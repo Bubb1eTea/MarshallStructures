@@ -10,13 +10,13 @@
             <h4 class="heading"><?= __('Actions') ?></h4>
             <?= $this->Html->link(__('Edit Associate'), ['action' => 'edit', $associate->id], ['class' => 'side-nav-item']) ?>
             <?= $this->Form->postLink(__('Delete Associate'), ['action' => 'delete', $associate->id], ['confirm' => __('Are you sure you want to delete # {0}?', $associate->id), 'class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('List Associate'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('List Associates'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
             <?= $this->Html->link(__('New Associate'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
         <div class="associates view content">
-            <h3><?= h($associate->firstname) ?> <?= h($associate->lastname) ?></h3>
+            <h3><?= h($associate->firstname) ?>&nbsp<?= h($associate->lastname) ?></h3>
             <table>
                 <tr>
                     <th><?= __('First Name') ?></th>
@@ -35,16 +35,16 @@
                     <td><?= h($associate->phonenumber) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Company') ?></th>
-                    <td><?= $associate->has('company') ? $this->Html->link($associate->company->companyname, ['controller' => 'Companys', 'action' => 'view', $associate->company->id]) : '' ?></td>
-                </tr>
-                <tr>
                     <th><?= __('Position') ?></th>
                     <td><?= h($associate->position) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Role') ?></th>
                     <td><?= h($associate->role) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Associate Company') ?></th>
+                    <td><?= $associate->has('associatecompany') ? $this->Html->link($associate->associatecompany->id, ['controller' => 'Associatecompanys', 'action' => 'view', $associate->associatecompany->id]) : '' ?></td>
                 </tr>
             </table>
             <div class="related">
@@ -62,7 +62,6 @@
                             <th><?= __('State') ?></th>
                             <th><?= __('Phase') ?></th>
                             <th><?= __('Duedate') ?></th>
-                            <th><?= __('Projdesc') ?></th>
                             <th><?= __('Client Id') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
@@ -77,7 +76,6 @@
                             <td><?= h($projects->state) ?></td>
                             <td><?= h($projects->phase) ?></td>
                             <td><?= h($projects->duedate) ?></td>
-                            <td><?= h($projects->projdesc) ?></td>
                             <td><?= h($projects->client_id) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Projects', 'action' => 'view', $projects->id]) ?>

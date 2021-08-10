@@ -11,13 +11,13 @@
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('firstname', ['label' =>"First Name"]) ?></th>
-                    <th><?= $this->Paginator->sort('lastname', ['label' =>"Last Name"]) ?></th>
-                    <th><?= $this->Paginator->sort('email', ['label' =>"Email"]) ?></th>
-                    <th><?= $this->Paginator->sort('phonenumber', ['label' =>"Phone Number"]) ?></th>
-                    <th><?= $this->Paginator->sort('company_id', ['label' =>"Company"]) ?></th>
-                    <th><?= $this->Paginator->sort('position', ['label' =>"Position"]) ?></th>
-                    <th><?= $this->Paginator->sort('role', ['label' =>"Role"]) ?></th>
+                    <th><?= $this->Paginator->sort('First Name') ?></th>
+                    <th><?= $this->Paginator->sort('Last Name') ?></th>
+                    <th><?= $this->Paginator->sort('Email') ?></th>
+                    <th><?= $this->Paginator->sort('Phone Number') ?></th>
+                    <th><?= $this->Paginator->sort('Position') ?></th>
+                    <th><?= $this->Paginator->sort('Role') ?></th>
+                    <th><?= $this->Paginator->sort('Associate Company') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -28,9 +28,9 @@
                     <td><?= h($associate->lastname) ?></td>
                     <td><?= h($associate->email) ?></td>
                     <td><?= h($associate->phonenumber) ?></td>
-                    <td><?= $associate->has('company') ? $this->Html->link($associate->company->companyname, ['controller' => 'Companys', 'action' => 'view', $associate->company->id]) : '' ?></td>
                     <td><?= h($associate->position) ?></td>
                     <td><?= h($associate->role) ?></td>
+                    <td><?= $associate->has('associatecompany') ? $this->Html->link($associate->associatecompany->id, ['controller' => 'Associatecompanys', 'action' => 'view', $associate->associatecompany->id]) : '' ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $associate->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $associate->id]) ?>
