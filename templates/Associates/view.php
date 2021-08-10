@@ -10,7 +10,7 @@
             <h4 class="heading"><?= __('Actions') ?></h4>
             <?= $this->Html->link(__('Edit Associate'), ['action' => 'edit', $associate->id], ['class' => 'side-nav-item']) ?>
             <?= $this->Form->postLink(__('Delete Associate'), ['action' => 'delete', $associate->id], ['confirm' => __('Are you sure you want to delete # {0}?', $associate->id), 'class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('List Associates'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('List Associate'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
             <?= $this->Html->link(__('New Associate'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
@@ -35,16 +35,16 @@
                     <td><?= h($associate->phonenumber) ?></td>
                 </tr>
                 <tr>
+                    <th><?= __('Associate Company') ?></th>
+                    <td><?= $associate->has('associatecompany') ? $this->Html->link($associate->associatecompany->companyname, ['controller' => 'Associatecompanys', 'action' => 'view', $associate->associatecompany->companyname]) : '' ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Position') ?></th>
                     <td><?= h($associate->position) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Role') ?></th>
                     <td><?= h($associate->role) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Associate Company') ?></th>
-                    <td><?= $associate->has('associatecompany') ? $this->Html->link($associate->associatecompany->id, ['controller' => 'Associatecompanys', 'action' => 'view', $associate->associatecompany->id]) : '' ?></td>
                 </tr>
             </table>
             <div class="related">

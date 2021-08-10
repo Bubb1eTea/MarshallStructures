@@ -15,9 +15,9 @@
                     <th><?= $this->Paginator->sort('Last Name') ?></th>
                     <th><?= $this->Paginator->sort('Email') ?></th>
                     <th><?= $this->Paginator->sort('Phone Number') ?></th>
+                    <th><?= $this->Paginator->sort('Associate Company') ?></th>
                     <th><?= $this->Paginator->sort('Position') ?></th>
                     <th><?= $this->Paginator->sort('Role') ?></th>
-                    <th><?= $this->Paginator->sort('Associate Company') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -28,9 +28,9 @@
                     <td><?= h($associate->lastname) ?></td>
                     <td><?= h($associate->email) ?></td>
                     <td><?= h($associate->phonenumber) ?></td>
+                    <td><?= $associate->has('associatecompany') ? $this->Html->link($associate->associatecompany->companyname, ['controller' => 'Associatecompanys', 'action' => 'view', $associate->associatecompany->companyname]) : '' ?></td>
                     <td><?= h($associate->position) ?></td>
                     <td><?= h($associate->role) ?></td>
-                    <td><?= $associate->has('associatecompany') ? $this->Html->link($associate->associatecompany->id, ['controller' => 'Associatecompanys', 'action' => 'view', $associate->associatecompany->id]) : '' ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $associate->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $associate->id]) ?>
