@@ -59,6 +59,12 @@
                     <td><?= h($project->duedate) ?></td>
                 </tr>
             </table>
+            <div class="text">
+                <strong><?= __('Projectdesc') ?></strong>
+                <blockquote>
+                    <?= $this->Text->autoParagraph(h($project->projectdesc)); ?>
+                </blockquote>
+            </div>
             <div class="related">
                 <h4><?= __('Related Associates') ?></h4>
                 <?php if (!empty($project->associates)) : ?>

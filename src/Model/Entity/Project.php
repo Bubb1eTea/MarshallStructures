@@ -16,6 +16,7 @@ use Cake\ORM\Entity;
  * @property string $postcode
  * @property string $state
  * @property string $phase
+ * @property string $projectdesc
  * @property \Cake\I18n\FrozenDate|null $duedate
  * @property int|null $client_id
  *
@@ -41,6 +42,7 @@ class Project extends Entity
         'postcode' => true,
         'state' => true,
         'phase' => true,
+        'projectdesc' => true,
         'duedate' => true,
         'client_id' => true,
         'client' => true,
