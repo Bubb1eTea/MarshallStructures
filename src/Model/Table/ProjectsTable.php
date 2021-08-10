@@ -110,8 +110,7 @@ class ProjectsTable extends Table
 
         $validator
             ->scalar('projectdesc')
-            ->requirePresence('projectdesc', 'create')
-            ->notEmptyString('projectdesc');
+            ->allowEmptyString('projectdesc');
 
         $validator
             ->date('duedate')

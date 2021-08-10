@@ -16,7 +16,7 @@ use Cake\ORM\Entity;
  * @property string $postcode
  * @property string $state
  * @property string $phase
- * @property string $projectdesc
+ * @property string|null $projectdesc
  * @property \Cake\I18n\FrozenDate|null $duedate
  * @property int|null $client_id
  *
