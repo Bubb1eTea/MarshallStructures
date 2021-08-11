@@ -16,18 +16,18 @@
     </aside>
     <div class="column-responsive column-80">
         <div class="projects view content">
-            <h3><?= h($project->id) ?></h3>
+            <h3><?= h($project->projectname) ?></h3>
             <table>
                 <tr>
-                    <th><?= __('Msnumber') ?></th>
+                    <th><?= __('MS Number') ?></th>
                     <td><?= h($project->msnumber) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Projectname') ?></th>
+                    <th><?= __('Project Name') ?></th>
                     <td><?= h($project->projectname) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Streetname') ?></th>
+                    <th><?= __('Street Name') ?></th>
                     <td><?= h($project->streetname) ?></td>
                 </tr>
                 <tr>
@@ -35,7 +35,7 @@
                     <td><?= h($project->suburb) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Postcode') ?></th>
+                    <th><?= __('Post Code') ?></th>
                     <td><?= h($project->postcode) ?></td>
                 </tr>
                 <tr>
@@ -48,21 +48,17 @@
                 </tr>
                 <tr>
                     <th><?= __('Client') ?></th>
-                    <td><?= $project->has('client') ? $this->Html->link($project->client->full_name, ['controller' => 'Clients', 'action' => 'view', $project->client->id]) : '' ?></td>
+                    <td><?= $project->has('client') ? $this->Html->link($project->client->id, ['controller' => 'Clients', 'action' => 'view', $project->client->id]) : '' ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= $this->Number->format($project->id) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Duedate') ?></th>
+                    <th><?= __('Due Date') ?></th>
                     <td><?= h($project->duedate) ?></td>
                 </tr>
             </table>
             <div class="text">
-                <strong><?= __('Projdesc') ?></strong>
+                <strong><?= __('Project Description') ?></strong>
                 <blockquote>
-                    <?= $this->Text->autoParagraph(h($project->projdesc)); ?>
+                    <?= $this->Text->autoParagraph(h($project->projectdesc)); ?>
                 </blockquote>
             </div>
             <div class="related">
@@ -78,7 +74,7 @@
                             <th><?= __('Phonenumber') ?></th>
                             <th><?= __('Position') ?></th>
                             <th><?= __('Role') ?></th>
-                            <th><?= __('Company Id') ?></th>
+                            <th><?= __('Associatecompany Id') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($project->associates as $associates) : ?>
@@ -90,85 +86,11 @@
                             <td><?= h($associates->phonenumber) ?></td>
                             <td><?= h($associates->position) ?></td>
                             <td><?= h($associates->role) ?></td>
-                            <td><?= h($associates->company_id) ?></td>
+                            <td><?= h($associates->associatecompany_id) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Associates', 'action' => 'view', $associates->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Associates', 'action' => 'edit', $associates->id]) ?>
                                 <?= $this->Form->postLink(__('Delete'), ['controller' => 'Associates', 'action' => 'delete', $associates->id], ['confirm' => __('Are you sure you want to delete # {0}?', $associates->id)]) ?>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-                    </table>
-                </div>
-                <?php endif; ?>
-            </div>
-            <div class="related">
-                <h4><?= __('Related Feeproposals') ?></h4>
-                <?php if (!empty($project->feeproposals)) : ?>
-                <div class="table-responsive">
-                    <table>
-                        <tr>
-                            <th><?= __('Id') ?></th>
-                            <th><?= __('Proposaldesc') ?></th>
-                            <th><?= __('Datecreated') ?></th>
-                            <th><?= __('Lastmodified') ?></th>
-                            <th><?= __('Fee') ?></th>
-                            <th><?= __('Disbursement') ?></th>
-                            <th><?= __('Total') ?></th>
-                            <th><?= __('Project Id') ?></th>
-                            <th class="actions"><?= __('Actions') ?></th>
-                        </tr>
-                        <?php foreach ($project->feeproposals as $feeproposals) : ?>
-                        <tr>
-                            <td><?= h($feeproposals->id) ?></td>
-                            <td><?= h($feeproposals->proposaldesc) ?></td>
-                            <td><?= h($feeproposals->datecreated) ?></td>
-                            <td><?= h($feeproposals->lastmodified) ?></td>
-                            <td><?= h($feeproposals->fee) ?></td>
-                            <td><?= h($feeproposals->disbursement) ?></td>
-                            <td><?= h($feeproposals->total) ?></td>
-                            <td><?= h($feeproposals->project_id) ?></td>
-                            <td class="actions">
-                                <?= $this->Html->link(__('View'), ['controller' => 'Feeproposals', 'action' => 'view', $feeproposals->id]) ?>
-                                <?= $this->Html->link(__('Edit'), ['controller' => 'Feeproposals', 'action' => 'edit', $feeproposals->id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Feeproposals', 'action' => 'delete', $feeproposals->id], ['confirm' => __('Are you sure you want to delete # {0}?', $feeproposals->id)]) ?>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-                    </table>
-                </div>
-                <?php endif; ?>
-            </div>
-            <div class="related">
-                <h4><?= __('Related Invoices') ?></h4>
-                <?php if (!empty($project->invoices)) : ?>
-                <div class="table-responsive">
-                    <table>
-                        <tr>
-                            <th><?= __('Id') ?></th>
-                            <th><?= __('Datecreated') ?></th>
-                            <th><?= __('Invdesc') ?></th>
-                            <th><?= __('Completepercentage') ?></th>
-                            <th><?= __('Subtotal') ?></th>
-                            <th><?= __('Saletax') ?></th>
-                            <th><?= __('Totalamount') ?></th>
-                            <th><?= __('Project Id') ?></th>
-                            <th class="actions"><?= __('Actions') ?></th>
-                        </tr>
-                        <?php foreach ($project->invoices as $invoices) : ?>
-                        <tr>
-                            <td><?= h($invoices->id) ?></td>
-                            <td><?= h($invoices->datecreated) ?></td>
-                            <td><?= h($invoices->invdesc) ?></td>
-                            <td><?= h($invoices->completepercentage) ?></td>
-                            <td><?= h($invoices->subtotal) ?></td>
-                            <td><?= h($invoices->saletax) ?></td>
-                            <td><?= h($invoices->totalamount) ?></td>
-                            <td><?= h($invoices->project_id) ?></td>
-                            <td class="actions">
-                                <?= $this->Html->link(__('View'), ['controller' => 'Invoices', 'action' => 'view', $invoices->id]) ?>
-                                <?= $this->Html->link(__('Edit'), ['controller' => 'Invoices', 'action' => 'edit', $invoices->id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Invoices', 'action' => 'delete', $invoices->id], ['confirm' => __('Are you sure you want to delete # {0}?', $invoices->id)]) ?>
                             </td>
                         </tr>
                         <?php endforeach; ?>

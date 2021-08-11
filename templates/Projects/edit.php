@@ -24,15 +24,15 @@
             <fieldset>
                 <legend><?= __('Edit Project') ?></legend>
                 <?php
-                    echo $this->Form->control('msnumber');
-                    echo $this->Form->control('projectname');
-                    echo $this->Form->control('streetname');
-                    echo $this->Form->control('suburb');
-                    echo $this->Form->control('postcode');
-                    echo $this->Form->control('state');
-                    echo $this->Form->control('phase');
-                    echo $this->Form->control('duedate', ['empty' => true]);
-                    echo $this->Form->control('projdesc');
+                    echo $this->Form->control('msnumber', ['label'=>"MS Number"]);
+                    echo $this->Form->control('projectname', ['label'=>"Project Name"]);
+                    echo $this->Form->control('streetname', ['label'=>"Street Name"]);
+                    echo $this->Form->control('suburb', ['label'=>"Suburb"]);
+                    echo $this->Form->control('postcode', ['label'=>"Post Code"]);
+                    echo $this->Form->control('state', ['label'=>"State"]);
+                    echo $this->Form->control('phase', ['label'=>"Phase"]);
+                    echo $this->Form->control('projectdesc', ['label'=>"Project Description"]);
+                    echo $this->Form->control('duedate', ['label'=>"Due Date"], ['empty' => true]);
                     echo $this->Form->control('client_id', ['options' => $clients, 'empty' => true]);
                     echo $this->Form->control('associates._ids', ['options' => $associates]);
                 ?>
