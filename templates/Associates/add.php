@@ -25,7 +25,7 @@
                     echo $this->Form->control('Phone Number');
                     echo $this->Form->control('Position');
                     echo $this->Form->control('Role');
-                    echo $this->Form->control('Associate Company', ['options' => $associatecompanys, 'empty' => false]);
+                    echo $this->Form->control('Associate Company', ['options' => $associatecompanys, 'empty' => true]);
                     echo $this->Form->control('projects._ids', ['options' => $projects]);
                 ?>
             </fieldset>

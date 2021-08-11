@@ -11,13 +11,13 @@
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('First Name') ?></th>
-                    <th><?= $this->Paginator->sort('Last Name') ?></th>
-                    <th><?= $this->Paginator->sort('Email') ?></th>
-                    <th><?= $this->Paginator->sort('Phone Number') ?></th>
-                    <th><?= $this->Paginator->sort('Associate Company') ?></th>
-                    <th><?= $this->Paginator->sort('Position') ?></th>
-                    <th><?= $this->Paginator->sort('Role') ?></th>
+                    <th><?= $this->Paginator->sort('firstname', ['label'=>"First Name"]) ?></th>
+                    <th><?= $this->Paginator->sort('lastname', ['label'=>"Last Name"]) ?></th>
+                    <th><?= $this->Paginator->sort('email') ?></th>
+                    <th><?= $this->Paginator->sort('phonenumber', ['label'=>"Phone Number"]) ?></th>
+                    <th><?= $this->Paginator->sort('associatecompany_id', ['label'=>"Associate Company"]) ?></th>
+                    <th><?= $this->Paginator->sort('position', ['label'=>"Position"]) ?></th>
+                    <th><?= $this->Paginator->sort('role', ['label'=>"Role"]) ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
