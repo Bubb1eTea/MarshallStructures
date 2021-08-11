@@ -29,7 +29,8 @@
                     echo $this->Form->control('streetname', ['label'=>"Street Name"]);
                     echo $this->Form->control('suburb', ['label'=>"Suburb"]);
                     echo $this->Form->control('postcode', ['label'=>"Post Code"]);
-                    echo $this->Form->control('state', ['label'=>"State"]);
+                    $choices = ['NSW'=>'NSW','QLD'=>'QLD','SA'=>'SA', 'TAS'=>'TAS','VIC	'=>'VIC	','WA'=>'WA'];
+                    echo $this->Form->control('state', ['label'=>"State", 'options' => $choices, 'empty' => true]);
                     echo $this->Form->control('phase', ['label'=>"Phase"]);
                     echo $this->Form->control('projectdesc', ['label'=>"Project Description"]);
                     echo $this->Form->control('duedate', ['label'=>"Due Date", 'empty' => true]);
