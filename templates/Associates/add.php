@@ -19,14 +19,14 @@
             <fieldset>
                 <legend><?= __('Add Associate') ?></legend>
                 <?php
-                    echo $this->Form->control('First Name');
-                    echo $this->Form->control('Last Name');
-                    echo $this->Form->control('Email');
-                    echo $this->Form->control('Phone Number');
-                    echo $this->Form->control('Position');
-                    echo $this->Form->control('Role');
-                    echo $this->Form->control('Associate Company', ['options' => $associatecompanys, 'empty' => true]);
-                    echo $this->Form->control('projects._ids', ['options' => $projects]);
+                    echo $this->Form->control('firstname', ['label'=>"First Name"]);
+                    echo $this->Form->control('lastname', ['label'=>"Last Name"]);
+                    echo $this->Form->control('email', ['label'=>"Email"]);
+                    echo $this->Form->control('phonenumber', ['label'=>"Phone Number"]);
+                    echo $this->Form->control('associatecompany_id', ['label'=>"Associate Company", 'options' => $associatecompanys, 'empty' => true]);
+                    echo $this->Form->control('position', ['label'=>"Position"]);
+                    echo $this->Form->control('role', ['label'=>"Role"]);
+                    echo $this->Form->control('projects._ids', ['label'=>"Projects", 'options' => $projects]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

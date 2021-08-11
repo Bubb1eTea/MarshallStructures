@@ -28,9 +28,9 @@
                     echo $this->Form->control('lastname', ['label'=>"Last Name"]);
                     echo $this->Form->control('email', ['label'=>"Email"]);
                     echo $this->Form->control('phonenumber', ['label'=>"Phone Number"]);
+                    echo $this->Form->control('associatecompany_id', ['label'=>"Associate Company", 'options' => $associatecompanys, 'empty' => true]);
                     echo $this->Form->control('position', ['label'=>"Position"]);
                     echo $this->Form->control('role', ['label'=>"Role"]);
-                    echo $this->Form->control('associatecompany_id', ['label'=>"Associate Company", 'options' => $associatecompanys, 'empty' => true]);
                     echo $this->Form->control('projects._ids', ['label'=>"Projects", 'options' => $projects]);
                 ?>
             </fieldset>
