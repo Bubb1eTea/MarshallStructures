@@ -27,7 +27,7 @@
                     echo $this->Form->control('state', ['label'=>"State"]);
                     echo $this->Form->control('phase', ['label'=>"Phase"]);
                     echo $this->Form->control('projectdesc', ['label'=>"Project Description"]);
-                    echo $this->Form->control('duedate', ['label'=>"Due Date"], ['empty' => true]);
+                    echo $this->Form->control('duedate', ['label'=>"Due Date", 'empty' => true]);
                     echo $this->Form->control('client_id', ['options' => $clients, 'empty' => true]);
                     echo $this->Form->control('associates._ids', ['options' => $associates]);
                 ?>
