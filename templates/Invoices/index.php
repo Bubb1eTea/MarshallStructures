@@ -11,12 +11,11 @@
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('datecreated') ?></th>
-                    <th><?= $this->Paginator->sort('completepercentage') ?></th>
-                    <th><?= $this->Paginator->sort('subtotal') ?></th>
-                    <th><?= $this->Paginator->sort('saletax') ?></th>
-                    <th><?= $this->Paginator->sort('totalamount') ?></th>
+                    <th><?= $this->Paginator->sort('datecreated', ['label' =>"Date Created"]) ?></th>
+                    <th><?= $this->Paginator->sort('completepercentage', ['label' =>"Paid Percentage"]) ?></th>
+                    <th><?= $this->Paginator->sort('subtotal', ['label' =>"Subtotal"]) ?></th>
+                    <th><?= $this->Paginator->sort('saletax', ['label' =>"Sales Tax"]) ?></th>
+                    <th><?= $this->Paginator->sort('totalamount', ['label' =>"Total Amount"]) ?></th>
                     <th><?= $this->Paginator->sort('project_id') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
@@ -24,7 +23,6 @@
             <tbody>
                 <?php foreach ($invoices as $invoice): ?>
                 <tr>
-                    <td><?= $this->Number->format($invoice->id) ?></td>
                     <td><?= h($invoice->datecreated) ?></td>
                     <td><?= $this->Number->format($invoice->completepercentage) ?></td>
                     <td><?= $this->Number->format($invoice->subtotal) ?></td>

@@ -15,7 +15,7 @@
                 ['action' => 'delete', $associate->id],
                 ['confirm' => __('Are you sure you want to delete # {0}?', $associate->id), 'class' => 'side-nav-item']
             ) ?>
-            <?= $this->Html->link(__('List Associates'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('List Associate'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
@@ -24,14 +24,14 @@
             <fieldset>
                 <legend><?= __('Edit Associate') ?></legend>
                 <?php
-                    echo $this->Form->control('firstname');
-                    echo $this->Form->control('lastname');
-                    echo $this->Form->control('email');
-                    echo $this->Form->control('phonenumber');
-                    echo $this->Form->control('position');
-                    echo $this->Form->control('role');
+                    echo $this->Form->control('firstname', ['label' =>"First Name"]);
+                    echo $this->Form->control('lastname', ['label' =>"Last Name"]);
+                    echo $this->Form->control('email', ['label' =>"Email"]);
+                    echo $this->Form->control('phonenumber', ['label' =>"Phone Number"]);
                     echo $this->Form->control('company_id', ['options' => $companys, 'empty' => true]);
-                    echo $this->Form->control('projects._ids', ['options' => $projects]);
+                    echo $this->Form->control('position', ['label' =>"Position"]);
+                    echo $this->Form->control('role', ['label' =>"Role"]);
+                    echo $this->Form->control('projects._ids', ['label' =>"Project"], ['options' => $projects]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

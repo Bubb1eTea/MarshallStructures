@@ -13,7 +13,7 @@
                 ['action' => 'delete', $company->id],
                 ['confirm' => __('Are you sure you want to delete # {0}?', $company->id), 'class' => 'side-nav-item']
             ) ?>
-            <?= $this->Html->link(__('List Companys'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('List Company'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
@@ -22,8 +22,8 @@
             <fieldset>
                 <legend><?= __('Edit Company') ?></legend>
                 <?php
-                    echo $this->Form->control('companyname');
-                    echo $this->Form->control('type');
+                    echo $this->Form->control('companyname', ['label' =>"Company Name"]);
+                    echo $this->Form->control('type', ['label' =>"Type"]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
