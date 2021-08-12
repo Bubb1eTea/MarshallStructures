@@ -1,12 +1,12 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\Associatecompany[]|\Cake\Collection\CollectionInterface $associatecompanys
+ * @var \App\Model\Entity\Company[]|\Cake\Collection\CollectionInterface $companys
  */
 ?>
-<div class="associatecompanys index content">
-    <?= $this->Html->link(__('New Associatecompany'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('Associatecompanys') ?></h3>
+<div class="companys index content">
+    <?= $this->Html->link(__('New Company'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('Companys') ?></h3>
     <div class="table-responsive">
         <table>
             <thead>
@@ -18,15 +18,15 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($associatecompanys as $associatecompany): ?>
+                <?php foreach ($companys as $company): ?>
                 <tr>
-                    <td><?= $this->Number->format($associatecompany->id) ?></td>
-                    <td><?= h($associatecompany->companyname) ?></td>
-                    <td><?= h($associatecompany->type) ?></td>
+                    <td><?= $this->Number->format($company->id) ?></td>
+                    <td><?= h($company->companyname) ?></td>
+                    <td><?= h($company->type) ?></td>
                     <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $associatecompany->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $associatecompany->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $associatecompany->id], ['confirm' => __('Are you sure you want to delete # {0}?', $associatecompany->id)]) ?>
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $company->id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $company->id]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $company->id], ['confirm' => __('Are you sure you want to delete # {0}?', $company->id)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

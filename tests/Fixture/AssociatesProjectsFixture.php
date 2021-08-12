@@ -17,6 +17,7 @@ class AssociatesProjectsFixture extends TestFixture
      */
     // phpcs:disable
     public $fields = [
+        'id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
         'associate_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'project_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_indexes' => [
@@ -24,6 +25,7 @@ class AssociatesProjectsFixture extends TestFixture
             'FK_PROJECT_ID' => ['type' => 'index', 'columns' => ['project_id'], 'length' => []],
         ],
         '_constraints' => [
+            'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
             'FK_PROJECT_ID' => ['type' => 'foreign', 'columns' => ['project_id'], 'references' => ['projects', 'id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
             'FK_ASSOCIATES_ID' => ['type' => 'foreign', 'columns' => ['associate_id'], 'references' => ['associates', 'id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
         ],
@@ -42,6 +44,7 @@ class AssociatesProjectsFixture extends TestFixture
     {
         $this->records = [
             [
+                'id' => 1,
                 'associate_id' => 1,
                 'project_id' => 1,
             ],

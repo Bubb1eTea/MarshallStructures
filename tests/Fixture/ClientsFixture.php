@@ -23,13 +23,13 @@ class ClientsFixture extends TestFixture
         'email' => ['type' => 'string', 'length' => 30, 'null' => false, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
         'phonenumber' => ['type' => 'string', 'length' => 12, 'null' => false, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
         'position' => ['type' => 'string', 'length' => 30, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
-        'clientcompany_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'company_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_indexes' => [
-            'FK_CLIENTCOMPANYS_CLIENTS' => ['type' => 'index', 'columns' => ['clientcompany_id'], 'length' => []],
+            'FK_COMPANYS_CLIENTS' => ['type' => 'index', 'columns' => ['company_id'], 'length' => []],
         ],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
-            'FK_CLIENTCOMPANYS_CLIENTS' => ['type' => 'foreign', 'columns' => ['clientcompany_id'], 'references' => ['clientcompanys', 'id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
+            'FK_COMPANYS_CLIENTS' => ['type' => 'foreign', 'columns' => ['company_id'], 'references' => ['companys', 'id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
         ],
         '_options' => [
             'engine' => 'InnoDB',
@@ -52,7 +52,7 @@ class ClientsFixture extends TestFixture
                 'email' => 'Lorem ipsum dolor sit amet',
                 'phonenumber' => 'Lorem ipsu',
                 'position' => 'Lorem ipsum dolor sit amet',
-                'clientcompany_id' => 1,
+                'company_id' => 1,
             ],
         ];
         parent::init();

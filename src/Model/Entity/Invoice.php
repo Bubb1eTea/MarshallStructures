@@ -6,16 +6,20 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * AssociatesProject Entity
+ * Invoice Entity
  *
  * @property int $id
- * @property int|null $associate_id
+ * @property \Cake\I18n\FrozenTime $datecreated
+ * @property string|null $invdesc
+ * @property int|null $completepercentage
+ * @property string|null $subtotal
+ * @property string|null $saletax
+ * @property string|null $totalamount
  * @property int|null $project_id
  *
- * @property \App\Model\Entity\Associate $associate
  * @property \App\Model\Entity\Project $project
  */
-class AssociatesProject extends Entity
+class Invoice extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -27,9 +31,13 @@ class AssociatesProject extends Entity
      * @var array
      */
     protected $_accessible = [
-        'associate_id' => true,
+        'datecreated' => true,
+        'invdesc' => true,
+        'completepercentage' => true,
+        'subtotal' => true,
+        'saletax' => true,
+        'totalamount' => true,
         'project_id' => true,
-        'associate' => true,
         'project' => true,
     ];
 }

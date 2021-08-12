@@ -2,7 +2,7 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Client $client
- * @var \Cake\Collection\CollectionInterface|string[] $clientcompanys
+ * @var \Cake\Collection\CollectionInterface|string[] $companys
  */
 ?>
 <div class="row">
@@ -23,7 +23,7 @@
                     echo $this->Form->control('email');
                     echo $this->Form->control('phonenumber');
                     echo $this->Form->control('position');
-                    echo $this->Form->control('clientcompany_id', ['options' => $clientcompanys, 'empty' => true]);
+                    echo $this->Form->control('company_id', ['options' => $companys, 'empty' => true]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

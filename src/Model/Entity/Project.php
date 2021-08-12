@@ -16,11 +16,13 @@ use Cake\ORM\Entity;
  * @property string $postcode
  * @property string $state
  * @property string $phase
- * @property string|null $projectdesc
  * @property \Cake\I18n\FrozenDate|null $duedate
+ * @property string|null $projdesc
  * @property int|null $client_id
  *
  * @property \App\Model\Entity\Client $client
+ * @property \App\Model\Entity\Feeproposal[] $feeproposals
+ * @property \App\Model\Entity\Invoice[] $invoices
  * @property \App\Model\Entity\Associate[] $associates
  */
 class Project extends Entity
@@ -42,10 +44,12 @@ class Project extends Entity
         'postcode' => true,
         'state' => true,
         'phase' => true,
-        'projectdesc' => true,
         'duedate' => true,
+        'projdesc' => true,
         'client_id' => true,
         'client' => true,
+        'feeproposals' => true,
+        'invoices' => true,
         'associates' => true,
     ];
 }

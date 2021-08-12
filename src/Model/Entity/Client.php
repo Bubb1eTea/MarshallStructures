@@ -14,9 +14,9 @@ use Cake\ORM\Entity;
  * @property string $email
  * @property string $phonenumber
  * @property string|null $position
- * @property int|null $clientcompany_id
+ * @property int|null $company_id
  *
- * @property \App\Model\Entity\Clientcompany $clientcompany
+ * @property \App\Model\Entity\Company $company
  * @property \App\Model\Entity\Project[] $projects
  */
 class Client extends Entity
@@ -36,8 +36,8 @@ class Client extends Entity
         'email' => true,
         'phonenumber' => true,
         'position' => true,
-        'clientcompany_id' => true,
-        'clientcompany' => true,
+        'company_id' => true,
+        'company' => true,
         'projects' => true,
     ];
 }

@@ -3,16 +3,16 @@ declare(strict_types=1);
 
 namespace App\Test\TestCase\Controller;
 
-use App\Controller\AssociatesController;
+use App\Controller\InvoicesController;
 use Cake\TestSuite\IntegrationTestTrait;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Controller\AssociatesController Test Case
+ * App\Controller\InvoicesController Test Case
  *
- * @uses \App\Controller\AssociatesController
+ * @uses \App\Controller\InvoicesController
  */
-class AssociatesControllerTest extends TestCase
+class InvoicesControllerTest extends TestCase
 {
     use IntegrationTestTrait;
 
@@ -22,17 +22,15 @@ class AssociatesControllerTest extends TestCase
      * @var array
      */
     protected $fixtures = [
-        'app.Associates',
-        'app.Companys',
+        'app.Invoices',
         'app.Projects',
-        'app.AssociatesProjects',
     ];
 
     /**
      * Test index method
      *
      * @return void
-     * @uses \App\Controller\AssociatesController::index()
+     * @uses \App\Controller\InvoicesController::index()
      */
     public function testIndex(): void
     {
@@ -43,7 +41,7 @@ class AssociatesControllerTest extends TestCase
      * Test view method
      *
      * @return void
-     * @uses \App\Controller\AssociatesController::view()
+     * @uses \App\Controller\InvoicesController::view()
      */
     public function testView(): void
     {
@@ -54,7 +52,7 @@ class AssociatesControllerTest extends TestCase
      * Test add method
      *
      * @return void
-     * @uses \App\Controller\AssociatesController::add()
+     * @uses \App\Controller\InvoicesController::add()
      */
     public function testAdd(): void
     {
@@ -65,7 +63,7 @@ class AssociatesControllerTest extends TestCase
      * Test edit method
      *
      * @return void
-     * @uses \App\Controller\AssociatesController::edit()
+     * @uses \App\Controller\InvoicesController::edit()
      */
     public function testEdit(): void
     {
@@ -76,7 +74,7 @@ class AssociatesControllerTest extends TestCase
      * Test delete method
      *
      * @return void
-     * @uses \App\Controller\AssociatesController::delete()
+     * @uses \App\Controller\InvoicesController::delete()
      */
     public function testDelete(): void
     {

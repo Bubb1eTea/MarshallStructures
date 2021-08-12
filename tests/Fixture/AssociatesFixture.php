@@ -24,13 +24,13 @@ class AssociatesFixture extends TestFixture
         'phonenumber' => ['type' => 'string', 'length' => 12, 'null' => false, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
         'position' => ['type' => 'string', 'length' => 30, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
         'role' => ['type' => 'string', 'length' => 30, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
-        'associatecompany_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'company_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_indexes' => [
-            'FK_ASSOCIATESCOMPANYS_ASSOCIATES' => ['type' => 'index', 'columns' => ['associatecompany_id'], 'length' => []],
+            'FK_COMPANYS_ASSOCIATES' => ['type' => 'index', 'columns' => ['company_id'], 'length' => []],
         ],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
-            'FK_ASSOCIATESCOMPANYS_ASSOCIATES' => ['type' => 'foreign', 'columns' => ['associatecompany_id'], 'references' => ['associatecompanys', 'id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
+            'FK_COMPANYS_ASSOCIATES' => ['type' => 'foreign', 'columns' => ['company_id'], 'references' => ['companys', 'id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
         ],
         '_options' => [
             'engine' => 'InnoDB',
@@ -54,7 +54,7 @@ class AssociatesFixture extends TestFixture
                 'phonenumber' => 'Lorem ipsu',
                 'position' => 'Lorem ipsum dolor sit amet',
                 'role' => 'Lorem ipsum dolor sit amet',
-                'associatecompany_id' => 1,
+                'company_id' => 1,
             ],
         ];
         parent::init();

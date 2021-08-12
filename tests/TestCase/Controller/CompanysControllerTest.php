@@ -3,16 +3,16 @@ declare(strict_types=1);
 
 namespace App\Test\TestCase\Controller;
 
-use App\Controller\AssociatecompanysController;
+use App\Controller\CompanysController;
 use Cake\TestSuite\IntegrationTestTrait;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Controller\AssociatecompanysController Test Case
+ * App\Controller\CompanysController Test Case
  *
- * @uses \App\Controller\AssociatecompanysController
+ * @uses \App\Controller\CompanysController
  */
-class AssociatecompanysControllerTest extends TestCase
+class CompanysControllerTest extends TestCase
 {
     use IntegrationTestTrait;
 
@@ -22,15 +22,16 @@ class AssociatecompanysControllerTest extends TestCase
      * @var array
      */
     protected $fixtures = [
-        'app.Associatecompanys',
+        'app.Companys',
         'app.Associates',
+        'app.Clients',
     ];
 
     /**
      * Test index method
      *
      * @return void
-     * @uses \App\Controller\AssociatecompanysController::index()
+     * @uses \App\Controller\CompanysController::index()
      */
     public function testIndex(): void
     {
@@ -41,7 +42,7 @@ class AssociatecompanysControllerTest extends TestCase
      * Test view method
      *
      * @return void
-     * @uses \App\Controller\AssociatecompanysController::view()
+     * @uses \App\Controller\CompanysController::view()
      */
     public function testView(): void
     {
@@ -52,7 +53,7 @@ class AssociatecompanysControllerTest extends TestCase
      * Test add method
      *
      * @return void
-     * @uses \App\Controller\AssociatecompanysController::add()
+     * @uses \App\Controller\CompanysController::add()
      */
     public function testAdd(): void
     {
@@ -63,7 +64,7 @@ class AssociatecompanysControllerTest extends TestCase
      * Test edit method
      *
      * @return void
-     * @uses \App\Controller\AssociatecompanysController::edit()
+     * @uses \App\Controller\CompanysController::edit()
      */
     public function testEdit(): void
     {
@@ -74,7 +75,7 @@ class AssociatecompanysControllerTest extends TestCase
      * Test delete method
      *
      * @return void
-     * @uses \App\Controller\AssociatecompanysController::delete()
+     * @uses \App\Controller\CompanysController::delete()
      */
     public function testDelete(): void
     {

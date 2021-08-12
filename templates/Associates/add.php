@@ -2,7 +2,7 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Associate $associate
- * @var \Cake\Collection\CollectionInterface|string[] $associatecompanys
+ * @var \Cake\Collection\CollectionInterface|string[] $companys
  * @var \Cake\Collection\CollectionInterface|string[] $projects
  */
 ?>
@@ -25,7 +25,7 @@
                     echo $this->Form->control('phonenumber');
                     echo $this->Form->control('position');
                     echo $this->Form->control('role');
-                    echo $this->Form->control('associatecompany_id', ['options' => $associatecompanys, 'empty' => true]);
+                    echo $this->Form->control('company_id', ['options' => $companys, 'empty' => true]);
                     echo $this->Form->control('projects._ids', ['options' => $projects]);
                 ?>
             </fieldset>

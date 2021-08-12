@@ -19,7 +19,7 @@ class AssociatesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Associatecompanys'],
+            'contain' => ['Companys'],
         ];
         $associates = $this->paginate($this->Associates);
 
@@ -36,7 +36,7 @@ class AssociatesController extends AppController
     public function view($id = null)
     {
         $associate = $this->Associates->get($id, [
-            'contain' => ['Associatecompanys', 'Projects'],
+            'contain' => ['Companys', 'Projects'],
         ]);
 
         $this->set(compact('associate'));
@@ -59,9 +59,9 @@ class AssociatesController extends AppController
             }
             $this->Flash->error(__('The associate could not be saved. Please, try again.'));
         }
-        $associatecompanys = $this->Associates->Associatecompanys->find('list', ['limit' => 200]);
+        $companys = $this->Associates->Companys->find('list', ['limit' => 200]);
         $projects = $this->Associates->Projects->find('list', ['limit' => 200]);
-        $this->set(compact('associate', 'associatecompanys', 'projects'));
+        $this->set(compact('associate', 'companys', 'projects'));
     }
 
     /**
@@ -85,9 +85,9 @@ class AssociatesController extends AppController
             }
             $this->Flash->error(__('The associate could not be saved. Please, try again.'));
         }
-        $associatecompanys = $this->Associates->Associatecompanys->find('list', ['limit' => 200]);
+        $companys = $this->Associates->Companys->find('list', ['limit' => 200]);
         $projects = $this->Associates->Projects->find('list', ['limit' => 200]);
-        $this->set(compact('associate', 'associatecompanys', 'projects'));
+        $this->set(compact('associate', 'companys', 'projects'));
     }
 
     /**

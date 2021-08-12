@@ -11,7 +11,7 @@ use Cake\Validation\Validator;
 /**
  * Clients Model
  *
- * @property \App\Model\Table\ClientcompanysTable&\Cake\ORM\Association\BelongsTo $Clientcompanys
+ * @property \App\Model\Table\CompanysTable&\Cake\ORM\Association\BelongsTo $Companys
  * @property \App\Model\Table\ProjectsTable&\Cake\ORM\Association\HasMany $Projects
  *
  * @method \App\Model\Entity\Client newEmptyEntity()
@@ -44,8 +44,8 @@ class ClientsTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('Clientcompanys', [
-            'foreignKey' => 'clientcompany_id',
+        $this->belongsTo('Companys', [
+            'foreignKey' => 'company_id',
         ]);
         $this->hasMany('Projects', [
             'foreignKey' => 'client_id',
@@ -104,7 +104,7 @@ class ClientsTable extends Table
      */
     public function buildRules(RulesChecker $rules): RulesChecker
     {
-        $rules->add($rules->existsIn(['clientcompany_id'], 'Clientcompanys'), ['errorField' => 'clientcompany_id']);
+        $rules->add($rules->existsIn(['company_id'], 'Companys'), ['errorField' => 'company_id']);
 
         return $rules;
     }

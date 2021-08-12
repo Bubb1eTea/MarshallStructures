@@ -12,6 +12,8 @@ use Cake\Validation\Validator;
  * Projects Model
  *
  * @property \App\Model\Table\ClientsTable&\Cake\ORM\Association\BelongsTo $Clients
+ * @property \App\Model\Table\FeeproposalsTable&\Cake\ORM\Association\HasMany $Feeproposals
+ * @property \App\Model\Table\InvoicesTable&\Cake\ORM\Association\HasMany $Invoices
  * @property \App\Model\Table\AssociatesTable&\Cake\ORM\Association\BelongsToMany $Associates
  *
  * @method \App\Model\Entity\Project newEmptyEntity()
@@ -46,6 +48,12 @@ class ProjectsTable extends Table
 
         $this->belongsTo('Clients', [
             'foreignKey' => 'client_id',
+        ]);
+        $this->hasMany('Feeproposals', [
+            'foreignKey' => 'project_id',
+        ]);
+        $this->hasMany('Invoices', [
+            'foreignKey' => 'project_id',
         ]);
         $this->belongsToMany('Associates', [
             'foreignKey' => 'project_id',
@@ -109,12 +117,12 @@ class ProjectsTable extends Table
             ->notEmptyString('phase');
 
         $validator
-            ->scalar('projectdesc')
-            ->allowEmptyString('projectdesc');
-
-        $validator
             ->date('duedate')
             ->allowEmptyDate('duedate');
+
+        $validator
+            ->scalar('projdesc')
+            ->allowEmptyString('projdesc');
 
         return $validator;
     }

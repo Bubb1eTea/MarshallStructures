@@ -24,6 +24,8 @@ class ProjectsControllerTest extends TestCase
     protected $fixtures = [
         'app.Projects',
         'app.Clients',
+        'app.Feeproposals',
+        'app.Invoices',
         'app.Associates',
         'app.AssociatesProjects',
     ];

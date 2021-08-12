@@ -39,8 +39,8 @@
                     <td><?= h($client->position) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Clientcompany') ?></th>
-                    <td><?= $client->has('clientcompany') ? $this->Html->link($client->clientcompany->id, ['controller' => 'Clientcompanys', 'action' => 'view', $client->clientcompany->id]) : '' ?></td>
+                    <th><?= __('Company') ?></th>
+                    <td><?= $client->has('company') ? $this->Html->link($client->company->id, ['controller' => 'Companys', 'action' => 'view', $client->company->id]) : '' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Id') ?></th>
@@ -62,6 +62,7 @@
                             <th><?= __('State') ?></th>
                             <th><?= __('Phase') ?></th>
                             <th><?= __('Duedate') ?></th>
+                            <th><?= __('Projdesc') ?></th>
                             <th><?= __('Client Id') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
@@ -76,6 +77,7 @@
                             <td><?= h($projects->state) ?></td>
                             <td><?= h($projects->phase) ?></td>
                             <td><?= h($projects->duedate) ?></td>
+                            <td><?= h($projects->projdesc) ?></td>
                             <td><?= h($projects->client_id) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Projects', 'action' => 'view', $projects->id]) ?>

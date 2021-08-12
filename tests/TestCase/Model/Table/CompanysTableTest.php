@@ -3,20 +3,20 @@ declare(strict_types=1);
 
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\AssociatecompanysTable;
+use App\Model\Table\CompanysTable;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\AssociatecompanysTable Test Case
+ * App\Model\Table\CompanysTable Test Case
  */
-class AssociatecompanysTableTest extends TestCase
+class CompanysTableTest extends TestCase
 {
     /**
      * Test subject
      *
-     * @var \App\Model\Table\AssociatecompanysTable
+     * @var \App\Model\Table\CompanysTable
      */
-    protected $Associatecompanys;
+    protected $Companys;
 
     /**
      * Fixtures
@@ -24,8 +24,9 @@ class AssociatecompanysTableTest extends TestCase
      * @var array
      */
     protected $fixtures = [
-        'app.Associatecompanys',
+        'app.Companys',
         'app.Associates',
+        'app.Clients',
     ];
 
     /**
@@ -36,8 +37,8 @@ class AssociatecompanysTableTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        $config = $this->getTableLocator()->exists('Associatecompanys') ? [] : ['className' => AssociatecompanysTable::class];
-        $this->Associatecompanys = $this->getTableLocator()->get('Associatecompanys', $config);
+        $config = $this->getTableLocator()->exists('Companys') ? [] : ['className' => CompanysTable::class];
+        $this->Companys = $this->getTableLocator()->get('Companys', $config);
     }
 
     /**
@@ -47,7 +48,7 @@ class AssociatecompanysTableTest extends TestCase
      */
     public function tearDown(): void
     {
-        unset($this->Associatecompanys);
+        unset($this->Companys);
 
         parent::tearDown();
     }
@@ -56,7 +57,7 @@ class AssociatecompanysTableTest extends TestCase
      * Test validationDefault method
      *
      * @return void
-     * @uses \App\Model\Table\AssociatecompanysTable::validationDefault()
+     * @uses \App\Model\Table\CompanysTable::validationDefault()
      */
     public function testValidationDefault(): void
     {

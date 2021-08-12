@@ -3,20 +3,20 @@ declare(strict_types=1);
 
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\ProjectsTable;
+use App\Model\Table\FeeproposalsTable;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\ProjectsTable Test Case
+ * App\Model\Table\FeeproposalsTable Test Case
  */
-class ProjectsTableTest extends TestCase
+class FeeproposalsTableTest extends TestCase
 {
     /**
      * Test subject
      *
-     * @var \App\Model\Table\ProjectsTable
+     * @var \App\Model\Table\FeeproposalsTable
      */
-    protected $Projects;
+    protected $Feeproposals;
 
     /**
      * Fixtures
@@ -24,11 +24,8 @@ class ProjectsTableTest extends TestCase
      * @var array
      */
     protected $fixtures = [
-        'app.Projects',
-        'app.Clients',
         'app.Feeproposals',
-        'app.Invoices',
-        'app.Associates',
+        'app.Projects',
     ];
 
     /**
@@ -39,8 +36,8 @@ class ProjectsTableTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        $config = $this->getTableLocator()->exists('Projects') ? [] : ['className' => ProjectsTable::class];
-        $this->Projects = $this->getTableLocator()->get('Projects', $config);
+        $config = $this->getTableLocator()->exists('Feeproposals') ? [] : ['className' => FeeproposalsTable::class];
+        $this->Feeproposals = $this->getTableLocator()->get('Feeproposals', $config);
     }
 
     /**
@@ -50,7 +47,7 @@ class ProjectsTableTest extends TestCase
      */
     public function tearDown(): void
     {
-        unset($this->Projects);
+        unset($this->Feeproposals);
 
         parent::tearDown();
     }
@@ -59,7 +56,7 @@ class ProjectsTableTest extends TestCase
      * Test validationDefault method
      *
      * @return void
-     * @uses \App\Model\Table\ProjectsTable::validationDefault()
+     * @uses \App\Model\Table\FeeproposalsTable::validationDefault()
      */
     public function testValidationDefault(): void
     {
@@ -70,7 +67,7 @@ class ProjectsTableTest extends TestCase
      * Test buildRules method
      *
      * @return void
-     * @uses \App\Model\Table\ProjectsTable::buildRules()
+     * @uses \App\Model\Table\FeeproposalsTable::buildRules()
      */
     public function testBuildRules(): void
     {

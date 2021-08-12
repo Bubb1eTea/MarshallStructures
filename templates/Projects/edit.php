@@ -31,8 +31,8 @@
                     echo $this->Form->control('postcode');
                     echo $this->Form->control('state');
                     echo $this->Form->control('phase');
-                    echo $this->Form->control('projectdesc');
                     echo $this->Form->control('duedate', ['empty' => true]);
+                    echo $this->Form->control('projdesc');
                     echo $this->Form->control('client_id', ['options' => $clients, 'empty' => true]);
                     echo $this->Form->control('associates._ids', ['options' => $associates]);
                 ?>

@@ -43,8 +43,8 @@
                     <td><?= h($associate->role) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Associatecompany') ?></th>
-                    <td><?= $associate->has('associatecompany') ? $this->Html->link($associate->associatecompany->id, ['controller' => 'Associatecompanys', 'action' => 'view', $associate->associatecompany->id]) : '' ?></td>
+                    <th><?= __('Company') ?></th>
+                    <td><?= $associate->has('company') ? $this->Html->link($associate->company->id, ['controller' => 'Companys', 'action' => 'view', $associate->company->id]) : '' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Id') ?></th>
@@ -66,6 +66,7 @@
                             <th><?= __('State') ?></th>
                             <th><?= __('Phase') ?></th>
                             <th><?= __('Duedate') ?></th>
+                            <th><?= __('Projdesc') ?></th>
                             <th><?= __('Client Id') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
@@ -80,6 +81,7 @@
                             <td><?= h($projects->state) ?></td>
                             <td><?= h($projects->phase) ?></td>
                             <td><?= h($projects->duedate) ?></td>
+                            <td><?= h($projects->projdesc) ?></td>
                             <td><?= h($projects->client_id) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Projects', 'action' => 'view', $projects->id]) ?>

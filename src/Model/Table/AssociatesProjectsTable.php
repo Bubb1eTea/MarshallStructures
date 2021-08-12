@@ -41,6 +41,8 @@ class AssociatesProjectsTable extends Table
         parent::initialize($config);
 
         $this->setTable('associates_projects');
+        $this->setDisplayField('id');
+        $this->setPrimaryKey('id');
 
         $this->belongsTo('Associates', [
             'foreignKey' => 'associate_id',
@@ -48,6 +50,21 @@ class AssociatesProjectsTable extends Table
         $this->belongsTo('Projects', [
             'foreignKey' => 'project_id',
         ]);
+    }
+
+    /**
+     * Default validation rules.
+     *
+     * @param \Cake\Validation\Validator $validator Validator instance.
+     * @return \Cake\Validation\Validator
+     */
+    public function validationDefault(Validator $validator): Validator
+    {
+        $validator
+            ->integer('id')
+            ->allowEmptyString('id', null, 'create');
+
+        return $validator;
     }
 
     /**

@@ -17,7 +17,7 @@
                     <th><?= $this->Paginator->sort('email') ?></th>
                     <th><?= $this->Paginator->sort('phonenumber') ?></th>
                     <th><?= $this->Paginator->sort('position') ?></th>
-                    <th><?= $this->Paginator->sort('clientcompany_id') ?></th>
+                    <th><?= $this->Paginator->sort('company_id') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -30,7 +30,7 @@
                     <td><?= h($client->email) ?></td>
                     <td><?= h($client->phonenumber) ?></td>
                     <td><?= h($client->position) ?></td>
-                    <td><?= $client->has('clientcompany') ? $this->Html->link($client->clientcompany->id, ['controller' => 'Clientcompanys', 'action' => 'view', $client->clientcompany->id]) : '' ?></td>
+                    <td><?= $client->has('company') ? $this->Html->link($client->company->id, ['controller' => 'Companys', 'action' => 'view', $client->company->id]) : '' ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $client->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $client->id]) ?>

@@ -3,16 +3,16 @@ declare(strict_types=1);
 
 namespace App\Test\TestCase\Controller;
 
-use App\Controller\ClientcompanysController;
+use App\Controller\FeeproposalsController;
 use Cake\TestSuite\IntegrationTestTrait;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Controller\ClientcompanysController Test Case
+ * App\Controller\FeeproposalsController Test Case
  *
- * @uses \App\Controller\ClientcompanysController
+ * @uses \App\Controller\FeeproposalsController
  */
-class ClientcompanysControllerTest extends TestCase
+class FeeproposalsControllerTest extends TestCase
 {
     use IntegrationTestTrait;
 
@@ -22,15 +22,15 @@ class ClientcompanysControllerTest extends TestCase
      * @var array
      */
     protected $fixtures = [
-        'app.Clientcompanys',
-        'app.Clients',
+        'app.Feeproposals',
+        'app.Projects',
     ];
 
     /**
      * Test index method
      *
      * @return void
-     * @uses \App\Controller\ClientcompanysController::index()
+     * @uses \App\Controller\FeeproposalsController::index()
      */
     public function testIndex(): void
     {
@@ -41,7 +41,7 @@ class ClientcompanysControllerTest extends TestCase
      * Test view method
      *
      * @return void
-     * @uses \App\Controller\ClientcompanysController::view()
+     * @uses \App\Controller\FeeproposalsController::view()
      */
     public function testView(): void
     {
@@ -52,7 +52,7 @@ class ClientcompanysControllerTest extends TestCase
      * Test add method
      *
      * @return void
-     * @uses \App\Controller\ClientcompanysController::add()
+     * @uses \App\Controller\FeeproposalsController::add()
      */
     public function testAdd(): void
     {
@@ -63,7 +63,7 @@ class ClientcompanysControllerTest extends TestCase
      * Test edit method
      *
      * @return void
-     * @uses \App\Controller\ClientcompanysController::edit()
+     * @uses \App\Controller\FeeproposalsController::edit()
      */
     public function testEdit(): void
     {
@@ -74,7 +74,7 @@ class ClientcompanysControllerTest extends TestCase
      * Test delete method
      *
      * @return void
-     * @uses \App\Controller\ClientcompanysController::delete()
+     * @uses \App\Controller\FeeproposalsController::delete()
      */
     public function testDelete(): void
     {

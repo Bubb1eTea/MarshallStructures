@@ -11,7 +11,7 @@ use Cake\Validation\Validator;
 /**
  * Associates Model
  *
- * @property \App\Model\Table\AssociatecompanysTable&\Cake\ORM\Association\BelongsTo $Associatecompanys
+ * @property \App\Model\Table\CompanysTable&\Cake\ORM\Association\BelongsTo $Companys
  * @property \App\Model\Table\ProjectsTable&\Cake\ORM\Association\BelongsToMany $Projects
  *
  * @method \App\Model\Entity\Associate newEmptyEntity()
@@ -44,8 +44,8 @@ class AssociatesTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('Associatecompanys', [
-            'foreignKey' => 'associatecompany_id',
+        $this->belongsTo('Companys', [
+            'foreignKey' => 'company_id',
         ]);
         $this->belongsToMany('Projects', [
             'foreignKey' => 'associate_id',
@@ -111,7 +111,7 @@ class AssociatesTable extends Table
      */
     public function buildRules(RulesChecker $rules): RulesChecker
     {
-        $rules->add($rules->existsIn(['associatecompany_id'], 'Associatecompanys'), ['errorField' => 'associatecompany_id']);
+        $rules->add($rules->existsIn(['company_id'], 'Companys'), ['errorField' => 'company_id']);
 
         return $rules;
     }
