@@ -28,10 +28,10 @@
                     echo $this->Form->control('lastname', ['label' =>"Last Name"]);
                     echo $this->Form->control('email', ['label' =>"Email"]);
                     echo $this->Form->control('phonenumber', ['label' =>"Phone Number"]);
-                    echo $this->Form->control('company_id', ['options' => $companys, 'empty' => true]);
+                    echo $this->Form->control('company_id', ['label' =>"Company", 'options' => $companys, 'empty' => true]);
                     echo $this->Form->control('position', ['label' =>"Position"]);
                     echo $this->Form->control('role', ['label' =>"Role"]);
-                    echo $this->Form->control('projects._ids', ['label' =>"Project"], ['options' => $projects]);
+                    echo $this->Form->control('projects._ids', ['label' =>"Project", 'options' => $projects]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
