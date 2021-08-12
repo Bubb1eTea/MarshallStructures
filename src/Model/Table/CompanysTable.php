@@ -72,7 +72,7 @@ class CompanysTable extends Table
 
         $validator
             ->scalar('type')
-            ->maxLength('type', 30)
+            ->maxLength('type', 50)
             ->allowEmptyString('type');
 
         return $validator;

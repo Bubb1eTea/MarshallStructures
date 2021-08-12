@@ -82,19 +82,19 @@ class ProjectsTable extends Table
 
         $validator
             ->scalar('projectname')
-            ->maxLength('projectname', 30)
+            ->maxLength('projectname', 100)
             ->requirePresence('projectname', 'create')
             ->notEmptyString('projectname');
 
         $validator
             ->scalar('streetname')
-            ->maxLength('streetname', 30)
+            ->maxLength('streetname', 50)
             ->requirePresence('streetname', 'create')
             ->notEmptyString('streetname');
 
         $validator
             ->scalar('suburb')
-            ->maxLength('suburb', 30)
+            ->maxLength('suburb', 50)
             ->requirePresence('suburb', 'create')
             ->notEmptyString('suburb');
 

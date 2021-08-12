@@ -66,13 +66,13 @@ class ClientsTable extends Table
 
         $validator
             ->scalar('firstname')
-            ->maxLength('firstname', 30)
+            ->maxLength('firstname', 50)
             ->requirePresence('firstname', 'create')
             ->notEmptyString('firstname');
 
         $validator
             ->scalar('lastname')
-            ->maxLength('lastname', 30)
+            ->maxLength('lastname', 50)
             ->requirePresence('lastname', 'create')
             ->notEmptyString('lastname');
 
@@ -89,7 +89,7 @@ class ClientsTable extends Table
 
         $validator
             ->scalar('position')
-            ->maxLength('position', 30)
+            ->maxLength('position', 50)
             ->allowEmptyString('position');
 
         return $validator;
