@@ -54,7 +54,6 @@
                 <div class="table-responsive">
                     <table>
                         <tr>
-                            <th><?= __('Id') ?></th>
                             <th><?= __('Msnumber') ?></th>
                             <th><?= __('Projectname') ?></th>
                             <th><?= __('Streetname') ?></th>
@@ -69,7 +68,6 @@
                         </tr>
                         <?php foreach ($client->projects as $projects) : ?>
                         <tr>
-                            <td><?= h($projects->id) ?></td>
                             <td><?= h($projects->msnumber) ?></td>
                             <td><?= h($projects->projectname) ?></td>
                             <td><?= h($projects->streetname) ?></td>
