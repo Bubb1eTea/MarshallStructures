@@ -16,23 +16,22 @@
     </aside>
     <div class="column-responsive column-80">
         <div class="clients view content">
-            <h3><?= h($client->firstname) ?> <?= h($client->lastname) ?></h3>
-            
+            <h3><?= h($client->id) ?></h3>
             <table>
                 <tr>
-                    <th><?= __('First Name') ?></th>
+                    <th><?= __('Firstname') ?></th>
                     <td><?= h($client->firstname) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Last Name') ?></th>
+                    <th><?= __('Lastname') ?></th>
                     <td><?= h($client->lastname) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('E-mail') ?></th>
+                    <th><?= __('Email') ?></th>
                     <td><?= h($client->email) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Phone number') ?></th>
+                    <th><?= __('Phonenumber') ?></th>
                     <td><?= h($client->phonenumber) ?></td>
                 </tr>
                 <tr>
@@ -54,6 +53,7 @@
                 <div class="table-responsive">
                     <table>
                         <tr>
+                            <th><?= __('Id') ?></th>
                             <th><?= __('Msnumber') ?></th>
                             <th><?= __('Projectname') ?></th>
                             <th><?= __('Streetname') ?></th>
@@ -68,6 +68,7 @@
                         </tr>
                         <?php foreach ($client->projects as $projects) : ?>
                         <tr>
+                            <td><?= h($projects->id) ?></td>
                             <td><?= h($projects->msnumber) ?></td>
                             <td><?= h($projects->projectname) ?></td>
                             <td><?= h($projects->streetname) ?></td>

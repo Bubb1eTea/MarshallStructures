@@ -18,12 +18,12 @@
             <fieldset>
                 <legend><?= __('Add Client') ?></legend>
                 <?php
-                    echo $this->Form->control('firstname', ['label'=>"First name"]);
-                    echo $this->Form->control('lastname', ['label'=>"Last name"]);
-                    echo $this->Form->control('email', ['label'=>"E-mail"]);
-                    echo $this->Form->control('phonenumber', ['label'=>"Phone number"]);
-                    echo $this->Form->control('position', ['label'=>"Position"]);
-                    echo $this->Form->control('clientcompany_id', ['options' => $companys, 'empty' => true], ['label'=>'Client Company']);
+                    echo $this->Form->control('firstname');
+                    echo $this->Form->control('lastname');
+                    echo $this->Form->control('email');
+                    echo $this->Form->control('phonenumber');
+                    echo $this->Form->control('position');
+                    echo $this->Form->control('company_id', ['options' => $companys, 'empty' => true]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
