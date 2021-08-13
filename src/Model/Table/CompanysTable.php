@@ -41,7 +41,7 @@ class CompanysTable extends Table
         parent::initialize($config);
 
         $this->setTable('companys');
-        $this->setDisplayField('id');
+        $this->setDisplayField('companyname');
         $this->setPrimaryKey('id');
 
         $this->hasMany('Associates', [

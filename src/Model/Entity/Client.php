@@ -40,4 +40,8 @@ class Client extends Entity
         'company' => true,
         'projects' => true,
     ];
+
+    protected function _getFullName() {
+        return $this->firstname . ' ' . $this->lastname;
+    }
 }
