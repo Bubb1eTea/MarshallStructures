@@ -30,7 +30,7 @@
                     <td><?= h($client->email) ?></td>
                     <td><?= h($client->phonenumber) ?></td>
                     <td><?= h($client->position) ?></td>
-                    <td><?= $client->has('company') ? $this->Html->link($client->company->id, ['controller' => 'Companys', 'action' => 'view', $client->company->id]) : '' ?></td>
+                    <td><?= $client->has('company') ? $this->Html->link($client->company->companyname, ['controller' => 'Companys', 'action' => 'view', $client->company->id]) : '' ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $client->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $client->id]) ?>

@@ -19,8 +19,8 @@
             <h3><?= $invoice->has('project') ? $this->Html->link($invoice->project->projectname, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></h3>
             <table>
                 <tr>
-                    <th><?= __('Project ID') ?></th>
-                    <td><?= $invoice->has('project') ? $this->Html->link($invoice->project->msnumber, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></td>
+                    <th><?= __('Project Name') ?></th>
+                    <td><?= $invoice->has('project') ? $this->Html->link($invoice->project->projectname, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Paid Percentage') ?></th>

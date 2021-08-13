@@ -40,7 +40,7 @@
                 </tr>
                 <tr>
                     <th><?= __('Company') ?></th>
-                    <td><?= $client->has('company') ? $this->Html->link($client->company->id, ['controller' => 'Companys', 'action' => 'view', $client->company->id]) : '' ?></td>
+                    <td><?= $client->has('company') ? $this->Html->link($client->company->companyname, ['controller' => 'Companys', 'action' => 'view', $client->company->id]) : '' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Id') ?></th>
