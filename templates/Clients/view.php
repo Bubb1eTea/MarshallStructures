@@ -16,22 +16,23 @@
     </aside>
     <div class="column-responsive column-80">
         <div class="clients view content">
-            <h3><?= h($client->id) ?></h3>
+            <h3><?= h($client->firstname) ?> <?= h($client->lastname) ?></h3>
+            
             <table>
                 <tr>
-                    <th><?= __('Firstname') ?></th>
+                    <th><?= __('First Name') ?></th>
                     <td><?= h($client->firstname) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Lastname') ?></th>
+                    <th><?= __('Last Name') ?></th>
                     <td><?= h($client->lastname) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Email') ?></th>
+                    <th><?= __('E-mail') ?></th>
                     <td><?= h($client->email) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Phonenumber') ?></th>
+                    <th><?= __('Phone number') ?></th>
                     <td><?= h($client->phonenumber) ?></td>
                 </tr>
                 <tr>

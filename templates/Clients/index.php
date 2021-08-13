@@ -11,26 +11,24 @@
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('firstname') ?></th>
-                    <th><?= $this->Paginator->sort('lastname') ?></th>
-                    <th><?= $this->Paginator->sort('email') ?></th>
-                    <th><?= $this->Paginator->sort('phonenumber') ?></th>
-                    <th><?= $this->Paginator->sort('position') ?></th>
-                    <th><?= $this->Paginator->sort('company_id') ?></th>
+                    <th><?= $this->Paginator->sort('First name') ?></th>
+                    <th><?= $this->Paginator->sort('Last name') ?></th>
+                    <th><?= $this->Paginator->sort('E-mail') ?></th>
+                    <th><?= $this->Paginator->sort('Phone number') ?></th>
+                    <th><?= $this->Paginator->sort('Position') ?></th>
+                    <th><?= $this->Paginator->sort('Client company') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($clients as $client): ?>
                 <tr>
-                    <td><?= $this->Number->format($client->id) ?></td>
                     <td><?= h($client->firstname) ?></td>
                     <td><?= h($client->lastname) ?></td>
                     <td><?= h($client->email) ?></td>
                     <td><?= h($client->phonenumber) ?></td>
                     <td><?= h($client->position) ?></td>
-                    <td><?= $client->has('company') ? $this->Html->link($client->company->id, ['controller' => 'Companys', 'action' => 'view', $client->company->id]) : '' ?></td>
+                    <td><?= $client->has('company') ? $this->Html->link($client->company->companyname, ['controller' => 'Companys', 'action' => 'view', $client->company->id]) : '' ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $client->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $client->id]) ?>
