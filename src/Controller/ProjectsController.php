@@ -18,10 +18,16 @@ class ProjectsController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Clients'],
-        ];
-        $projects = $this->paginate($this->Projects);
+        $key = $this->request->getQuery('key');
+
+        if($key){
+            $query = $this->Projects->find("all")
+                ->where(['Or'=>['projectname like'=>'%'.$key.'%','streetname like'=>'%'.$key.'%','msnumber'=>$key+0]]);
+        }else{
+            $query = $this->Projects;
+        }
+
+        $projects = $this->paginate($query);
 
         $this->set(compact('projects'));
     }

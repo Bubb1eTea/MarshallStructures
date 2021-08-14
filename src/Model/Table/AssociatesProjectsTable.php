@@ -41,7 +41,7 @@ class AssociatesProjectsTable extends Table
         parent::initialize($config);
 
         $this->setTable('associates_projects');
-        $this->setDisplayField('id');
+        $this->setDisplayField('full_name');
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Associates', [
