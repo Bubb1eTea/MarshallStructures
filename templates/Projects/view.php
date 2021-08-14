@@ -10,7 +10,7 @@
             <h4 class="heading"><?= __('Actions') ?></h4>
             <?= $this->Html->link(__('Edit Project'), ['action' => 'edit', $project->id], ['class' => 'side-nav-item']) ?>
             <?= $this->Form->postLink(__('Delete Project'), ['action' => 'delete', $project->id], ['confirm' => __('Are you sure you want to delete # {0}?', $project->id), 'class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('List Projects'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('List Project'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
             <?= $this->Html->link(__('New Project'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
@@ -19,7 +19,7 @@
             <h3><?= h($project->projectname) ?></h3>
             <table>
                 <tr>
-                    <th><?= __('MS Number') ?></th>
+                    <th><?= __('Project ID') ?></th>
                     <td><?= h($project->msnumber) ?></td>
                 </tr>
                 <tr>
@@ -35,7 +35,7 @@
                     <td><?= h($project->suburb) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Post Code') ?></th>
+                    <th><?= __('Postcode') ?></th>
                     <td><?= h($project->postcode) ?></td>
                 </tr>
                 <tr>

@@ -18,11 +18,11 @@
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('msnumber', ['label'=>"MS Number"]) ?></th>
+                    <th><?= $this->Paginator->sort('msnumber', ['label'=>"Project ID"]) ?></th>
                     <th><?= $this->Paginator->sort('projectname', ['label'=>"Project Name"]) ?></th>
                     <th><?= $this->Paginator->sort('street', ['label'=>"Street"]) ?></th>
                     <th><?= $this->Paginator->sort('suburb', ['label'=>"Suburb"]) ?></th>
-                    <th><?= $this->Paginator->sort('postcode', ['label'=>"Post Code"]) ?></th>
+                    <th><?= $this->Paginator->sort('postcode', ['label'=>"Postcode"]) ?></th>
                     <th><?= $this->Paginator->sort('state', ['label'=>"State"]) ?></th>
                     <th><?= $this->Paginator->sort('phase', ['label'=>"Phase"]) ?></th>
                     <th><?= $this->Paginator->sort('duedate', ['label'=>"Due Date"]) ?></th>
@@ -41,7 +41,7 @@
                     <td><?= h($project->state) ?></td>
                     <td><?= h($project->phase) ?></td>
                     <td><?= h($project->duedate) ?></td>
-                    <td><?= $project->has('client') ? $this->Html->link($project->client->full_name, ['controller' => 'Clients', 'action' => 'view', $project->client->id]) : '' ?></td>
+                    <td><?= $project->has('client') ? $this->Html->link($project->client->firstname, ['controller' => 'Clients', 'action' => 'view', $project->client->id]) : '' ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $project->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $project->id]) ?>
