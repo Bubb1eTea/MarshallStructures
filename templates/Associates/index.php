@@ -28,7 +28,7 @@
                     <td><?= h($associate->lastname) ?></td>
                     <td><?= h($associate->email) ?></td>
                     <td><?= h($associate->phonenumber) ?></td>
-                    <td><?= $associate->has('associatecompany') ? $this->Html->link($associate->associatecompany->companyname, ['controller' => 'Associatecompanys', 'action' => 'view', $associate->associatecompany->id]) : '' ?></td>
+                    <td><?= $associate->has('company') ? $this->Html->link($associate->company->companyname, ['controller' => 'Companys', 'action' => 'view', $associate->company->id]) : '' ?></td>
                     <td><?= h($associate->position) ?></td>
                     <td><?= h($associate->role) ?></td>
                     <td class="actions">

@@ -36,7 +36,7 @@
                 </tr>
                 <tr>
                     <th><?= __('Associate Company') ?></th>
-                    <td><?= $associate->has('associatecompany') ? $this->Html->link($associate->associatecompany->companyname, ['controller' => 'Associatecompanys', 'action' => 'view', $associate->associatecompany->id]) : '' ?></td>
+                    <td><?= $associate->has('company') ? $this->Html->link($associate->company->companyname, ['controller' => 'Companys', 'action' => 'view', $associate->company->id]) : '' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Position') ?></th>
