@@ -11,11 +11,10 @@
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('firstname') ?></th>
-                    <th><?= $this->Paginator->sort('lastname') ?></th>
+                    <th><?= $this->Paginator->sort('firstname', ['label'=>"First Name"]) ?></th>
+                    <th><?= $this->Paginator->sort('lastname', ['label'=>"Last Name"]) ?></th>
                     <th><?= $this->Paginator->sort('email') ?></th>
-                    <th><?= $this->Paginator->sort('phonenumber') ?></th>
+                    <th><?= $this->Paginator->sort('phonenumber', ['label'=>"Phone Number"]) ?></th>
                     <th><?= $this->Paginator->sort('position') ?></th>
                     <th><?= $this->Paginator->sort('company_id') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
@@ -24,7 +23,6 @@
             <tbody>
                 <?php foreach ($clients as $client): ?>
                 <tr>
-                    <td><?= $this->Number->format($client->id) ?></td>
                     <td><?= h($client->firstname) ?></td>
                     <td><?= h($client->lastname) ?></td>
                     <td><?= h($client->email) ?></td>
