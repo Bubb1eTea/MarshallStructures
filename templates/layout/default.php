@@ -41,11 +41,24 @@ $cakeDescription = 'Marshall Structures';
 
     <div id="mySidenav" class="sidenav">
     <b href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</b>
-    <a href="#"><i class="material-icons fa-fw"style="font-size:24px; vertical-align: middle;">person</i>Client</a>
-    <a href="#"><i class='far fa-building fa-fw' style="font-size:24px;vertical-align: middle;"></i>Company</a>
-    <a href="#"><i class="material-icons fa-fw" style="font-size:24px;vertical-align: middle;">group</i>Associates</a>
-    <a href="#">Invoices</a>
-    <a href="#"> <?= $this->Html->image("marshall.png");?></a>
+    <div id="yeet" class="yeet"><a href="#"> <?= $this->Html->image("marshall.png");?></a></div>
+    <?= $this->Html->link('Associates','/Associates/index'); ?>
+    <!--<a href="#"><i class="material-icons fa-fw"style="font-size:24px; vertical-align: middle;">person</i>Client</a> -->
+    <?= $this->Html->link('Client','/Clients/index'); ?>
+    <!--<a href="#"><i class='far fa-building fa-fw' style="font-size:24px;vertical-align: middle;"></i>Company</a> -->
+ 
+    <?= $this->Html->link('Company','/Companys/index'); ?>
+    <!--<a href="#"><i class="material-icons fa-fw" style="font-size:24px;vertical-align: middle;">group</i>Associates</a> -->
+    
+    <!--<a href="#">Invoices</a>-->
+    
+    <?= $this->Html->link('Fee Proposals','/feeproposals/index'); ?>
+
+    <?= $this->Html->link('Invoice','/invoices/index'); ?>
+    <?= $this->Html->link('Projects','/projects/index'); ?>
+
+    <br>
+    
     </div>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
 
