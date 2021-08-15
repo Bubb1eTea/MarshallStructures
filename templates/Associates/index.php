@@ -15,7 +15,7 @@
                     <th><?= $this->Paginator->sort('lastname', ['label'=>"Last Name"]) ?></th>
                     <th><?= $this->Paginator->sort('email') ?></th>
                     <th><?= $this->Paginator->sort('phonenumber', ['label'=>"Phone Number"]) ?></th>
-                    <th><?= $this->Paginator->sort('associatecompany_id', ['label'=>"Associate Company"]) ?></th>
+                    <th><?= $this->Paginator->sort('company_id', ['label'=>"Associate Company"]) ?></th>
                     <th><?= $this->Paginator->sort('position', ['label'=>"Position"]) ?></th>
                     <th><?= $this->Paginator->sort('role', ['label'=>"Role"]) ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
