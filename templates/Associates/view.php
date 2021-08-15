@@ -53,23 +53,21 @@
                 <div class="table-responsive">
                     <table>
                         <tr>
-                            <th><?= __('Id') ?></th>
-                            <th><?= __('Msnumber') ?></th>
-                            <th><?= __('Projectname') ?></th>
-                            <th><?= __('Streetname') ?></th>
+                            <th><?= __('Project ID') ?></th>
+                            <th><?= __('Project Name') ?></th>
+                            <th><?= __('Street Name') ?></th>
                             <th><?= __('Suburb') ?></th>
                             <th><?= __('Postcode') ?></th>
                             <th><?= __('State') ?></th>
                             <th><?= __('Phase') ?></th>
-                            <th><?= __('Duedate') ?></th>
-                            <th><?= __('Client Id') ?></th>
+                            <th><?= __('Due Date') ?></th>
+                            <th><?= __('Client') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($associate->projects as $projects) : ?>
                         <tr>
-                            <td><?= h($projects->id) ?></td>
-                            <td><?= h($projects->msnumber) ?></td>
-                            <td><?= h($projects->projectname) ?></td>
+                            <td><?= h($projects->msnumber) ? $this->Html->link($projects->msnumber, ['controller' => 'Projects', 'action' => 'view', $projects->id]) : '' ?></td>
+                            <td><?= h($projects->projectname) ? $this->Html->link($projects->projectname, ['controller' => 'Projects', 'action' => 'view', $projects->id]) : '' ?></td>
                             <td><?= h($projects->streetname) ?></td>
                             <td><?= h($projects->suburb) ?></td>
                             <td><?= h($projects->postcode) ?></td>
