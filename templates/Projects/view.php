@@ -48,7 +48,7 @@
                 </tr>
                 <tr>
                     <th><?= __('Client') ?></th>
-                    <td><?= $project->has('client') ? $this->Html->link($project->client->firstname, ['controller' => 'Clients', 'action' => 'view', $project->client->id]) : '' ?></td>
+                    <td><?= $project->has('client') ? $this->Html->link($project->client->firstname, ['controller' => 'Clients', 'action' => 'view', $project->client->id]) : '' ?> <?= $project->has('client') ? $this->Html->link($project->client->lastname, ['controller' => 'Clients', 'action' => 'view', $project->client->id]) : '' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Due Date') ?></th>
@@ -67,26 +67,24 @@
                 <div class="table-responsive">
                     <table>
                         <tr>
-                            <th><?= __('Id') ?></th>
-                            <th><?= __('Firstname') ?></th>
-                            <th><?= __('Lastname') ?></th>
+                            <th><?= __('First Name') ?></th>
+                            <th><?= __('Last Name') ?></th>
                             <th><?= __('Email') ?></th>
-                            <th><?= __('Phonenumber') ?></th>
+                            <th><?= __('Phone Number') ?></th>
                             <th><?= __('Position') ?></th>
                             <th><?= __('Role') ?></th>
-                            <th><?= __('Associatecompany Id') ?></th>
+                            <th><?= __('Company') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($project->associates as $associates) : ?>
                         <tr>
-                            <td><?= h($associates->id) ?></td>
                             <td><?= h($associates->firstname) ?></td>
                             <td><?= h($associates->lastname) ?></td>
                             <td><?= h($associates->email) ?></td>
                             <td><?= h($associates->phonenumber) ?></td>
                             <td><?= h($associates->position) ?></td>
                             <td><?= h($associates->role) ?></td>
-                            <td><?= h($associates->associatecompany_id) ?></td>
+                            <td><?= h($associates->company_id) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Associates', 'action' => 'view', $associates->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Associates', 'action' => 'edit', $associates->id]) ?>
