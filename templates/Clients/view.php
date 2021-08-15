@@ -61,8 +61,8 @@
                         </tr>
                         <?php foreach ($client->projects as $projects) : ?>
                         <tr>
-                            <td><?= h($projects->msnumber) ?></td>
-                            <td><?= h($projects->projectname) ?></td>
+                            <td><?= h($projects->msnumber) ? $this->Html->link($projects->msnumber, ['controller' => 'Projects', 'action' => 'view', $projects->id]) : '' ?></td>
+                            <td><?= h($projects->projectname) ? $this->Html->link($projects->projectname, ['controller' => 'Projects', 'action' => 'view', $projects->id]) : '' ?></td>
                             <td><?= h($projects->streetname) ?></td>
                             <td><?= h($projects->suburb) ?></td>
                             <td><?= h($projects->postcode) ?></td>

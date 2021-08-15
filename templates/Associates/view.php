@@ -61,7 +61,6 @@
                             <th><?= __('State') ?></th>
                             <th><?= __('Phase') ?></th>
                             <th><?= __('Due Date') ?></th>
-                            <th><?= __('Client') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($associate->projects as $projects) : ?>
@@ -74,7 +73,6 @@
                             <td><?= h($projects->state) ?></td>
                             <td><?= h($projects->phase) ?></td>
                             <td><?= h($projects->duedate) ?></td>
-                            <td><?= h($projects->client_id) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Projects', 'action' => 'view', $projects->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Projects', 'action' => 'edit', $projects->id]) ?>
