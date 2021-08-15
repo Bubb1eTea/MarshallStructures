@@ -14,7 +14,7 @@
  * @var \App\View\AppView $this
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'Marshall Structures';
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,10 +40,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <body> <!-- beginning of body -->
 
     <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#"><i class="material-icons"style="font-size:36px; vertical-align: middle;">person</i> Client</a>
-    <a href="#"><i class='far fa-building' style="font-size:36px;vertical-align: middle;"></i> Company</a>
-    <a href="#"><i class="material-icons" style="font-size:36px;vertical-align: middle;">group</i> Associates</a>
+    <b href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</b>
+    <a href="#"><i class="material-icons fa-fw"style="font-size:24px; vertical-align: middle;">person</i>Client</a>
+    <a href="#"><i class='far fa-building fa-fw' style="font-size:24px;vertical-align: middle;"></i>Company</a>
+    <a href="#"><i class="material-icons fa-fw" style="font-size:24px;vertical-align: middle;">group</i>Associates</a>
     <a href="#">Invoices</a>
     <a href="#"> <?= $this->Html->image("marshall.png");?></a>
     </div>

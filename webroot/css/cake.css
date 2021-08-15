@@ -33,7 +33,7 @@ a:active  {
 .top-nav-links a,
 th a,
 .actions a {
-    color: #606c76;
+    color: black;
 }
 
 .side-nav a:hover,
@@ -168,6 +168,7 @@ th {
     list-style: none;
     padding: 0;
     margin: 0 0 1rem;
+    
 }
 .pagination li {
     margin: 0 0.5rem;
@@ -175,7 +176,7 @@ th {
 .prev.disabled a,
 .next.disabled a {
     cursor: not-allowed;
-    color: #606c76;
+    color: black;
 }
 .asc:after {
     content: " \2193";
@@ -214,3 +215,4 @@ th {
         content: " \2190";
     }
 }
+
