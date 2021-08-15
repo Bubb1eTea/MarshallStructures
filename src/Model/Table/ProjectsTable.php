@@ -76,45 +76,48 @@ class ProjectsTable extends Table
 
         $validator
             ->scalar('msnumber')
-            ->maxLength('msnumber', 12)
+            ->maxLength('msnumber', 12, 'This field is too long.')
             ->requirePresence('msnumber', 'create')
-            ->notEmptyString('msnumber');
+            ->notEmptyString('msnumber','This field cannot be empty.')
+            ->integer('msnumber', 'This field can only contain digits.');
 
         $validator
             ->scalar('projectname')
-            ->maxLength('projectname', 100)
+            ->maxLength('projectname', 100, 'This field is too long.')
             ->requirePresence('projectname', 'create')
-            ->notEmptyString('projectname');
+            ->notEmptyString('projectname','This field cannot be empty.');
 
         $validator
             ->scalar('streetname')
-            ->maxLength('streetname', 50)
+            ->maxLength('streetname', 50, 'This field is too long.')
             ->requirePresence('streetname', 'create')
-            ->notEmptyString('streetname');
+            ->notEmptyString('streetname','This field cannot be empty.');
 
         $validator
             ->scalar('suburb')
-            ->maxLength('suburb', 50)
+            ->maxLength('suburb', 50, 'This field is too long.')
             ->requirePresence('suburb', 'create')
-            ->notEmptyString('suburb');
+            ->notEmptyString('suburb','This field cannot be empty.');
 
         $validator
             ->scalar('postcode')
-            ->maxLength('postcode', 4)
+            ->maxLength('postcode', 4,'This field is too long')
             ->requirePresence('postcode', 'create')
-            ->notEmptyString('postcode');
+            ->notEmptyString('postcode','This field cannot be empty.')
+            ->integer('postcode','This field can only contain digits.');
 
         $validator
             ->scalar('state')
-            ->maxLength('state', 3)
+            ->maxLength('state', 3,'This field is too long')
             ->requirePresence('state', 'create')
-            ->notEmptyString('state');
+            ->notEmptyString('state','This field cannot be empty.')
+            ->regex('state', '/^[A-Za-z]+$/', 'This field can only contain letters.');
 
         $validator
             ->scalar('phase')
-            ->maxLength('phase', 20)
+            ->maxLength('phase', 20,'This field is too long')
             ->requirePresence('phase', 'create')
-            ->notEmptyString('phase');
+            ->notEmptyString('phase','This field cannot be empty.');
 
         $validator
             ->date('duedate')
