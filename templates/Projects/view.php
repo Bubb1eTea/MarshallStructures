@@ -48,7 +48,7 @@
                 </tr>
                 <tr>
                     <th><?= __('Client') ?></th>
-                    <td><?= $project->has('client') ? $this->Html->link($project->client->firstname, ['controller' => 'Clients', 'action' => 'view', $project->client->id]) : '' ?></td>
+                    <td><?= $project->has('client') ? $this->Html->link($project->client->full_name, ['controller' => 'Clients', 'action' => 'view', $project->client->id]) : '' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Due Date') ?></th>
@@ -58,7 +58,7 @@
             <div class="text">
                 <strong><?= __('Project Description') ?></strong>
                 <blockquote>
-                    <?= $this->Text->autoParagraph(h($project->projectdesc)); ?>
+                    <?= $this->Text->autoParagraph(h($project->projdesc)); ?>
                 </blockquote>
             </div>
             <div class="related">
