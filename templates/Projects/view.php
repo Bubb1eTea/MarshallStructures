@@ -58,7 +58,7 @@
             <div class="text">
                 <strong><?= __('Project Description') ?></strong>
                 <blockquote>
-                    <?= $this->Text->autoParagraph(h($project->projectdesc)); ?>
+                    <?= $this->Text->autoParagraph(h($project->projdesc)); ?>
                 </blockquote>
             </div>
             <div class="related">
