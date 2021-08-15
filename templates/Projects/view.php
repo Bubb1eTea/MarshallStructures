@@ -78,8 +78,8 @@
                         </tr>
                         <?php foreach ($project->associates as $associates) : ?>
                         <tr>
-                            <td><?= h($associates->firstname) ?></td>
-                            <td><?= h($associates->lastname) ?></td>
+                            <td><?= h($associates->firstname) ? $this->Html->link($project->client->firstname, ['controller' => 'Clients', 'action' => 'view', $project->client->id]) : '' ?></td>
+                            <td><?= h($associates->lastname) ? $this->Html->link($project->client->lastname, ['controller' => 'Clients', 'action' => 'view', $project->client->id]) : '' ?></td>
                             <td><?= h($associates->email) ?></td>
                             <td><?= h($associates->phonenumber) ?></td>
                             <td><?= h($associates->position) ?></td>
@@ -114,7 +114,7 @@
                         <tr>
                             <td><?= h($feeproposals->datecreated) ?></td>
                             <td><?= h($feeproposals->lastmodified) ?></td>
-                            <td><?= h($feeproposals->id) ?></td>
+                            <td><?= h($feeproposals->id) ? $this->Html->link($feeproposals->id, ['controller' => 'feeproposals', 'action' => 'view', $feeproposals->id]) : '' ?></td>
                             <td><?= h($feeproposals->fee) ?></td>
                             <td><?= h($feeproposals->disbursement) ?></td>
                             <td><?= h($feeproposals->total) ?></td>
@@ -146,7 +146,7 @@
                         <?php foreach ($project->invoices as $invoices) : ?>
                         <tr>
                             <td><?= h($invoices->datecreated) ?></td>
-                            <td><?= h($invoices->id) ?></td>
+                            <td><?= h($invoices->id) ? $this->Html->link($invoices->id, ['controller' => 'invoices', 'action' => 'view', $invoices->id]) : '' ?></td>
                             <td><?= h($invoices->completepercentage) ?></td>
                             <td><?= h($invoices->subtotal) ?></td>
                             <td><?= h($invoices->saletax) ?></td>
