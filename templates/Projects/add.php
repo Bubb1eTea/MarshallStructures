@@ -7,7 +7,7 @@
  */
 ?>
 <style>
-    select[id='projects-ids'] { height:15rem;}
+    select[multiple="multiple"] { height:15rem;}
 </style>
 <div class="row">
     <aside class="column">
