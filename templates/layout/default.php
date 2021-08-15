@@ -40,8 +40,9 @@ $cakeDescription = 'Marshall Structures';
 <body> <!-- beginning of body -->
 
     <div id="mySidenav" class="sidenav">
+    <div id="yeet" class="yeet"><a href="/team078-app_fit3048/"> <?= $this->Html->image("marshall.png");?></a></div> <hr>
     <b href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</b>
-    <div id="yeet" class="yeet"><a href="#"> <?= $this->Html->image("marshall.png");?></a></div>
+   
     <?= $this->Html->link('Associates','/Associates/index'); ?>
     <!--<a href="#"><i class="material-icons fa-fw"style="font-size:24px; vertical-align: middle;">person</i>Client</a> -->
     <?= $this->Html->link('Client','/Clients/index'); ?>
@@ -60,7 +61,7 @@ $cakeDescription = 'Marshall Structures';
     <br>
     
     </div>
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    <span style="color:black;font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Open</span>
 
     <script> //script for animating opening and closing
         function openNav() {
@@ -76,8 +77,8 @@ $cakeDescription = 'Marshall Structures';
             <a href="<?= $this->Url->build('/') ?>"> <?= $this->Html->image("marshall.png");?> </a>
         </div>
         <div class="top-nav-links">
-            <a target="_blank" rel="noopener" href="https://book.cakephp.org/4/">Documentation</a>
-            <a target="_blank" rel="noopener" href="https://api.cakephp.org/">API</a>
+           <!-- <a target="_blank" rel="noopener" href="https://book.cakephp.org/4/">Documentation</a> -->
+           <!-- <a target="_blank" rel="noopener" href="https://api.cakephp.org/">API</a> -->
         </div>
     </nav>
 </body>

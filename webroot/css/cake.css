@@ -7,7 +7,7 @@ body {
 .top-nav-links,
 .side-nav,
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Raleway", sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -55,6 +55,7 @@ th a,
 body {
     background: whitesmoke;
 }
+
 .content {
     padding: 2rem;
     background: #98B6E4;

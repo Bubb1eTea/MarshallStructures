@@ -61,7 +61,7 @@ body {
   .yeet a{
     padding: 0px 0px 0px 0px;
     position: absolute;
-    top: 10px;
+    top: 20px;
     right: 25px;
     left: 25px;
     
@@ -69,4 +69,11 @@ body {
 
   .yeet a:hover{
       background-color: #0069b1;
+  }
+
+  hr {
+    border-top:2px solid white;
+    width: 50%;
+    margin-top: 20px;
+    margin-left: 50px;
   }
