@@ -33,8 +33,8 @@
             <tbody>
                 <?php foreach ($projects as $project): ?>
                 <tr>
-                    <td><?= h($project->msnumber) ?></td>
-                    <td><?= h($project->projectname) ?></td>
+                    <td><?= $this->Html->link($project->msnumber, ['action' => 'view', $project->id]) ?></td>
+                    <td><?= $this->Html->link($project->projectname, ['action' => 'view', $project->id]) ?></td>
                     <td><?= h($project->streetname) ?></td>
                     <td><?= h($project->suburb) ?></td>
                     <td><?= h($project->postcode) ?></td>
