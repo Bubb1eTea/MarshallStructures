@@ -6,6 +6,9 @@
  * @var \Cake\Collection\CollectionInterface|string[] $associates
  */
 ?>
+<style>
+    select[id='projects-ids'] { height:15rem;}
+</style>
 <div class="row">
     <aside class="column">
         <div class="side-nav">
