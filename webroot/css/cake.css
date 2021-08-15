@@ -53,11 +53,11 @@ th a,
 
 /* Main */
 body {
-    background: #f5f7fa;
+    background: whitesmoke;
 }
 .content {
     padding: 2rem;
-    background: #ffffff;
+    background: #98B6E4;
     border-radius: 0.4rem;
     /* Thanks Stripe */
     box-shadow: 0 7px 14px 0 rgba(60, 66, 87, 0.1),
@@ -85,7 +85,7 @@ th {
     color: #d33c43;
 }
 .top-nav-title span {
-    color: #404041;
+    color: #0069B1;
 }
 .top-nav-links a {
     margin: 0 0.5rem;

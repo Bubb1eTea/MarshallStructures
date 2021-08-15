@@ -11,12 +11,12 @@
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('firstname', ['label'=>"First Name"]) ?></th>
-                    <th><?= $this->Paginator->sort('lastname', ['label'=>"Last Name"]) ?></th>
-                    <th><?= $this->Paginator->sort('email') ?></th>
-                    <th><?= $this->Paginator->sort('phonenumber', ['label'=>"Phone Number"]) ?></th>
-                    <th><?= $this->Paginator->sort('position') ?></th>
-                    <th><?= $this->Paginator->sort('company_id') ?></th>
+                    <th><?= $this->Paginator->sort('First name') ?></th>
+                    <th><?= $this->Paginator->sort('Last name') ?></th>
+                    <th><?= $this->Paginator->sort('E-mail') ?></th>
+                    <th><?= $this->Paginator->sort('Phone number') ?></th>
+                    <th><?= $this->Paginator->sort('Position') ?></th>
+                    <th><?= $this->Paginator->sort('Client company') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
