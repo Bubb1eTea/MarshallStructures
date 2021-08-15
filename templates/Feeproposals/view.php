@@ -19,6 +19,10 @@
             <h3><?= $feeproposal->has('project') ? $this->Html->link($feeproposal->project->projectname, ['controller' => 'Projects', 'action' => 'view', $feeproposal->project->id]) : '' ?></h3>
             <table>
                 <tr>
+                    <th><?= __('Proposal ID') ?></th>
+                    <td><?= $this->Number->format($feeproposal->id) ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Project Name') ?></th>
                     <td><?= $feeproposal->has('project') ? $this->Html->link($feeproposal->project->projectname, ['controller' => 'Projects', 'action' => 'view', $feeproposal->project->id]) : '' ?></td>
                 </tr>

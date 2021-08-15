@@ -48,7 +48,7 @@
                 </tr>
                 <tr>
                     <th><?= __('Client') ?></th>
-                    <td><?= $project->has('client') ? $this->Html->link($project->client->firstname, ['controller' => 'Clients', 'action' => 'view', $project->client->id]) : '' ?> <?= $project->has('client') ? $this->Html->link($project->client->lastname, ['controller' => 'Clients', 'action' => 'view', $project->client->id]) : '' ?></td>
+                    <td><?= $project->has('client') ? $this->Html->link($project->client->full_name, ['controller' => 'Clients', 'action' => 'view', $project->client->id]) : '' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Due Date') ?></th>
@@ -96,6 +96,73 @@
                 </div>
                 <?php endif; ?>
             </div>
+            <div class="related">
+                <h4><?= __('Related Fee Proposals') ?></h4>
+                <?php if (!empty($project->feeproposals)) : ?>
+                <div class="table-responsive">
+                    <table>
+                        <tr>
+                            <th><?= __('Date Created') ?></th>
+                            <th><?= __('Last Modified') ?></th>
+                            <th><?= __('Proposal ID') ?></th>
+                            <th><?= __('Fee') ?></th>
+                            <th><?= __('Disbursement') ?></th>
+                            <th><?= __('Total Amount') ?></th>
+                            <th class="actions"><?= __('Actions') ?></th>
+                        </tr>
+                        <?php foreach ($project->feeproposals as $feeproposals) : ?>
+                        <tr>
+                            <td><?= h($feeproposals->datecreated) ?></td>
+                            <td><?= h($feeproposals->lastmodified) ?></td>
+                            <td><?= h($feeproposals->id) ?></td>
+                            <td><?= h($feeproposals->fee) ?></td>
+                            <td><?= h($feeproposals->disbursement) ?></td>
+                            <td><?= h($feeproposals->total) ?></td>
+                            <td class="actions">
+                                <?= $this->Html->link(__('View'), ['controller' => 'Feeproposals', 'action' => 'view', $feeproposals->id]) ?>
+                                <?= $this->Html->link(__('Edit'), ['controller' => 'Feeproposals', 'action' => 'edit', $feeproposals->id]) ?>
+                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Feeproposals', 'action' => 'delete', $feeproposals->id], ['confirm' => __('Are you sure you want to delete # {0}?', $feeproposals->id)]) ?>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </table>
+                </div>
+                <?php endif; ?>
+            </div>
+            <div class="related">
+                <h4><?= __('Related Invoices') ?></h4>
+                <?php if (!empty($project->invoices)) : ?>
+                <div class="table-responsive">
+                    <table>
+                        <tr>
+                            <th><?= __('Date Created') ?></th>
+                            <th><?= __('Invoice ID') ?></th>
+                            <th><?= __('Paid Percentage') ?></th>
+                            <th><?= __('Subtotal') ?></th>
+                            <th><?= __('Sales Tax') ?></th>
+                            <th><?= __('Total Amount') ?></th>
+                            <th class="actions"><?= __('Actions') ?></th>
+                        </tr>
+                        <?php foreach ($project->invoices as $invoices) : ?>
+                        <tr>
+                            <td><?= h($invoices->datecreated) ?></td>
+                            <td><?= h($invoices->id) ?></td>
+                            <td><?= h($invoices->completepercentage) ?></td>
+                            <td><?= h($invoices->subtotal) ?></td>
+                            <td><?= h($invoices->saletax) ?></td>
+                            <td><?= h($invoices->totalamount) ?></td>
+                            <td class="actions">
+                                <?= $this->Html->link(__('View'), ['controller' => 'Invoices', 'action' => 'view', $invoices->id]) ?>
+                                <?= $this->Html->link(__('Edit'), ['controller' => 'Invoices', 'action' => 'edit', $invoices->id]) ?>
+                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Invoices', 'action' => 'delete', $invoices->id], ['confirm' => __('Are you sure you want to delete # {0}?', $invoices->id)]) ?>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </table>
+                </div>
+                <?php endif; ?>
+            </div>
+
         </div>
     </div>
 </div>
