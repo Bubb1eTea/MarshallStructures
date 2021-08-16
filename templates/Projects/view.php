@@ -73,7 +73,7 @@
                             <th><?= __('Phone Number') ?></th>
                             <th><?= __('Position') ?></th>
                             <th><?= __('Role') ?></th>
-                            <th><?= __('Company') ?></th>
+                            <!-- <th><?= __('Company') ?></th> -->
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($project->associates as $associates) : ?>
@@ -84,7 +84,7 @@
                             <td><?= h($associates->phonenumber) ?></td>
                             <td><?= h($associates->position) ?></td>
                             <td><?= h($associates->role) ?></td>
-                            <td><?= h($associates->company_id) ?></td>
+                            <!-- <td><?= h($associates->company_id) ?></td> -->
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Associates', 'action' => 'view', $associates->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Associates', 'action' => 'edit', $associates->id]) ?>
