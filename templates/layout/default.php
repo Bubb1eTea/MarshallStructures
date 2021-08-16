@@ -40,7 +40,6 @@ $cakeDescription = 'Marshall Structures';
 <body> <!-- beginning of body -->
 
     <div id="mySidenav" class="sidenav">
-    <div id="yeet" class="yeet"><a href="/team078-app_fit3048/"> <?= $this->Html->image("marshall.png");?></a></div> <hr>
     <b href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</b>
    
     <?= $this->Html->link('Associates','/associates/index'); ?>
@@ -66,16 +65,20 @@ $cakeDescription = 'Marshall Structures';
 
     <script> //script for animating opening and closing
         function openNav() {
-        document.getElementById("mySidenav").style.width = "200px";
+        document.getElementById("mySidenav").style.width = "12%";
+        document.getElementById("mySidenav").style.display = "block";
+        document.getElementById("container").style.marginLeft = "25%";
+        
         }
 
         function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
         }
+        
     </script>
     <nav class="top-nav">
         <div class="top-nav-title">
-            <a href="<?= $this->Url->build('/') ?>"> <?= $this->Html->image("marshall.png");?> </a>
+            <a href="<?= $this->Url->build('/projects/index') ?>"> <?= $this->Html->image("marshall.png");?> </a>
         </div>
         <div class="top-nav-links">
            <!-- <a target="_blank" rel="noopener" href="https://book.cakephp.org/4/">Documentation</a> -->

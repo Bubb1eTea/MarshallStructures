@@ -57,7 +57,7 @@
 
 <a href="/team078-app_fit3048/feeproposals/index">
     <div class="pricing-table" style="cursor: pointer;" onclick="window.location='/team078-app_fit3048/feeproposals/index';">
-      <h3 class="pricing-title">Fee Proposals</h3>
+      <h3 class="pricing-title">Fee Proposal</h3>
       <!-- <div class="price">Placeholder</div> -->
       <!-- Lista de Caracteristicas / Propiedades -->
       <ul class="table-list">
