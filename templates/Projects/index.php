@@ -41,7 +41,7 @@
                     <td><?= h($project->state) ?></td>
                     <td><?= h($project->phase) ?></td>
                     <td><?= h($project->duedate) ?></td>
-                    <td><?= $project->has('client') ? $this->Html->link($project->client->firstname, ['controller' => 'Clients', 'action' => 'view', $project->client->id]) : '' ?></td>
+                    <td><?= $project->has('client') ? $this->Html->link($project->client->full_name, ['controller' => 'Clients', 'action' => 'view', $project->client->id]) : '' ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $project->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $project->id]) ?>
