@@ -43,8 +43,8 @@
                         </tr>
                         <?php foreach ($company->associates as $associates) : ?>
                         <tr>
-                            <td><?= h($associates->firstname) ?></td>
-                            <td><?= h($associates->lastname) ?></td>
+                            <td><?= h($associates->firstname) ? $this->Html->link($associates->firstname, ['controller' => 'associates', 'action' => 'view', $associates->id]) : '' ?></td>
+                            <td><?= h($associates->lastname) ? $this->Html->link($associates->lastname, ['controller' => 'associates', 'action' => 'view', $associates->id]) : '' ?></td>
                             <td><?= h($associates->email) ?></td>
                             <td><?= h($associates->phonenumber) ?></td>
                             <td><?= h($associates->position) ?></td>
@@ -75,8 +75,8 @@
                         </tr>
                         <?php foreach ($company->clients as $clients) : ?>
                         <tr>
-                            <td><?= h($clients->firstname) ?></td>
-                            <td><?= h($clients->lastname) ?></td>
+                            <td><?= h($clients->firstname) ? $this->Html->link($clients->firstname, ['controller' => 'clients', 'action' => 'view', $clients->id]) : '' ?></td>
+                            <td><?= h($clients->lastname) ? $this->Html->link($clients->lastname, ['controller' => 'clients', 'action' => 'view', $clients->id]) : '' ?>></td>
                             <td><?= h($clients->email) ?></td>
                             <td><?= h($clients->phonenumber) ?></td>
                             <td><?= h($clients->position) ?></td>
