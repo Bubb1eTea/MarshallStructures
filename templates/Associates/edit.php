@@ -6,6 +6,9 @@
  * @var string[]|\Cake\Collection\CollectionInterface $projects
  */
 ?>
+<style>
+    select[multiple="multiple"] { height:15rem;}
+</style>
 <div class="row">
     <aside class="column">
         <div class="side-nav">

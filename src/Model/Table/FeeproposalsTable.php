@@ -62,26 +62,30 @@ class FeeproposalsTable extends Table
 
         $validator
             ->scalar('proposaldesc')
+            ->maxLength('firstname', 12,'This field is too long.')
             ->allowEmptyString('proposaldesc');
 
         $validator
             ->dateTime('datecreated')
-            ->notEmptyDateTime('datecreated');
+            ->notEmptyDateTime('datecreated','This field cannot be empty.');
 
         $validator
             ->dateTime('lastmodified')
-            ->notEmptyDateTime('lastmodified');
+            ->notEmptyDateTime('lastmodified','This field cannot be empty.');
 
         $validator
             ->decimal('fee')
+            ->maxLength('firstname', 12,'This field is too long.')
             ->allowEmptyString('fee');
 
         $validator
             ->decimal('disbursement')
+            ->maxLength('firstname', 12,'This field is too long.')
             ->allowEmptyString('disbursement');
 
         $validator
             ->decimal('total')
+            ->maxLength('firstname', 12,'This field is too long.')
             ->allowEmptyString('total');
 
         return $validator;
