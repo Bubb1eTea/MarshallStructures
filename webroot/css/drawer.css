@@ -47,10 +47,6 @@ body {
   .sidenav b{
       color: white;
   }
-
-  .sideNavTable {
-    margin: auto;
-  }
   
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
