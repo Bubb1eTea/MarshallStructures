@@ -48,7 +48,7 @@
                 </tr>
             </table>
             <div class="related">
-                <h4><?= __('Related Projects') ?></h4>
+                <h4><?= $this->Html->link('Related Projects','/projects/index') ?></h4>
                 <?php if (!empty($associate->projects)) : ?>
                 <div class="table-responsive">
                     <table>

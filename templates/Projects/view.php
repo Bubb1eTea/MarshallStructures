@@ -62,7 +62,7 @@
                 </blockquote>
             </div>
             <div class="related">
-                <h4><?= __('Related Associates') ?></h4>
+                <h4><?= $this->Html->link('Related Associates','/associates/index') ?></h4> 
                 <?php if (!empty($project->associates)) : ?>
                 <div class="table-responsive">
                     <table>
@@ -97,7 +97,7 @@
                 <?php endif; ?>
             </div>
             <div class="related">
-                <h4><?= __('Related Fee Proposals') ?></h4>
+                <h4><?= $this->Html->link('Related Fee Proposals','/feeproposals/index') ?></h4>
                 <?php if (!empty($project->feeproposals)) : ?>
                 <div class="table-responsive">
                     <table>
@@ -130,7 +130,7 @@
                 <?php endif; ?>
             </div>
             <div class="related">
-                <h4><?= __('Related Invoices') ?></h4>
+                <h4><?= $this->Html->link('Related Invoices','/invoices/index') ?></h4>
                 <?php if (!empty($project->invoices)) : ?>
                 <div class="table-responsive">
                     <table>
