@@ -40,24 +40,20 @@ $cakeDescription = 'Marshall Structures';
 <body> <!-- beginning of body -->
 
     <div id="mySidenav" class="sidenav">
-    <b href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</b>
-   
-    <?= $this->Html->link('Associates','/associates/index'); ?>
-    <!--<a href="#"><i class="material-icons fa-fw"style="font-size:24px; vertical-align: middle;">person</i>Client</a> -->
-    <?= $this->Html->link('Client','/clients/index'); ?>
-    <!--<a href="#"><i class='far fa-building fa-fw' style="font-size:24px;vertical-align: middle;"></i>Company</a> -->
- 
-    <?= $this->Html->link('Company','/companys/index'); ?>
-    <!--<a href="#"><i class="material-icons fa-fw" style="font-size:24px;vertical-align: middle;">group</i>Associates</a> -->
-    
-    <!--<a href="#">Invoices</a>-->
-    
-    <?= $this->Html->link('Fee Proposals','/feeproposals/index'); ?>
-
-    <?= $this->Html->link('Invoice','/invoices/index'); ?>
-    <?= $this->Html->link('Projects','/projects/index'); ?>
-
-    <br>
+        <b href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</b>
+            <table class="sideNavTable">
+                <tr><?= $this->Html->link('Associates','/associates/index'); ?></tr>
+                <!--<a href="#"><i class="material-icons fa-fw"style="font-size:24px; vertical-align: middle;">person</i>Client</a> -->
+                <tr><?= $this->Html->link('Client','/clients/index'); ?></tr>
+                <!--<a href="#"><i class='far fa-building fa-fw' style="font-size:24px;vertical-align: middle;"></i>Company</a> -->
+                <tr><?= $this->Html->link('Company','/companys/index'); ?></tr>
+                <!--<a href="#"><i class="material-icons fa-fw" style="font-size:24px;vertical-align: middle;">group</i>Associates</a> -->
+                <!--<a href="#">Invoices</a>-->
+                <tr><?= $this->Html->link('Fee Proposals','/feeproposals/index'); ?></tr>
+                <tr><?= $this->Html->link('Invoice','/invoices/index'); ?></tr>
+                <tr><?= $this->Html->link('Projects','/projects/index'); ?></tr>
+            </table>
+        <br>
     
     </div>
     <div class="toper"></div>
