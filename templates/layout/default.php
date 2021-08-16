@@ -61,7 +61,7 @@ $cakeDescription = 'Marshall Structures';
     <br>
     
     </div>
-    <span style="color:black;font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Open</span>
+    <span style="color:black;font-size:30px;cursor:pointer; position: fixed;" onclick="openNav()">&#9776; Open</span>
 
     <script> //script for animating opening and closing
         function openNav() {

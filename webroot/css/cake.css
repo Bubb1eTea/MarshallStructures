@@ -58,7 +58,7 @@ body {
 
 .content {
     padding: 2rem;
-    background: #98B6E4;
+    background: white;
     border-radius: 0.4rem;
     /* Thanks Stripe */
     box-shadow: 0 7px 14px 0 rgba(60, 66, 87, 0.1),
