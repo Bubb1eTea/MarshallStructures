@@ -66,13 +66,14 @@ class CompanysTable extends Table
 
         $validator
             ->scalar('companyname')
-            ->maxLength('companyname', 50)
+            ->maxLength('companyname', 50, 'This field is too long.')
             ->requirePresence('companyname', 'create')
-            ->notEmptyString('companyname');
+            ->notEmptyString('companyname', 'This field cannot be empty.');
 
         $validator
             ->scalar('type')
-            ->maxLength('type', 50)
+            ->maxLength('type', 50, 'This field is too long.')
+            ->alphaNumeric('type','This message can only contain letters and digits.')
             ->allowEmptyString('type');
 
         return $validator;

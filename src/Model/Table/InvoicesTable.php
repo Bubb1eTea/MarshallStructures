@@ -62,7 +62,7 @@ class InvoicesTable extends Table
 
         $validator
             ->dateTime('datecreated')
-            ->notEmptyDateTime('datecreated');
+            ->notEmptyDateTime('datecreated','This field cannot be empty.');
 
         $validator
             ->scalar('invdesc')
@@ -70,18 +70,22 @@ class InvoicesTable extends Table
 
         $validator
             ->integer('completepercentage')
+            ->maxLength('firstname', 12,'This field is too long.')
             ->allowEmptyString('completepercentage');
 
         $validator
             ->decimal('subtotal')
+            ->maxLength('firstname', 12,'This field is too long.')
             ->allowEmptyString('subtotal');
 
         $validator
             ->decimal('saletax')
+            ->maxLength('firstname', 12,'This field is too long.')
             ->allowEmptyString('saletax');
 
         $validator
             ->decimal('totalamount')
+            ->maxLength('firstname', 12,'This field is too long.')
             ->allowEmptyString('totalamount');
 
         return $validator;

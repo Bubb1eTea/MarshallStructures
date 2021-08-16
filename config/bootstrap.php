@@ -208,7 +208,7 @@ ServerRequest::addDetector('tablet', function ($request) {
 
 // There is no time-specific type in Cake
 TypeFactory::map('time', StringType::class);
-
+date_default_timezone_set('Australia/Melbourne');
 /*
  * Custom Inflector rules, can be set to correctly pluralize or singularize
  * table, model, controller names or whatever other string is passed to the
