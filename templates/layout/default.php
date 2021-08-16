@@ -66,9 +66,6 @@ $cakeDescription = 'Marshall Structures';
     <script> //script for animating opening and closing
         function openNav() {
         document.getElementById("mySidenav").style.width = "12%";
-        document.getElementById("mySidenav").style.display = "block";
-        document.getElementById("container").style.marginLeft = "25%";
-        
         }
 
         function closeNav() {
@@ -86,7 +83,7 @@ $cakeDescription = 'Marshall Structures';
         </div>
     </nav>
 </body>
-    <main class="main">
+    <main class="main" id='testing'>
         <div class="container">
             <?= $this->Flash->render() ?>
             <?= $this->fetch('content') ?>
