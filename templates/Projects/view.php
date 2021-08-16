@@ -48,7 +48,7 @@
                 </tr>
                 <tr>
                     <th><?= __('Client') ?></th>
-                    <td><?= $project->has('client') ? $this->Html->link($project->client->full_name, ['controller' => 'Clients', 'action' => 'view', $project->client->id]) : '' ?></td>
+                    <td><?= $project->has('client') ? $this->Html->link($project->client->full_name, ['controller' => 'clients', 'action' => 'view', $project->client->id]) : '' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Due Date') ?></th>
@@ -78,8 +78,8 @@
                         </tr>
                         <?php foreach ($project->associates as $associates) : ?>
                         <tr>
-                            <td><?= h($associates->firstname) ? $this->Html->link($project->client->firstname, ['controller' => 'Clients', 'action' => 'view', $project->client->id]) : '' ?></td>
-                            <td><?= h($associates->lastname) ? $this->Html->link($project->client->lastname, ['controller' => 'Clients', 'action' => 'view', $project->client->id]) : '' ?></td>
+                            <td><?= h($associates->firstname) ? $this->Html->link($associates->firstname, ['controller' => 'associates', 'action' => 'view', $associates->id]) : '' ?></td>
+                            <td><?= h($associates->lastname) ? $this->Html->link($associates->lastname, ['controller' => 'associates', 'action' => 'view', $associates->id]) : '' ?></td>
                             <td><?= h($associates->email) ?></td>
                             <td><?= h($associates->phonenumber) ?></td>
                             <td><?= h($associates->position) ?></td>
