@@ -221,3 +221,10 @@ a {
     width: 300px;
   }
 } 
+
+centerthis{
+  text-align: center;
+}
+body{
+  padding-bottom: 200px;
+}

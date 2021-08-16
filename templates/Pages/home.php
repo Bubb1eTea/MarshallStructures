@@ -1,5 +1,6 @@
 <?= $this->Html->css('homepage'); ?>
 
+<centerthis> <h1> Home Page </h1> </centerthis>
 <!-- Contenedor -->
 <div class="pricing-wrapper clearfix">
     <!-- Titulo -->
