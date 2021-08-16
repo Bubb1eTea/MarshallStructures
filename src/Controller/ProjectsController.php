@@ -22,7 +22,7 @@ class ProjectsController extends AppController
 
         if($key){
             $query = $this->Projects->find("all")
-                ->where(['Or'=>['projectname like'=>'%'.$key.'%','streetname like'=>'%'.$key.'%','msnumber'=>$key+0]]);
+                ->where(['Or'=>['projectname like'=>'%'.$key.'%','streetname like'=>'%'.$key.'%','suburb like'=>'%'.$key.'%','postcode like'=>'%'.$key.'%','state like'=>'%'.$key.'%','msnumber'=>$key+0]]);
         }else{
             $query = $this->Projects;
         }
