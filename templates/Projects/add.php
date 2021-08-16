@@ -23,11 +23,12 @@
                     echo $this->Form->control('projectname', ['label'=>"Project Name"]);
                     echo $this->Form->control('streetname', ['label'=>"Street Name"]);
                     echo $this->Form->control('suburb', ['label'=>"Suburb"]);
+
                     echo $this->Form->control('postcode', ['label'=>"Postcode"]);
-                    $choices = ['NSW'=>'NSW','QLD'=>'QLD','SA'=>'SA', 'TAS'=>'TAS','VIC'=>'VIC','WA'=>'WA'];
-                    echo $this->Form->control('state', ['label'=>"State", 'options' => $choices, 'empty' => false]);
-                    $choices = ['Proposal'=>'Proposal','Conceptual'=>'Conceptual','Design'=>'Design', 'Construction'=>'Construction','Completion'=>'Completion'];
-                    echo $this->Form->control('phase', ['label'=>"Phase", 'options' => $choices, 'empty' => false]);
+                    $states = ['NSW'=>'NSW','QLD'=>'QLD','SA'=>'SA', 'TAS'=>'TAS','VIC'=>'VIC','WA'=>'WA'];
+                    echo $this->Form->control('state', ['label'=>"State", 'options' => $states, 'empty' => false]);
+                    $phases = ['Proposal'=>'Proposal','Conceptual'=>'Conceptual','Design'=>'Design', 'Construction'=>'Construction','Completion'=>'Completion'];
+                    echo $this->Form->control('phase', ['label'=>"Phase", 'options' => $phases, 'empty' => false]);
                     echo $this->Form->control('duedate', ['label'=>"Due Date", 'empty' => true]);
                     echo $this->Form->control('projectdesc', ['label'=>"Project Description"]);
                     echo $this->Form->control('client_id', ['options' => $clients, 'empty' => true]);
