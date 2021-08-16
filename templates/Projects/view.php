@@ -47,7 +47,7 @@
                     <td><?= h($project->phase) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Client') ?></th>
+                    <th><?= $this->Html->link('Client','/clients/index') ?></th>
                     <td><?= $project->has('client') ? $this->Html->link($project->client->full_name, ['controller' => 'clients', 'action' => 'view', $project->client->id]) : '' ?></td>
                 </tr>
                 <tr>

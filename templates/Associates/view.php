@@ -35,7 +35,7 @@
                     <td><?= h($associate->phonenumber) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Company') ?></th>
+                    <th><?= $this->Html->link('Company','/companys/index') ?></th>
                     <td><?= $associate->has('company') ? $this->Html->link($associate->company->companyname, ['controller' => 'Companys', 'action' => 'view', $associate->company->id]) : '' ?></td>
                 </tr>
                 <tr>

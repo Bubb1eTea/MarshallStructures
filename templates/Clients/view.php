@@ -39,7 +39,7 @@
                     <td><?= h($client->position) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Company') ?></th>
+                    <th><?= $this->Html->link('Company','/companys/index') ?></th>
                     <td><?= $client->has('company') ? $this->Html->link($client->company->companyname, ['controller' => 'Companys', 'action' => 'view', $client->company->id]) : '' ?></td>
                 </tr>
             </table>
