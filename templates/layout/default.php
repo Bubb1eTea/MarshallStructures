@@ -43,12 +43,12 @@ $cakeDescription = 'Marshall Structures';
     <div id="yeet" class="yeet"><a href="/team078-app_fit3048/"> <?= $this->Html->image("marshall.png");?></a></div> <hr>
     <b href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</b>
    
-    <?= $this->Html->link('Associates','/Associates/index'); ?>
+    <?= $this->Html->link('Associates','/associates/index'); ?>
     <!--<a href="#"><i class="material-icons fa-fw"style="font-size:24px; vertical-align: middle;">person</i>Client</a> -->
-    <?= $this->Html->link('Client','/Clients/index'); ?>
+    <?= $this->Html->link('Client','/clients/index'); ?>
     <!--<a href="#"><i class='far fa-building fa-fw' style="font-size:24px;vertical-align: middle;"></i>Company</a> -->
  
-    <?= $this->Html->link('Company','/Companys/index'); ?>
+    <?= $this->Html->link('Company','/companys/index'); ?>
     <!--<a href="#"><i class="material-icons fa-fw" style="font-size:24px;vertical-align: middle;">group</i>Associates</a> -->
     
     <!--<a href="#">Invoices</a>-->
