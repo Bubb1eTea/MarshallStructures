@@ -9,10 +9,13 @@
     <h3><?= __('Projects') ?></h3>
 
     <!--     Search function-->
-    <?= $this->Form->create(null,['type'=>'get']) ?>
-    <?= $this->Form->control('key',['label'=>'Search','value'=>$this->request->getQuery('key')]) ?>
-    <?= $this->Form->submit() ?>
-    <?= $this->Form->end() ?>
+    <table>
+        <th class="searchbar"><h4 class="searchtitle"><?= ('Search') ?></h4></th>
+        <th><?= $this->Form->create(null,['type'=>'get']) ?>
+        <th><?= $this->Form->control('key',['label'=>'','value'=>$this->request->getQuery('key')]) ?></th>
+        <th><?= $this->Form->submit() ?></th>
+        <th><?= $this->Form->end() ?></th>
+    </table>
 
     <div class="table-responsive">
         <table>
