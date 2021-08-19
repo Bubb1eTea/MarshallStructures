@@ -5,6 +5,9 @@
  * @var string[]|\Cake\Collection\CollectionInterface $projects
  */
 ?>
+<style>
+    .error-message {color:red;}
+</style>
 <div class="row">
     <aside class="column">
         <div class="side-nav">

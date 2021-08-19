@@ -8,6 +8,7 @@
 ?>
 <style>
     select[multiple="multiple"] { height:15rem;}
+    .error-message {color:red;}
 </style>
 <div class="row">
     <aside class="column">

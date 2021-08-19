@@ -5,6 +5,9 @@
  * @var string[]|\Cake\Collection\CollectionInterface $companys
  */
 ?>
+<style>
+    .error-message {color:red;}
+</style>
 <div class="row">
     <aside class="column">
         <div class="side-nav">
