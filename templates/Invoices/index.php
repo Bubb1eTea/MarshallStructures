@@ -27,7 +27,7 @@
                     <td><?= h($invoice->datecreated) ?></td>
                     <td><?= $invoice->has('project') ? $this->Html->link($invoice->project->msnumber, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></td>
                     <td><?= $invoice->has('project') ? $this->Html->link($invoice->project->projectname, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></td>
-                    <td><?= $this->Number->format($invoice->completepercentage) ?></td>
+                    <td><?= $this->Number->format($invoice->completepercentage) ?>%</td>
                     <td><?= $this->Number->format($invoice->subtotal) ?></td>
                     <td><?= $this->Number->format($invoice->saletax) ?></td>
                     <td><?= $this->Number->format($invoice->totalamount) ?></td>

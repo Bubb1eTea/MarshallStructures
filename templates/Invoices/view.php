@@ -28,7 +28,7 @@
                 </tr>
                 <tr>
                     <th><?= __('Paid Percentage') ?></th>
-                    <td><?= $this->Number->format($invoice->completepercentage) ?></td>
+                    <td><?= $this->Number->format($invoice->completepercentage) ?>%</td>
                 </tr>
                 <tr>
                     <th><?= __('Subtotal') ?></th>
