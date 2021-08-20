@@ -67,7 +67,7 @@ class ClientsTable extends Table
         $validator
             ->scalar('firstname')
             ->maxLength('firstname', 50,'This field is too long.')
-            ->regex('firstname', '/^[A-Za-z]+$/', 'This field can only contain letters.')
+            ->regex('firstname', '/^[a-zA-Z\s]*$/', 'This field can only contain letters.')
             ->requirePresence('firstname', 'create')
             ->notEmptyString('firstname','This field cannot be empty.');
 
@@ -76,7 +76,7 @@ class ClientsTable extends Table
             ->maxLength('lastname', 50,'This field is too long.')
             ->requirePresence('lastname', 'create')
             ->notEmptyString('lastname','This field cannot be empty.')
-            ->regex('lastname', '/^[A-Za-z]+$/', 'This field can only contain letters.');
+            ->regex('lastname', '/^[a-zA-Z\s]*$/', 'This field can only contain letters.');
 
         $validator
             ->email('email',false,'This is not a valid email address.')
@@ -95,7 +95,7 @@ class ClientsTable extends Table
             ->scalar('position')
             ->maxLength('position', 50, 'This field is too long.')
             ->allowEmptyString('position','This field cannot be empty.')
-            ->regex('position', '/^[A-Za-z]+$/', 'This field can only contain letters.');;
+            ->regex('position', '/^[a-zA-Z\s]*$/', 'This field can only contain letters.');;
 
         return $validator;
     }

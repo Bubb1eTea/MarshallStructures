@@ -70,14 +70,14 @@ class AssociatesTable extends Table
             ->scalar('firstname')
             ->maxLength('firstname', 50, 'This field is too long.')
             ->requirePresence('firstname', 'create')
-            ->regex('firstname', '/^[A-Za-z]+$/', 'This field can only contain letters.')
+            ->regex('firstname', '/^[a-zA-Z\s]*$/', 'This field can only contain letters.')
             ->notEmptyString('firstname', 'This field cannot be empty.');
 
         $validator
             ->scalar('lastname')
             ->maxLength('lastname', 50,'This field is too long.')
             ->requirePresence('lastname', 'create')
-            ->regex('lastname', '/^[A-Za-z]+$/', 'This field can only contain letters.')
+            ->regex('lastname', '/^[a-zA-Z\s]*$/', 'This field can only contain letters.')
             ->notEmptyString('lastname','This field cannot be empty.');
 
         $validator
@@ -97,13 +97,13 @@ class AssociatesTable extends Table
             ->scalar('position')
             ->maxLength('position', 50, 'This field is too long.')
             ->allowEmptyString('position')
-            ->regex('position', '/^[A-Za-z]+$/', 'This field can only contain letters.');
+            ->regex('position', '/^[a-zA-Z\s]*$/', 'This field can only contain letters.');
 
         $validator
             ->scalar('role')
             ->maxLength('role', 50,'This field is too long.')
             ->allowEmptyString('role')
-            ->regex('role', '/^[A-Za-z]+$/', 'This field can only contain letters.');
+            ->regex('role', '/^[a-zA-Z\s]*$/', 'This field can only contain letters.');
 
         return $validator;
     }

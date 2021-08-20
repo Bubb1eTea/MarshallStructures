@@ -111,7 +111,7 @@ class ProjectsTable extends Table
             ->maxLength('state', 3,'This field is too long')
             ->requirePresence('state', 'create')
             ->notEmptyString('state','This field cannot be empty.')
-            ->regex('state', '/^[A-Za-z]+$/', 'This field can only contain letters.');
+            ->regex('state', '/^[a-zA-Z\s]*$/', 'This field can only contain letters.');
 
         $validator
             ->scalar('phase')

@@ -73,7 +73,6 @@ class CompanysTable extends Table
         $validator
             ->scalar('type')
             ->maxLength('type', 50, 'This field is too long.')
-            ->alphaNumeric('type','This message can only contain letters and digits.')
             ->allowEmptyString('type');
 
         return $validator;
