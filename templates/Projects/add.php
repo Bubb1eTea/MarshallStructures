@@ -35,7 +35,9 @@
                     echo $this->Form->control('phase', ['label'=>"Phase", 'options' => $phases, 'empty' => false]);
                     echo $this->Form->control('duedate', ['label'=>"Due Date", 'empty' => true]);
                     echo $this->Form->control('projdesc', ['label'=>"Project Description"]);
+                    echo $this->Html->link(__('Add New Client'), ['action' => '../clients/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('client_id', ['options' => $clients, 'empty' => true]);
+                    echo $this->Html->link(__('Add New Associate'), ['action' => '../associates/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('associates._ids', ['options' => $associates]);
                 ?>
             </fieldset>
