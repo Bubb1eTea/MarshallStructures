@@ -18,6 +18,11 @@ class CompanysController extends AppController
      */
     public function index()
     {
+
+        $this->paginate = [
+            'sort'=>'id',
+            'direction'=>'desc'
+        ];
         $companys = $this->paginate($this->Companys);
 
         $this->set(compact('companys'));

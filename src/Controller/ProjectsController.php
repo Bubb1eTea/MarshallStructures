@@ -20,6 +20,8 @@ class ProjectsController extends AppController
     {
         $this->paginate = [
             'contain' => ['Clients'],
+            'sort'=>'id',
+            'direction'=>'desc'
         ];
         $projects = $this->paginate($this->Projects);
 
