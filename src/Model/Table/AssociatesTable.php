@@ -71,26 +71,30 @@ class AssociatesTable extends Table
             ->maxLength('firstname', 50, 'This field is too long.')
             ->requirePresence('firstname', 'create')
             ->regex('firstname', '/^[a-zA-Z\s]*$/', 'This field can only contain letters.')
-            ->notEmptyString('firstname', 'This field cannot be empty.');
+            ->notEmptyString('firstname', 'This field cannot be empty.')
+            ->notBlank('firstname', 'This field cannot be empty.');
 
         $validator
             ->scalar('lastname')
             ->maxLength('lastname', 50,'This field is too long.')
             ->requirePresence('lastname', 'create')
             ->regex('lastname', '/^[a-zA-Z\s]*$/', 'This field can only contain letters.')
-            ->notEmptyString('lastname','This field cannot be empty.');
+            ->notEmptyString('lastname','This field cannot be empty.')
+            ->notBlank('lastname', 'This field cannot be empty.');
 
         $validator
             ->email('email',false,'This is not a valid email address.')
             ->maxLength('email', 70,'This field is too long.')
             ->requirePresence('email', 'create')
-            ->notEmptyString('email','This field cannot be empty.');
+            ->notEmptyString('email','This field cannot be empty.')
+            ->notBlank('email', 'This field cannot be empty.');
 
         $validator
             ->scalar('phonenumber')
             ->maxLength('phonenumber', 12,'This field is too long.')
             ->requirePresence('phonenumber', 'create')
             ->notEmptyString('phonenumber','This field cannot be empty.')
+            ->notBlank('phonenumber', 'This field cannot be empty.')
             ->integer('phonenumber','This field can only contain digits');
 
         $validator
