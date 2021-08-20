@@ -50,13 +50,13 @@
                     <table>
                         <tr>
                             <th><?= __('MS Number') ?></th>
-                            <th><?= __('Projectname') ?></th>
-                            <th><?= __('Streetname') ?></th>
+                            <th><?= __('Project Name') ?></th>
+                            <th><?= __('Street Name') ?></th>
                             <th><?= __('Suburb') ?></th>
                             <th><?= __('Postcode') ?></th>
                             <th><?= __('State') ?></th>
                             <th><?= __('Phase') ?></th>
-                            <th><?= __('Duedate') ?></th>
+                            <th><?= __('Due Date') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($client->projects as $projects) : ?>
