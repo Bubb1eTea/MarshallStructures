@@ -18,7 +18,7 @@
             <fieldset>
                 <legend><?= __('Add Fee Proposal') ?></legend>
                 <?php
-                    echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true]);
+                    echo $this->Form->control('project_id', ['options' => $projects, 'empty' => false]);
                     echo $this->Form->control('fee', ['label' =>"Fee"]);
                     echo $this->Form->control('disbursement', ['label' =>"Disbursement"]);
                     echo $this->Form->control('total', ['label' =>"Total"]);

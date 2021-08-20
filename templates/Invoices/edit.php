@@ -23,7 +23,7 @@
             <fieldset>
                 <legend><?= __('Edit Invoice') ?></legend>
                 <?php
-                    echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true]);
+                    echo $this->Form->control('project_id', ['options' => $projects, 'empty' => false]);
                     echo $this->Form->control('completepercentage', ['label' =>"Paid Percentage"]);
                     echo $this->Form->control('subtotal', ['label' =>"Subtotal"]);
                     echo $this->Form->control('saletax', ['label' =>"Sales Tax"]);
