@@ -141,6 +141,8 @@ class ProjectsTable extends Table
     {
         $rules->add($rules->existsIn(['client_id'], 'Clients'), ['errorField' => 'client_id']);
 
+        $rules->add($rules->isUnique(['msnumber']));
+
         return $rules;
     }
 }
