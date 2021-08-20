@@ -53,7 +53,7 @@
                 <div class="table-responsive">
                     <table>
                         <tr>
-                            <th><?= __('Project ID') ?></th>
+                            <th><?= __('MS Number') ?></th>
                             <th><?= __('Project Name') ?></th>
                             <th><?= __('Street Name') ?></th>
                             <th><?= __('Suburb') ?></th>

@@ -49,7 +49,7 @@
                 <div class="table-responsive">
                     <table>
                         <tr>
-                            <th><?= __('Msnumber') ?></th>
+                            <th><?= __('MS Number') ?></th>
                             <th><?= __('Projectname') ?></th>
                             <th><?= __('Streetname') ?></th>
                             <th><?= __('Suburb') ?></th>

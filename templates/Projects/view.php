@@ -19,7 +19,7 @@
             <h3><?= h($project->projectname) ?></h3>
             <table>
                 <tr>
-                    <th><?= __('Project ID') ?></th>
+                    <th><?= __('MS Number') ?></th>
                     <td><?= h($project->msnumber) ?></td>
                 </tr>
                 <tr>
