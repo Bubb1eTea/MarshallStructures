@@ -19,7 +19,7 @@
             <h3><?= h($project->projectname) ?></h3>
             <table>
                 <tr>
-                    <th><?= __('Project ID') ?></th>
+                    <th><?= __('MS Number') ?></th>
                     <td><?= h($project->msnumber) ?></td>
                 </tr>
                 <tr>
@@ -62,7 +62,7 @@
                 </blockquote>
             </div>
             <div class="related">
-                <h4><?= $this->Html->link('Related Associates','/associates/index') ?></h4> 
+                <h4><?= $this->Html->link('Related Associates','/associates/index') ?></h4>
                 <?php if (!empty($project->associates)) : ?>
                 <div class="table-responsive">
                     <table>

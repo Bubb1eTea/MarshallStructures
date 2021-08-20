@@ -22,7 +22,7 @@
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('msnumber', ['label'=>"Project ID"]) ?></th>
+                    <th><?= $this->Paginator->sort('msnumber', ['label'=>"MS Number"]) ?></th>
                     <th><?= $this->Paginator->sort('projectname', ['label'=>"Project Name"]) ?></th>
                     <th><?= $this->Paginator->sort('street', ['label'=>"Street"]) ?></th>
                     <th><?= $this->Paginator->sort('suburb', ['label'=>"Suburb"]) ?></th>
