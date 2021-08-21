@@ -28,7 +28,7 @@
                 </tr>
             </table>
             <div class="related">
-                <h4><?= $this->Html->link('Related Associates','/associates/index') ?></h4>
+                <h4><?= __('Related Associates') ?></h4>
                 <?php if (!empty($company->associates)) : ?>
                 <div class="table-responsive">
                     <table>
@@ -61,7 +61,7 @@
                 <?php endif; ?>
             </div>
             <div class="related">
-                <h4><?= $this->Html->link('Related Clients','/clients/index') ?></h4>
+                <h4><?= __('Related Clients') ?></h4>
                 <?php if (!empty($company->clients)) : ?>
                 <div class="table-responsive">
                     <table>
