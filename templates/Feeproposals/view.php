@@ -4,6 +4,9 @@
  * @var \App\Model\Entity\Feeproposal $feeproposal
  */
 ?>
+<?php session_start();
+$_SESSION['previous_url']=$_SESSION['url'];
+$_SESSION['url']='feeproposals.view';?>
 <div class="row">
     <aside class="column">
         <div class="side-nav">

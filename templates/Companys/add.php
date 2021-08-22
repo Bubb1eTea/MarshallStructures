@@ -4,9 +4,9 @@
  * @var \App\Model\Entity\Company $company
  */
 ?>
-<style>
-    .error-message {color:red;}
-</style>
+<?php session_start();
+$_SESSION['previous_url']=$_SESSION['url'];
+$_SESSION['url']='companys.add';?>
 <div class="row">
     <aside class="column">
         <div class="side-nav">

@@ -5,6 +5,9 @@
  * @var \Cake\Collection\CollectionInterface|string[] $projects
  */
 ?>
+<?php session_start();
+$_SESSION['previous_url']=$_SESSION['url'];
+$_SESSION['url']='feeproposals.add';?>
 <style>
     .error-message {color:red;}
 </style>

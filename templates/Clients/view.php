@@ -4,6 +4,9 @@
  * @var \App\Model\Entity\Client $client
  */
 ?>
+<?php session_start();
+$_SESSION['previous_url']=$_SESSION['url'];
+$_SESSION['url']='clients.view';?>
 <div class="row">
     <aside class="column">
         <div class="side-nav">

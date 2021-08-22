@@ -4,6 +4,9 @@
  * @var \App\Model\Entity\Client[]|\Cake\Collection\CollectionInterface $clients
  */
 ?>
+<?php session_start();
+$_SESSION['previous_url']=$_SESSION['url'];
+$_SESSION['url']='clients.index';?>
 <div class="clients index content">
     <?= $this->Html->link(__('New Client'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Clients') ?></h3>

@@ -5,6 +5,9 @@
  * @var \Cake\Collection\CollectionInterface|string[] $companys
  */
 ?>
+<?php session_start();
+$_SESSION['previous_url']=$_SESSION['url'];
+$_SESSION['url']='clients.add';?>
 <style>
     .error-message {color:red;}
 </style>
@@ -20,8 +23,7 @@
             <?= $this->Form->create($client) ?>
             <fieldset>
                 <legend><?= __('Add Client') ?></legend>
-                <?php
-                    echo $this->Form->control('firstname', ['label'=>"First Name"]);
+                <?php echo $this->Form->control('firstname', ['label'=>"First Name"]);
                     echo $this->Form->control('lastname', ['label'=>"Last Name"]);
                     echo $this->Form->control('email', ['label'=>"Email"]);
                     echo $this->Form->control('phonenumber', ['label'=>"Phone Number"]);

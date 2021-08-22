@@ -4,6 +4,9 @@
  * @var \App\Model\Entity\Associate $associate
  */
 ?>
+<?php session_start();
+$_SESSION['previous_url']=$_SESSION['url'];
+$_SESSION['url']='associates.view';?>
 <div class="row">
     <aside class="column">
         <div class="side-nav">

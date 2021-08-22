@@ -57,7 +57,16 @@ class CompanysController extends AppController
             if ($this->Companys->save($company)) {
                 $this->Flash->success(__('The company has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                if(isset($_SESSION['previous_url'])&& $_SESSION['previous_url']=='clients.add'){
+                    return $this->redirect(['action'=>'../clients/add']);
+                }
+                elseif (isset($_SESSION['previous_url'])&& $_SESSION['previous_url']=='associates.add'){
+                    $_SESSION['previous_url']='';
+                    return $this->redirect(['action'=>'../associates/add']);
+                }
+                else {
+                    return $this->redirect(['action' => 'index']);
+                }
             }
             $this->Flash->error(__('The company could not be saved. Please, try again.'));
         }

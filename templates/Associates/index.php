@@ -4,6 +4,9 @@
  * @var \App\Model\Entity\Associate[]|\Cake\Collection\CollectionInterface $associates
  */
 ?>
+<?php session_start();
+$_SESSION['previous_url']=$_SESSION['url'];
+$_SESSION['url']='associates.index';?>
 <div class="associates index content">
     <?= $this->Html->link(__('New Associate'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Associates') ?></h3>

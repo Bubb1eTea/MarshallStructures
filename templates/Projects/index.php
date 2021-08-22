@@ -4,6 +4,9 @@
  * @var \App\Model\Entity\Project[]|\Cake\Collection\CollectionInterface $projects
  */
 ?>
+<?php session_start();
+$_SESSION['previous_url']=$_SESSION['url'];
+$_SESSION['url']='projects.index';?>
 <div class="projects index content">
     <?= $this->Html->link(__('New Project'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Projects') ?></h3>

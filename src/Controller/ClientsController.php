@@ -57,7 +57,11 @@ class ClientsController extends AppController
             if ($this->Clients->save($client)) {
                 $this->Flash->success(__('The client has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                if(isset($_SESSION['previous_url'])&& $_SESSION['previous_url']=='projects.add'){
+                    return $this->redirect(['action'=>'../projects/add']);
+                } else {
+                    return $this->redirect(['action' => 'index']);
+                }
             }
             $this->Flash->error(__('The client could not be saved. Please, try again.'));
         }

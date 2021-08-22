@@ -4,6 +4,9 @@
  * @var \App\Model\Entity\Company[]|\Cake\Collection\CollectionInterface $companys
  */
 ?>
+<?php session_start();
+$_SESSION['previous_url']=$_SESSION['url'];
+$_SESSION['url']='companys.index';?>
 <div class="companys index content">
     <?= $this->Html->link(__('New Company'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Companies') ?></h3>

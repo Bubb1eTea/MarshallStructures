@@ -6,6 +6,9 @@
  * @var string[]|\Cake\Collection\CollectionInterface $associates
  */
 ?>
+<?php session_start();
+$_SESSION['previous_url']=$_SESSION['url'];
+$_SESSION['url']='projects.edit';?>
 <style>
     select[multiple="multiple"] { height:15rem;}
     .error-message {color:red;}

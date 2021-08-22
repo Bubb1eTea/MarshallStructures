@@ -4,6 +4,9 @@
  * @var \App\Model\Entity\Feeproposal[]|\Cake\Collection\CollectionInterface $feeproposals
  */
 ?>
+<?php session_start();
+$_SESSION['previous_url']=$_SESSION['url'];
+$_SESSION['url']='feeproposals.index';?>
 <div class="feeproposals index content">
     <?= $this->Html->link(__('New Fee Proposal'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Fee Proposals') ?></h3>

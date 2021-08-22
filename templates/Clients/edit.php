@@ -5,6 +5,9 @@
  * @var string[]|\Cake\Collection\CollectionInterface $companys
  */
 ?>
+<?php session_start();
+$_SESSION['previous_url']=$_SESSION['url'];
+$_SESSION['url']='clients.edit';?>
 <style>
     .error-message {color:red;}
 </style>

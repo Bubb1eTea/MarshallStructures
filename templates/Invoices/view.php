@@ -4,6 +4,9 @@
  * @var \App\Model\Entity\Invoice $invoice
  */
 ?>
+<?php session_start();
+$_SESSION['previous_url']=$_SESSION['url'];
+$_SESSION['url']='invoices.view';?>
 <div class="row">
     <aside class="column">
         <div class="side-nav">
