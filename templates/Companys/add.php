@@ -7,6 +7,9 @@
 <?php session_start();
 $_SESSION['previous_url']=$_SESSION['url'];
 $_SESSION['url']='companys.add';?>
+<style>
+    .error-message {color:red;}
+</style>
 <div class="row">
     <aside class="column">
         <div class="side-nav">
