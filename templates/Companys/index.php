@@ -4,6 +4,9 @@
  * @var \App\Model\Entity\Company[]|\Cake\Collection\CollectionInterface $companys
  */
 ?>
+<?php session_start();
+$_SESSION['previous_url']=$_SESSION['url'];
+$_SESSION['url']='companys.index';?>
 <div class="companys index content">
     <?= $this->Html->link(__('New Company'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Companies') ?></h3>
@@ -24,7 +27,7 @@
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $company->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $company->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $company->id], ['confirm' => __('Are you sure you want to delete # {0}?', $company->id)]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $company->id], ['confirm' => __('Are you sure you want to delete company "{0}"?', $company->companyname)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

@@ -5,6 +5,12 @@
  * @var string[]|\Cake\Collection\CollectionInterface $projects
  */
 ?>
+<?php session_start();
+$_SESSION['previous_url']=$_SESSION['url'];
+$_SESSION['url']='feeproposals.edit';?>
+<style>
+    .error-message {color:red;}
+</style>
 <div class="row">
     <aside class="column">
         <div class="side-nav">
@@ -12,7 +18,7 @@
             <?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $feeproposal->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $feeproposal->id), 'class' => 'side-nav-item']
+                ['confirm' => __('Are you sure you want to delete fee proposal #{0}?', $feeproposal->id), 'class' => 'side-nav-item']
             ) ?>
             <?= $this->Html->link(__('List Fee Proposal'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
@@ -21,7 +27,7 @@
         <div class="feeproposals form content">
             <?= $this->Form->create($feeproposal) ?>
             <fieldset>
-                <legend><?= __('Edit Fee Proposal') ?></legend>
+                <legend><?= __('Edit Fee Proposal #'.$feeproposal->id) ?></legend>
                 <?php
                     echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true]);
                     echo $this->Form->control('fee', ['label' =>"Fee"]);

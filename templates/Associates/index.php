@@ -4,6 +4,9 @@
  * @var \App\Model\Entity\Associate[]|\Cake\Collection\CollectionInterface $associates
  */
 ?>
+<?php session_start();
+$_SESSION['previous_url']=$_SESSION['url'];
+$_SESSION['url']='associates.index';?>
 <div class="associates index content">
     <?= $this->Html->link(__('New Associate'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Associates') ?></h3>
@@ -34,7 +37,7 @@
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $associate->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $associate->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $associate->id], ['confirm' => __('Are you sure you want to delete # {0}?', $associate->id)]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $associate->id], ['confirm' => __('Are you sure you want to delete associate "{0}"?', $associate->full_name)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

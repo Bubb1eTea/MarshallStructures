@@ -7,6 +7,12 @@
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
 
+<?php session_start();
+$_SESSION['previous_url']=$_SESSION['url'];
+$_SESSION['url']='invoices.add';?>
+<style>
+    .error-message {color:red;}
+</style>
 <div class="row">
     <aside class="column">
         <div class="side-nav">
@@ -20,6 +26,7 @@
             <fieldset>
                 <legend><?= __('Add Invoice') ?></legend>
                 <?php
+                    echo $this->Html->link(__('Add New Project'), ['action' => '../projects/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true]);
                     echo $this->Form->control('completepercentage', ['label' =>"Paid Percentage"]);
                     echo $this->Form->control('subtotal', ['label' =>"Subtotal"]);

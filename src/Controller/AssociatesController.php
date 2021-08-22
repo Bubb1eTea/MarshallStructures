@@ -20,6 +20,8 @@ class AssociatesController extends AppController
     {
         $this->paginate = [
             'contain' => ['Companys'],
+            'sort'=>'id',
+            'direction'=>'desc'
         ];
         $associates = $this->paginate($this->Associates);
 
@@ -37,6 +39,8 @@ class AssociatesController extends AppController
     {
         $associate = $this->Associates->get($id, [
             'contain' => ['Companys', 'Projects'],
+            'sort'=>'id',
+            'direction'=>'desc'
         ]);
 
         $this->set(compact('associate'));
@@ -55,7 +59,14 @@ class AssociatesController extends AppController
             if ($this->Associates->save($associate)) {
                 $this->Flash->success(__('The associate has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                if(isset($_SESSION['previous_url'])&& $_SESSION['previous_url']=='projects.add'){
+                    return $this->redirect(['action'=>'../projects/add']);
+                } elseif(isset($_SESSION['previous_url'])&& isset($_SESSION['projects_id']) && $_SESSION['previous_url']=='projects.edit'){
+                    return $this->redirect(['action'=>'../projects/edit'.'/'.$_SESSION['projects_id']]);
+                }
+                else {
+                    return $this->redirect(['action' => 'index']);
+                }
             }
             $this->Flash->error(__('The associate could not be saved. Please, try again.'));
         }

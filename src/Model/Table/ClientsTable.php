@@ -67,35 +67,39 @@ class ClientsTable extends Table
         $validator
             ->scalar('firstname')
             ->maxLength('firstname', 50,'This field is too long.')
-            ->regex('firstname', '/^[A-Za-z]+$/', 'This field can only contain letters.')
+            ->regex('firstname', '/^[a-zA-Z\s]*$/', 'This field can only contain letters.')
             ->requirePresence('firstname', 'create')
-            ->notEmptyString('firstname','This field cannot be empty.');
+            ->notEmptyString('firstname','This field cannot be empty.')
+            ->notBlank('firstname', 'This field cannot be empty.');
 
         $validator
             ->scalar('lastname')
             ->maxLength('lastname', 50,'This field is too long.')
             ->requirePresence('lastname', 'create')
             ->notEmptyString('lastname','This field cannot be empty.')
-            ->regex('lastname', '/^[A-Za-z]+$/', 'This field can only contain letters.');
+            ->regex('lastname', '/^[a-zA-Z\s]*$/', 'This field can only contain letters.')
+            ->notBlank('lastname', 'This field cannot be empty.');
 
         $validator
             ->email('email',false,'This is not a valid email address.')
             ->maxLength('email', 70,'This field is too long.')
             ->requirePresence('email', 'create')
-            ->notEmptyString('email','This field cannot be empty.');
+            ->notEmptyString('email','This field cannot be empty.')
+            ->notBlank('email', 'This field cannot be empty.');
 
         $validator
             ->scalar('phonenumber')
             ->maxLength('phonenumber', 12,'This field is too long.')
             ->requirePresence('phonenumber', 'create')
             ->notEmptyString('phonenumber','This field cannot be empty.')
-            ->integer('phonenumber','This field can only contain digits');;
+            ->notBlank('phonenumber', 'This field cannot be empty.')
+            ->integer('phonenumber','This field can only contain digits');
 
         $validator
             ->scalar('position')
             ->maxLength('position', 50, 'This field is too long.')
             ->allowEmptyString('position','This field cannot be empty.')
-            ->regex('position', '/^[A-Za-z]+$/', 'This field can only contain letters.');;
+            ->regex('position', '/^[a-zA-Z\s]*$/', 'This field can only contain letters.');;
 
         return $validator;
     }

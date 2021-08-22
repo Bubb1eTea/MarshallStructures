@@ -20,6 +20,8 @@ class ProjectsController extends AppController
     {
         $this->paginate = [
             'contain' => ['Clients'],
+            'sort'=>'id',
+            'direction'=>'desc'
         ];
         $projects = $this->paginate($this->Projects);
 
@@ -66,7 +68,17 @@ class ProjectsController extends AppController
             if ($this->Projects->save($project)) {
                 $this->Flash->success(__('The project has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                if(isset($_SESSION['previous_url'])&& $_SESSION['previous_url']=='associates.add'){
+                    return $this->redirect(['action'=>'../associates/add']);
+                } elseif(isset($_SESSION['previous_url'])&& $_SESSION['previous_url']=='feeproposals.add'){
+                    return $this->redirect(['action'=>'../feeproposals/add']);
+                } elseif(isset($_SESSION['previous_url'])&& $_SESSION['previous_url']=='invoices.add'){
+                    return $this->redirect(['action'=>'../invoices/add']);
+                } elseif (isset($_SESSION['previous_url'])&& isset($_SESSION['associates_id']) && $_SESSION['previous_url']=='associates.edit'){
+                    return $this->redirect(['action'=>'../associates/edit'.'/'.$_SESSION['associates_id']]);
+                } else {
+                    return $this->redirect(['action' => 'index']);
+                }
             }
             $this->Flash->error(__('The project could not be saved. Please, try again.'));
         }

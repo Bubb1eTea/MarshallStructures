@@ -62,7 +62,7 @@ class FeeproposalsTable extends Table
 
         $validator
             ->scalar('proposaldesc')
-            ->maxLength('firstname', 12,'This field is too long.')
+            ->maxLength('proposaldesc', 12,'This field is too long.')
             ->allowEmptyString('proposaldesc');
 
         $validator
@@ -75,17 +75,17 @@ class FeeproposalsTable extends Table
 
         $validator
             ->decimal('fee')
-            ->maxLength('firstname', 12,'This field is too long.')
+            ->maxLength('fee', 12,'This field is too long.')
             ->allowEmptyString('fee');
 
         $validator
             ->decimal('disbursement')
-            ->maxLength('firstname', 12,'This field is too long.')
+            ->maxLength('disbursement', 12,'This field is too long.')
             ->allowEmptyString('disbursement');
 
         $validator
             ->decimal('total')
-            ->maxLength('firstname', 12,'This field is too long.')
+            ->maxLength('total', 12,'This field is too long.')
             ->allowEmptyString('total');
 
         return $validator;

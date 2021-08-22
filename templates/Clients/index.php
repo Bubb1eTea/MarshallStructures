@@ -4,6 +4,9 @@
  * @var \App\Model\Entity\Client[]|\Cake\Collection\CollectionInterface $clients
  */
 ?>
+<?php session_start();
+$_SESSION['previous_url']=$_SESSION['url'];
+$_SESSION['url']='clients.index';?>
 <div class="clients index content">
     <?= $this->Html->link(__('New Client'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Clients') ?></h3>
@@ -32,7 +35,7 @@
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $client->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $client->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $client->id], ['confirm' => __('Are you sure you want to delete # {0}?', $client->id)]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $client->id], ['confirm' => __('Are you sure you want to delete client "{0}"?', $client->full_name)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

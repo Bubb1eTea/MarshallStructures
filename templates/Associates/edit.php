@@ -6,8 +6,13 @@
  * @var string[]|\Cake\Collection\CollectionInterface $projects
  */
 ?>
+<?php session_start();
+$_SESSION['previous_url']=$_SESSION['url'];
+$_SESSION['url']='associates.edit';
+$_SESSION['associates_id']=$associate->id; ?>
 <style>
     select[multiple="multiple"] { height:15rem;}
+    .error-message {color:red;}
 </style>
 <div class="row">
     <aside class="column">
@@ -16,7 +21,7 @@
             <?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $associate->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $associate->id), 'class' => 'side-nav-item']
+                ['confirm' => __('Are you sure you want to delete associate "{0}"?', $associate->full_name), 'class' => 'side-nav-item']
             ) ?>
             <?= $this->Html->link(__('List Associate'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
@@ -31,9 +36,11 @@
                     echo $this->Form->control('lastname', ['label'=>"Last Name"]);
                     echo $this->Form->control('email', ['label'=>"Email"]);
                     echo $this->Form->control('phonenumber', ['label'=>"Phone Number"]);
+                    echo $this->Html->link(__('Add New Company'), ['action' => '../companys/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('company_id', ['label'=>"Company", 'options' => $companys, 'empty' => true]);
                     echo $this->Form->control('position', ['label'=>"Position"]);
                     echo $this->Form->control('role', ['label'=>"Role"]);
+                    echo $this->Html->link(__('Add New Project'), ['action' => '../projects/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('projects._ids', ['label'=>"Projects", 'options' => $projects]);
                 ?>
             </fieldset>

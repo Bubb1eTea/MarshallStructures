@@ -5,6 +5,12 @@
  * @var \Cake\Collection\CollectionInterface|string[] $companys
  */
 ?>
+<?php session_start();
+$_SESSION['previous_url']=$_SESSION['url'];
+$_SESSION['url']='clients.add';?>
+<style>
+    .error-message {color:red;}
+</style>
 <div class="row">
     <aside class="column">
         <div class="side-nav">
@@ -17,12 +23,12 @@
             <?= $this->Form->create($client) ?>
             <fieldset>
                 <legend><?= __('Add Client') ?></legend>
-                <?php
-                    echo $this->Form->control('firstname', ['label'=>"First Name"]);
+                <?php echo $this->Form->control('firstname', ['label'=>"First Name"]);
                     echo $this->Form->control('lastname', ['label'=>"Last Name"]);
                     echo $this->Form->control('email', ['label'=>"Email"]);
                     echo $this->Form->control('phonenumber', ['label'=>"Phone Number"]);
                     echo $this->Form->control('position', ['label'=>"Position"]);
+                    echo $this->Html->link(__('Add New Company'), ['action' => '../companys/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('company_id', ['options' => $companys, 'empty' => true]);
                 ?>
             </fieldset>

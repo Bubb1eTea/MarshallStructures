@@ -20,6 +20,8 @@ class ClientsController extends AppController
     {
         $this->paginate = [
             'contain' => ['Companys'],
+                'sort'=>'id',
+                'direction'=>'desc'
         ];
         $clients = $this->paginate($this->Clients);
 
@@ -55,7 +57,13 @@ class ClientsController extends AppController
             if ($this->Clients->save($client)) {
                 $this->Flash->success(__('The client has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                if(isset($_SESSION['previous_url'])&& $_SESSION['previous_url']=='projects.add'){
+                    return $this->redirect(['action'=>'../projects/add']);
+                } elseif(isset($_SESSION['previous_url'])&& isset($_SESSION['projects_id']) && $_SESSION['previous_url']=='projects.edit'){
+                    return $this->redirect(['action'=>'../projects/edit'.'/'.$_SESSION['projects_id']]);
+                } else {
+                    return $this->redirect(['action' => 'index']);
+                }
             }
             $this->Flash->error(__('The client could not be saved. Please, try again.'));
         }
