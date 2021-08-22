@@ -70,24 +70,24 @@ class InvoicesTable extends Table
 
         $validator
             ->integer('completepercentage')
-            ->maxLength('firstname', 12,'This field is too long.')
+            ->maxLength('completepercentage', 12,'This field is too long.')
             ->allowEmptyString('completepercentage')
             ->greaterThanOrEqual('completepercentage', 0,'This field must be positive.')
             ->lessThanOrEqual('completepercentage',100,'This field should be less than or equal to 100.');
 
         $validator
             ->decimal('subtotal')
-            ->maxLength('firstname', 12,'This field is too long.')
+            ->maxLength('subtotal', 12,'This field is too long.')
             ->allowEmptyString('subtotal');
 
         $validator
             ->decimal('saletax')
-            ->maxLength('firstname', 12,'This field is too long.')
+            ->maxLength('saletax', 12,'This field is too long.')
             ->allowEmptyString('saletax');
 
         $validator
             ->decimal('totalamount')
-            ->maxLength('firstname', 12,'This field is too long.')
+            ->maxLength('totalamount', 12,'This field is too long.')
             ->allowEmptyString('totalamount');
 
         return $validator;
