@@ -101,5 +101,13 @@ body {
   }
 
   main{
-    padding-left:50px
+    padding-left:50px;
+  }
+
+  .submit{
+    text-align: right;
+  }
+
+  .clear{
+    text-align: left;
   }

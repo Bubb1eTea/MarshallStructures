@@ -17,7 +17,7 @@ $_SESSION['url']='projects.index';?>
         <th><?= $this->Form->create(null,['type'=>'get']) ?>
         <th><?= $this->Form->control('key',['label'=>'','value'=>$this->request->getQuery('key')]) ?></th>
         <th><?= $this->Form->submit() ?></th>
-        <th><?= $this->Form->button ('Back', ['onclick' =>'history.back ()', 'type' =>'button']) ?> </th>
+        <th><?= $this->Form->button ('Back', ['onclick' =>'history.back ()', 'type' =>'button']) ?></th>
         <th><?= $this->Form->end() ?></th>
     </table>
 
