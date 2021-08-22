@@ -8,7 +8,8 @@
 ?>
 <?php session_start();
 $_SESSION['previous_url']=$_SESSION['url'];
-$_SESSION['url']='associates.edit'; ?>
+$_SESSION['url']='associates.edit';
+$_SESSION['associates_id']=$associate->id; ?>
 <style>
     select[multiple="multiple"] { height:15rem;}
     .error-message {color:red;}

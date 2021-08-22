@@ -59,12 +59,14 @@ class CompanysController extends AppController
 
                 if(isset($_SESSION['previous_url'])&& $_SESSION['previous_url']=='clients.add'){
                     return $this->redirect(['action'=>'../clients/add']);
-                }
-                elseif (isset($_SESSION['previous_url'])&& $_SESSION['previous_url']=='associates.add'){
+                } elseif (isset($_SESSION['previous_url'])&& $_SESSION['previous_url']=='associates.add'){
                     $_SESSION['previous_url']='';
                     return $this->redirect(['action'=>'../associates/add']);
-                }
-                else {
+                } elseif (isset($_SESSION['previous_url'])&& isset($_SESSION['associates_id']) && $_SESSION['previous_url']=='associates.edit'){
+                    return $this->redirect(['action'=>'../associates/edit'.'/'.$_SESSION['associates_id']]);
+                } elseif (isset($_SESSION['previous_url'])&& isset($_SESSION['clients_id']) && $_SESSION['previous_url']=='clients.edit'){
+                    return $this->redirect(['action'=>'../clients/edit'.'/'.$_SESSION['clients_id']]);
+                } else {
                     return $this->redirect(['action' => 'index']);
                 }
             }

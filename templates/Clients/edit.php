@@ -7,7 +7,8 @@
 ?>
 <?php session_start();
 $_SESSION['previous_url']=$_SESSION['url'];
-$_SESSION['url']='clients.edit';?>
+$_SESSION['url']='clients.edit';
+$_SESSION['clients_id']=$client->id;?>
 <style>
     .error-message {color:red;}
 </style>

@@ -74,6 +74,8 @@ class ProjectsController extends AppController
                     return $this->redirect(['action'=>'../feeproposals/add']);
                 } elseif(isset($_SESSION['previous_url'])&& $_SESSION['previous_url']=='invoices.add'){
                     return $this->redirect(['action'=>'../invoices/add']);
+                } elseif (isset($_SESSION['previous_url'])&& isset($_SESSION['associates_id']) && $_SESSION['previous_url']=='associates.edit'){
+                    return $this->redirect(['action'=>'../associates/edit'.'/'.$_SESSION['associates_id']]);
                 } else {
                     return $this->redirect(['action' => 'index']);
                 }

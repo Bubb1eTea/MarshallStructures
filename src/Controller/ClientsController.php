@@ -59,6 +59,8 @@ class ClientsController extends AppController
 
                 if(isset($_SESSION['previous_url'])&& $_SESSION['previous_url']=='projects.add'){
                     return $this->redirect(['action'=>'../projects/add']);
+                } elseif(isset($_SESSION['previous_url'])&& isset($_SESSION['projects_id']) && $_SESSION['previous_url']=='projects.edit'){
+                    return $this->redirect(['action'=>'../projects/edit'.'/'.$_SESSION['projects_id']]);
                 } else {
                     return $this->redirect(['action' => 'index']);
                 }
