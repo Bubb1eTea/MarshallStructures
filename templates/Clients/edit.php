@@ -19,7 +19,7 @@ $_SESSION['clients_id']=$client->id;?>
             <?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $client->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $client->id), 'class' => 'side-nav-item']
+                ['confirm' => __('Are you sure you want to delete client "{0}"?', $client->full_name), 'class' => 'side-nav-item']
             ) ?>
             <?= $this->Html->link(__('List Client'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>

@@ -21,7 +21,7 @@ $_SESSION['projects_id']=$project->id;?>
             <?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $project->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $project->id), 'class' => 'side-nav-item']
+                ['confirm' => __('Are you sure you want to delete project "{0}"?', $project->projectname), 'class' => 'side-nav-item']
             ) ?>
             <?= $this->Html->link(__('List Project'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>

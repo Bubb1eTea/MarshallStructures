@@ -21,7 +21,7 @@ $_SESSION['associates_id']=$associate->id; ?>
             <?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $associate->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $associate->id), 'class' => 'side-nav-item']
+                ['confirm' => __('Are you sure you want to delete associate "{0}"?', $associate->full_name), 'class' => 'side-nav-item']
             ) ?>
             <?= $this->Html->link(__('List Associate'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>

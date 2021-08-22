@@ -18,7 +18,7 @@ $_SESSION['url']='invoices.edit';?>
             <?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $invoice->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $invoice->id), 'class' => 'side-nav-item']
+                ['confirm' => __('Are you sure you want to delete invoice #{0}?', $invoice->id), 'class' => 'side-nav-item']
             ) ?>
             <?= $this->Html->link(__('List Invoice'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
@@ -27,7 +27,7 @@ $_SESSION['url']='invoices.edit';?>
         <div class="invoices form content">
             <?= $this->Form->create($invoice) ?>
             <fieldset>
-                <legend><?= __('Edit Invoice') ?></legend>
+                <legend><?= __('Edit Invoice #'.$invoice->id) ?></legend>
                 <?php
                     echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true]);
                     echo $this->Form->control('completepercentage', ['label' =>"Paid Percentage"]);

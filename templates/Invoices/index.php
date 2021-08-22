@@ -14,6 +14,7 @@ $_SESSION['url']='invoices.index';?>
         <table>
             <thead>
                 <tr>
+                    <th><?= $this->Paginator->sort('id', ['label' =>"Invoice ID"]) ?></th>
                     <th><?= $this->Paginator->sort('datecreated', ['label' =>"Date Created"]) ?></th>
                     <th><?= $this->Paginator->sort('project_id', ['label' =>"Project ID"]) ?></th>
                     <th><?= $this->Paginator->sort('project_projectname', ['label' =>"Project Name"]) ?></th>
@@ -27,6 +28,7 @@ $_SESSION['url']='invoices.index';?>
             <tbody>
                 <?php foreach ($invoices as $invoice): ?>
                 <tr>
+                    <td><?= h($invoice->id) ?></td>
                     <td><?= h($invoice->datecreated) ?></td>
                     <td><?= $invoice->has('project') ? $this->Html->link($invoice->project->msnumber, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></td>
                     <td><?= $invoice->has('project') ? $this->Html->link($invoice->project->projectname, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></td>
@@ -37,7 +39,7 @@ $_SESSION['url']='invoices.index';?>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $invoice->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $invoice->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $invoice->id], ['confirm' => __('Are you sure you want to delete # {0}?', $invoice->id)]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $invoice->id], ['confirm' => __('Are you sure you want to delete invoice #{0}?', $invoice->id)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>
