@@ -33,9 +33,9 @@ $_SESSION['url']='invoices.index';?>
                     <td><?= $invoice->has('project') ? $this->Html->link($invoice->project->msnumber, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></td>
                     <td><?= $invoice->has('project') ? $this->Html->link($invoice->project->projectname, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></td>
                     <td><?= $this->Number->format($invoice->completepercentage) ?>%</td>
-                    <td><?= $this->Number->format($invoice->subtotal) ?></td>
-                    <td><?= $this->Number->format($invoice->saletax) ?></td>
-                    <td><?= $this->Number->format($invoice->totalamount) ?></td>
+                    <td>$<?= $this->Number->format($invoice->subtotal) ?></td>
+                    <td>$<?= $this->Number->format($invoice->saletax) ?></td>
+                    <td>$<?= $this->Number->format($invoice->totalamount) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $invoice->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $invoice->id]) ?>

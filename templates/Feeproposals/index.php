@@ -33,9 +33,9 @@ $_SESSION['url']='feeproposals.index';?>
                     <td><?= h($feeproposal->datecreated) ?></td>
                     <td><?= $feeproposal->has('project') ? $this->Html->link($feeproposal->project->msnumber, ['controller' => 'Projects', 'action' => 'view', $feeproposal->project->id]) : '' ?></td>
                     <td><?= $feeproposal->has('project') ? $this->Html->link($feeproposal->project->projectname, ['controller' => 'Projects', 'action' => 'view', $feeproposal->project->id]) : '' ?></td>
-                    <td><?= $this->Number->format($feeproposal->fee) ?></td>
-                    <td><?= $this->Number->format($feeproposal->disbursement) ?></td>
-                    <td><?= $this->Number->format($feeproposal->total) ?></td>
+                    <td>$ <?= $this->Number->format($feeproposal->fee) ?></td>
+                    <td>$ <?= $this->Number->format($feeproposal->disbursement) ?></td>
+                    <td>$ <?= $this->Number->format($feeproposal->total) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $feeproposal->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $feeproposal->id]) ?>
