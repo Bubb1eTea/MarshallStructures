@@ -55,7 +55,7 @@ $_SESSION['url']='companys.view';?>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Associates', 'action' => 'view', $associates->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Associates', 'action' => 'edit', $associates->id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Associates', 'action' => 'delete', $associates->id], ['confirm' => __('Are you sure you want to delete associate "{0}"?', $associates->full_name)]) ?>
+                                <?php // echo $this->Form->postLink(__('Delete'), ['controller' => 'Associates', 'action' => 'delete', $associates->id], ['confirm' => __('Are you sure you want to delete associate "{0}"?', $associates->full_name)]) ?>
                             </td>
                         </tr>
                         <?php endforeach; ?>
@@ -86,7 +86,7 @@ $_SESSION['url']='companys.view';?>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Clients', 'action' => 'view', $clients->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Clients', 'action' => 'edit', $clients->id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Clients', 'action' => 'delete', $clients->id], ['confirm' => __('Are you sure you want to delete client "{0}"?', $clients->full_name)]) ?>
+                                <?php // echo $this->Form->postLink(__('Delete'), ['controller' => 'Clients', 'action' => 'delete', $clients->id], ['confirm' => __('Are you sure you want to delete client "{0}"?', $clients->full_name)]) ?>
                             </td>
                         </tr>
                         <?php endforeach; ?>

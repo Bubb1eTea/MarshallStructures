@@ -80,7 +80,7 @@ $_SESSION['url']='associates.view';?>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Projects', 'action' => 'view', $projects->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Projects', 'action' => 'edit', $projects->id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Projects', 'action' => 'delete', $projects->id], ['confirm' => __('Are you sure you want to delete project "{0}"?', $projects->projectname)]) ?>
+                                <?php // echo $this->Form->postLink(__('Delete'), ['controller' => 'Projects', 'action' => 'delete', $projects->id], ['confirm' => __('Are you sure you want to delete project "{0}"?', $projects->projectname)]) ?>
                             </td>
                         </tr>
                         <?php endforeach; ?>

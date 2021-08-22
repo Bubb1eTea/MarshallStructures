@@ -91,7 +91,7 @@ $_SESSION['url']='projects.view';?>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Associates', 'action' => 'view', $associates->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Associates', 'action' => 'edit', $associates->id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Associates', 'action' => 'delete', $associates->id], ['confirm' => __('Are you sure you want to delete associate "{0}"?', $associates->full_name)]) ?>
+                                <?php // echo $this->Form->postLink(__('Delete'), ['controller' => 'Associates', 'action' => 'delete', $associates->id], ['confirm' => __('Are you sure you want to delete associate "{0}"?', $associates->full_name)]) ?>
                             </td>
                         </tr>
                         <?php endforeach; ?>
@@ -124,7 +124,7 @@ $_SESSION['url']='projects.view';?>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Feeproposals', 'action' => 'view', $feeproposals->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Feeproposals', 'action' => 'edit', $feeproposals->id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Feeproposals', 'action' => 'delete', $feeproposals->id], ['confirm' => __('Are you sure you want to delete fee proposal #{0}?', $feeproposals->id)]) ?>
+                                <?php // echo $this->Form->postLink(__('Delete'), ['controller' => 'Feeproposals', 'action' => 'delete', $feeproposals->id], ['confirm' => __('Are you sure you want to delete fee proposal #{0}?', $feeproposals->id)]) ?>
                             </td>
                         </tr>
                         <?php endforeach; ?>
@@ -157,7 +157,7 @@ $_SESSION['url']='projects.view';?>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Invoices', 'action' => 'view', $invoices->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Invoices', 'action' => 'edit', $invoices->id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Invoices', 'action' => 'delete', $invoices->id], ['confirm' => __('Are you sure you want to delete invoice #{0}?', $invoices->id)]) ?>
+                                <?php // echo $this->Form->postLink(__('Delete'), ['controller' => 'Invoices', 'action' => 'delete', $invoices->id], ['confirm' => __('Are you sure you want to delete invoice #{0}?', $invoices->id)]) ?>
                             </td>
                         </tr>
                         <?php endforeach; ?>
