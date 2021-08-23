@@ -10,6 +10,8 @@
     $session->write('url', 'projects.index');
     debug($session->read('previous_url')); ?>
 
+<?= $this->Html->css(['normalize.min', 'milligram.min', 'cake','drawer','project']) ?>
+
 <div class="projects index content">
     <?= $this->Html->link(__('New Project'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Projects') ?></h3>

@@ -1,0 +1,31 @@
+.searchbar{
+    text-align: left;
+    width: 100px;
+}
+
+.searchtitle{
+    margin: auto;
+}
+
+.clearbutton{
+    text-align: right;
+    width: 154px;
+}
+
+.clearbutton a.button{
+    width: 154px;
+    
+}
+
+.submit{
+    text-align: right;
+}
+
+.submitbox{
+    width: 100px;
+    padding-right: 0%;
+}
+
+input[type="submit"]{
+    width: 154px;
+}
