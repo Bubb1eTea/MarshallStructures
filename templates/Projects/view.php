@@ -65,7 +65,7 @@ $_SESSION['url']='projects.view';?>
                 </blockquote>
             </div>
             <div class="related">
-                <h4><?= __('Related Associates') ?></h4> 
+                <h4><?= __('Related Associates') ?></h4>
                 <?php if (!empty($project->associates)) : ?>
                 <div class="table-responsive">
                     <table>
@@ -118,9 +118,9 @@ $_SESSION['url']='projects.view';?>
                             <td><?= h($feeproposals->datecreated) ?></td>
                             <td><?= h($feeproposals->lastmodified) ?></td>
                             <td><?= h($feeproposals->id) ? $this->Html->link($feeproposals->id, ['controller' => 'feeproposals', 'action' => 'view', $feeproposals->id]) : '' ?></td>
-                            <td><?= h($feeproposals->fee) ?></td>
-                            <td><?= h($feeproposals->disbursement) ?></td>
-                            <td><?= h($feeproposals->total) ?></td>
+                            <td>$ <?= h($feeproposals->fee) ?></td>
+                            <td>$ <?= h($feeproposals->disbursement) ?></td>
+                            <td>$ <?= h($feeproposals->total) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Feeproposals', 'action' => 'view', $feeproposals->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Feeproposals', 'action' => 'edit', $feeproposals->id]) ?>
@@ -150,10 +150,10 @@ $_SESSION['url']='projects.view';?>
                         <tr>
                             <td><?= h($invoices->datecreated) ?></td>
                             <td><?= h($invoices->id) ? $this->Html->link($invoices->id, ['controller' => 'invoices', 'action' => 'view', $invoices->id]) : '' ?></td>
-                            <td><?= h($invoices->completepercentage) ?></td>
-                            <td><?= h($invoices->subtotal) ?></td>
-                            <td><?= h($invoices->saletax) ?></td>
-                            <td><?= h($invoices->totalamount) ?></td>
+                            <td><?= h($invoices->completepercentage) ?>%</td>
+                            <td>$ <?= h($invoices->subtotal) ?></td>
+                            <td>$ <?= h($invoices->saletax) ?></td>
+                            <td>$ <?= h($invoices->totalamount) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Invoices', 'action' => 'view', $invoices->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Invoices', 'action' => 'edit', $invoices->id]) ?>

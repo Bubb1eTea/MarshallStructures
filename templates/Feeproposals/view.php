@@ -31,15 +31,15 @@ $_SESSION['url']='feeproposals.view';?>
                 </tr>
                 <tr>
                     <th><?= __('Fee') ?></th>
-                    <td><?= $this->Number->format($feeproposal->fee) ?></td>
+                    <td>$ <?= $this->Number->format($feeproposal->fee) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Disbursement') ?></th>
-                    <td><?= $this->Number->format($feeproposal->disbursement) ?></td>
+                    <td>$ <?= $this->Number->format($feeproposal->disbursement) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Total') ?></th>
-                    <td><?= $this->Number->format($feeproposal->total) ?></td>
+                    <td>$ <?= $this->Number->format($feeproposal->total) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Date Created') ?></th>
