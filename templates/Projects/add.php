@@ -13,8 +13,10 @@ $session->write('url', 'projects.add');
 debug($session->read('previous_url')); ?>
 <style>
     select[multiple="multiple"] { height:15rem;}
-    .error-message {color:red;}
+    .error-message {color: #ff0000;}
 </style>
+
+
 <div class="row">
     <aside class="column">
         <div class="side-nav">
@@ -32,7 +34,6 @@ debug($session->read('previous_url')); ?>
                     echo $this->Form->control('projectname', ['label'=>"Project Name"]);
                     echo $this->Form->control('streetname', ['label'=>"Street Name"]);
                     echo $this->Form->control('suburb', ['label'=>"Suburb"]);
-
                     echo $this->Form->control('postcode', ['label'=>"Postcode"]);
                     $states = ['NSW'=>'NSW','QLD'=>'QLD','SA'=>'SA', 'TAS'=>'TAS','VIC'=>'VIC','WA'=>'WA'];
                     echo $this->Form->control('state', ['label'=>"State", 'options' => $states, 'empty' => false]);
@@ -43,7 +44,7 @@ debug($session->read('previous_url')); ?>
                     echo $this->Html->link(__('Add New Client'), ['action' => '../clients/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('client_id', ['options' => $clients, 'empty' => true]);
                     echo $this->Html->link(__('Add New Associate'), ['action' => '../associates/add'], ['class' => 'button float-right']);
-                    echo $this->Form->control('associates._ids', ['options' => $associates]);
+                    echo $this->Form->control('associates._ids', ['label'=>"Associate (hold 'ctrl' when selecting more than one)", 'options' => $associates, 'empty' => true]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
@@ -51,3 +52,4 @@ debug($session->read('previous_url')); ?>
         </div>
     </div>
 </div>
+

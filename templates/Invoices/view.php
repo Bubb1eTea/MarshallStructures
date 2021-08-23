@@ -37,15 +37,15 @@ debug($session->read('previous_url')); ?>
                 </tr>
                 <tr>
                     <th><?= __('Subtotal') ?></th>
-                    <td><?= $this->Number->format($invoice->subtotal) ?></td>
+                    <td>$ <?= $this->Number->format($invoice->subtotal) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Sales Tax') ?></th>
-                    <td><?= $this->Number->format($invoice->saletax) ?></td>
+                    <td>$ <?= $this->Number->format($invoice->saletax) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Total Amount') ?></th>
-                    <td><?= $this->Number->format($invoice->totalamount) ?></td>
+                    <td>$ <?= $this->Number->format($invoice->totalamount) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Date Created') ?></th>
