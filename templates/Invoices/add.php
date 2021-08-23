@@ -8,8 +8,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
 
 <?php session_start();
-$_SESSION['previous_url']=$_SESSION['url'];
-$_SESSION['url']='invoices.add';?>
+$session = $this->request->getSession();
+$session->write('previous_url', $session->read('url'));
+$session->write('url', 'invoices.add');
+debug($session->read('previous_url')); ?>
 <style>
     .error-message {color:red;}
 </style>
@@ -45,7 +47,7 @@ $_SESSION['url']='invoices.add';?>
                         var sale_tax = parseFloat(sub_total * 0.1).toFixed(2);
                         var divobj = document.getElementById('saletax');
                         divobj.value = sale_tax;
-                        
+
                         var total_amount = (parseFloat(sub_total) + parseFloat(sale_tax)).toFixed(2);
                         var divobj = document.getElementById('totalamount');
                         divobj.value = total_amount;

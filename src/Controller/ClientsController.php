@@ -57,10 +57,12 @@ class ClientsController extends AppController
             if ($this->Clients->save($client)) {
                 $this->Flash->success(__('The client has been saved.'));
 
-                if(isset($_SESSION['previous_url'])&& $_SESSION['previous_url']=='projects.add'){
+                $session = $this->request->getSession();
+
+                if($session->read('previous_url') !== null && $session->read('previous_url')=='projects.add'){
                     return $this->redirect(['action'=>'../projects/add']);
-                } elseif(isset($_SESSION['previous_url'])&& isset($_SESSION['projects_id']) && $_SESSION['previous_url']=='projects.edit'){
-                    return $this->redirect(['action'=>'../projects/edit'.'/'.$_SESSION['projects_id']]);
+                } elseif($session->read('previous_url') !== null && $session->read('projects_id') !== null && $session->read('previous_url')=='projects.edit'){
+                    return $this->redirect(['action'=>'../projects/edit'.'/'.$session->read('projects_id')]);
                 } else {
                     return $this->redirect(['action' => 'index']);
                 }

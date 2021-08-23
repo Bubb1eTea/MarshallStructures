@@ -57,15 +57,16 @@ class CompanysController extends AppController
             if ($this->Companys->save($company)) {
                 $this->Flash->success(__('The company has been saved.'));
 
-                if(isset($_SESSION['previous_url'])&& $_SESSION['previous_url']=='clients.add'){
+                $session = $this->request->getSession();
+
+                if($session->read('previous_url') !== null && $session->read('previous_url') == 'clients.add'){
                     return $this->redirect(['action'=>'../clients/add']);
-                } elseif (isset($_SESSION['previous_url'])&& $_SESSION['previous_url']=='associates.add'){
-                    $_SESSION['previous_url']='';
+                } elseif ($session->read('previous_url') !== null && $session->read('previous_url') == 'associates.add'){
                     return $this->redirect(['action'=>'../associates/add']);
-                } elseif (isset($_SESSION['previous_url'])&& isset($_SESSION['associates_id']) && $_SESSION['previous_url']=='associates.edit'){
-                    return $this->redirect(['action'=>'../associates/edit'.'/'.$_SESSION['associates_id']]);
-                } elseif (isset($_SESSION['previous_url'])&& isset($_SESSION['clients_id']) && $_SESSION['previous_url']=='clients.edit'){
-                    return $this->redirect(['action'=>'../clients/edit'.'/'.$_SESSION['clients_id']]);
+                } elseif ($session->read('previous_url') !== null && $session->read('associates_id') !== null && $session->read('previous_url') =='associates.edit'){
+                    return $this->redirect(['action'=>'../associates/edit'.'/'.$session->read('associates_id')]);
+                } elseif ($session->read('previous_url') !== null && $session->read('clients_id') !== null && $session->read('previous_url') =='clients.edit'){
+                    return $this->redirect(['action'=>'../clients/edit'.'/'.$session->read('clients_id')]);
                 } else {
                     return $this->redirect(['action' => 'index']);
                 }

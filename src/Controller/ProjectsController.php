@@ -68,14 +68,16 @@ class ProjectsController extends AppController
             if ($this->Projects->save($project)) {
                 $this->Flash->success(__('The project has been saved.'));
 
-                if(isset($_SESSION['previous_url'])&& $_SESSION['previous_url']=='associates.add'){
+                $session = $this->request->getSession();
+
+                if($session->read('previous_url') !== null && $session->read('previous_url')=='associates.add'){
                     return $this->redirect(['action'=>'../associates/add']);
-                } elseif(isset($_SESSION['previous_url'])&& $_SESSION['previous_url']=='feeproposals.add'){
+                } elseif($session->read('previous_url') !== null && $session->read('previous_url')=='feeproposals.add'){
                     return $this->redirect(['action'=>'../feeproposals/add']);
-                } elseif(isset($_SESSION['previous_url'])&& $_SESSION['previous_url']=='invoices.add'){
+                } elseif($session->read('previous_url') !== null && $session->read('previous_url')=='invoices.add'){
                     return $this->redirect(['action'=>'../invoices/add']);
-                } elseif (isset($_SESSION['previous_url'])&& isset($_SESSION['associates_id']) && $_SESSION['previous_url']=='associates.edit'){
-                    return $this->redirect(['action'=>'../associates/edit'.'/'.$_SESSION['associates_id']]);
+                } elseif ($session->read('previous_url') !== null && $session->read('associates_id') !== null && $session->read('previous_url')=='associates.edit'){
+                    return $this->redirect(['action'=>'../associates/edit'.'/'.$session->read('associates_id')]);
                 } else {
                     return $this->redirect(['action' => 'index']);
                 }

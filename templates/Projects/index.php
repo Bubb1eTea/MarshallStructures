@@ -5,8 +5,10 @@
  */
 ?>
 <?php session_start();
-$_SESSION['previous_url']=$_SESSION['url'];
-$_SESSION['url']='projects.index';?>
+$session = $this->request->getSession();
+$session->write('previous_url', $session->read('url'));
+$session->write('url', 'projects.index');
+debug($session->read('previous_url')); ?>
 <div class="projects index content">
     <?= $this->Html->link(__('New Project'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Projects') ?></h3>

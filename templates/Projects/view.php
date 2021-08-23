@@ -5,8 +5,10 @@
  */
 ?>
 <?php session_start();
-$_SESSION['previous_url']=$_SESSION['url'];
-$_SESSION['url']='projects.view';?>
+$session = $this->request->getSession();
+$session->write('previous_url', $session->read('url'));
+$session->write('url', 'projects.view');
+debug($session->read('previous_url')); ?>
 <div class="row">
     <aside class="column">
         <div class="side-nav">
@@ -65,7 +67,7 @@ $_SESSION['url']='projects.view';?>
                 </blockquote>
             </div>
             <div class="related">
-                <h4><?= __('Related Associates') ?></h4> 
+                <h4><?= __('Related Associates') ?></h4>
                 <?php if (!empty($project->associates)) : ?>
                 <div class="table-responsive">
                     <table>

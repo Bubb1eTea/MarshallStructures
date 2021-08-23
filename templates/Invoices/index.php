@@ -5,8 +5,10 @@
  */
 ?>
 <?php session_start();
-$_SESSION['previous_url']=$_SESSION['url'];
-$_SESSION['url']='invoices.index';?>
+$session = $this->request->getSession();
+$session->write('previous_url', $session->read('url'));
+$session->write('url', 'invoices.index');
+debug($session->read('previous_url')); ?>
 <div class="invoices index content">
     <?= $this->Html->link(__('New Invoice'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Invoices') ?></h3>

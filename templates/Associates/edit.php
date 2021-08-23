@@ -7,9 +7,11 @@
  */
 ?>
 <?php session_start();
-$_SESSION['previous_url']=$_SESSION['url'];
-$_SESSION['url']='associates.edit';
-$_SESSION['associates_id']=$associate->id; ?>
+$session = $this->request->getSession();
+$session->write('previous_url', $session->read('url'));
+$session->write('url', 'associates.edit');
+$session->write('associates_id',$associate->id);
+debug($session->read('previous_url'));?>
 <style>
     select[multiple="multiple"] { height:15rem;}
     .error-message {color:red;}

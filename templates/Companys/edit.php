@@ -5,8 +5,11 @@
  */
 ?>
 <?php session_start();
-$_SESSION['previous_url']=$_SESSION['url'];
-$_SESSION['url']='companys.edit';?>
+$session = $this->request->getSession();
+$session->write('previous_url', $session->read('url'));
+$session->write('url', 'companys.edit');
+$session->write('companys',$company->id);
+debug($session->read('previous_url'));?>
 <style>
     .error-message {color:red;}
 </style>

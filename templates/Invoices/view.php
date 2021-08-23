@@ -5,8 +5,10 @@
  */
 ?>
 <?php session_start();
-$_SESSION['previous_url']=$_SESSION['url'];
-$_SESSION['url']='invoices.view';?>
+$session = $this->request->getSession();
+$session->write('previous_url', $session->read('url'));
+$session->write('url', 'invoices.view');
+debug($session->read('previous_url')); ?>
 <div class="row">
     <aside class="column">
         <div class="side-nav">
