@@ -5,22 +5,21 @@
  */
 ?>
 <?php session_start();
-$session = $this->request->getSession();
-$session->write('previous_url', $session->read('url'));
-$session->write('url', 'projects.index');
-debug($session->read('previous_url')); ?>
+    $session = $this->request->getSession();
+    $session->write('previous_url', $session->read('url'));
+    $session->write('url', 'projects.index');
+    debug($session->read('previous_url')); ?>
+
 <div class="projects index content">
     <?= $this->Html->link(__('New Project'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Projects') ?></h3>
 
     <!--     Search function-->
-    <table>
+    <table> 
         <th class="searchbar"><h4 class="searchtitle"><?= ('Search') ?></h4></th>
-        <th><?= $this->Form->create(null,['type'=>'get']) ?>
-        <th><?= $this->Form->control('key',['label'=>'','value'=>$this->request->getQuery('key')]) ?></th>
-        <th><?= $this->Form->submit() ?></th>
-        <th><?= $this->Form->button ('Back', ['onclick' =>'history.back ()', 'type' =>'button']) ?></th>
-        <th><?= $this->Form->end() ?></th>
+        <th><?= $this->Form->create(null,['type'=>'get']) ?><?= $this->Form->control('key',['label'=>'','value'=>$this->request->getQuery('key')]) ?></th>
+        <th class="submitbox"><?= $this->Form->submit() ?></th>
+        <th class="clearbutton"><?= $this->Html->link(('Clear'), ['action' => 'index'], ['class' => 'button']) ?><?= $this->Form->end() ?></th>
     </table>
 
     <div class="table-responsive">
