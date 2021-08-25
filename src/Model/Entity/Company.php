@@ -9,8 +9,14 @@ use Cake\ORM\Entity;
  * Company Entity
  *
  * @property int $id
- * @property string $companyname
+ * @property string|null $companyname
  * @property string|null $type
+ * @property string|null $email
+ * @property string|null $streetname
+ * @property string|null $suburb
+ * @property string|null $postcode
+ * @property string|null $state
+ * @property string|null $phonenumber
  *
  * @property \App\Model\Entity\Associate[] $associates
  * @property \App\Model\Entity\Client[] $clients
@@ -29,6 +35,12 @@ class Company extends Entity
     protected $_accessible = [
         'companyname' => true,
         'type' => true,
+        'email' => true,
+        'streetname' => true,
+        'suburb' => true,
+        'postcode' => true,
+        'state' => true,
+        'phonenumber' => true,
         'associates' => true,
         'clients' => true,
     ];

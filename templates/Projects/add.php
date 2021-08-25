@@ -35,7 +35,7 @@ debug($session->read('previous_url')); ?>
                     echo $this->Form->control('streetname', ['label'=>"Street Name"]);
                     echo $this->Form->control('suburb', ['label'=>"Suburb"]);
                     echo $this->Form->control('postcode', ['label'=>"Postcode"]);
-                    $states = ['NSW'=>'NSW','QLD'=>'QLD','SA'=>'SA', 'TAS'=>'TAS','VIC'=>'VIC','WA'=>'WA'];
+                    $states = ['VIC'=>'VIC','NSW'=>'NSW','QLD'=>'QLD','SA'=>'SA', 'TAS'=>'TAS','WA'=>'WA', 'NT'=>'NT'];
                     echo $this->Form->control('state', ['label'=>"State", 'options' => $states, 'empty' => false]);
                     $phases = ['Proposal'=>'Proposal','Conceptual'=>'Conceptual','Design'=>'Design', 'Construction'=>'Construction','Completion'=>'Completion'];
                     echo $this->Form->control('phase', ['label'=>"Phase", 'options' => $phases, 'empty' => false]);

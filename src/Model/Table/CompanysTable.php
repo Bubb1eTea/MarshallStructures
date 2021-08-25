@@ -76,6 +76,53 @@ class CompanysTable extends Table
             ->maxLength('type', 50, 'This field is too long.')
             ->allowEmptyString('type');
 
+
+        $validator
+            ->email('email',false,'This is not a valid email address.')
+            ->maxLength('email', 70,'This field is too long.')
+            ->requirePresence('email', 'create')
+            ->notEmptyString('email','This field cannot be empty.')
+            ->notBlank('email', 'This field cannot be empty.');
+
+        $validator
+            ->scalar('streetname')
+            ->maxLength('streetname', 50, 'This field is too long.')
+            ->requirePresence('streetname', 'create')
+            ->notEmptyString('streetname','This field cannot be empty.')
+            ->notBlank('streetname','This field cannot be empty.');
+
+        $validator
+            ->scalar('suburb')
+            ->maxLength('suburb', 50, 'This field is too long.')
+            ->requirePresence('suburb', 'create')
+            ->notEmptyString('suburb','This field cannot be empty.')
+            ->notBlank('suburb','This field cannot be empty.')
+            ->regex('suburb', '/^[a-zA-Z\s]*$/', 'This field can only contain letters.');
+
+        $validator
+            ->scalar('postcode')
+            ->maxLength('postcode', 4,'This field is too long')
+            ->requirePresence('postcode', 'create')
+            ->notEmptyString('postcode','This field cannot be empty.')
+            ->notBlank('postcode','This field cannot be empty.')
+            ->integer('postcode','This field can only contain digits.');
+
+        $validator
+            ->scalar('state')
+            ->maxLength('state', 3,'This field is too long')
+            ->requirePresence('state', 'create')
+            ->notEmptyString('state','This field cannot be empty.')
+            ->notBlank('state','This field cannot be empty.')
+            ->regex('state', '/^[a-zA-Z\s]*$/', 'This field can only contain letters.');
+
+        $validator
+            ->scalar('phonenumber')
+            ->maxLength('phonenumber', 12,'This field is too long.')
+            ->requirePresence('phonenumber', 'create')
+            ->notEmptyString('phonenumber','This field cannot be empty.')
+            ->notBlank('phonenumber', 'This field cannot be empty.')
+            ->integer('phonenumber','This field can only contain digits');
+
         return $validator;
     }
 }
