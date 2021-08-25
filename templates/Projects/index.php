@@ -27,7 +27,7 @@ debug($session->read('previous_url')); ?>
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('msnumber', ['label'=>"MS Number"]) ?></th>
+                    <th><?= $this->Paginator->sort('msnumber', ['label'=>"MS Code"]) ?></th>
                     <th><?= $this->Paginator->sort('projectname', ['label'=>"Project Name"]) ?></th>
                     <th><?= $this->Paginator->sort('street', ['label'=>"Street"]) ?></th>
                     <th><?= $this->Paginator->sort('suburb', ['label'=>"Suburb"]) ?></th>

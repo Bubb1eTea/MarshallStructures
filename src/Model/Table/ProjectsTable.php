@@ -80,7 +80,7 @@ class ProjectsTable extends Table
             ->requirePresence('msnumber', 'create')
             ->notEmptyString('msnumber','This field cannot be empty.')
             ->notBlank('msnumber','This field cannot be empty.')
-            ->integer('msnumber', 'This field can only contain digits.');
+            ->alphanumeric('msnumber', 'This field can only contain digits or letters.');
 
         $validator
             ->scalar('projectname')

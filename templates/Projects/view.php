@@ -24,7 +24,7 @@ debug($session->read('previous_url')); ?>
             <h3><?= h($project->projectname) ?></h3>
             <table>
                 <tr>
-                    <th><?= __('MS Number') ?></th>
+                    <th><?= __('MS Code') ?></th>
                     <td><?= h($project->msnumber) ?></td>
                 </tr>
                 <tr>
