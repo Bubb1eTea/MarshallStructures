@@ -11,8 +11,6 @@ use Cake\Validation\Validator;
 /**
  * Invoices Model
  *
- * @property \App\Model\Table\ProjectsTable&\Cake\ORM\Association\BelongsTo $Projects
- *
  * @method \App\Model\Entity\Invoice newEmptyEntity()
  * @method \App\Model\Entity\Invoice newEntity(array $data, array $options = [])
  * @method \App\Model\Entity\Invoice[] newEntities(array $data, array $options = [])
@@ -43,8 +41,8 @@ class InvoicesTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('Projects', [
-            'foreignKey' => 'project_id',
+        $this->belongsTo('Feeproposals', [
+            'foreignKey' => 'feeproposal_id',
         ]);
     }
 
@@ -62,7 +60,7 @@ class InvoicesTable extends Table
 
         $validator
             ->dateTime('datecreated')
-            ->notEmptyDateTime('datecreated','This field cannot be empty.');
+            ->notEmptyDateTime('datecreated');
 
         $validator
             ->scalar('invdesc')
@@ -70,25 +68,23 @@ class InvoicesTable extends Table
 
         $validator
             ->integer('completepercentage')
-            ->maxLength('completepercentage', 12,'This field is too long.')
-            ->allowEmptyString('completepercentage')
-            ->greaterThanOrEqual('completepercentage', 0,'This field must be positive.')
-            ->lessThanOrEqual('completepercentage',100,'This field should be less than or equal to 100.');
+            ->allowEmptyString('completepercentage');
 
         $validator
             ->decimal('subtotal')
-            ->maxLength('subtotal', 12,'This field is too long.')
             ->allowEmptyString('subtotal');
 
         $validator
             ->decimal('saletax')
-            ->maxLength('saletax', 12,'This field is too long.')
             ->allowEmptyString('saletax');
 
         $validator
             ->decimal('totalamount')
-            ->maxLength('totalamount', 12,'This field is too long.')
             ->allowEmptyString('totalamount');
+
+        $validator
+            ->integer('paywithinday')
+            ->allowEmptyString('paywithinday');
 
         return $validator;
     }
@@ -102,7 +98,7 @@ class InvoicesTable extends Table
      */
     public function buildRules(RulesChecker $rules): RulesChecker
     {
-        $rules->add($rules->existsIn(['project_id'], 'Projects'), ['errorField' => 'project_id']);
+        $rules->add($rules->existsIn(['feeproposal_id'], 'Feeproposals'), ['errorField' => 'feeproposal_id']);
 
         return $rules;
     }
