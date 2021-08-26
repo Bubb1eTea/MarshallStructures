@@ -18,11 +18,6 @@ class CompanysController extends AppController
      */
     public function index()
     {
-
-        $this->paginate = [
-            'sort'=>'id',
-            'direction'=>'desc'
-        ];
         $companys = $this->paginate($this->Companys);
 
         $this->set(compact('companys'));
@@ -57,19 +52,7 @@ class CompanysController extends AppController
             if ($this->Companys->save($company)) {
                 $this->Flash->success(__('The company has been saved.'));
 
-                $session = $this->request->getSession();
-
-                if($session->read('previous_url') !== null && $session->read('previous_url') == 'clients.add'){
-                    return $this->redirect(['action'=>'../clients/add']);
-                } elseif ($session->read('previous_url') !== null && $session->read('previous_url') == 'associates.add'){
-                    return $this->redirect(['action'=>'../associates/add']);
-                } elseif ($session->read('previous_url') !== null && $session->read('associates_id') !== null && $session->read('previous_url') =='associates.edit'){
-                    return $this->redirect(['action'=>'../associates/edit'.'/'.$session->read('associates_id')]);
-                } elseif ($session->read('previous_url') !== null && $session->read('clients_id') !== null && $session->read('previous_url') =='clients.edit'){
-                    return $this->redirect(['action'=>'../clients/edit'.'/'.$session->read('clients_id')]);
-                } else {
-                    return $this->redirect(['action' => 'index']);
-                }
+                return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The company could not be saved. Please, try again.'));
         }

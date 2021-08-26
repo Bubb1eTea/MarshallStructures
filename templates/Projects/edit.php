@@ -34,7 +34,7 @@ debug($session->read('previous_url'));?>
             <fieldset>
                 <legend><?= __('Edit Project') ?></legend>
                 <?php
-                    echo $this->Form->control('msnumber', ['label'=>"MS Number"]);
+                    echo $this->Form->control('msnumber', ['label'=>"MS Code"]);
                     echo $this->Form->control('projectname', ['label'=>"Project Name"]);
                     echo $this->Form->control('streetname', ['label'=>"Street Name"]);
                     echo $this->Form->control('suburb', ['label'=>"Suburb"]);

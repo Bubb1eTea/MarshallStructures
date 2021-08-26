@@ -80,7 +80,7 @@ class ProjectsTable extends Table
             ->requirePresence('msnumber', 'create')
             ->notEmptyString('msnumber','This field cannot be empty.')
             ->notBlank('msnumber','This field cannot be empty.')
-            ->integer('msnumber', 'This field can only contain digits.');
+            ->alphanumeric('msnumber', 'This field can only contain digits or letters.');
 
         $validator
             ->scalar('projectname')
@@ -101,7 +101,8 @@ class ProjectsTable extends Table
             ->maxLength('suburb', 50, 'This field is too long.')
             ->requirePresence('suburb', 'create')
             ->notEmptyString('suburb','This field cannot be empty.')
-            ->notBlank('suburb','This field cannot be empty.');
+            ->notBlank('suburb','This field cannot be empty.')
+            ->regex('suburb', '/^[a-zA-Z\s]*$/', 'This field can only contain letters.');
 
         $validator
             ->scalar('postcode')
