@@ -46,6 +46,20 @@ class FeeproposalsTable extends Table
         $this->belongsTo('Projects', [
             'foreignKey' => 'project_id',
         ]);
+        $this->belongsTo('Services', [
+            'foreignKey' => 'service_id',
+            'joinType' => 'INNER',
+        ]);
+        $this->belongsTo('Documents', [
+            'foreignKey' => 'document_id',
+            'joinType' => 'INNER',
+        ]);
+        $this->belongsTo('Feebrokendowns', [
+            'foreignKey' => 'feebrokendown_id',
+        ]);
+        $this->hasMany('Invoices', [
+            'foreignKey' => 'feeproposal_id',
+        ]);
     }
 
     /**
@@ -61,32 +75,45 @@ class FeeproposalsTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->scalar('proposaldesc')
-            ->maxLength('proposaldesc', 12,'This field is too long.')
-            ->allowEmptyString('proposaldesc');
-
-        $validator
-            ->dateTime('datecreated')
-            ->notEmptyDateTime('datecreated','This field cannot be empty.');
-
-        $validator
-            ->dateTime('lastmodified')
-            ->notEmptyDateTime('lastmodified','This field cannot be empty.');
+            ->boolean('guarantor')
+            ->requirePresence('guarantor', 'create')
+            ->notEmptyString('guarantor');
 
         $validator
             ->decimal('fee')
-            ->maxLength('fee', 12,'This field is too long.')
             ->allowEmptyString('fee');
 
         $validator
+            ->decimal('hourlyrate')
+            ->allowEmptyString('hourlyrate');
+
+        $validator
             ->decimal('disbursement')
-            ->maxLength('disbursement', 12,'This field is too long.')
             ->allowEmptyString('disbursement');
 
         $validator
             ->decimal('total')
-            ->maxLength('total', 12,'This field is too long.')
             ->allowEmptyString('total');
+
+        $validator
+            ->decimal('totalGST')
+            ->allowEmptyString('totalGST');
+
+        $validator
+            ->decimal('grandtotal')
+            ->allowEmptyString('grandtotal');
+
+        $validator
+            ->integer('paywithinday')
+            ->allowEmptyString('paywithinday');
+
+        $validator
+            ->dateTime('datecreated')
+            ->notEmptyDateTime('datecreated');
+
+        $validator
+            ->dateTime('lastmodified')
+            ->notEmptyDateTime('lastmodified');
 
         return $validator;
     }
@@ -101,6 +128,9 @@ class FeeproposalsTable extends Table
     public function buildRules(RulesChecker $rules): RulesChecker
     {
         $rules->add($rules->existsIn(['project_id'], 'Projects'), ['errorField' => 'project_id']);
+        $rules->add($rules->existsIn(['service_id'], 'Services'), ['errorField' => 'service_id']);
+        $rules->add($rules->existsIn(['document_id'], 'Documents'), ['errorField' => 'document_id']);
+        $rules->add($rules->existsIn(['feebrokendown_id'], 'Feebrokendowns'), ['errorField' => 'feebrokendown_id']);
 
         return $rules;
     }
