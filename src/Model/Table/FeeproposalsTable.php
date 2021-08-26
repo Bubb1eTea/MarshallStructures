@@ -81,6 +81,7 @@ class FeeproposalsTable extends Table
 
         $validator
             ->decimal('fee')
+            ->maxLength('fee', 12,'This field is too long.')
             ->allowEmptyString('fee');
 
         $validator
@@ -89,10 +90,12 @@ class FeeproposalsTable extends Table
 
         $validator
             ->decimal('disbursement')
+            ->maxLength('disbursement', 12,'This field is too long.')
             ->allowEmptyString('disbursement');
 
         $validator
             ->decimal('total')
+            ->maxLength('total', 12,'This field is too long.')
             ->allowEmptyString('total');
 
         $validator
