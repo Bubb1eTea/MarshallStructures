@@ -4,81 +4,60 @@
  * @var \App\Model\Entity\Feeproposal $feeproposal
  */
 ?>
+<?php session_start();
+$session = $this->request->getSession();
+$session->write('previous_url', $session->read('url'));
+$session->write('url', 'feeproposals.view');
+debug($session->read('previous_url')); ?>
 <div class="row">
     <aside class="column">
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('Edit Feeproposal'), ['action' => 'edit', $feeproposal->id], ['class' => 'side-nav-item']) ?>
-            <?= $this->Form->postLink(__('Delete Feeproposal'), ['action' => 'delete', $feeproposal->id], ['confirm' => __('Are you sure you want to delete # {0}?', $feeproposal->id), 'class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('List Feeproposals'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('New Feeproposal'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('Edit Fee Proposal'), ['action' => 'edit', $feeproposal->id], ['class' => 'side-nav-item']) ?>
+            <?= $this->Form->postLink(__('Delete Fee Proposal'), ['action' => 'delete', $feeproposal->id], ['confirm' => __('Are you sure you want to delete fee proposal #{0}?', $feeproposal->id), 'class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('List Fee Proposal'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('New Fee Proposal'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
         <div class="feeproposals view content">
-            <h3><?= h($feeproposal->id) ?></h3>
+            <h3><?= $feeproposal->has('project') ? $this->Html->link($feeproposal->project->projectname, ['controller' => 'Projects', 'action' => 'view', $feeproposal->project->id]) : '' ?></h3>
             <table>
                 <tr>
-                    <th><?= __('Project') ?></th>
-                    <td><?= $feeproposal->has('project') ? $this->Html->link($feeproposal->project->projectname, ['controller' => 'Projects', 'action' => 'view', $feeproposal->project->id]) : '' ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Id') ?></th>
+                    <th><?= __('Proposal ID') ?></th>
                     <td><?= $this->Number->format($feeproposal->id) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Service Id') ?></th>
-                    <td><?= $this->Number->format($feeproposal->service_id) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Document Id') ?></th>
-                    <td><?= $this->Number->format($feeproposal->document_id) ?></td>
+                    <th><?= __('Project Name') ?></th>
+                    <td><?= $feeproposal->has('project') ? $this->Html->link($feeproposal->project->projectname, ['controller' => 'Projects', 'action' => 'view', $feeproposal->project->id]) : '' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Fee') ?></th>
-                    <td><?= $this->Number->format($feeproposal->fee) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Hourlyrate') ?></th>
-                    <td><?= $this->Number->format($feeproposal->hourlyrate) ?></td>
+                    <td>$ <?= $this->Number->format($feeproposal->fee) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Disbursement') ?></th>
-                    <td><?= $this->Number->format($feeproposal->disbursement) ?></td>
+                    <td>$ <?= $this->Number->format($feeproposal->disbursement) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Total') ?></th>
-                    <td><?= $this->Number->format($feeproposal->total) ?></td>
+                    <td>$ <?= $this->Number->format($feeproposal->total) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('TotalGST') ?></th>
-                    <td><?= $this->Number->format($feeproposal->totalGST) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Grandtotal') ?></th>
-                    <td><?= $this->Number->format($feeproposal->grandtotal) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Feebrokendown Id') ?></th>
-                    <td><?= $this->Number->format($feeproposal->feebrokendown_id) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Paywithinday') ?></th>
-                    <td><?= $this->Number->format($feeproposal->paywithinday) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Datecreated') ?></th>
+                    <th><?= __('Date Created') ?></th>
                     <td><?= h($feeproposal->datecreated) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Lastmodified') ?></th>
+                    <th><?= __('Last Modified') ?></th>
                     <td><?= h($feeproposal->lastmodified) ?></td>
                 </tr>
-                <tr>
-                    <th><?= __('Guarantor') ?></th>
-                    <td><?= $feeproposal->guarantor ? __('Yes') : __('No'); ?></td>
-                </tr>
             </table>
+            <div class="text">
+                <strong><?= __('Proposal Description') ?></strong>
+                <blockquote>
+                    <?= $this->Text->autoParagraph(h($feeproposal->proposaldesc)); ?>
+                </blockquote>
+            </div>
         </div>
     </div>
 </div>
