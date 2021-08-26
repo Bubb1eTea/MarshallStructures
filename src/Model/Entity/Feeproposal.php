@@ -9,13 +9,20 @@ use Cake\ORM\Entity;
  * Feeproposal Entity
  *
  * @property int $id
- * @property string|null $proposaldesc
- * @property \Cake\I18n\FrozenTime $datecreated
- * @property \Cake\I18n\FrozenTime $lastmodified
+ * @property int|null $project_id
+ * @property bool $guarantor
+ * @property int $scopeofservice_id
+ * @property int $documentsprovided_id
  * @property string|null $fee
+ * @property string|null $hourlyrate
  * @property string|null $disbursement
  * @property string|null $total
- * @property int|null $project_id
+ * @property string|null $totalGST
+ * @property string|null $grandtotal
+ * @property int|null $feebrokendown_id
+ * @property int|null $paywithindays
+ * @property \Cake\I18n\FrozenTime $datecreated
+ * @property \Cake\I18n\FrozenTime $lastmodified
  *
  * @property \App\Model\Entity\Project $project
  */
@@ -31,13 +38,20 @@ class Feeproposal extends Entity
      * @var array
      */
     protected $_accessible = [
-        'proposaldesc' => true,
-        'datecreated' => true,
-        'lastmodified' => true,
+        'project_id' => true,
+        'guarantor' => true,
+        'scopeofservice_id' => true,
+        'documentsprovided_id' => true,
         'fee' => true,
+        'hourlyrate' => true,
         'disbursement' => true,
         'total' => true,
-        'project_id' => true,
+        'totalGST' => true,
+        'grandtotal' => true,
+        'feebrokendown_id' => true,
+        'paywithindays' => true,
+        'datecreated' => true,
+        'lastmodified' => true,
         'project' => true,
     ];
 }
