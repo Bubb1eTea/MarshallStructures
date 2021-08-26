@@ -9,7 +9,7 @@ use Cake\ORM\Entity;
  * Company Entity
  *
  * @property int $id
- * @property string|null $companyname
+ * @property string $companyname
  * @property string|null $type
  * @property string|null $email
  * @property string|null $streetname
