@@ -20,8 +20,6 @@ class FeeproposalsController extends AppController
     {
         $this->paginate = [
             'contain' => ['Projects'],
-            'sort'=>'id',
-            'direction'=>'desc'
         ];
         $feeproposals = $this->paginate($this->Feeproposals);
 
@@ -38,7 +36,7 @@ class FeeproposalsController extends AppController
     public function view($id = null)
     {
         $feeproposal = $this->Feeproposals->get($id, [
-            'contain' => ['Projects'],
+            'contain' => ['Projects', 'Invoices'],
         ]);
 
         $this->set(compact('feeproposal'));

@@ -12,6 +12,7 @@ use Cake\Validation\Validator;
  * Invoices Model
  *
  * @property \App\Model\Table\ProjectsTable&\Cake\ORM\Association\BelongsTo $Projects
+ * @property \App\Model\Table\FeeproposalsTable&\Cake\ORM\Association\BelongsTo $Feeproposals
  *
  * @method \App\Model\Entity\Invoice newEmptyEntity()
  * @method \App\Model\Entity\Invoice newEntity(array $data, array $options = [])
@@ -45,6 +46,11 @@ class InvoicesTable extends Table
 
         $this->belongsTo('Projects', [
             'foreignKey' => 'project_id',
+            'joinType' => 'INNER',
+        ]);
+        $this->belongsTo('Feeproposals', [
+            'foreignKey' => 'feeproposal_id',
+            'joinType' => 'INNER',
         ]);
     }
 
@@ -62,33 +68,36 @@ class InvoicesTable extends Table
 
         $validator
             ->dateTime('datecreated')
-            ->notEmptyDateTime('datecreated','This field cannot be empty.');
+            ->notEmptyDateTime('datecreated');
 
         $validator
             ->scalar('invdesc')
             ->allowEmptyString('invdesc');
 
         $validator
-            ->integer('completepercentage')
-            ->maxLength('completepercentage', 12,'This field is too long.')
-            ->allowEmptyString('completepercentage')
-            ->greaterThanOrEqual('completepercentage', 0,'This field must be positive.')
-            ->lessThanOrEqual('completepercentage',100,'This field should be less than or equal to 100.');
+            ->decimal('completedpercentage')
+            ->requirePresence('completedpercentage', 'create')
+            ->notEmptyString('completedpercentage');
 
         $validator
-            ->decimal('subtotal')
-            ->maxLength('subtotal', 12,'This field is too long.')
-            ->allowEmptyString('subtotal');
+            ->decimal('total')
+            ->requirePresence('total', 'create')
+            ->notEmptyString('total');
 
         $validator
-            ->decimal('saletax')
-            ->maxLength('saletax', 12,'This field is too long.')
-            ->allowEmptyString('saletax');
+            ->decimal('totalgst')
+            ->requirePresence('totalgst', 'create')
+            ->notEmptyString('totalgst');
 
         $validator
-            ->decimal('totalamount')
-            ->maxLength('totalamount', 12,'This field is too long.')
-            ->allowEmptyString('totalamount');
+            ->decimal('grandtotal')
+            ->requirePresence('grandtotal', 'create')
+            ->notEmptyString('grandtotal');
+
+        $validator
+            ->integer('paywithinday')
+            ->requirePresence('paywithinday', 'create')
+            ->notEmptyString('paywithinday');
 
         return $validator;
     }
@@ -103,6 +112,7 @@ class InvoicesTable extends Table
     public function buildRules(RulesChecker $rules): RulesChecker
     {
         $rules->add($rules->existsIn(['project_id'], 'Projects'), ['errorField' => 'project_id']);
+        $rules->add($rules->existsIn(['feeproposal_id'], 'Feeproposals'), ['errorField' => 'feeproposal_id']);
 
         return $rules;
     }

@@ -19,9 +19,7 @@ class InvoicesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Projects'],
-            'sort'=>'id',
-            'direction'=>'desc'
+            'contain' => ['Projects', 'Feeproposals'],
         ];
         $invoices = $this->paginate($this->Invoices);
 
@@ -38,7 +36,7 @@ class InvoicesController extends AppController
     public function view($id = null)
     {
         $invoice = $this->Invoices->get($id, [
-            'contain' => ['Projects'],
+            'contain' => ['Projects', 'Feeproposals'],
         ]);
 
         $this->set(compact('invoice'));
@@ -62,7 +60,8 @@ class InvoicesController extends AppController
             $this->Flash->error(__('The invoice could not be saved. Please, try again.'));
         }
         $projects = $this->Invoices->Projects->find('list', ['limit' => 200]);
-        $this->set(compact('invoice', 'projects'));
+        $feeproposals = $this->Invoices->Feeproposals->find('list', ['limit' => 200]);
+        $this->set(compact('invoice', 'projects', 'feeproposals'));
     }
 
     /**
@@ -87,7 +86,8 @@ class InvoicesController extends AppController
             $this->Flash->error(__('The invoice could not be saved. Please, try again.'));
         }
         $projects = $this->Invoices->Projects->find('list', ['limit' => 200]);
-        $this->set(compact('invoice', 'projects'));
+        $feeproposals = $this->Invoices->Feeproposals->find('list', ['limit' => 200]);
+        $this->set(compact('invoice', 'projects', 'feeproposals'));
     }
 
     /**

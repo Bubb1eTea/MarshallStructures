@@ -26,6 +26,7 @@ class InvoicesTableTest extends TestCase
     protected $fixtures = [
         'app.Invoices',
         'app.Projects',
+        'app.Feeproposals',
     ];
 
     /**

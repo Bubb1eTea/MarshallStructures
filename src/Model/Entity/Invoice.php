@@ -9,15 +9,18 @@ use Cake\ORM\Entity;
  * Invoice Entity
  *
  * @property int $id
+ * @property int $project_id
+ * @property int $feeproposal_id
  * @property \Cake\I18n\FrozenTime $datecreated
  * @property string|null $invdesc
- * @property int|null $completepercentage
- * @property string|null $subtotal
- * @property string|null $saletax
- * @property string|null $totalamount
- * @property int|null $project_id
+ * @property string $completedpercentage
+ * @property string $total
+ * @property string $totalgst
+ * @property string $grandtotal
+ * @property int $paywithinday
  *
  * @property \App\Model\Entity\Project $project
+ * @property \App\Model\Entity\Feeproposal $feeproposal
  */
 class Invoice extends Entity
 {
@@ -31,13 +34,16 @@ class Invoice extends Entity
      * @var array
      */
     protected $_accessible = [
+        'project_id' => true,
+        'feeproposal_id' => true,
         'datecreated' => true,
         'invdesc' => true,
-        'completepercentage' => true,
-        'subtotal' => true,
-        'saletax' => true,
-        'totalamount' => true,
-        'project_id' => true,
+        'completedpercentage' => true,
+        'total' => true,
+        'totalgst' => true,
+        'grandtotal' => true,
+        'paywithinday' => true,
         'project' => true,
+        'feeproposal' => true,
     ];
 }

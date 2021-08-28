@@ -12,6 +12,7 @@ use Cake\Validation\Validator;
  * Feeproposals Model
  *
  * @property \App\Model\Table\ProjectsTable&\Cake\ORM\Association\BelongsTo $Projects
+ * @property \App\Model\Table\InvoicesTable&\Cake\ORM\Association\HasMany $Invoices
  *
  * @method \App\Model\Entity\Feeproposal newEmptyEntity()
  * @method \App\Model\Entity\Feeproposal newEntity(array $data, array $options = [])
@@ -45,6 +46,10 @@ class FeeproposalsTable extends Table
 
         $this->belongsTo('Projects', [
             'foreignKey' => 'project_id',
+            'joinType' => 'INNER',
+        ]);
+        $this->hasMany('Invoices', [
+            'foreignKey' => 'feeproposal_id',
         ]);
     }
 
@@ -61,32 +66,55 @@ class FeeproposalsTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->scalar('proposaldesc')
-            ->maxLength('proposaldesc', 12,'This field is too long.')
-            ->allowEmptyString('proposaldesc');
+            ->scalar('guarantor')
+            ->maxLength('guarantor', 100)
+            ->allowEmptyString('guarantor');
 
         $validator
-            ->dateTime('datecreated')
-            ->notEmptyDateTime('datecreated','This field cannot be empty.');
+            ->scalar('scopeofservice')
+            ->requirePresence('scopeofservice', 'create')
+            ->notEmptyString('scopeofservice');
 
         $validator
-            ->dateTime('lastmodified')
-            ->notEmptyDateTime('lastmodified','This field cannot be empty.');
+            ->scalar('documentsprovided')
+            ->requirePresence('documentsprovided', 'create')
+            ->notEmptyString('documentsprovided');
 
         $validator
-            ->decimal('fee')
-            ->maxLength('fee', 12,'This field is too long.')
-            ->allowEmptyString('fee');
+            ->scalar('feebreakdown')
+            ->allowEmptyString('feebreakdown');
+
+        $validator
+            ->decimal('fixedfee')
+            ->allowEmptyString('fixedfee');
+
+        $validator
+            ->decimal('hourlyrate')
+            ->allowEmptyString('hourlyrate');
 
         $validator
             ->decimal('disbursement')
-            ->maxLength('disbursement', 12,'This field is too long.')
             ->allowEmptyString('disbursement');
 
         $validator
             ->decimal('total')
-            ->maxLength('total', 12,'This field is too long.')
-            ->allowEmptyString('total');
+            ->requirePresence('total', 'create')
+            ->notEmptyString('total');
+
+        $validator
+            ->decimal('totalgst')
+            ->requirePresence('totalgst', 'create')
+            ->notEmptyString('totalgst');
+
+        $validator
+            ->decimal('grandtotal')
+            ->requirePresence('grandtotal', 'create')
+            ->notEmptyString('grandtotal');
+
+        $validator
+            ->integer('paywithinday')
+            ->requirePresence('paywithinday', 'create')
+            ->notEmptyString('paywithinday');
 
         return $validator;
     }

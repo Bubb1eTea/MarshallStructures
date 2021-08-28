@@ -24,6 +24,7 @@ class InvoicesControllerTest extends TestCase
     protected $fixtures = [
         'app.Invoices',
         'app.Projects',
+        'app.Feeproposals',
     ];
 
     /**
