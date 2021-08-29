@@ -5,6 +5,15 @@
  * @var string[]|\Cake\Collection\CollectionInterface $projects
  */
 ?>
+<?php session_start();
+$session = $this->request->getSession();
+$session->write('previous_url', $session->read('url'));
+$session->write('url', 'feeproposals.edit');
+$session->write('feeproposals_id',$feeproposal->id);
+debug($session->read('previous_url'));?>
+<style>
+    .error-message {color:red;}
+</style>
 <div class="row">
     <aside class="column">
         <div class="side-nav">
@@ -12,29 +21,30 @@
             <?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $feeproposal->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $feeproposal->id), 'class' => 'side-nav-item']
+                ['confirm' => __('Are you sure you want to delete fee proposal #{0}?', $feeproposal->id), 'class' => 'side-nav-item']
             ) ?>
-            <?= $this->Html->link(__('List Feeproposals'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('List Fee Proposals'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
         <div class="feeproposals form content">
             <?= $this->Form->create($feeproposal) ?>
             <fieldset>
-                <legend><?= __('Edit Feeproposal') ?></legend>
+                <legend><?= __('Edit Fee Proposal #'.$feeproposal->id) ?></legend>
                 <?php
-                    echo $this->Form->control('project_id', ['options' => $projects]);
-                    echo $this->Form->control('guarantor');
-                    echo $this->Form->control('scopeofservice');
-                    echo $this->Form->control('documentsprovided');
-                    echo $this->Form->control('feebreakdown');
-                    echo $this->Form->control('fixedfee');
-                    echo $this->Form->control('hourlyrate');
-                    echo $this->Form->control('disbursement');
-                    echo $this->Form->control('total');
-                    echo $this->Form->control('totalgst');
-                    echo $this->Form->control('grandtotal');
-                    echo $this->Form->control('paywithinday');
+                    echo $this->Form->control('project_id', ['options' => $projects, 'empty' => false]);
+                    echo $this->Form->control('guarantor',['label' =>"Guarantor (leave blank if none)"]);
+                    echo $this->Form->control('scopeofservice',['label' =>"Scope of Service (provide a list)"]);
+                    echo $this->Form->control('documentsprovided',['label' =>"Documents Provided (provide a list)"]);
+                    echo $this->Form->control('feebreakdown', ['label' =>"Fee Breakdown (provide a list)"]);
+                    echo $this->Form->control('fixedfee', ['label' =>"Fixed Fee"]);
+                    echo $this->Form->control('hourlyrate', ['label' =>"Hourly Rate"]);
+                    echo $this->Form->control('disbursement',['label' =>"Disbursement"]);
+                    echo $this->Form->control('total',['label' =>"Subtotal"]);
+                    echo $this->Form->control('totalgst',['label' =>"Total GST"]);
+                    echo $this->Form->control('grandtotal', ['label' =>"Grand Total"]);
+                    $days = ['7'=>'7','30'=>'30'];
+                    echo $this->Form->control('paywithinday', ['label' =>"Pay within how many days?",'options' => $days, 'empty' => false]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
