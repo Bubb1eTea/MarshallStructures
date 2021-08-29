@@ -16,7 +16,7 @@
     </aside>
     <div class="column-responsive column-80">
         <div class="invoices view content">
-            <h3><?= h($invoice->id) ?></h3>
+            <h3><?= h($invoice->id) ?><buttoner style='float: right;'> <?= $this->Html->link(__('View generated template'), ['action' => ''], ['class' => 'button float-right']); ?></h3>
             <table>
                 <tr>
                     <th><?= __('Project') ?></th>
