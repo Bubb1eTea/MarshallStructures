@@ -32,6 +32,16 @@ debug($session->read('previous_url')); ?>
                     <th><?= __('Fee Proposal ID') ?></th>
                     <td><?= $invoice->has('feeproposal') ? $this->Html->link($invoice->feeproposal->id, ['controller' => 'Feeproposals', 'action' => 'view', $invoice->feeproposal->id]) : '' ?></td>
                 </tr>
+            </table>
+                <tr>
+                    <div class="text">
+                        <strong><?= __('Invoice Description') ?></strong>
+                        <blockquote>
+                            <?= $this->Text->autoParagraph(h($invoice->invdesc)); ?>
+                        </blockquote>
+                    </div>
+                </tr>
+            <table>
                 <tr>
                     <th><?= __('Completed Percentage') ?></th>
                     <td>$<?= $this->Number->format($invoice->completedpercentage) ?></td>
@@ -61,12 +71,6 @@ debug($session->read('previous_url')); ?>
                     <td><?= date('D d/m/y', strtotime($invoice->datecreated. ' + ' .$invoice->paywithinday.' days')) ?></td>
                 </tr>
             </table>
-            <div class="text">
-                <strong><?= __('Invoice Description') ?></strong>
-                <blockquote>
-                    <?= $this->Text->autoParagraph(h($invoice->invdesc)); ?>
-                </blockquote>
-            </div>
         </div>
     </div>
 </div>

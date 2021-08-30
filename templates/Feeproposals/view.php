@@ -32,6 +32,32 @@ debug($session->read('previous_url')); ?>
                     <th><?= __('Guarantor') ?></th>
                     <td><?= h($feeproposal->guarantor) ?></td>
                 </tr>
+            </table>
+            <tr>
+                <div class="text">
+                    <strong><?= __('Scope of Service') ?></strong>
+                    <blockquote>
+                        <?= $this->Text->autoParagraph(h($feeproposal->scopeofservice)); ?>
+                    </blockquote>
+                </div>
+            </tr>
+            <tr>
+                <div class="text">
+                    <strong><?= __('Documents Provided') ?></strong>
+                    <blockquote>
+                        <?= $this->Text->autoParagraph(h($feeproposal->documentsprovided)); ?>
+                    </blockquote>
+                </div>
+            </tr>
+            <tr>
+                <div class="text">
+                    <strong><?= __('Fee Breakdown') ?></strong>
+                    <blockquote>
+                        <?= $this->Text->autoParagraph(h($feeproposal->feebreakdown)); ?>
+                    </blockquote>
+                </div>
+            </tr>
+            <table>
                 </tr>
                 <tr>
                     <th><?= __('Fixed Fee') ?></th>
@@ -62,24 +88,6 @@ debug($session->read('previous_url')); ?>
                     <td><?= $this->Number->format($feeproposal->paywithinday) ?> days</td>
                 </tr>
             </table>
-            <div class="text">
-                <strong><?= __('Scope of Service') ?></strong>
-                <blockquote>
-                    <?= $this->Text->autoParagraph(h($feeproposal->scopeofservice)); ?>
-                </blockquote>
-            </div>
-            <div class="text">
-                <strong><?= __('Documents Provided') ?></strong>
-                <blockquote>
-                    <?= $this->Text->autoParagraph(h($feeproposal->documentsprovided)); ?>
-                </blockquote>
-            </div>
-            <div class="text">
-                <strong><?= __('Fee Breakdown') ?></strong>
-                <blockquote>
-                    <?= $this->Text->autoParagraph(h($feeproposal->feebreakdown)); ?>
-                </blockquote>
-            </div>
             <div class="related">
                 <h4><?= __('Related Invoices') ?></h4>
                 <?php if (!empty($feeproposal->invoices)) : ?>
