@@ -107,21 +107,15 @@ debug($session->read('previous_url')); ?>
                 <div class="table-responsive">
                     <table>
                         <tr>
-                            <th><?= __('Date Created') ?></th>
-                            <th><?= __('Last Modified') ?></th>
-                            <th><?= __('Proposal ID') ?></th>
-                            <th><?= __('Fee') ?></th>
-                            <th><?= __('Disbursement') ?></th>
+                            <th><?= __('Fee Proposal ID') ?></th>
+                            <th><?= __('Guarantor') ?></th>
                             <th><?= __('Total Amount') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($project->feeproposals as $feeproposals) : ?>
                         <tr>
-                            <td><?= h($feeproposals->datecreated) ?></td>
-                            <td><?= h($feeproposals->lastmodified) ?></td>
                             <td><?= h($feeproposals->id) ? $this->Html->link($feeproposals->id, ['controller' => 'feeproposals', 'action' => 'view', $feeproposals->id]) : '' ?></td>
-                            <td>$ <?= h($feeproposals->fee) ?></td>
-                            <td>$ <?= h($feeproposals->disbursement) ?></td>
+                            <td><?= h($feeproposals->guarantor) ?></td>
                             <td>$ <?= h($feeproposals->total) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Feeproposals', 'action' => 'view', $feeproposals->id]) ?>
@@ -140,28 +134,24 @@ debug($session->read('previous_url')); ?>
                 <div class="table-responsive">
                     <table>
                         <tr>
-                            <th><?= __('Date Created') ?></th>
                             <th><?= __('Invoice ID') ?></th>
-                            <th><?= __('Paid Percentage') ?></th>
-                            <th><?= __('Subtotal') ?></th>
-                            <th><?= __('Sales Tax') ?></th>
-                            <th><?= __('Total Amount') ?></th>
+                            <th><?= __('Date Created') ?></th>
+                            <th><?= __('Grand Total') ?></th>
+                            <th><?= __('Date Due') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($project->invoices as $invoices) : ?>
-                        <tr>
-                            <td><?= h($invoices->datecreated) ?></td>
-                            <td><?= h($invoices->id) ? $this->Html->link($invoices->id, ['controller' => 'invoices', 'action' => 'view', $invoices->id]) : '' ?></td>
-                            <td><?= h($invoices->completepercentage) ?>%</td>
-                            <td>$ <?= h($invoices->subtotal) ?></td>
-                            <td>$ <?= h($invoices->saletax) ?></td>
-                            <td>$ <?= h($invoices->totalamount) ?></td>
-                            <td class="actions">
-                                <?= $this->Html->link(__('View'), ['controller' => 'Invoices', 'action' => 'view', $invoices->id]) ?>
-                                <?= $this->Html->link(__('Edit'), ['controller' => 'Invoices', 'action' => 'edit', $invoices->id]) ?>
-                                <?php // echo $this->Form->postLink(__('Delete'), ['controller' => 'Invoices', 'action' => 'delete', $invoices->id], ['confirm' => __('Are you sure you want to delete invoice #{0}?', $invoices->id)]) ?>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td><?= h($invoices->id) ?></td>
+                                <td><?= date('D d/m/y h:m A',strtotime($invoices->datecreated)) ?></td>
+                                <td>$<?= h($invoices->grandtotal) ?></td>
+                                <td><?= date('D d/m/y h:m A',strtotime($invoices->datecreated)) ?></td>
+                                <td class="actions">
+                                    <?= $this->Html->link(__('View'), ['controller' => 'Invoices', 'action' => 'view', $invoices->id]) ?>
+                                    <?= $this->Html->link(__('Edit'), ['controller' => 'Invoices', 'action' => 'edit', $invoices->id]) ?>
+                                    <?php // $this->Form->postLink(__('Delete'), ['controller' => 'Invoices', 'action' => 'delete', $invoices->id], ['confirm' => __('Are you sure you want to delete invoice #{0}?', $invoices->id)]) ?>
+                                </td>
+                            </tr>
                         <?php endforeach; ?>
                     </table>
                 </div>
