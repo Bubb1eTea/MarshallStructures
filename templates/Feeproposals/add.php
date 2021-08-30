@@ -5,6 +5,9 @@
  * @var \Cake\Collection\CollectionInterface|string[] $projects
  */
 ?>
+
+
+
 <?php session_start();
 $session = $this->request->getSession();
 $session->write('previous_url', $session->read('url'));
@@ -45,6 +48,17 @@ debug($session->read('previous_url')); ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
+
+            <!-- <script>
+                var fixedfee = document.getElementById('fixedfee').value;
+                var hourlyrate = document.getElementById('hourlyrate').value;
+                var disbursement = document.getElementById('disbursement').value;
+
+                var subtotal = parseFloat(fixedfee).toFixed(2) + parseFloat(hourlyrate).toFixed(2) + parseFloat(disbursement).toFixed(2);
+                document.getElementById('totalgst').value = subtotal;
+
+            </script> -->
+
         </div>
     </div>
 </div>
