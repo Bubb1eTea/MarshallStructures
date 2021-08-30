@@ -67,18 +67,21 @@ class FeeproposalsTable extends Table
 
         $validator
             ->scalar('guarantor')
-            ->maxLength('guarantor', 100)
+            ->maxLength('guarantor', 100,'This field is too long.')
+            ->regex('guarantor', '/^[a-zA-Z\s]*$/', 'This field can only contain letters.')
             ->allowEmptyString('guarantor');
 
         $validator
             ->scalar('scopeofservice')
             ->requirePresence('scopeofservice', 'create')
-            ->notEmptyString('scopeofservice');
+            ->notEmptyString('scopeofservice', 'This field cannot be empty.')
+            ->notBlank('scopeofservice', 'This field cannot be empty.');
 
         $validator
             ->scalar('documentsprovided')
             ->requirePresence('documentsprovided', 'create')
-            ->notEmptyString('documentsprovided');
+            ->notEmptyString('documentsprovided', 'This field cannot be empty.')
+            ->notBlank('documentsprovided', 'This field cannot be empty.');
 
         $validator
             ->scalar('feebreakdown')
@@ -86,35 +89,41 @@ class FeeproposalsTable extends Table
 
         $validator
             ->decimal('fixedfee')
+            ->maxLength('fixedfee',12,'This field is too long.')
             ->allowEmptyString('fixedfee');
 
         $validator
             ->decimal('hourlyrate')
+            ->maxLength('hourlyrate',12,'This field is too long.')
             ->allowEmptyString('hourlyrate');
 
         $validator
             ->decimal('disbursement')
+            ->maxLength('disbursement',12,'This field is too long.')
             ->allowEmptyString('disbursement');
 
         $validator
             ->decimal('total')
+            ->maxLength('total',12,'This field is too long.')
             ->requirePresence('total', 'create')
-            ->notEmptyString('total');
+            ->notEmptyString('total', 'This field cannot be empty.');
 
         $validator
             ->decimal('totalgst')
+            ->maxLength('totalgst',12,'This field is too long.')
             ->requirePresence('totalgst', 'create')
-            ->notEmptyString('totalgst');
+            ->notEmptyString('totalgst', 'This field cannot be empty.');
 
         $validator
             ->decimal('grandtotal')
+            ->maxLength('grandtotal',12,'This field is too long.')
             ->requirePresence('grandtotal', 'create')
-            ->notEmptyString('grandtotal');
+            ->notEmptyString('grandtotal', 'This field cannot be empty.');
 
         $validator
             ->integer('paywithinday')
             ->requirePresence('paywithinday', 'create')
-            ->notEmptyString('paywithinday');
+            ->notEmptyString('paywithinday', 'This field cannot be empty.');
 
         return $validator;
     }

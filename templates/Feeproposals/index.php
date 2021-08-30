@@ -18,7 +18,7 @@ debug($session->read('previous_url')); ?>
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id', ['label' =>"Fee Proposal ID"]) ?></th>
-                    <th><?= $this->Paginator->sort('project_id', ['label' =>"Project ID"]) ?></th>
+                    <th><?= $this->Paginator->sort('project_id', ['label' =>"Project Name"]) ?></th>
                     <th><?= $this->Paginator->sort('guarantor', ['label' =>"Guarantor"]) ?></th>
                     <th><?= $this->Paginator->sort('grandtotal', ['label' =>"Grand Total"]) ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
@@ -30,7 +30,7 @@ debug($session->read('previous_url')); ?>
                     <td><?= $this->Number->format($feeproposal->id) ?></td>
                     <td><?= $feeproposal->has('project') ? $this->Html->link($feeproposal->project->projectname, ['controller' => 'Projects', 'action' => 'view', $feeproposal->project->id]) : '' ?></td>
                     <td><?= h($feeproposal->guarantor) ?></td>
-                    <td><?= $this->Number->format($feeproposal->grandtotal) ?></td>
+                    <td>$<?= $this->Number->format($feeproposal->grandtotal) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $feeproposal->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $feeproposal->id]) ?>

@@ -25,7 +25,7 @@ debug($session->read('previous_url')); ?>
             <h3><?= 'Fee Proposal #'.($feeproposal->id) ?></h3>
             <table>
                 <tr>
-                    <th><?= __('Project') ?></th>
+                    <th><?= __('Project Name') ?></th>
                     <td><?= $feeproposal->has('project') ? $this->Html->link($feeproposal->project->projectname, ['controller' => 'Projects', 'action' => 'view', $feeproposal->project->id]) : '' ?></td>
                 </tr>
                 <tr>
@@ -35,31 +35,31 @@ debug($session->read('previous_url')); ?>
                 </tr>
                 <tr>
                     <th><?= __('Fixed Fee') ?></th>
-                    <td><?= $this->Number->format($feeproposal->fixedfee) ?></td>
+                    <td>$<?= $this->Number->format($feeproposal->fixedfee) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Hourly Rate') ?></th>
-                    <td><?= $this->Number->format($feeproposal->hourlyrate) ?></td>
+                    <td>$<?= $this->Number->format($feeproposal->hourlyrate) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Disbursement') ?></th>
-                    <td><?= $this->Number->format($feeproposal->disbursement) ?></td>
+                    <td>$<?= $this->Number->format($feeproposal->disbursement) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Subtotal') ?></th>
-                    <td><?= $this->Number->format($feeproposal->total) ?></td>
+                    <td>$<?= $this->Number->format($feeproposal->total) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Total GST') ?></th>
-                    <td><?= $this->Number->format($feeproposal->totalgst) ?></td>
+                    <td>$<?= $this->Number->format($feeproposal->totalgst) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Grand Total') ?></th>
-                    <td><?= $this->Number->format($feeproposal->grandtotal) ?></td>
+                    <td>$<?= $this->Number->format($feeproposal->grandtotal) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Pay within how many days?') ?></th>
-                    <td><?= $this->Number->format($feeproposal->paywithinday) ?></td>
+                    <td><?= $this->Number->format($feeproposal->paywithinday) ?> days</td>
                 </tr>
             </table>
             <div class="text">
@@ -86,20 +86,18 @@ debug($session->read('previous_url')); ?>
                 <div class="table-responsive">
                     <table>
                         <tr>
-                            <th><?= __('Id') ?></th>
+                            <th><?= __('ID') ?></th>
                             <th><?= __('Date Created') ?></th>
-                            <th><?= __('Invoice Description') ?></th>
                             <th><?= __('Grand Total') ?></th>
-                            <th><?= __('Pay within # days?') ?></th>
+                            <th><?= __('Date Due') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($feeproposal->invoices as $invoices) : ?>
                         <tr>
                             <td><?= h($invoices->id) ?></td>
-                            <td><?= h($invoices->datecreated) ?></td>
-                            <td><?= h($invoices->invdesc) ?></td>
-                            <td><?= h($invoices->grandtotal) ?></td>
-                            <td><?= h($invoices->paywithinday) ?></td>
+                            <td><?= date('D d/m/y h:m A',strtotime($invoices->datecreated)) ?></td>
+                            <td>$<?= h($invoices->grandtotal) ?></td>
+                            <td><?= date('D d/m/y h:m A',strtotime($invoices->datecreated)) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Invoices', 'action' => 'view', $invoices->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Invoices', 'action' => 'edit', $invoices->id]) ?>

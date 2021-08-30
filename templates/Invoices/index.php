@@ -33,7 +33,7 @@ debug($session->read('previous_url')); ?>
                     <td><?= $invoice->has('project') ? $this->Html->link($invoice->project->projectname, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></td>
                     <td><?= $invoice->has('feeproposal') ? $this->Html->link($invoice->feeproposal->id, ['controller' => 'Feeproposals', 'action' => 'view', $invoice->feeproposal->id]) : '' ?></td>
                     <td><?= date('D d/m/y',strtotime($invoice->datecreated)) ?></td>
-                    <td><?= $this->Number->format($invoice->grandtotal) ?></td>
+                    <td>$<?= $this->Number->format($invoice->grandtotal) ?></td>
                     <td><?= date('D d/m/y', strtotime($invoice->datecreated. ' + ' .$invoice->paywithinday.' days')) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $invoice->id]) ?>
