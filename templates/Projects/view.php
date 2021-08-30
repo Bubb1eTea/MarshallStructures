@@ -110,7 +110,7 @@ debug($session->read('previous_url')); ?>
                             <th><?= __('Date Created') ?></th>
                             <th><?= __('Fee Proposal ID') ?></th>
                             <th><?= __('Guarantor') ?></th>
-                            <th><?= __('Total Amount') ?></th>
+                            <th><?= __('Grand Total') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($project->feeproposals as $feeproposals) : ?>
@@ -118,7 +118,7 @@ debug($session->read('previous_url')); ?>
                             <td><?= h($feeproposals->datecreated) ?></td>
                             <td><?= h($feeproposals->id) ? $this->Html->link($feeproposals->id, ['controller' => 'feeproposals', 'action' => 'view', $feeproposals->id]) : '' ?></td>
                             <td><?= h($feeproposals->guarantor) ?></td>
-                            <td>$<?= h($feeproposals->total) ?></td>
+                            <td><?= $this->Number->format($feeproposals->grandtotal, ['places' => 2, 'before' => '$']) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Feeproposals', 'action' => 'view', $feeproposals->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Feeproposals', 'action' => 'edit', $feeproposals->id]) ?>
