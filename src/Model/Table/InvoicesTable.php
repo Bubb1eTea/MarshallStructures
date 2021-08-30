@@ -84,18 +84,21 @@ class InvoicesTable extends Table
 
         $validator
             ->decimal('total')
+            ->greaterThanOrEqual('total', 0,'This field must be positive.')
             ->requirePresence('total', 'create')
             ->maxLength('total', 12,'This field is too long.')
             ->notEmptyString('total', 'This field cannot be empty.');
 
         $validator
             ->decimal('totalgst')
+            ->greaterThanOrEqual('totalgst', 0,'This field must be positive.')
             ->maxLength('totalgst', 12,'This field is too long.')
             ->requirePresence('totalgst', 'create')
             ->notEmptyString('totalgst', 'This field cannot be empty.');
 
         $validator
             ->decimal('grandtotal')
+            ->greaterThanOrEqual('grandtotal', 0,'This field must be positive.')
             ->maxLength('grandtotal', 12,'This field is too long.')
             ->requirePresence('grandtotal', 'create')
             ->notEmptyString('grandtotal', 'This field cannot be empty.');
