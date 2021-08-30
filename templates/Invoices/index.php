@@ -31,7 +31,7 @@ debug($session->read('previous_url')); ?>
             <tbody>
                 <?php foreach ($invoices as $invoice): ?>
                 <tr>
-                    <td><?= h($invoice->datecreated) ?></td>
+                    <td><?= date('d/m/y',strtotime($invoice->datecreated)) ?></td>
                     <td><?= $this->Number->format($invoice->id) ?></td>
                     <td><?= $invoice->has('project') ? $this->Html->link($invoice->project->msnumber, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></td>
                     <td><?= $invoice->has('project') ? $this->Html->link($invoice->project->projectname, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></td>

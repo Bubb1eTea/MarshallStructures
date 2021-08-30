@@ -68,7 +68,7 @@ debug($session->read('previous_url')); ?>
                 </tr>
                 <tr>
                     <th><?= __('Date Created') ?></th>
-                    <td><?= h($invoice->datecreated) ?></td>
+                    <td><?= date('d/m/y h:m A',strtotime($invoice->datecreated)) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Pay within how many days?') ?></th>

@@ -29,7 +29,7 @@ debug($session->read('previous_url')); ?>
             <tbody>
                 <?php foreach ($feeproposals as $feeproposal): ?>
                 <tr>
-                    <td><?= h($feeproposal->datecreated) ?></td>
+                    <td><?= date('d/m/y', strtotime($feeproposal->datecreated)) ?></td>
                     <td><?= $this->Number->format($feeproposal->id) ?></td>
                     <td><?= $feeproposal->has('project') ? $this->Html->link($feeproposal->project->msnumber, ['controller' => 'Projects', 'action' => 'view', $feeproposal->project->id]) : '' ?></td>
                     <td><?= $feeproposal->has('project') ? $this->Html->link($feeproposal->project->projectname, ['controller' => 'Projects', 'action' => 'view', $feeproposal->project->id]) : '' ?></td>

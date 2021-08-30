@@ -115,7 +115,7 @@ debug($session->read('previous_url')); ?>
                         </tr>
                         <?php foreach ($project->feeproposals as $feeproposals) : ?>
                         <tr>
-                            <td><?= h($feeproposals->datecreated) ?></td>
+                            <td><?= date('d/m/y h:m A',strtotime($feeproposals->datecreated)) ?></td>
                             <td><?= h($feeproposals->id) ? $this->Html->link($feeproposals->id, ['controller' => 'feeproposals', 'action' => 'view', $feeproposals->id]) : '' ?></td>
                             <td><?= h($feeproposals->guarantor) ?></td>
                             <td><?= $this->Number->format($feeproposals->grandtotal, ['places' => 2, 'before' => '$']) ?></td>
@@ -145,7 +145,7 @@ debug($session->read('previous_url')); ?>
                         </tr>
                         <?php foreach ($project->invoices as $invoices) : ?>
                             <tr>
-                                <td><?= h($invoices->datecreated) ?></td>
+                                <td><?= date('d/m/y h:m A', strtotime($invoices->datecreated)) ?></td>
                                 <td><?= h($invoices->id) ? $this->Html->link($invoices->id, ['controller' => 'invoices', 'action' => 'view', $invoices->id]) : '' ?></td>
                                 <td><?= $this->Number->format($invoices->completedpercentage, ['after' => '%']) ?></td>
                                 <td><?= $this->Number->format($invoices->grandtotal, ['places' => 2, 'before' => '$']) ?></td>
