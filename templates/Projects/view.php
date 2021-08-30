@@ -107,6 +107,7 @@ debug($session->read('previous_url')); ?>
                 <div class="table-responsive">
                     <table>
                         <tr>
+                            <th><?= __('Date Created') ?></th>
                             <th><?= __('Fee Proposal ID') ?></th>
                             <th><?= __('Guarantor') ?></th>
                             <th><?= __('Total Amount') ?></th>
@@ -114,6 +115,7 @@ debug($session->read('previous_url')); ?>
                         </tr>
                         <?php foreach ($project->feeproposals as $feeproposals) : ?>
                         <tr>
+                            <td><?= h($feeproposals->datecreated) ?></td>
                             <td><?= h($feeproposals->id) ? $this->Html->link($feeproposals->id, ['controller' => 'feeproposals', 'action' => 'view', $feeproposals->id]) : '' ?></td>
                             <td><?= h($feeproposals->guarantor) ?></td>
                             <td>$<?= h($feeproposals->total) ?></td>

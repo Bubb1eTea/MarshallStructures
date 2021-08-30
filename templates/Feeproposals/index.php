@@ -17,7 +17,9 @@ debug($session->read('previous_url')); ?>
         <table>
             <thead>
                 <tr>
+                    <th><?= $this->Paginator->sort('datecreated',['label'=>'Date Created']) ?></th>
                     <th><?= $this->Paginator->sort('id', ['label' =>"Fee Proposal ID"]) ?></th>
+                    <th><?= $this->Paginator->sort('project_id', ['label' =>"MS Code"]) ?></th>
                     <th><?= $this->Paginator->sort('project_id', ['label' =>"Project Name"]) ?></th>
                     <th><?= $this->Paginator->sort('guarantor', ['label' =>"Guarantor"]) ?></th>
                     <th><?= $this->Paginator->sort('grandtotal', ['label' =>"Grand Total"]) ?></th>
@@ -27,10 +29,12 @@ debug($session->read('previous_url')); ?>
             <tbody>
                 <?php foreach ($feeproposals as $feeproposal): ?>
                 <tr>
+                    <td><?= h($feeproposal->datecreated) ?></td>
                     <td><?= $this->Number->format($feeproposal->id) ?></td>
+                    <td><?= $feeproposal->has('project') ? $this->Html->link($feeproposal->project->msnumber, ['controller' => 'Projects', 'action' => 'view', $feeproposal->project->id]) : '' ?></td>
                     <td><?= $feeproposal->has('project') ? $this->Html->link($feeproposal->project->projectname, ['controller' => 'Projects', 'action' => 'view', $feeproposal->project->id]) : '' ?></td>
                     <td><?= h($feeproposal->guarantor) ?></td>
-                    <td>$<?= $this->Number->format($feeproposal->grandtotal) ?></td>
+                    <td><?= $this->Number->format($feeproposal->grandtotal, ['places' => 2, 'before' => '$']) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $feeproposal->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $feeproposal->id]) ?>

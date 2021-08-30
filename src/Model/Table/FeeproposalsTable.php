@@ -66,6 +66,10 @@ class FeeproposalsTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
+            ->dateTime('datecreated')
+            ->notEmptyDateTime('datecreated','This field cannot be empty.');
+
+        $validator
             ->scalar('guarantor')
             ->maxLength('guarantor', 100,'This field is too long.')
             ->regex('guarantor', '/^[a-zA-Z\s]*$/', 'This field can only contain letters.')

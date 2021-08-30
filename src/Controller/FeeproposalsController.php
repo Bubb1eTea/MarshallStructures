@@ -20,7 +20,7 @@ class FeeproposalsController extends AppController
     {
         $this->paginate = [
             'contain' => ['Projects'],
-            'sort'=>'id',
+            'sort'=>'datecreated',
             'direction'=>'desc'
 
         ];

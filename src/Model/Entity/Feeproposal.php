@@ -38,6 +38,7 @@ class Feeproposal extends Entity
      */
     protected $_accessible = [
         'project_id' => true,
+        'datecreated' => true,
         'guarantor' => true,
         'scopeofservice' => true,
         'documentsprovided' => true,

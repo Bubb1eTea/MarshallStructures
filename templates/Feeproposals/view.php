@@ -25,6 +25,10 @@ debug($session->read('previous_url')); ?>
             <h3><?= 'Fee Proposal #'.($feeproposal->id) ?></h3>
             <table>
                 <tr>
+                    <th><?= __('MS Code') ?></th>
+                    <td><?=$feeproposal->has('project') ? $this->Html->link($feeproposal->project->msnumber, ['controller' => 'Projects', 'action' => 'view', $feeproposal->project->id]) : '' ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Project Name') ?></th>
                     <td><?= $feeproposal->has('project') ? $this->Html->link($feeproposal->project->projectname, ['controller' => 'Projects', 'action' => 'view', $feeproposal->project->id]) : '' ?></td>
                 </tr>
@@ -61,27 +65,27 @@ debug($session->read('previous_url')); ?>
                 </tr>
                 <tr>
                     <th><?= __('Fixed Fee') ?></th>
-                    <td>$<?= $this->Number->format($feeproposal->fixedfee) ?></td>
+                    <td><?= $this->Number->format($feeproposal->fixedfee, ['places' => 2, 'before' => '$']) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Hourly Rate') ?></th>
-                    <td>$<?= $this->Number->format($feeproposal->hourlyrate) ?></td>
+                    <td><?= $this->Number->format($feeproposal->hourlyrate, ['places' => 2, 'before' => '$']) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Disbursement') ?></th>
-                    <td>$<?= $this->Number->format($feeproposal->disbursement) ?></td>
+                    <td><?= $this->Number->format($feeproposal->disbursement, ['places' => 2, 'before' => '$']) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Subtotal') ?></th>
-                    <td>$<?= $this->Number->format($feeproposal->total) ?></td>
+                    <td><?= $this->Number->format($feeproposal->total, ['places' => 2, 'before' => '$']) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Total GST') ?></th>
-                    <td>$<?= $this->Number->format($feeproposal->totalgst) ?></td>
+                    <td><?= $this->Number->format($feeproposal->totalgst, ['places' => 2, 'before' => '$']) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Grand Total') ?></th>
-                    <td>$<?= $this->Number->format($feeproposal->grandtotal) ?></td>
+                    <td><?= $this->Number->format($feeproposal->grandtotal, ['places' => 2, 'before' => '$']) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Pay within how many days?') ?></th>
@@ -91,27 +95,29 @@ debug($session->read('previous_url')); ?>
             <div class="related">
                 <h4><?= __('Related Invoices') ?></h4>
                 <?php if (!empty($feeproposal->invoices)) : ?>
-                <div class="table-responsive">
+                    <div class="table-responsive">
                     <table>
                         <tr>
-                            <th><?= __('ID') ?></th>
                             <th><?= __('Date Created') ?></th>
+                            <th><?= __('Invoice ID') ?></th>
+                            <th><?= __('Percentage') ?></th>
                             <th><?= __('Grand Total') ?></th>
                             <th><?= __('Date Due') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($feeproposal->invoices as $invoices) : ?>
-                        <tr>
-                            <td><?= h($invoices->id) ?></td>
-                            <td><?= date('D d/m/y h:m A',strtotime($invoices->datecreated)) ?></td>
-                            <td>$<?= h($invoices->grandtotal) ?></td>
-                            <td><?= date('D d/m/y h:m A',strtotime($invoices->datecreated)) ?></td>
-                            <td class="actions">
-                                <?= $this->Html->link(__('View'), ['controller' => 'Invoices', 'action' => 'view', $invoices->id]) ?>
-                                <?= $this->Html->link(__('Edit'), ['controller' => 'Invoices', 'action' => 'edit', $invoices->id]) ?>
-                                <?php // $this->Form->postLink(__('Delete'), ['controller' => 'Invoices', 'action' => 'delete', $invoices->id], ['confirm' => __('Are you sure you want to delete invoice #{0}?', $invoices->id)]) ?>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td><?= h($invoices->datecreated) ?></td>
+                                <td><?= h($invoices->id) ? $this->Html->link($invoices->id, ['controller' => 'invoices', 'action' => 'view', $invoices->id]) : '' ?></td>
+                                <td><?= $this->Number->format($invoices->completedpercentage, ['after' => '%']) ?></td>
+                                <td><?= $this->Number->format($invoices->grandtotal, ['places' => 2, 'before' => '$']) ?></td>
+                                <td><?= date('d/m/y', strtotime($invoices->datecreated. ' + ' .$invoices->paywithinday.' days')) ?></td>
+                                <td class="actions">
+                                    <?= $this->Html->link(__('View'), ['controller' => 'Invoices', 'action' => 'view', $invoices->id]) ?>
+                                    <?= $this->Html->link(__('Edit'), ['controller' => 'Invoices', 'action' => 'edit', $invoices->id]) ?>
+                                    <?php // $this->Form->postLink(__('Delete'), ['controller' => 'Invoices', 'action' => 'delete', $invoices->id], ['confirm' => __('Are you sure you want to delete invoice #{0}?', $invoices->id)]) ?>
+                                </td>
+                            </tr>
                         <?php endforeach; ?>
                     </table>
                 </div>
