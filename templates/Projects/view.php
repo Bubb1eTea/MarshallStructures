@@ -116,7 +116,7 @@ debug($session->read('previous_url')); ?>
                         <tr>
                             <td><?= h($feeproposals->id) ? $this->Html->link($feeproposals->id, ['controller' => 'feeproposals', 'action' => 'view', $feeproposals->id]) : '' ?></td>
                             <td><?= h($feeproposals->guarantor) ?></td>
-                            <td>$ <?= h($feeproposals->total) ?></td>
+                            <td>$<?= h($feeproposals->total) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Feeproposals', 'action' => 'view', $feeproposals->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Feeproposals', 'action' => 'edit', $feeproposals->id]) ?>
@@ -134,18 +134,20 @@ debug($session->read('previous_url')); ?>
                 <div class="table-responsive">
                     <table>
                         <tr>
-                            <th><?= __('Invoice ID') ?></th>
                             <th><?= __('Date Created') ?></th>
+                            <th><?= __('Invoice ID') ?></th>
+                            <th><?= __('Percentage') ?></th>
                             <th><?= __('Grand Total') ?></th>
                             <th><?= __('Date Due') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($project->invoices as $invoices) : ?>
                             <tr>
-                                <td><?= h($invoices->id) ?></td>
-                                <td><?= date('D d/m/y h:m A',strtotime($invoices->datecreated)) ?></td>
-                                <td>$<?= h($invoices->grandtotal) ?></td>
-                                <td><?= date('D d/m/y h:m A',strtotime($invoices->datecreated)) ?></td>
+                                <td><?= h($invoices->datecreated) ?></td>
+                                <td><?= h($invoices->id) ? $this->Html->link($invoices->id, ['controller' => 'invoices', 'action' => 'view', $invoices->id]) : '' ?></td>
+                                <td><?= $this->Number->format($invoices->completedpercentage, ['after' => '%']) ?></td>
+                                <td><?= $this->Number->format($invoices->grandtotal, ['places' => 2, 'before' => '$']) ?></td>
+                                <td><?= date('d/m/y', strtotime($invoices->datecreated. ' + ' .$invoices->paywithinday.' days')) ?></td>
                                 <td class="actions">
                                     <?= $this->Html->link(__('View'), ['controller' => 'Invoices', 'action' => 'view', $invoices->id]) ?>
                                     <?= $this->Html->link(__('Edit'), ['controller' => 'Invoices', 'action' => 'edit', $invoices->id]) ?>

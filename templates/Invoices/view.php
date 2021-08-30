@@ -25,6 +25,10 @@ debug($session->read('previous_url')); ?>
             <h3><?= 'Invoice #'.h($invoice->id) ?></h3>
             <table>
                 <tr>
+                    <th><?= __('MS Code') ?></th>
+                    <td><?= $invoice->has('project') ? $this->Html->link($invoice->project->msnumber, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Project Name') ?></th>
                     <td><?= $invoice->has('project') ? $this->Html->link($invoice->project->projectname, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></td>
                 </tr>
@@ -34,31 +38,31 @@ debug($session->read('previous_url')); ?>
                 </tr>
                 <tr>
                     <th><?= __('Completed Percentage') ?></th>
-                    <td>$<?= $this->Number->format($invoice->completedpercentage) ?></td>
+                    <td><?= $this->Number->format($invoice->completedpercentage, ['after' => '%']) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Subtotal') ?></th>
-                    <td>$<?= $this->Number->format($invoice->total) ?></td>
+                    <td><?= $this->Number->format($invoice->total, ['places' => 2, 'before' => '$']) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Total GST') ?></th>
-                    <td>$<?= $this->Number->format($invoice->totalgst) ?></td>
+                    <td><?= $this->Number->format($invoice->totalgst, ['places' => 2, 'before' => '$']) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Grand Total') ?></th>
-                    <td>$<?= $this->Number->format($invoice->grandtotal) ?></td>
+                    <td><?= $this->Number->format($invoice->grandtotal, ['places' => 2, 'before' => '$']) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Date Created') ?></th>
+                    <td><?= h($invoice->datecreated) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Pay within how many days?') ?></th>
                     <td><?= $this->Number->format($invoice->paywithinday) ?> days</td>
                 </tr>
                 <tr>
-                    <th><?= __('Date Created') ?></th>
-                    <td><?= date('D d/m/y h:m A',strtotime($invoice->datecreated)) ?></td>
-                </tr>
-                <tr>
                     <th><?= __('Date Due') ?></th>
-                    <td><?= date('D d/m/y', strtotime($invoice->datecreated. ' + ' .$invoice->paywithinday.' days')) ?></td>
+                    <td><?= date('d/m/y', strtotime($invoice->datecreated. ' + ' .$invoice->paywithinday.' days')) ?></td>
                 </tr>
             </table>
             <div class="text">
