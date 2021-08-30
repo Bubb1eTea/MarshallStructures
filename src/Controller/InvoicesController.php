@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use http\Client;
+
 /**
  * Invoices Controller
  *
@@ -108,5 +110,41 @@ class InvoicesController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    /**
+     * Generate project PDF file method
+     *
+     */
+    public function invoiceReport($id = null)
+    {
+        $this->viewBuilder()->enableAutoLayout(false);
+        $invoice = $this->Invoices->get($id, [
+            'contain' => ['Projects', 'Feeproposals']]);
+        $this->viewBuilder()->setClassName('CakePdf.Pdf');
+        $this->viewBuilder()->setOption(
+            'pdfConfig',
+            [
+                'orientation' => 'portrait',
+                'download' => true, // This can be omitted if "filename" is specified.
+                'filename' => 'Invoice_' . $id . '.pdf' //// This can be omitted if you want file name based on URL.
+            ]
+        );
+        $this->set('invoice', $invoice);
+    }
+
+
+    /**
+     * Invoice_report_preview method
+     *
+     * @param string|null $id Invoice id.
+     */
+    public function invoiceReportPreview($id = null)
+    {
+        $invoice = $this->Invoices->get($id, [
+            'contain' => ['Projects', 'Feeproposals'],
+        ]);
+
+        $this->set(compact('invoice'));
     }
 }
