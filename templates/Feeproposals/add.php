@@ -6,7 +6,7 @@
  */
 ?>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
 
 <?php session_start();
 $session = $this->request->getSession();
@@ -39,9 +39,9 @@ debug($session->read('previous_url')); ?>
                     echo $this->Form->control('fixedfee', ['label' =>"Fixed Fee"]);
                     echo $this->Form->control('hourlyrate', ['label' =>"Hourly Rate"]);
                     echo $this->Form->control('disbursement',['label' =>"Disbursement"]);
-                    echo $this->Form->control('total',['label' =>"Subtotal"]);
-                    echo $this->Form->control('totalgst',['label' =>"Total GST"]);
-                    echo $this->Form->control('grandtotal', ['label' =>"Grand Total"]);
+                    echo $this->Form->control('total',['label' =>"Subtotal", 'disabled']);
+                    echo $this->Form->control('totalgst',['label' =>"Total GST", 'disabled']);
+                    echo $this->Form->control('grandtotal', ['label' =>"Grand Total", 'disabled']);
                     $days = ['7'=>'7','30'=>'30'];
                     echo $this->Form->control('paywithinday', ['label' =>"Pay within how many days?",'options' => $days, 'empty' => false]);
                 ?>
@@ -50,15 +50,43 @@ debug($session->read('previous_url')); ?>
             <?= $this->Form->end() ?>
 
             <!-- <script>
-                var fixedfee = document.getElementById('fixedfee').value;
-                var hourlyrate = document.getElementById('hourlyrate').value;
-                var disbursement = document.getElementById('disbursement').value;
-
-                var subtotal = parseFloat(fixedfee).toFixed(2) + parseFloat(hourlyrate).toFixed(2) + parseFloat(disbursement).toFixed(2);
-                document.getElementById('totalgst').value = subtotal;
-
+                var fixedfee1 = document.getElementById("fixedfee").value;
+                var hourlyrate1 = document.getElementById('hourlyrate').value;
+                var disbursement1 = document.getElementById('disbursement').value;
+                document.getElementById('subtotal').value = parseInt(subtotal1); 
             </script> -->
 
+            <script>
+                $(document).ready(function() {
+                    // $('#fixedfee','#hourlyrate').keyup(function(ev) {
+                    // var fixedfee = parseFloat($('#fixedfee').val());
+                    // var hourlyrate = parseFloat($('#hourlyrate').val());
+                    // var x =  (parseFloat(fixedfee) + parseFloat(hourlyrate)).toFixed(2);
+
+                    // var divobj = document.getElementById('disbursement');
+                    // divobj.value = x;
+                    // });
+
+                    $('input').keyup(function(ev) {                               
+                        var fixedfee = parseFloat($('#fixedfee').val()) || 0;
+                        var hourlyrate = parseFloat($('#hourlyrate').val())  || 0;
+                        var disbursement = parseFloat($('#disbursement').val())  || 0;
+                        var total = (parseFloat(fixedfee) + parseFloat(hourlyrate) + parseFloat(disbursement)).toFixed(2);
+                        
+                        var divobj = document.getElementById('total');
+                        divobj.value = total;
+
+                        var totalgst = parseFloat(total * 0.1).toFixed(2);
+                        var divobj = document.getElementById('totalgst');
+                        divobj.value = totalgst;
+
+                        var grandtotal = (parseFloat(total) + parseFloat(totalgst)).toFixed(2);
+                        var divobj = document.getElementById('grandtotal');
+                        divobj.value = grandtotal;
+                    });
+                });
+            </script>
+        
         </div>
     </div>
 </div>
