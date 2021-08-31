@@ -39,9 +39,9 @@ debug($session->read('previous_url')); ?>
                     echo $this->Form->control('fixedfee', ['label' =>"Fixed Fee"]);
                     echo $this->Form->control('hourlyrate', ['label' =>"Hourly Rate"]);
                     echo $this->Form->control('disbursement',['label' =>"Disbursement"]);
-                    echo $this->Form->control('total',['label' =>"Subtotal", 'disabled']);
-                    echo $this->Form->control('totalgst',['label' =>"Total GST", 'disabled']);
-                    echo $this->Form->control('grandtotal', ['label' =>"Grand Total", 'disabled']);
+                    echo $this->Form->control('total',['label' =>"Subtotal", array('readonly' => 'readonly')]);
+                    echo $this->Form->control('totalgst',['label' =>"Total GST", array('readonly' => 'readonly')]);
+                    echo $this->Form->control('grandtotal', ['label' =>"Grand Total", array('readonly' => 'readonly')]);
                     $days = ['7'=>'7','30'=>'30'];
                     echo $this->Form->control('paywithinday', ['label' =>"Pay within how many days?",'options' => $days, 'empty' => false]);
                 ?>
@@ -49,24 +49,8 @@ debug($session->read('previous_url')); ?>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
 
-            <!-- <script>
-                var fixedfee1 = document.getElementById("fixedfee").value;
-                var hourlyrate1 = document.getElementById('hourlyrate').value;
-                var disbursement1 = document.getElementById('disbursement').value;
-                document.getElementById('subtotal').value = parseInt(subtotal1); 
-            </script> -->
-
             <script>
                 $(document).ready(function() {
-                    // $('#fixedfee','#hourlyrate').keyup(function(ev) {
-                    // var fixedfee = parseFloat($('#fixedfee').val());
-                    // var hourlyrate = parseFloat($('#hourlyrate').val());
-                    // var x =  (parseFloat(fixedfee) + parseFloat(hourlyrate)).toFixed(2);
-
-                    // var divobj = document.getElementById('disbursement');
-                    // divobj.value = x;
-                    // });
-
                     $('input').keyup(function(ev) {                               
                         var fixedfee = parseFloat($('#fixedfee').val()) || 0;
                         var hourlyrate = parseFloat($('#hourlyrate').val())  || 0;
@@ -86,7 +70,6 @@ debug($session->read('previous_url')); ?>
                     });
                 });
             </script>
-        
         </div>
     </div>
 </div>
