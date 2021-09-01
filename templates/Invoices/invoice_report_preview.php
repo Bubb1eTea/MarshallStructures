@@ -82,10 +82,10 @@
         <tr style='height:72.0pt'>
             <td width=367 valign=top style='width:275.4pt;padding:0cm 5.4pt 0cm 5.4pt;height:72.0pt'>
                 <p class=MsoNormal><span lang=EN-GB>Attn: <b><?=$clientname->first()['Clients']['firstname'].' '.$clientname->first()['Clients']['lastname']?></b></span></p>
-                <p class=MsoNormal><span lang=EN-GB>Architects/builder company: </span> <!-- insert Architects/builder company --></p>
-                <p class=MsoNormal><span lang=EN-GB>Address: </span> <?= $invoice->project->streetname ?></p>
-                <p class=MsoNormal><span lang=EN-GB>Suburb, State: </span><?= $invoice->project->suburb ?>,<?= $invoice->project->state ?></p>
-                <p class=MsoNormal><span lang=EN-GB>Phone Number: </span> <!-- insert phone number --></p>
+                <p class=MsoNormal><span lang=EN-GB>Client Company: <b> <?=$company->first()['Companys']['companyname']?></b></span></p>
+                <p class=MsoNormal><span lang=EN-GB>Client Company Address: <b> <?=$company->first()['Companys']['streetname']?></b></span></p>
+                <p class=MsoNormal><span lang=EN-GB>Client Company Suburb, State: <b><?= $company->first()['Companys']['suburb']?>, <?= $company->first()['Companys']['state'] ?> <?=$company->first()['Companys']['postcode']?></b></span></p>
+                <p class=MsoNormal><span lang=EN-GB>Client Phone Number: <b> <?=$clientname->first()['Clients']['phonenumber']?></b></span></p>
             </td>
             <td width=367 valign=top style='width:275.4pt;padding:0cm 5.4pt 0cm 5.4pt;height:72.0pt'>
                 <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
