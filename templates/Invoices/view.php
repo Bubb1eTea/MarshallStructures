@@ -12,14 +12,13 @@
             <?= $this->Form->postLink(__('Delete Invoice'), ['action' => 'delete', $invoice->id], ['confirm' => __('Are you sure you want to delete # {0}?', $invoice->id), 'class' => 'side-nav-item']) ?>
             <?= $this->Html->link(__('List Invoices'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
             <?= $this->Html->link(__('New Invoice'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('Download as PDF'), ['action' => 'invoiceReport', $invoice->id ], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
         <div class="invoices view content">
 
-            <h3><?= h($invoice->id) ?> <buttoner style='float: right;'> <?= $this->Html->link(__('Download to pdf'), ['action' => 'invoiceReportPreview', $invoice->id ], ['class' => 'button float-right']); ?>
-            <buttoner style='float: right; padding-right:10px;'> <?= $this->Html->link(__('View Generated Template'), ['action' => ''], ['class' => 'button float-right']); ?></buttoner> </h3>
+            <h3><?= h($invoice->id) ?> <buttoner style='float: right;'> <?= $this->Html->link(__('Download to pdf'), ['action' => 'invoiceReport', $invoice->id ], ['class' => 'button float-right']); ?>
+            <buttoner style='float: right; padding-right:10px;'> <?= $this->Html->link(__('View Generated Template'), ['action' => 'invoiceReportPreview', $invoice->id], ['class' => 'button float-right']); ?></buttoner> </h3>
             <table>
                 <tr>
                     <th><?= __('Project') ?></th>
