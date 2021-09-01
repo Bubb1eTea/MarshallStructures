@@ -61,7 +61,7 @@
 
 <div class=WordSection1>
 
-    <p class=MsoNormal><img width=338 height=77 id="Picture 1" src="Invoice%20Template_files/image001.jpg">
+    <p class=MsoNormal><img width=338 height=77 id="Picture 1" src="../../webroot/img/Logo_2.jpg">
         <b>
             <span lang=EN-GB style='font-size:18.0pt; margin-left: 9%;'> </span>
         </b>
