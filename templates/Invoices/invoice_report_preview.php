@@ -81,7 +81,7 @@
            style='border-collapse:collapse'>
         <tr style='height:72.0pt'>
             <td width=367 valign=top style='width:275.4pt;padding:0cm 5.4pt 0cm 5.4pt;height:72.0pt'>
-                <p class=MsoNormal><span lang=EN-GB>Attn: <b><?= $invoice->project->client_id ?></b></span></p>
+                <p class=MsoNormal><span lang=EN-GB>Attn: <b><?=$clientname->first()['Clients']['firstname'].' '.$clientname->first()['Clients']['lastname']?></b></span></p>
                 <p class=MsoNormal><span lang=EN-GB>Architects/builder company: </span> <!-- insert Architects/builder company --></p>
                 <p class=MsoNormal><span lang=EN-GB>Address: </span> <?= $invoice->project->streetname ?></p>
                 <p class=MsoNormal><span lang=EN-GB>Suburb, State: </span><?= $invoice->project->suburb ?>,<?= $invoice->project->state ?></p>

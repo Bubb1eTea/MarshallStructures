@@ -145,6 +145,13 @@ class InvoicesController extends AppController
             'contain' => ['Projects', 'Feeproposals'],
         ]);
 
+        $clientname = $this->Invoices->find('all');
+        $clientname->join(['table'=>'Projects', 'type'=>'INNER', 'conditions'=>'Projects.id = project_id']);
+        $clientname->select(['Clients.firstname', 'Clients.lastname']);
+        $clientname->join(['table'=>'Clients', 'type'=>'INNER', 'conditions'=>'Clients.id=client_id']);
+        $clientname->where(['Invoices.id = '=>$id]);
+
         $this->set(compact('invoice'));
+        $this->set(compact('clientname'));
     }
 }
