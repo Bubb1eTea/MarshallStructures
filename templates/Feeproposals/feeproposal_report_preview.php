@@ -1,9 +1,15 @@
 <html>
-
+<button style = 'float:left;'onclick="history.go(-1);"> Back </button>
+            <buttoner style='float: right; padding: 0px;'> <?= $this->Html->link(__(' Download to pdf'), ['action' => 'feeproposalReport',  ], ['class' => 'button']); ?> </buttoner>
+    
 <head>
+
+    
+        
 <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
 <meta name=Generator content="Microsoft Word 15 (filtered)">
 <style>
+    
 <!--
  /* Font Definitions */
  @font-face
@@ -196,12 +202,14 @@ div.WordSection1
 	{margin-bottom:0cm;}
 ul
 	{margin-bottom:0cm;}
--->
 </style>
 
 </head>
 
+
+
 <body lang=EN-US style='word-wrap:break-word'>
+
 
 <div class=WordSection1>
 
