@@ -7,7 +7,15 @@
  */
 ?>
 
-<button onclick="history.go(-1);">Back </button>
+<div class="column-responsive column-80">
+<!--    <div class="invoices view content">-->
+
+        <h3>
+            <button onclick="history.go(-1);"> Back </button>
+            <buttoner style='float: right;'> <?= $this->Html->link(__('Download to pdf'), ['action' => 'invoiceReport', $invoice->id ], ['class' => 'button float-right']); ?> </buttoner>
+        </h3>
+<!--    </div>-->
+</div>
 
 <html>
 
