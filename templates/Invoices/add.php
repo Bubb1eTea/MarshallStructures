@@ -7,6 +7,8 @@
  */
 ?>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
+
 <?php session_start();
 $session = $this->request->getSession();
 $session->write('previous_url', $session->read('url'));
@@ -44,6 +46,28 @@ debug($session->read('previous_url')); ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
+
+            <!-- <script>
+                $(document).ready(function() {
+                    $('input').keyup(function(ev) {      
+                        
+
+                        var completedpercentage = (parseFloat($('#completedpercentage').val())* 0.01) || 0;
+                        var total = (parseFloat(completedpercentage) * <subtotal of fee proposal>).toFixed(2);
+                        
+                        var divobj = document.getElementById('total');
+                        divobj.value = total;
+
+                        var totalgst = parseFloat(total * 0.1).toFixed(2);
+                        var divobj = document.getElementById('totalgst');
+                        divobj.value = totalgst;
+
+                        var grandtotal = (parseFloat(total) + parseFloat(totalgst)).toFixed(2);
+                        var divobj = document.getElementById('grandtotal');
+                        divobj.value = grandtotal;
+                    });
+                });
+            </script> -->
         </div>
     </div>
 </div>
