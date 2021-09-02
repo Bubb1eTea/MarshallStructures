@@ -52,7 +52,7 @@
         {margin-bottom:0cm;}
         ul
         {margin-bottom:0cm;}
-        
+
     </style>
 
 </head>
@@ -66,7 +66,7 @@
         <b>
             <span lang=EN-GB style='font-size:18.0pt; margin-left: 9%;'> </span>
         </b>
-        <span lang=EN-GB style='font-size:28.0pt;font-family:"Arial Black",sans-serif;color:gray'>INVOICE</span>
+        <span lang=EN-GB style='font-size:28.0pt;font-family:"Arial Black",sans-serif;color:gray; float: right;'>INVOICE</span>
     </p>
 
     <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>

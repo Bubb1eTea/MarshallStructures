@@ -6,6 +6,9 @@
  * @var string[]|\Cake\Collection\CollectionInterface $feeproposals
  */
 ?>
+
+</div>
+
 <html>
 
 <head>
@@ -41,16 +44,17 @@
         {margin-bottom:0cm;}
         ul
         {margin-bottom:0cm;}
-        -->
+
     </style>
 
 </head>
 
 <body lang=EN-US style='word-wrap:break-word'>
 
+<div class="contenter">
 <div class=WordSection1>
 
-    <p class=MsoNormal><img width=338 height=77 id="Picture 1" src="Invoice%20Template_files/image001.jpg">
+    <p class=MsoNormal><img width=338 height=77 id="Picture 1" src="../../webroot/img/Logo_2.jpg">
         <b>
             <span lang=EN-GB style='font-size:18.0pt; margin-left: 9%;'> </span>
         </b>
@@ -81,11 +85,11 @@
            style='border-collapse:collapse'>
         <tr style='height:72.0pt'>
             <td width=367 valign=top style='width:275.4pt;padding:0cm 5.4pt 0cm 5.4pt;height:72.0pt'>
-                <p class=MsoNormal><span lang=EN-GB>Attn: <b><?= $invoice->project->client->firstname ?></b></span></p>
-                <p class=MsoNormal><span lang=EN-GB>Architects/builder company: </span> <!-- insert Architects/builder company --></p>
-                <p class=MsoNormal><span lang=EN-GB>Address: </span> <?= $invoice->project->streetname ?></p>
-                <p class=MsoNormal><span lang=EN-GB>Suburb, State: </span><?= $invoice->project->suburb ?>,<?= $invoice->project->state ?></p>
-                <p class=MsoNormal><span lang=EN-GB>Phone Number: </span> <!-- insert phone number --></p>
+                <p class=MsoNormal><span lang=EN-GB>Attn: <b><?=$clientname->first()['Clients']['firstname'].' '.$clientname->first()['Clients']['lastname']?></b></span></p>
+                <p class=MsoNormal><span lang=EN-GB>Client Company: <b> <?=$company->first()['Companys']['companyname']?></b></span></p>
+                <p class=MsoNormal><span lang=EN-GB>Client Company Address: <b> <?=$company->first()['Companys']['streetname']?></b></span></p>
+                <p class=MsoNormal><span lang=EN-GB>Client Company Suburb, State: <b><?= $company->first()['Companys']['suburb']?>, <?= $company->first()['Companys']['state'] ?> <?=$company->first()['Companys']['postcode']?></b></span></p>
+                <p class=MsoNormal><span lang=EN-GB>Client Phone Number: <b> <?=$clientname->first()['Clients']['phonenumber']?></b></span></p>
             </td>
             <td width=367 valign=top style='width:275.4pt;padding:0cm 5.4pt 0cm 5.4pt;height:72.0pt'>
                 <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
@@ -118,10 +122,10 @@
                 <p class=MsoNormal><span lang=EN-GB><?= $invoice->invdesc ?></span></p>
             </td>
             <td width="34%" valign=top style='width:34.48%;border:none;border-right:solid windowtext 1.0pt;padding:0cm 10.8pt 0cm 10.8pt'>
-                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->completedpercentage ?></span></p>
+                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->completedpercentage ?>%</span></p>
             </td>
             <td width="14%" valign=top style='width:14.16%;border:none;border-right:solid windowtext 1.0pt;padding:0cm 10.8pt 0cm 10.8pt'>
-                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->total ?></span></p>
+                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->total ?>$</span></p>
             </td>
         </tr>
         <tr style='page-break-inside:avoid'>
@@ -154,7 +158,7 @@
                 <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB>SUBTOTAL</span></p>
             </td>
             <td width="14%" valign=top style='width:14.16%;border:none;border-right:solid windowtext 1.0pt;padding:0cm 10.8pt 0cm 10.8pt'>
-                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB> <!-- insert Subtotal --> </span></p>
+                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB> <?= $invoice->total ?>$ </span></p>
             </td>
         </tr>
         <tr style='page-break-inside:avoid'>
@@ -165,7 +169,7 @@
                 <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB>SALESTAX</span></p>
             </td>
             <td width="14%" valign=top style='width:14.16%;border:none;border-right:solid windowtext 1.0pt;padding:0cm 10.8pt 0cm 10.8pt'>
-                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><!-- insert sales tax --></span></p>
+                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->totalgst ?>$</span></p>
             </td>
         </tr>
         <tr style='page-break-inside:avoid'>
@@ -176,7 +180,7 @@
                 <p class=MsoNormal align=right style='text-align:right'><b><span lang=EN-GB>TOTALDUE</span></b></p>
             </td>
             <td width="14%" valign=top style='width:14.16%;border:solid windowtext 1.0pt;border-left:none;padding:0cm 10.8pt 0cm 10.8pt'>
-                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><!-- insert total tax --></span></p>
+                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->grandtotal ?>$</span></p>
             </td>
         </tr>
         <tr height=0>
@@ -197,7 +201,7 @@
 
     <p class=MsoNormal><span lang=EN-GB>If you have any questions concerning this invoice, contact Ben Marshall either via phone or email as per the information at the top of this page.</span></p>
 
-    <p class=MsoNormal><span lang=EN-GB>All payments are due within <b>30</b> days of the issue date of this invoice, as per fee proposal and terms of appointment agreements.</span></p>
+    <p class=MsoNormal><span lang=EN-GB>All payments are due within <b><?= $invoice->paywithinday ?></b> days of the issue date of this invoice, as per fee proposal and terms of appointment agreements.</span></p>
 
     <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
 
