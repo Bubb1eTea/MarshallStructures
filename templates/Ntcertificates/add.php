@@ -30,6 +30,16 @@ use PhpParser\Node\Stmt\Label;
                     echo $this->Form->control('drawingno', ['label' => "Drawing No."]);
                     echo $this->Form->control('other', ['label' => "Other"]);
                     echo $this->Form->control('designstandards._ids', ['label' => "Design Basis", 'options' => $designstandards]);
+                    $building = [   'Class 1a - A detached house / A group of two or more attached dwelling each separated by a fire-resisting wall' => 'Class 1a - A detached house / A group of two or more attached dwelling each separated by a fire-resisting wall',
+                                    'Class 1b - A boarding house, guest house hostel with total area not exceeding 300m² and in which not more than 12 persons would ordinarily be resident / 3 or more single dwellings located in one allotment and used for short-term holiday accommodation',
+                                    'Class 2  - A building containing 2 or more sole-occupancy units each being a separate dwelling',
+                                    'Class 3  - A [boarding house, guest house, hostel, lodging house, backpackers accommodation] / Residential part of a hotel or motel / residertial part of a school / accommodation for the aged, children or people with disabilities / residential part of a health-care building which accommodates members of staff / residential part of a detention centre',
+                                    'Class 4  - A dwelling in a building that is class 5, 6, 7, 8, or 9 if it is the only dwelling in the building',
+                                    'Class 5  - An office building excluding those of class 6, 7, 8 or 9',
+                                    'Class 6  - A shop or other building for sale of goods by retail lor the supply of services direct to the public.',
+                                    'Class 7a - A carpark',
+                                    'Class 7b - A storage or form the display of good or produce for sale by wholesale',
+                                    'Class 8  - A laboratory, or building in which` a handicraft or process for for the production assembling, altering, repairing, packaing ']
                     echo $this->Form->control('buildingclass', ['label' => "Class of Building (BCA)"]);
                     echo $this->Form->control('constructiontype', ['label' => "Type of Construction (BCA volume 1 §C1.1) eg. Type A fire-resisting construction)"]);
                     echo $this->Form->control('buildingimportancelevel', ['label' => "Building Importance Level (BCA Table B1.2a)"]);
