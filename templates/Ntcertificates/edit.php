@@ -24,14 +24,14 @@ debug($session->read('previous_url')); ?>
                 ['action' => 'delete', $ntcertificate->id],
                 ['confirm' => __('Are you sure you want to delete NT Certificate #{0}?', $ntcertificate->id), 'class' => 'side-nav-item']
             ) ?>
-            <?= $this->Html->link(__('List Ntcertificates'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('List NT Certificates'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
         <div class="ntcertificates form content">
             <?= $this->Form->create($ntcertificate) ?>
             <fieldset>
-                <legend><?= __('Edit Ntcertificate') ?></legend>
+                <legend><?= __('Edit NT Certificate') ?></legend>
                 <?php
                     echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true]);
                     echo $this->Form->control('lotportionnum', ['label' => "Lot/Portion Number"]);
