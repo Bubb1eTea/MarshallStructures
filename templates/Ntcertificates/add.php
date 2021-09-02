@@ -15,7 +15,7 @@ $session->write('previous_url', $session->read('url'));
 $session->write('url', 'ntcertificates.add');
 debug($session->read('previous_url')); ?>
 <style>
-    select[multiple="multiple"] { height:25rem;}
+    select[multiple="multiple"] { height:30rem;}
     .error-message {color: #ff0000;}
 </style>
 <div class="row">

@@ -40,7 +40,7 @@ class DesignstandardsTable extends Table
         parent::initialize($config);
 
         $this->setTable('designstandards');
-        $this->setDisplayField('id');
+        $this->setDisplayField('design_basis');
         $this->setPrimaryKey('id');
 
         $this->belongsToMany('Ntcertificates', [
