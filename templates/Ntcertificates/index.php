@@ -4,6 +4,11 @@
  * @var \App\Model\Entity\Ntcertificate[]|\Cake\Collection\CollectionInterface $ntcertificates
  */
 ?>
+<?php session_start();
+$session = $this->request->getSession();
+$session->write('previous_url', $session->read('url'));
+$session->write('url', 'ntcertificates.index');
+debug($session->read('previous_url')); ?>
 <div class="ntcertificates index content">
     <?= $this->Html->link(__('New NT Certificate'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('NI Certificates') ?></h3>

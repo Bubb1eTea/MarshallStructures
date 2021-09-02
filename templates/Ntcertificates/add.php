@@ -9,6 +9,15 @@
 use PhpParser\Node\Stmt\Label;
 
 ?>
+<?php session_start();
+$session = $this->request->getSession();
+$session->write('previous_url', $session->read('url'));
+$session->write('url', 'ntcertificates.add');
+debug($session->read('previous_url')); ?>
+<style>
+    select[multiple="multiple"] { height:25rem;}
+    .error-message {color: #ff0000;}
+</style>
 <div class="row">
     <aside class="column">
         <div class="side-nav">
@@ -54,7 +63,7 @@ use PhpParser\Node\Stmt\Label;
                                             'B' => 'B',
                                             'C' => 'C'];
                     echo $this->Form->control('constructiontype', ['label' => "Type of Construction (BCA volume 1 §C1.1) eg. Type A fire-resisting construction)", 'options' => $contructiontype]);
-                    
+
                     $buildingimportancelevel = [    '1' => '1 Minor structures (failure not likely to endanger human life)',
                                                     '2' => '2 Normal structures and structures not falling into other levels',
                                                     '3' => '3 Major structures (affecting crowds)',
@@ -95,7 +104,7 @@ use PhpParser\Node\Stmt\Label;
                                     '4' => '4',
                                     '5' => '5'];
                     echo $this->Form->control('terraincat', ['label' => "Terrain Category", 'options' => $terraincat]);
-                
+
                     echo $this->Form->control('referenceheight', ['label' => "Reference height (m)"]);
                     echo $this->Form->control('mz', ['label' => "Mᶻ⸴ᶜᵃᵗ"]);
                     echo $this->Form->control('ms', ['label' => "Mˢ"]);
@@ -119,7 +128,7 @@ use PhpParser\Node\Stmt\Label;
                                         'Be' => 'Be',
                                         'Ce' => 'Ce',
                                         'De' => 'De',
-                                        'Ed' => 'Ed'];                                  
+                                        'Ed' => 'Ed'];
                     echo $this->Form->control('subsoilclass', ['label' => "Class of Sub-Soil (Section 4)", 'options' => $subsoilclass]);
 
                     echo $this->Form->control('bearingcap', ['label' => "Safe Foundation Bearing Capacity, kPa"]);
@@ -132,13 +141,13 @@ use PhpParser\Node\Stmt\Label;
                                     'H1-D' => 'H1-D',
                                     'H2' => 'H2',
                                     'P' => 'P'];
-                    echo $this->Form->control('siteclass', ['label' => "Site classification (AS2870)", 'options' => $siteclass]);
+                    echo $this->Form->control('siteclass', ['label' => "Site Classification (AS2870)", 'options' => $siteclass]);
                     echo $this->Form->control('exclusion', ['label' => "The following items are excluded and shall be certified separately"]);
                     echo $this->Form->control('comment', ['label' => "Comments"]);
                     echo $this->Form->control('compname', ['label' => "Company Name"]);
                     echo $this->Form->control('compntregnum', ['label' => "Company NT Registration Number"]);
                     echo $this->Form->control('name', ['label' => "Name"]);
-                    echo $this->Form->control('ntregnum', ['label' => "Nominee/Indicidual NT Registration Number"]);
+                    echo $this->Form->control('ntregnum', ['label' => "Nominee/Individual NT Registration Number"]);
                     echo $this->Form->control('date', ['label' => "Date", 'empty' => true]);
                 ?>
             </fieldset>
