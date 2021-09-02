@@ -5,7 +5,7 @@
  */
 ?>
 <div class="designstandards index content">
-    <?= $this->Html->link(__('New Designstandard'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <?= $this->Html->link(__('New Design Standard'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Designstandards') ?></h3>
     <div class="table-responsive">
         <table>
