@@ -39,7 +39,7 @@ debug($session->read('previous_url')); ?>
                     echo $this->Form->control('drawingno', ['label' => "Drawing No."]);
                     echo $this->Form->control('other', ['label' => "Other"]);
 
-                    echo $this->Form->control('designstandards._ids', ['label' => "Design Basis", 'options' => $designstandards]);
+                    echo $this->Form->control('designstandards._ids', ['label' => "Design Basis (hold 'ctrl' when selecting more than one)", 'options' => $designstandards]);
                     $building = [   'Class 1a'  => 'Class 1a  - A detached house / A group of two or more attached dwelling each separated by a fire-resisting wall',
                                     'Class 1b'  => 'Class 1b  - A boarding house, guest house hostel with total area not exceeding 300m² and in which not more than 12 persons would ordinarily be resident / 3 or more single dwellings located in one allotment and used for short-term holiday accommodation',
                                     'Class 2'   => 'Class 2   - A building containing 2 or more sole-occupancy units each being a separate dwelling',
