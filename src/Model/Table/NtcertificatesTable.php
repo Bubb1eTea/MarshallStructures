@@ -41,7 +41,7 @@ class NtcertificatesTable extends Table
         parent::initialize($config);
 
         $this->setTable('ntcertificates');
-        $this->setDisplayField('name');
+        $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Projects', [
@@ -72,17 +72,19 @@ class NtcertificatesTable extends Table
 
         $validator
             ->scalar('lotportionnum')
-            ->maxLength('lotportionnum', 50)
-            ->allowEmptyString('lotportionnum');
+            ->maxLength('lotportionnum', 50, 'This field is too long.')
+            ->allowEmptyString('lotportionnum')
+            ->integer('lotportionnum','This field can only contain digits');
 
         $validator
             ->scalar('location')
-            ->maxLength('location', 50)
+            ->maxLength('location', 50, 'This field is too long.')
             ->allowEmptyString('location');
 
         $validator
             ->scalar('townhundred')
-            ->maxLength('townhundred', 50)
+            ->maxLength('townhundred', 50, 'This field is too long.')
+            ->regex('townhundred', '/^[a-zA-Z\s]*$/', 'This field can only contain letters.')
             ->allowEmptyString('townhundred');
 
         $validator
@@ -99,116 +101,117 @@ class NtcertificatesTable extends Table
 
         $validator
             ->scalar('buildingclass')
-            ->maxLength('buildingclass', 100)
+            ->maxLength('buildingclass', 100, 'This field is too long.')
             ->allowEmptyString('buildingclass');
 
         $validator
             ->scalar('constructiontype')
-            ->maxLength('constructiontype', 10)
+            ->maxLength('constructiontype', 10,'This field is too long.')
             ->allowEmptyString('constructiontype');
 
         $validator
             ->scalar('buildingimportancelevel')
-            ->maxLength('buildingimportancelevel', 50)
+            ->maxLength('buildingimportancelevel', 50,'This field is too long.')
             ->allowEmptyString('buildingimportancelevel');
 
         $validator
             ->scalar('windexceedance')
-            ->maxLength('windexceedance', 10)
+            ->integer('windexceedance', 'This field can only contain digits.')
+            ->maxLength('windexceedance', 10,'This field is too long.')
             ->allowEmptyString('windexceedance');
 
         $validator
             ->scalar('region')
-            ->maxLength('region', 50)
+            ->maxLength('region', 50,'This field is too long.')
             ->allowEmptyString('region');
 
         $validator
-            ->decimal('windspeed')
+            ->decimal('windspeed', 'This field must be a decimal')
             ->allowEmptyString('windspeed');
 
         $validator
             ->scalar('terraincat')
-            ->maxLength('terraincat', 5)
+            ->maxLength('terraincat', 5, 'This field is too long.')
             ->allowEmptyString('terraincat');
 
         $validator
-            ->decimal('referenceheight')
+            ->decimal('referenceheight', 'This field must be a decimal.')
             ->allowEmptyString('referenceheight');
 
         $validator
-            ->decimal('mz')
+            ->decimal('mz', 'This field must be a decimal.')
             ->allowEmptyString('mz');
 
         $validator
-            ->decimal('ms')
+            ->decimal('ms', 'This field must be a decimal.')
             ->allowEmptyString('ms');
 
         $validator
-            ->decimal('mt')
+            ->decimal('mt', 'This field must be a decimal.')
             ->allowEmptyString('mt');
 
         $validator
-            ->decimal('windspeedrefheight')
+            ->decimal('windspeedrefheight', 'This field must be a decimal.')
             ->allowEmptyString('windspeedrefheight');
 
         $validator
             ->scalar('intpressure')
-            ->maxLength('intpressure', 15)
+            ->maxLength('intpressure', 15, 'This field is too long.')
             ->allowEmptyString('intpressure');
 
         $validator
             ->scalar('expressurewall')
-            ->maxLength('expressurewall', 15)
+            ->maxLength('expressurewall', 15, 'This field is too long.')
             ->allowEmptyString('expressurewall');
 
         $validator
             ->scalar('expressureroof')
-            ->maxLength('expressureroof', 15)
+            ->maxLength('expressureroof', 15, 'This field is too long.')
             ->allowEmptyString('expressureroof');
 
         $validator
             ->scalar('netpressureroofwall')
-            ->maxLength('netpressureroofwall', 20)
+            ->maxLength('netpressureroofwall', 20, 'This field is too long.')
             ->allowEmptyString('netpressureroofwall');
 
         $validator
             ->scalar('imposedloadfloorroof')
-            ->maxLength('imposedloadfloorroof', 15)
+            ->maxLength('imposedloadfloorroof', 15, 'This field is too long.')
             ->allowEmptyString('imposedloadfloorroof');
 
         $validator
             ->scalar('earthquakecat')
-            ->maxLength('earthquakecat', 3)
+            ->maxLength('earthquakecat', 3, 'This field is too long.')
             ->allowEmptyString('earthquakecat');
 
         $validator
             ->scalar('earthexceedance')
-            ->maxLength('earthexceedance', 10)
+            ->maxLength('earthexceedance', 10, 'This field is too long.')
             ->allowEmptyString('earthexceedance');
 
         $validator
             ->scalar('importancelevel')
-            ->maxLength('importancelevel', 10)
+            ->maxLength('importancelevel', 10, 'This field is too long.')
             ->allowEmptyString('importancelevel');
 
         $validator
             ->scalar('hazardfactor')
-            ->maxLength('hazardfactor', 10)
+            ->maxLength('hazardfactor', 10, 'This field is too long.')
             ->allowEmptyString('hazardfactor');
 
         $validator
             ->scalar('subsoilclass')
-            ->maxLength('subsoilclass', 10)
+            ->maxLength('subsoilclass', 10, 'This field is too long.')
             ->allowEmptyString('subsoilclass');
 
         $validator
             ->scalar('bearingcap')
-            ->maxLength('bearingcap', 20)
+            ->maxLength('bearingcap', 20, 'This field is too long.')
             ->allowEmptyString('bearingcap');
 
         $validator
             ->scalar('siteclass')
-            ->maxLength('siteclass', 10)
+            ->maxLength('siteclass', 10, 'This field is too long.')
             ->allowEmptyString('siteclass');
 
         $validator
@@ -221,21 +224,24 @@ class NtcertificatesTable extends Table
 
         $validator
             ->scalar('compname')
-            ->maxLength('compname', 50)
+            ->maxLength('compname', 50, 'This field is too long.')
             ->allowEmptyString('compname');
 
         $validator
             ->scalar('compntregnum')
-            ->maxLength('compntregnum', 50)
+            ->integer('compntregnum', 'This field can only contain digits.')
+            ->maxLength('compntregnum', 50, 'This field is too long.')
             ->allowEmptyString('compntregnum');
 
         $validator
             ->scalar('name')
-            ->maxLength('name', 50)
+            ->maxLength('name', 50, 'This field is too long.')
+            ->regex('name', '/^[a-zA-Z\s]*$/', 'This field can only contain letters.')
             ->allowEmptyString('name');
 
         $validator
             ->scalar('ntregnum')
+            ->integer('ntregnum', 'This field can only contain digits.')
             ->maxLength('ntregnum', 50)
             ->allowEmptyString('ntregnum');
 
