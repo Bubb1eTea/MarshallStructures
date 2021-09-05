@@ -31,7 +31,7 @@ debug($session->read('previous_url')); ?>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $ntcertificate->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $ntcertificate->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $ntcertificate->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ntcertificate->id)]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $ntcertificate->id], ['confirm' => __('Are you sure you want to delete NT Certificate #{0}?', $ntcertificate->id)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>
