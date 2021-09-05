@@ -162,10 +162,10 @@ debug($session->read('previous_url')); ?>
                 <script>
                     $(document).ready(function() {
                         $('input').keyup(function(ev) {                               
-                                var windspeed = parseFloat($('#windspeed').val()) || 0;
-                                var mz = parseFloat($('#mz').val())  || 0;
-                                var ms = parseFloat($('#ms').val())  || 0;
-                                var mt = parseFloat($('#mt').val()) || 0;
+                                var windspeed = parseFloat($('#windspeed').val()) || 1;
+                                var mz = parseFloat($('#mz').val())  || 1;
+                                var ms = parseFloat($('#ms').val())  || 1;
+                                var mt = parseFloat($('#mt').val()) || 1;
 
                                 var windspeedrefheight = (parseFloat(windspeed)*parseFloat(mz)*parseFloat(ms)*parseFloat(mt)).toFixed(2);
                                 var divobj = document.getElementById('windspeedrefheight');
