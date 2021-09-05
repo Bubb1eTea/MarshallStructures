@@ -6,6 +6,9 @@
  * @var string[]|\Cake\Collection\CollectionInterface $designstandards
  */
 ?>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>        
+
 <?php session_start();
 $session = $this->request->getSession();
 $session->write('previous_url', $session->read('url'));
@@ -155,6 +158,21 @@ debug($session->read('previous_url')); ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
+
+                <script>
+                    $(document).ready(function() {
+                        $('input').keyup(function(ev) {                               
+                                var windspeed = parseFloat($('#windspeed').val()) || 0;
+                                var mz = parseFloat($('#mz').val())  || 0;
+                                var ms = parseFloat($('#ms').val())  || 0;
+                                var mt = parseFloat($('#mt').val()) || 0;
+
+                                var windspeedrefheight = (parseFloat(windspeed)*parseFloat(mz)*parseFloat(ms)*parseFloat(mt)).toFixed(2);
+                                var divobj = document.getElementById('windspeedrefheight');
+                                divobj.value = windspeedrefheight;       
+                        });
+                    });
+                </script>
         </div>
     </div>
 </div>
