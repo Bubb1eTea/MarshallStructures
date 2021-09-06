@@ -8,10 +8,10 @@
     <aside class="column">
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('Edit VIC Regulation'), ['action' => 'edit', $viccertificate->id], ['class' => 'side-nav-item']) ?>
-            <?= $this->Form->postLink(__('Delete VIC Regulation'), ['action' => 'delete', $viccertificate->id], ['confirm' => __('Are you sure you want to delete VIC Regulation #{0}?', $viccertificate->id), 'class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('List VIC Regulations'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('New VIC Regulation'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('Edit VIC Certificate'), ['action' => 'edit', $viccertificate->id], ['class' => 'side-nav-item']) ?>
+            <?= $this->Form->postLink(__('Delete VIC Certificate'), ['action' => 'delete', $viccertificate->id], ['confirm' => __('Are you sure you want to delete VIC Certificate #{0}?', $viccertificate->id), 'class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('List VIC Certificates'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('New VIC Certificate'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
@@ -19,7 +19,7 @@
             <h3><?= h($viccertificate->id) ?></h3>
             <table>
                 <tr>
-                    <th><?= __('VIC Regulation ID') ?></th>
+                    <th><?= __('VIC Certificate ID') ?></th>
                     <td><?= $this->Number->format($viccertificate->id) ?></td>
                 </tr>
                 <tr>

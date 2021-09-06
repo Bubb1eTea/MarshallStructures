@@ -5,8 +5,8 @@
  */
 ?>
 <div class="viccertificates index content">
-    <?= $this->Html->link(__('New Viccertificate'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('VIC Regulations') ?></h3>
+    <?= $this->Html->link(__('New VIC Certificate'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('VIC Certificates') ?></h3>
     <div class="table-responsive">
         <table>
             <thead>
@@ -26,7 +26,7 @@
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $viccertificate->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $viccertificate->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $viccertificate->id], ['confirm' => __('Are you sure you want to delete VIC Regulation #{0}?', $viccertificate->id)]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $viccertificate->id], ['confirm' => __('Are you sure you want to delete VIC Certificate #{0}?', $viccertificate->id)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

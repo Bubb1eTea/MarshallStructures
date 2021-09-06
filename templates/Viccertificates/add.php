@@ -17,14 +17,14 @@
     <aside class="column">
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List VIC Regulations'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('List VIC Certificates'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
         <div class="viccertificates form content">
             <?= $this->Form->create($viccertificate) ?>
             <fieldset>
-                <legend><?= __('Add VIC Regulation') ?></legend>
+                <legend><?= __('Add VIC Certificate') ?></legend>
                 <?php
                     echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true]);
                     echo $this->Form->control('company_id', ['options' => $companys, 'empty' => true, 'label'=>'Surveyor: This certificate is issued to']);
