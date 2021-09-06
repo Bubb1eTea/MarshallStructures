@@ -9,10 +9,16 @@
  * @var \Cake\Collection\CollectionInterface|string[] $designstandards
  */
 ?>
+<?php session_start();
+$session = $this->request->getSession();
+$session->write('previous_url', $session->read('url'));
+$session->write('url', 'viccertificates.add');
+debug($session->read('previous_url')); ?>
 <style>
     select[multiple="multiple"] { height:30rem;}
     .error-message {color: #ff0000;}
 </style>
+
 <div class="row">
     <aside class="column">
         <div class="side-nav">
@@ -26,7 +32,7 @@
             <fieldset>
                 <legend><?= __('Add VIC Certificate') ?></legend>
                 <?php
-                    echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true]);
+                    echo $this->Form->control('project_id', ['options' => $projects]);
                     echo $this->Form->control('company_id', ['options' => $companys, 'empty' => true, 'label'=>'Surveyor: This certificate is issued to']);
                     $building= ['a new building'=>'a new building',
                                 'an extension'=>'an extension',

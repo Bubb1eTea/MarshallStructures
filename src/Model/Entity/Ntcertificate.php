@@ -9,7 +9,7 @@ use Cake\ORM\Entity;
  * Ntcertificate Entity
  *
  * @property int $id
- * @property int|null $project_id
+ * @property int $project_id
  * @property \Cake\I18n\FrozenTime $lastmodified
  * @property string|null $lotportionnum
  * @property string|null $location

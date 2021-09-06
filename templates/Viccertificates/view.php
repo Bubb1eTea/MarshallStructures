@@ -4,6 +4,12 @@
  * @var \App\Model\Entity\Viccertificate $viccertificate
  */
 ?>
+<?php session_start();
+$session = $this->request->getSession();
+$session->write('previous_url', $session->read('url'));
+$session->write('url', 'viccertificates.view');
+debug($session->read('previous_url')); ?>
+<div class="viccertificates index content">
 <div class="row">
     <aside class="column">
         <div class="side-nav">
