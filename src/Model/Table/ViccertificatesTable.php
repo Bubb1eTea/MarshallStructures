@@ -133,8 +133,8 @@ class ViccertificatesTable extends Table
             ->allowEmptyString('prepared');
 
         $validator
-            ->dateTime('dateofissue')
-            ->notEmptyDateTime('dateofissue');
+            ->date('dateofissue')
+            ->allowEmptyDate('dateofissue');
 
         return $validator;
     }

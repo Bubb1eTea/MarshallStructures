@@ -25,7 +25,7 @@ use Cake\ORM\Entity;
  * @property string|null $performancereq
  * @property string|null $performancesolution
  * @property string|null $prepared
- * @property \Cake\I18n\FrozenTime $dateofissue
+ * @property \Cake\I18n\FrozenDate|null $dateofissue
  *
  * @property \App\Model\Entity\Project $project
  * @property \App\Model\Entity\Company $company
