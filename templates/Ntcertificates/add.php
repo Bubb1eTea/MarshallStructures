@@ -12,7 +12,7 @@ use PhpParser\Node\Stmt\Label;
 
 ?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>            
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
 
 <?php session_start();
 $session = $this->request->getSession();
@@ -62,12 +62,13 @@ debug($session->read('previous_url')); ?>
                                     'Class 10b' => 'Class 10b - A fence, mast, antenna, retaining or free-standing wall, swimming pool or the link',
                                     'Class 10c' => 'Class 10c - A private bushfire shelter'];
                     echo $this->Form->control('buildingclass', ['label' => "Class of Building (BCA)", 'options' => $building]);
+                    echo $this->Html->image("buildingtype.jpg");
 
                     $contructiontype = [    'N/A' => 'N/A',
                                             'A' => 'A',
                                             'B' => 'B',
                                             'C' => 'C'];
-                    echo $this->Form->control('constructiontype', ['label' => "Type of Construction (BCA volume 1 §C1.1) eg. Type A fire-resisting construction)", 'options' => $contructiontype]);
+                    echo $this->Form->control('constructiontype', ['label' => "Type of Construction (BCA volume 1 §C1.1) eg. Type A fire-resisting construction", 'options' => $contructiontype]);
 
                     $buildingimportancelevel = [    '1' => '1 Minor structures (failure not likely to endanger human life)',
                                                     '2' => '2 Normal structures and structures not falling into other levels',
@@ -99,7 +100,7 @@ debug($session->read('previous_url')); ?>
                                 'C' => 'C refer fig 3.1 AS1170.2',
                                 'W' => 'W refer fig 3.1 AS1170.2'];
                     echo $this->Form->control('region', ['label' => "Region", 'options' => $region]);
-
+                    echo $this->Html->image("regionalwindspeed.jpg");
                     echo $this->Form->control('windspeed', ['label' => "Regional ultimate wind speed Vʳ (m/s)"]);
 
                     $terraincat = [ '1aaa' => '1',
@@ -153,7 +154,7 @@ debug($session->read('previous_url')); ?>
                     echo $this->Form->control('compntregnum', ['label' => "Company NT Registration Number"]);
                     echo $this->Form->control('name', ['label' => "Name"]);
                     echo $this->Form->control('ntregnum', ['label' => "Nominee/Individual NT Registration Number"]);
-                    echo $this->Form->control('date', ['label' => "Date", 'empty' => true]);
+                    echo $this->Form->control('date', ['label' => "Date of Issue", 'empty' => true]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
@@ -161,7 +162,7 @@ debug($session->read('previous_url')); ?>
 
                 <script>
                     $(document).ready(function() {
-                        $('input').keyup(function(ev) {                               
+                        $('input').keyup(function(ev) {
                                 var windspeed = parseFloat($('#windspeed').val()) || 1;
                                 var mz = parseFloat($('#mz').val())  || 1;
                                 var ms = parseFloat($('#ms').val())  || 1;
@@ -169,7 +170,7 @@ debug($session->read('previous_url')); ?>
 
                                 var windspeedrefheight = (parseFloat(windspeed)*parseFloat(mz)*parseFloat(ms)*parseFloat(mt)).toFixed(2);
                                 var divobj = document.getElementById('windspeedrefheight');
-                                divobj.value = windspeedrefheight;       
+                                divobj.value = windspeedrefheight;
                         });
                     });
                 </script>
