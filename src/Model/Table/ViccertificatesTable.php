@@ -79,6 +79,10 @@ class ViccertificatesTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
+            ->dateTime('lastmodified')
+            ->notEmptyDateTime('lastmodified');
+
+        $validator
             ->scalar('buildingtype')
             ->maxLength('buildingtype', 100)
             ->allowEmptyString('buildingtype');

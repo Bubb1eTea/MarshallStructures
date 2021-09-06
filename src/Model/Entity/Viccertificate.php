@@ -11,6 +11,7 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property int|null $project_id
  * @property int|null $company_id
+ * @property \Cake\I18n\FrozenTime $lastmodified
  * @property string|null $buildingtype
  * @property int|null $numberofstorey
  * @property int|null $riseinstory
@@ -46,6 +47,7 @@ class Viccertificate extends Entity
     protected $_accessible = [
         'project_id' => true,
         'company_id' => true,
+        'lastmodified' => true,
         'buildingtype' => true,
         'numberofstorey' => true,
         'riseinstory' => true,
