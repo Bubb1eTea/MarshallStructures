@@ -35,6 +35,10 @@ debug($session->read('previous_url'));?>
             <fieldset>
                 <legend><?= __('Edit Invoice #'.$invoice->id) ?></legend>
                 <?php
+                debug($feeproposal->first()['total']);
+                debug($feeproposal->first()['grandtotal']);
+                debug($feeproposal->first()['totalgst']);
+
                 echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true]);
                 echo $this->Form->control('feeproposal_id', ['options' => $feeproposals, 'empty' => true, 'label'=>"Fee Proposal"]);
                 echo $this->Form->control('datecreated', ['label'=>"Date Created"]);

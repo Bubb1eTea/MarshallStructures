@@ -90,7 +90,14 @@ class InvoicesController extends AppController
         }
         $projects = $this->Invoices->Projects->find('list', ['limit' => 200]);
         $feeproposals = $this->Invoices->Feeproposals->find('list', ['limit' => 200]);
+
+        $feeproposal = $this->Invoices->find('all');
+        $feeproposal->join(['table'=>'Feeproposals', 'type'=>'INNER', 'conditions'=>'Invoices.feeproposal_id = Feeproposals.id']);
+        $feeproposal->where(['Invoices.feeproposal_id = Feeproposals.id']);
+        $feeproposal->where(['Invoices.id = '=>$id]);
+
         $this->set(compact('invoice', 'projects', 'feeproposals'));
+        $this->set(compact('feeproposal'));
     }
 
     /**
