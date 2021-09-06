@@ -9,7 +9,6 @@ $session = $this->request->getSession();
 $session->write('previous_url', $session->read('url'));
 $session->write('url', 'viccertificates.view');
 debug($session->read('previous_url')); ?>
-<div class="viccertificates index content">
 <div class="row">
     <aside class="column">
         <div class="side-nav">
