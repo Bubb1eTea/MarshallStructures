@@ -17,8 +17,9 @@
     <div class="column-responsive column-80">
         <div class="invoices view content">
 
-            <h3><?= h($invoice->id) ?> <buttoner style='float: right;'> <?= $this->Html->link(__('Download to pdf'), ['action' => 'invoiceReport', $invoice->id ], ['class' => 'button float-right']); ?>
-            <buttoner style='float: right; padding-right:10px;'> <?= $this->Html->link(__('View Generated Template'), ['action' => 'invoiceReportPreview', $invoice->id], ['class' => 'button float-right']); ?></buttoner> </h3>
+            <h3><?= h($invoice->id) ?>
+                <buttoner style='float: right;'> <?= $this->Html->link(__('Download to pdf'), ['action' => 'invoiceReport', $invoice->id ], ['class' => 'button float-right']); ?>
+                <buttoner style='float: right; padding-right:10px;'> <?= $this->Html->link(__('View Generated Template'), ['action' => 'invoiceReportPreview', $invoice->id], ['class' => 'button float-right']); ?></buttoner> </h3>
             <table>
                 <tr>
                     <th><?= __('Project') ?></th>

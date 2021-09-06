@@ -1,15 +1,24 @@
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Feeproposal $feeproposal
+ * @var string[]|\Cake\Collection\CollectionInterface $projects
+ */
+?>
+
+
 <html>
-<button style = 'float:left;'onclick="history.go(-1);"> Back </button>
-            <buttoner style='float: right; padding: 0px;'> <?= $this->Html->link(__(' Download to pdf'), ['action' => 'feeproposalReport',  ], ['class' => 'button']); ?> </buttoner>
-    
+<button style = 'float:right;'onclick="history.go(-1);"> Back </button>
+<buttoner style='float: right; padding: 0px;'> <?= $this->Html->link(__(' Download to pdf'), ['action' => 'feeproposalReport',  ], ['class' => 'button']); ?> </buttoner>
+
 <head>
 
-    
-        
+
+
 <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
 <meta name=Generator content="Microsoft Word 15 (filtered)">
 <style>
-    
+
 <!--
  /* Font Definitions */
  @font-face
@@ -210,7 +219,7 @@ ul
 
 <body lang=EN-US style='word-wrap:break-word'>
 
-
+<div class="contenter">
 <div class=WordSection1>
 
 <p class=MsoNormal align=center style='margin-top:6.0pt;margin-right:0cm;
@@ -227,20 +236,17 @@ margin-left:0cm;text-align:justify'><b><span lang=EN-AU style='font-size:11.0pt'
 </span></b></p>
 
 <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm;text-align:justify'><b><span lang=EN-AU style='font-size:11.0pt'>CLIENT:
- <!-- insert client here --></span></b></p>
+margin-left:0cm;text-align:justify'><b><span lang=EN-AU style='font-size:11.0pt'>CLIENT: <?=$clientname->first()['Clients']['firstname'].' '.$clientname->first()['Clients']['lastname']?></span></b></p>
 
  <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm'><b><span lang=EN-AU style='font-size:11.0pt'>GUARANTOR: <!-- insert guarantor --></span></b></p>
 
 <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm'><b><span lang=EN-AU style='font-size:11.0pt'>CONSULTANT:  MARSHALL
-STRUCTURES</span></b></p>
-
+margin-left:0cm'><b><span lang=EN-AU style='font-size:11.0pt'>CONSULTANT: MARSHALL STRUCTURES</span></b></p>
 
 
 <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm'><b><span lang=EN-AU style='font-size:11.0pt'>PROJECT TITLE: <!-- insert project title here --> </span></b></p>
+margin-left:0cm'><b><span lang=EN-AU style='font-size:11.0pt'>PROJECT TITLE: <?= $feeproposal->project->projectname ?> </span></b></p>
 
 <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm'><span lang=EN-AU style='font-size:11.0pt'><br>
@@ -268,36 +274,25 @@ style='font-size:11.0pt;font-family:Symbol'><span style='font:7.0pt "Times New R
 
 
 <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:1.0cm'><span lang=EN-AU style='font-size:11.0pt'>Marshall
-Structures shall also engage a geotechnical engineer on behalf of the client to
-proform site investigation and determination of soil bearing capacity. Fees for
-these works are quoted from Home &amp; Industruial Consulting Engineers and
-listed in section 3, fees and disbursements, below. </span></p>
+margin-left:1.0cm'><span lang=EN-AU style='font-size:11.0pt'>Marshall Structures shall also engage a geotechnical engineer on behalf of the client to proform site investigation and determination of soil bearing capacity. Fees for these works are quoted from Home &amp; Industruial Consulting Engineers and listed in section 3, fees and disbursements, below. </span></p>
 
 <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm;text-indent:1.0cm'><span lang=EN-AU style='font-size:11.0pt'>Excluded
-from the scope are the following:</span></p>
+margin-left:0cm;text-indent:1.0cm'><span lang=EN-AU style='font-size:11.0pt'>Excluded from the scope are the following:</span></p>
 
 <p class=MsoListParagraphCxSpFirst style='margin-top:2.0pt;margin-right:0cm;
-margin-bottom:6.0pt;margin-left:64.35pt;text-indent:-18.0pt'><span lang=EN-AU
-style='font-size:11.0pt;font-family:Symbol'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span lang=EN-AU style='font-size:11.0pt'>◉ Design of in-ground
-pool shell and associated footings</span></p>
+margin-bottom:6.0pt;margin-left:64.35pt;text-indent:-18.0pt'><span lang=EN-AU style='font-size:11.0pt;font-family:Symbol'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-AU style='font-size:11.0pt'>◉ Design of in-ground pool shell and associated footings</span></p>
 
 
 <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:1.0cm'><span lang=EN-AU style='font-size:11.0pt'>Included in the
-scope of feels is allocation for three design meetings, site meetings or site
-inspections. Additional meetings and inspections required in addition this
-those allocated may be carried our at request for a fixed fee of $450 plus gst.</span></p>
+margin-left:1.0cm'><span lang=EN-AU style='font-size:11.0pt'>Included in the scope of feels is allocation for three design meetings, site meetings or site inspections. Additional meetings and inspections required in addition this those allocated may be carried our at request for a fixed fee of $450 plus gst.</span></p>
 
 <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:1.0cm'><span lang=EN-AU>&#8194;</span></p>
 
 <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>2.<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span lang=EN-AU>Documents provided by the Client for the
-Services</span></p>
+</span></span><span lang=EN-AU>Documents provided by the Client for the Services</span></p>
 
 <div style='border:none;border-top:solid windowtext 1.0pt;padding:6.0pt 0cm 0cm 0cm;
 margin-left:1.0cm;margin-right:0cm'>
@@ -309,9 +304,7 @@ margin-left:0cm;border:none;padding:0cm'><span lang=EN-AU style='font-size:
 </div>
 
 <p class=MsoNormal style='margin-left:1.0cm'><span lang=EN-AU style='font-size:
-11.0pt'>The Consultant</span><span style='font-size:11.0pt'> will render the
-Services by relying upon a briefing and all information concerning the Client's
-requirements in relation to the Project as follows-</span></p>
+11.0pt'>The Consultant</span><span style='font-size:11.0pt'> will render the Services by relying upon a briefing and all information concerning the Client's requirements in relation to the Project as follows-</span></p>
 
 <p class=MsoNormal style='margin-left:1.0cm'><span lang=EN-AU style='font-size:
 11.0pt'>&nbsp;</span></p>
