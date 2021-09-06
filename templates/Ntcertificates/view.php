@@ -36,18 +36,6 @@ debug($session->read('previous_url')); ?>
                     <td><?= $ntcertificate->has('project') ? $this->Html->link($ntcertificate->project->projectname, ['controller' => 'Projects', 'action' => 'view', $ntcertificate->project->id]) : '' ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Lot/Portion Number') ?></th>
-                    <td><?= h($ntcertificate->lotportionnum) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Location') ?></th>
-                    <td><?= h($ntcertificate->location) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Town') ?></th>
-                    <td><?= h($ntcertificate->townhundred) ?></td>
-                </tr>
-                <tr>
                     <th><?= __('Company Name') ?></th>
                     <td><?= h($ntcertificate->compname) ?></td>
                 </tr>
