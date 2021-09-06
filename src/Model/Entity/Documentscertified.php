@@ -1,0 +1,39 @@
+<?php
+declare(strict_types=1);
+
+namespace App\Model\Entity;
+
+use Cake\ORM\Entity;
+
+/**
+ * Documentscertified Entity
+ *
+ * @property int $id
+ * @property int|null $documentno
+ * @property \Cake\I18n\FrozenTime $documentdate
+ * @property string|null $type
+ * @property int|null $numberofpage
+ * @property string|null $preparedby
+ *
+ * @property \App\Model\Entity\Viccertificate[] $viccertificates
+ */
+class Documentscertified extends Entity
+{
+    /**
+     * Fields that can be mass assigned using newEntity() or patchEntity().
+     *
+     * Note that when '*' is set to true, this allows all unspecified fields to
+     * be mass assigned. For security purposes, it is advised to set '*' to false
+     * (or remove it), and explicitly make individual fields accessible as needed.
+     *
+     * @var array
+     */
+    protected $_accessible = [
+        'documentno' => true,
+        'documentdate' => true,
+        'type' => true,
+        'numberofpage' => true,
+        'preparedby' => true,
+        'viccertificates' => true,
+    ];
+}
