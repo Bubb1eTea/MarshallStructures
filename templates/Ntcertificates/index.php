@@ -11,14 +11,14 @@ $session->write('url', 'ntcertificates.index');
 debug($session->read('previous_url')); ?>
 <div class="ntcertificates index content">
     <?= $this->Html->link(__('New NT Certificate'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('NI Certificates') ?></h3>
+    <h3><?= __('NT Certificates') ?></h3>
     <div class="table-responsive">
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('project_id') ?></th>
-                    <th><?= $this->Paginator->sort('date') ?></th>
+                    <th><?= $this->Paginator->sort('id', ['label'=>'ID']) ?></th>
+                    <th><?= $this->Paginator->sort('project_id', ['label'=>'Project ID']) ?></th>
+                    <th><?= $this->Paginator->sort('date', ['label'=>'Date of Issue']) ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
