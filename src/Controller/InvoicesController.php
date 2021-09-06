@@ -93,6 +93,7 @@ class InvoicesController extends AppController
 
         $feeproposal = $this->Invoices->find('all');
         $feeproposal->join(['table'=>'Feeproposals', 'type'=>'INNER', 'conditions'=>'Invoices.feeproposal_id = Feeproposals.id']);
+        $feeproposal->select(['Feeproposals.total', 'Feeproposals.totalgst', 'Feeproposals.grandtotal']);
         $feeproposal->where(['Invoices.feeproposal_id = Feeproposals.id']);
         $feeproposal->where(['Invoices.id = '=>$id]);
 
