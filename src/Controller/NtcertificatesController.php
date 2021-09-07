@@ -112,8 +112,12 @@ class NtcertificatesController extends AppController
         
     }
 
-    public function ntcertificatesReportPreview()
+    public function ntcertificatesReportPreview($id = null)
     {
+        $ntcertificate = $this->Ntcertificates->get($id, [
+            'contain' => ['Projects', 'Designstandards'],
+        ]);
 
+        $this->set(compact('ntcertificate'));
     }
 }
