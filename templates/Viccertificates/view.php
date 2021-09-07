@@ -24,9 +24,9 @@ debug($session->read('previous_url')); ?>
 
         for($y=1; $y<=$numofrows;$y++){?>
     <tr>
-        <td><?=$documentsproducedarray[$y*3-3]?></td>
-        <td><?=$documentsproducedarray[$y*3-2]?></td>
-        <td><?=$documentsproducedarray[$y*3-1]?></td>
+        <td><?php if(!empty($documentsproducedarray[$y*3-3]))  echo $documentsproducedarray[$y*3-3]?></td>
+        <td><?php if(!empty($documentsproducedarray[$y*3-2]))  echo $documentsproducedarray[$y*3-2]?></td>
+        <td><?php if(!empty($documentsproducedarray[$y*3-1]))  echo $documentsproducedarray[$y*3-1]?></td>
         <?php }?>
 
     </tr>
@@ -47,11 +47,11 @@ debug($session->read('previous_url')); ?>
 
             for($y=1; $y<=$numofrows;$y++){?>
         <tr>
-            <td><?=$documentscertifiedarray[$y*5-5]?></td>
-            <td><?=$documentscertifiedarray[$y*5-4]?></td>
-            <td><?=$documentscertifiedarray[$y*5-3]?></td>
-            <td><?=$documentscertifiedarray[$y*5-2]?></td>
-            <td><?=$documentscertifiedarray[$y*5-1]?></td>
+            <td><?php if(!empty($documentscertifiedarray[$y*5-5])) echo $documentscertifiedarray[$y*5-5]?></td>
+            <td><?php if(!empty($documentscertifiedarray[$y*5-4])) echo $documentscertifiedarray[$y*5-4]?></td>
+            <td><?php if(!empty($documentscertifiedarray[$y*5-3])) echo $documentscertifiedarray[$y*5-3]?></td>
+            <td><?php if(!empty($documentscertifiedarray[$y*5-2])) echo $documentscertifiedarray[$y*5-2]?></td>
+            <td><?php if(!empty($documentscertifiedarray[$y*5-1])) echo $documentscertifiedarray[$y*5-1]?></td>
             <?php }?>
 
         </tr>
