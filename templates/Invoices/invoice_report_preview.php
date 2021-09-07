@@ -108,7 +108,7 @@
 
     <p class=MsoNormal><span lang=EN-GB>Refer below for invoice relating to the project '<b><?= $invoice->project->projectname ?></b> - <b><?= $invoice->project->streetname ?>&nbsp;<?= $invoice->project->suburb ?></b>'</span></p>
 
-    <p class=MsoNormal><span lang=EN-GB>This invoice relates to <b><span style='color:red'>100% completion</span></b> of total fees </span></p>
+    <p class=MsoNormal><span lang=EN-GB>This invoice relates to <b><span style='color:red'><?= $invoice->completedpercentage ?>% completion</span></b> of total fees </span></p>
 
     <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
 
