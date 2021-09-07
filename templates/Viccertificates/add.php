@@ -4,7 +4,6 @@
  * @var \App\Model\Entity\Viccertificate $viccertificate
  * @var \Cake\Collection\CollectionInterface|string[] $projects
  * @var \Cake\Collection\CollectionInterface|string[] $companys
- * @var \Cake\Collection\CollectionInterface|string[] $documentsproduceds
  * @var \Cake\Collection\CollectionInterface|string[] $documentscertifieds
  * @var \Cake\Collection\CollectionInterface|string[] $designstandards
  */
@@ -67,8 +66,8 @@ debug($session->read('previous_url')); ?>
                     echo $this->Form->control('constructiontype', ['label'=>'Type of Construction (BCA volume 1 §C1.1) eg. Type A fire-resisting construction', 'options'=>$constructiontype]);
                     echo $this->Form->control('workrelatingto', ['label'=>'Design or part of the design of building work relating to']);
                     echo $this->Form->control('drawingsproducedby', ['label'=>'Drawings produced by']);
-                    echo $this->Form->control('documentsproduced_id', ['options' => $documentsproduceds, 'empty' => true, 'label'=>'Documents Produced']);
-                    echo $this->Form->control('documentscertified_id', ['options' => $documentscertifieds, 'empty' => true, 'label'=>'Documents Certified']);
+                    echo $this->Form->control('documentsproduced');
+                    echo $this->Form->control('documentscertified');
                     echo $this->Form->control('performancereq', ['label'=>'Relevant performance requirement']);
                     echo $this->Form->control('performancesolution',['label'=>'Details of performance solution required by regulation 124']);
                     echo $this->Form->control('designstandards._ids', ['options' => $designstandards, 'label' => "Design Basis (hold 'ctrl' when selecting more than one)"]);

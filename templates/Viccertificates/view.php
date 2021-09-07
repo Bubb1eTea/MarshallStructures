@@ -9,6 +9,33 @@ $session = $this->request->getSession();
 $session->write('previous_url', $session->read('url'));
 $session->write('url', 'viccertificates.view');
 debug($session->read('previous_url')); ?>
+<?php         $documentsproducedtext = $viccertificate->documentsproduced;
+        $documentsproducedarray=explode(";", $documentsproducedtext);
+        $count=count($documentsproducedarray);
+        $numofrows=ceil($count/3);
+        $remainder=$count%3;
+        ?>
+<table>
+    <tr>
+        <th>Document No.</th>
+        <th>Document Date</th>
+        <th>Document Revision</th>
+
+    <?php
+    $documentsproducedtext = $viccertificate->documentsproduced;
+    $documentsproducedarray=explode(";", $documentsproducedtext);
+
+        for($y=1; $y<=$numofrows;$y++){?>
+    <tr>
+        <td><?=$documentsproducedarray[$y*3-3]?></td>
+        <td><?=$documentsproducedarray[$y*3-2]?></td>
+        <td><?=$documentsproducedarray[$y*3-1]?></td>
+        <?php }?>
+
+    </tr>
+
+
+</table>
 <div class="row">
     <aside class="column">
         <div class="side-nav">

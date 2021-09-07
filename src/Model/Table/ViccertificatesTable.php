@@ -13,8 +13,6 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\ProjectsTable&\Cake\ORM\Association\BelongsTo $Projects
  * @property \App\Model\Table\CompanysTable&\Cake\ORM\Association\BelongsTo $Companys
- * @property \App\Model\Table\DocumentsproducedsTable&\Cake\ORM\Association\BelongsTo $Documentsproduceds
- * @property \App\Model\Table\DocumentscertifiedsTable&\Cake\ORM\Association\BelongsTo $Documentscertifieds
  * @property \App\Model\Table\DesignstandardsTable&\Cake\ORM\Association\BelongsToMany $Designstandards
  *
  * @method \App\Model\Entity\Viccertificate newEmptyEntity()
@@ -53,12 +51,6 @@ class ViccertificatesTable extends Table
         $this->belongsTo('Companys', [
             'foreignKey' => 'company_id',
         ]);
-        $this->belongsTo('Documentsproduceds', [
-            'foreignKey' => 'documentsproduced_id',
-        ]);
-        $this->belongsTo('Documentscertifieds', [
-            'foreignKey' => 'documentscertified_id',
-        ]);
         $this->belongsToMany('Designstandards', [
             'foreignKey' => 'viccertificate_id',
             'targetForeignKey' => 'designstandard_id',
@@ -79,27 +71,20 @@ class ViccertificatesTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->dateTime('lastmodified')
-            ->notEmptyDateTime('lastmodified');
-
-        $validator
             ->scalar('buildingtype')
             ->maxLength('buildingtype', 100)
             ->allowEmptyString('buildingtype');
 
         $validator
             ->integer('numberofstorey')
-            ->greaterThanOrEqual('numberofstorey', 0,'This field must be positive.')
             ->allowEmptyString('numberofstorey');
 
         $validator
             ->integer('riseinstory')
-            ->greaterThanOrEqual('riseinstory', 0,'This field must be positive.')
             ->allowEmptyString('riseinstory');
 
         $validator
             ->integer('effectiveheight')
-            ->greaterThanOrEqual('effectiveheight', 0,'This field must be positive.')
             ->allowEmptyString('effectiveheight');
 
         $validator
@@ -136,8 +121,20 @@ class ViccertificatesTable extends Table
             ->allowEmptyString('prepared');
 
         $validator
+            ->dateTime('lastmodified')
+            ->notEmptyDateTime('lastmodified');
+
+        $validator
             ->date('dateofissue')
             ->allowEmptyDate('dateofissue');
+
+        $validator
+            ->scalar('documentsproduced')
+            ->allowEmptyString('documentsproduced');
+
+        $validator
+            ->scalar('documentscertified')
+            ->allowEmptyString('documentscertified');
 
         return $validator;
     }
@@ -153,8 +150,6 @@ class ViccertificatesTable extends Table
     {
         $rules->add($rules->existsIn(['project_id'], 'Projects'), ['errorField' => 'project_id']);
         $rules->add($rules->existsIn(['company_id'], 'Companys'), ['errorField' => 'company_id']);
-        $rules->add($rules->existsIn(['documentsproduced_id'], 'Documentsproduceds'), ['errorField' => 'documentsproduced_id']);
-        $rules->add($rules->existsIn(['documentscertified_id'], 'Documentscertifieds'), ['errorField' => 'documentscertified_id']);
 
         return $rules;
     }
