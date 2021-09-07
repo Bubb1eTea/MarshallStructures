@@ -9,12 +9,7 @@ $session = $this->request->getSession();
 $session->write('previous_url', $session->read('url'));
 $session->write('url', 'viccertificates.view');
 debug($session->read('previous_url')); ?>
-<?php         $documentsproducedtext = $viccertificate->documentsproduced;
-        $documentsproducedarray=explode(";", $documentsproducedtext);
-        $count=count($documentsproducedarray);
-        $numofrows=ceil($count/3);
-        $remainder=$count%3;
-        ?>
+<!-- BELOW IS THE CODE FOR THE DOCUMENT PRODUCED TABLE -->
 <table>
     <tr>
         <th>Document No.</th>
@@ -24,6 +19,8 @@ debug($session->read('previous_url')); ?>
     <?php
     $documentsproducedtext = $viccertificate->documentsproduced;
     $documentsproducedarray=explode(";", $documentsproducedtext);
+    $count=count($documentsproducedarray);
+    $numofrows=ceil($count/3);
 
         for($y=1; $y<=$numofrows;$y++){?>
     <tr>
@@ -33,6 +30,31 @@ debug($session->read('previous_url')); ?>
         <?php }?>
 
     </tr>
+    <!-- BELOW IS THE CODE FOR THE DOCUMENT CERTIFIED TABLE -->
+    <table>
+        <tr>
+            <th>Document No.</th>
+            <th>Document Date</th>
+            <th>Type of Document</th>
+            <th>Number of Pages</th>
+            <th>Prepared By</th>
+
+            <?php
+            $documentscertifiedtext = $viccertificate->documentscertified;
+            $documentscertifiedarray=explode(";", $documentscertifiedtext);
+            $count=count($documentscertifiedarray);
+            $numofrows=ceil($count/5);
+
+            for($y=1; $y<=$numofrows;$y++){?>
+        <tr>
+            <td><?=$documentscertifiedarray[$y*5-5]?></td>
+            <td><?=$documentscertifiedarray[$y*5-4]?></td>
+            <td><?=$documentscertifiedarray[$y*5-3]?></td>
+            <td><?=$documentscertifiedarray[$y*5-2]?></td>
+            <td><?=$documentscertifiedarray[$y*5-1]?></td>
+            <?php }?>
+
+        </tr>
 
 
 </table>
