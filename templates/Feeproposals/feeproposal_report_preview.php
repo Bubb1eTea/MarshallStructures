@@ -9,7 +9,7 @@
 
 <html>
 <button style = 'float:right;'onclick="history.go(-1);"> Back </button>
-<buttoner style='float: right; margin-right: 25px;padding: 0px;'> <?= $this->Html->link(__(' Download to pdf'), ['action' => 'feeproposalReport',  ], ['class' => 'button']); ?> </buttoner>
+<buttoner style='float: right; margin-right: 25px;padding: 0px;'> <?= $this->Html->link(__(' Download to pdf'), ['action' => 'feeproposalReport', $feeproposal->id ], ['class' => 'button']); ?> </buttoner>
 
 <head>
 
@@ -239,7 +239,7 @@ margin-left:0cm;text-align:justify'><b><span lang=EN-AU style='font-size:11.0pt'
 margin-left:0cm;text-align:justify'><b><span lang=EN-AU style='font-size:11.0pt'>CLIENT: <?=$clientname->first()['Clients']['firstname'].' '.$clientname->first()['Clients']['lastname']?></span></b></p>
 
  <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm'><b><span lang=EN-AU style='font-size:11.0pt'>GUARANTOR: <!-- insert guarantor --></span></b></p>
+margin-left:0cm'><b><span lang=EN-AU style='font-size:11.0pt'>GUARANTOR: <?=$feeproposal->guarantor?></span></b></p>
 
 <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm'><b><span lang=EN-AU style='font-size:11.0pt'>CONSULTANT: MARSHALL STRUCTURES</span></b></p>
@@ -269,7 +269,7 @@ margin-left:0cm;border:none;padding:0cm'><span lang=EN-AU style='font-size:
 <p class=MsoListParagraphCxSpFirst style='margin-top:2.0pt;margin-right:0cm;
 margin-bottom:6.0pt;margin-left:64.35pt;text-indent:-18.0pt'><span lang=EN-AU
 style='font-size:11.0pt;font-family:Symbol'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span lang=EN-AU style='font-size:11.0pt'> ◉  <!-- insert scope of service --></span></p>
+</span></span><span lang=EN-AU style='font-size:11.0pt'> ◉  <?= $feeproposal->scopeofservice ?></span></p>
 
 
 
@@ -311,7 +311,7 @@ margin-left:0cm;border:none;padding:0cm'><span lang=EN-AU style='font-size:
 
 <p class=MsoListParagraph style='margin-left:64.35pt;text-indent:-18.0pt'><span
 lang=EN-AU style='font-size:11.0pt;font-family:Symbol'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span lang=EN-AU style='font-size:11.0pt'>◉ <!-- insert documents provided here --><br>
+</span></span><span lang=EN-AU style='font-size:11.0pt'>◉ <?= $feeproposal->documentsprovided ?><br>
 <br>
 </span></p>
 
@@ -329,8 +329,7 @@ margin-left:0cm;border:none;padding:0cm'><b><span lang=EN-AU style='font-size:
 </div>
 
 <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:1.0cm'><span lang=EN-AU style='font-size:11.0pt'>Agreed fixed fee
-of <!-- insert fixed fee --> plus GST.</span></p>
+margin-left:1.0cm'><span lang=EN-AU style='font-size:11.0pt'>Agreed fixed fee of <?= $feeproposal->fixedfee ?> plus GST.</span></p>
 
 <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:1.0cm'><span lang=EN-AU style='font-size:11.0pt'>&nbsp;</span></p>
@@ -339,49 +338,40 @@ margin-left:1.0cm'><span lang=EN-AU style='font-size:11.0pt'>&nbsp;</span></p>
 margin-left:1.0cm'><b><span lang=EN-AU style='font-size:11.0pt'>Disbursements</span></b></p>
 
 <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:1.0cm'><span lang=EN-AU style='font-size:11.0pt'>In the course of the
-Services being provided it may be necessary to incur disbursements, which are
-fees, expenses and charges which will be charged to the Client at cost +10%.</span></p>
+margin-left:1.0cm'><span lang=EN-AU style='font-size:11.0pt'>In the course of the Services being provided it may be necessary to incur disbursements, which are fees, expenses and charges which will be charged to the Client at cost +10%.</span></p>
 
 <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:1.0cm;page-break-after:avoid'><b><span lang=EN-AU style='font-size:
-11.0pt'><br>
-Total professional fees and disbursements</span></b></p>
+11.0pt'><br> Total professional fees and disbursements</span></b></p>
 
 <p class=J15 align=left style='margin-top:6.0pt;margin-right:0cm;margin-bottom:
 6.0pt;margin-left:1.0cm;text-align:left;line-height:normal'><span lang=EN-AU
-style='font-size:11.0pt'>On the Client's present instructions, the estimate
-total fees and disbursements will be in the order of <b> <!-- insert fixed fee --> </b> plus GST. This is
-broken down to: </span></p>
+style='font-size:11.0pt'>On the Client's present instructions, the estimate total fees and disbursements will be in the order of <b> <?= $feeproposal->fixedfee ?> </b> plus GST. This is broken down to: </span></p>
+
+<p class=J15 align=left style='margin-top:6.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:72.0pt;text-align:left;line-height:normal'><span lang=EN-AU  style='font-size:11.0pt'> <b> <?= $feeproposal->total ?> </b> for our fees relating to the principal building plus GST</span></p>
+
+<!--<p class=J15 align=left style='margin-top:6.0pt;margin-right:0cm;margin-bottom:-->
+<!--6.0pt;margin-left:5.0cm;text-align:left;text-indent:-69.75pt;line-height:normal'><span-->
+<!--lang=EN-AU style='font-size:11.0pt'><- insert -> for our fees relating to-->
+<!--the design of building stormwater services plus GST; </span></p>-->
+<!---->
+<!--<p class=J15 align=left style='margin-top:6.0pt;margin-right:0cm;margin-bottom:-->
+<!--6.0pt;margin-left:5.0cm;text-align:left;text-indent:-69.75pt;line-height:normal'><span-->
+<!--lang=EN-AU style='font-size:11.0pt'>$649�������������� Home and Industrial-->
+<!--Consulting Engineers fees relating to the geotechnical site investigation ()-->
+<!--plus GST and</span></p>-->
 
 <p class=J15 align=left style='margin-top:6.0pt;margin-right:0cm;margin-bottom:
 6.0pt;margin-left:72.0pt;text-align:left;line-height:normal'><span lang=EN-AU
-style='font-size:11.0pt'> <!-- insert fee here --> for our fees relating to the
-principal building plus GST</span></p>
+style='font-size:11.0pt'> <b> <?= $feeproposal->disbursement ?> </b> for disbursements plus GST. </span></p>
 
 <p class=J15 align=left style='margin-top:6.0pt;margin-right:0cm;margin-bottom:
-6.0pt;margin-left:5.0cm;text-align:left;text-indent:-69.75pt;line-height:normal'><span
-lang=EN-AU style='font-size:11.0pt'><!-- insert  for our fees relating to
-the design of building stormwater services plus GST; </span></p>
-
-<p class=J15 align=left style='margin-top:6.0pt;margin-right:0cm;margin-bottom:
-6.0pt;margin-left:5.0cm;text-align:left;text-indent:-69.75pt;line-height:normal'><span
-lang=EN-AU style='font-size:11.0pt'>$649�������������� Home and Industrial
-Consulting Engineers fees relating to the geotechnical site investigation ()
-plus GST and</span></p>
-
-<p class=J15 align=left style='margin-top:6.0pt;margin-right:0cm;margin-bottom:
-6.0pt;margin-left:72.0pt;text-align:left;line-height:normal'><span lang=EN-AU
-style='font-size:11.0pt'> <b> <!-- insert disimbursemnt --> </b> for disbursements plus GST. </span></p>
-
-<p class=J15 align=left style='margin-top:6.0pt;margin-right:0cm;margin-bottom:
-6.0pt;margin-left:72.0pt;text-align:left;line-height:normal'><span lang=EN-AU
-style='font-size:11.0pt'> <b> <!-- insert total gst --> </b> for total plus GST. </span></p>
+6.0pt;margin-left:72.0pt;text-align:left;line-height:normal'><span lang=EN-AU style='font-size:11.0pt'> <b> <?= $feeproposal->totalgst ?> </b> for total plus GST. </span></p>
 
 <p class=MsoNormal style='margin-left:1.0cm;text-indent:-1.0cm;page-break-after:
 avoid'><b><span lang=EN-AU style='font-size:11.0pt'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></b><b><span lang=EN-AU style='font-size:11.0pt'>Billing and
-payment arrangements</span></b></p>
+</span></span></b><b><span lang=EN-AU style='font-size:11.0pt'>Billing and payment arrangements</span></b></p>
 
 <div style='border:none;border-top:solid windowtext 1.0pt;padding:6.0pt 0cm 0cm 0cm;
 margin-left:1.0cm;margin-right:0cm'>
@@ -390,21 +380,17 @@ margin-left:1.0cm;margin-right:0cm'>
 margin-left:1.0cm;text-indent:-1.0cm;border:none;padding:0cm'><a
 name="_Hlk517776747"></a><a name="_Hlk517773099"></a><a name="_Hlk517772716"><span
 lang=EN-AU style='font-size:11.0pt'>(a)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span lang=EN-AU style='font-size:11.0pt'>The Consultant will
-issue invoices to the Client at delivery of key project milestone documentation
-as follows:</span></a></p>
+</span></span><span lang=EN-AU style='font-size:11.0pt'>The Consultant will issue invoices to the Client at delivery of key project milestone documentation as follows:</span></a></p>
 
 <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:1.0cm;text-indent:-1.0cm;border:none;padding:0cm'><span lang=EN-AU>(i)<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span lang=EN-AU style='font-size:11.0pt'>10% of principal
-building design fees upon completion of concept design</span></p>
+</span></span><span lang=EN-AU style='font-size:11.0pt'>10% of principal building design fees upon completion of concept design</span></p>
 
 <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:1.0cm;text-indent:-1.0cm;border:none;padding:0cm'><span lang=EN-AU>(ii)<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span lang=EN-AU style='font-size:11.0pt'>30% of principal
-building design fees upon completion of detail design coordination</span></p>
+</span></span><span lang=EN-AU style='font-size:11.0pt'>30% of principal building design fees upon completion of detail design coordination</span></p>
 
 <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:1.0cm;text-indent:-1.0cm;border:none;padding:0cm'><span lang=EN-AU>(iii)<span
