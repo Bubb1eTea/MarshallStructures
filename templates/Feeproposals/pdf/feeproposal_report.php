@@ -8,8 +8,6 @@
 <br>
 
 <html>
-<button style = 'float:right;'onclick="history.go(-1);"> Back </button>
-<buttoner style='float: right; margin-right: 25px;padding: 0px;'> <?= $this->Html->link(__(' Download to pdf'), ['action' => 'feeproposalReport', $feeproposal->id ], ['class' => 'button']); ?> </buttoner>
 
 <head>
 
