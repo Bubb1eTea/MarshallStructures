@@ -77,14 +77,17 @@ class ViccertificatesTable extends Table
 
         $validator
             ->integer('numberofstorey')
+            ->greaterThanOrEqual('numberofstorey', 0,'This field must be positive.')
             ->allowEmptyString('numberofstorey');
 
         $validator
             ->integer('riseinstory')
+            ->greaterThanOrEqual('riseinstory', 0,'This field must be positive.')
             ->allowEmptyString('riseinstory');
 
         $validator
             ->integer('effectiveheight')
+            ->greaterThanOrEqual('effectiveheight', 0,'This field must be positive.')
             ->allowEmptyString('effectiveheight');
 
         $validator
