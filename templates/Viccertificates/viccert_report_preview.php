@@ -257,8 +257,6 @@ building only):</span><!-- insert rise in stories --> <b> <?=$viccertificate->ri
 style='font-size:14.0pt'>Building classification</span></b></p>
  <?=$viccertificate->buildingclass?>
 <br>
-<br>
-<br>
 
 <!-- insert building specification here (Dropdown list)-->
 
@@ -279,9 +277,9 @@ work relating to <!-- insert building work relation--><b> <?=$viccertificate->wo
 lang=EN-AU>Drawings Produced by *engineers name* relating to the design that is
 certified by this certificate</span></b></p>
 
-    <table>
+    <table border="1">
         <tr>
-            <th>Document No.</th>
+            <th>&nbsp Document No.</th>
             <th>Document Date</th>
             <th>Document Revision</th>
 
@@ -293,7 +291,7 @@ certified by this certificate</span></b></p>
 
             for($y=1; $y<=$numofrows;$y++){?>
         <tr>
-            <td><?php if(!empty($documentsproducedarray[$y*3-3]))  echo $documentsproducedarray[$y*3-3]?></td>
+            <td><?php if(!empty($documentsproducedarray[$y*3-3])) echo "&nbsp "; echo $documentsproducedarray[$y*3-3]?></td>
             <td><?php if(!empty($documentsproducedarray[$y*3-2]))  echo $documentsproducedarray[$y*3-2]?></td>
             <td><?php if(!empty($documentsproducedarray[$y*3-1]))  echo $documentsproducedarray[$y*3-1]?></td>
             <?php }?>
@@ -350,9 +348,9 @@ lang=EN-AU>Documents setting out the design that is certified by this certificat
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
  style='border-collapse:collapse;border:none'>
- <table>
+ <table border="1">
         <tr>
-            <th>Document No.</th>
+            <th>    &nbsp Document No.</th>
             <th>Document Date</th>
             <th>Type of Document</th>
             <th>Number of Pages</th>
@@ -366,7 +364,7 @@ lang=EN-AU>Documents setting out the design that is certified by this certificat
 
             for($y=1; $y<=$numofrows;$y++){?>
         <tr>
-            <td><?php if(!empty($documentscertifiedarray[$y*5-5])) echo $documentscertifiedarray[$y*5-5]?></td>
+            <td><?php if(!empty($documentscertifiedarray[$y*5-5])) echo "&nbsp "; echo $documentscertifiedarray[$y*5-5]?></td>
             <td><?php if(!empty($documentscertifiedarray[$y*5-4])) echo $documentscertifiedarray[$y*5-4]?></td>
             <td><?php if(!empty($documentscertifiedarray[$y*5-3])) echo $documentscertifiedarray[$y*5-3]?></td>
             <td><?php if(!empty($documentscertifiedarray[$y*5-2])) echo $documentscertifiedarray[$y*5-2]?></td>
@@ -388,9 +386,9 @@ this certificate. The performance solution complies with the following performan
 requirements of the NCC </b> </span></p>
 
 
- <table>
+ <table border = "1">
         <tr>
-            <th>Relevant performance Requirements</th>
+            <th>&nbsp Relevant performance Requirements</th>
             <th>Details of performance solution required by regulation 124</th>
 
             <?php
@@ -401,7 +399,7 @@ requirements of the NCC </b> </span></p>
 
             for($y=1; $y<=$numofrows;$y++){?>
         <tr>
-            <td><?php if(!empty($documentsperformancesolutionarray[$y*2-2])) echo $documentsperformancesolutionarray[$y*2-2]?></td>
+            <td><?php if(!empty($documentsperformancesolutionarray[$y*2-2])) echo "&nbsp "; echo $documentsperformancesolutionarray[$y*2-2]?></td>
             <td><?php if(!empty($documentsperformancesolutionarray[$y*2-1])) echo $documentsperformancesolutionarray[$y*2-1]?></td>
             <?php }?>
 
