@@ -19,7 +19,7 @@ class ViccertificatesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Projects', 'Companys', 'Documentsproduceds', 'Documentscertifieds'],
+            'contain' => ['Projects', 'Companys'],
         ];
         $viccertificates = $this->paginate($this->Viccertificates);
 
@@ -36,7 +36,7 @@ class ViccertificatesController extends AppController
     public function view($id = null)
     {
         $viccertificate = $this->Viccertificates->get($id, [
-            'contain' => ['Projects', 'Companys', 'Documentsproduceds', 'Documentscertifieds', 'Designstandards'],
+            'contain' => ['Projects', 'Companys', 'Designstandards'],
         ]);
 
         $this->set(compact('viccertificate'));
@@ -61,10 +61,8 @@ class ViccertificatesController extends AppController
         }
         $projects = $this->Viccertificates->Projects->find('list', ['limit' => 200]);
         $companys = $this->Viccertificates->Companys->find('list', ['limit' => 200]);
-        $documentsproduceds = $this->Viccertificates->Documentsproduceds->find('list', ['limit' => 200]);
-        $documentscertifieds = $this->Viccertificates->Documentscertifieds->find('list', ['limit' => 200]);
         $designstandards = $this->Viccertificates->Designstandards->find('list', ['limit' => 200]);
-        $this->set(compact('viccertificate', 'projects', 'companys', 'documentsproduceds', 'documentscertifieds', 'designstandards'));
+        $this->set(compact('viccertificate', 'projects', 'companys',  'designstandards'));
     }
 
     /**
@@ -90,10 +88,8 @@ class ViccertificatesController extends AppController
         }
         $projects = $this->Viccertificates->Projects->find('list', ['limit' => 200]);
         $companys = $this->Viccertificates->Companys->find('list', ['limit' => 200]);
-        $documentsproduceds = $this->Viccertificates->Documentsproduceds->find('list', ['limit' => 200]);
-        $documentscertifieds = $this->Viccertificates->Documentscertifieds->find('list', ['limit' => 200]);
         $designstandards = $this->Viccertificates->Designstandards->find('list', ['limit' => 200]);
-        $this->set(compact('viccertificate', 'projects', 'companys', 'documentsproduceds', 'documentscertifieds', 'designstandards'));
+        $this->set(compact('viccertificate', 'projects', 'companys',  'designstandards'));
     }
 
     /**
@@ -115,7 +111,7 @@ class ViccertificatesController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
-       public function viccertReportPreview($id=null)
+    public function viccertReportPreview($id=null)
     {
         $viccertificate = $this->Viccertificates->get($id, [
             'contain' => ['Projects', 'Companys', 'Designstandards'],
