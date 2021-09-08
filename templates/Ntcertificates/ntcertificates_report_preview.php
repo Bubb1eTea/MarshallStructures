@@ -267,8 +267,8 @@
             <tr style='height:15.6pt'>
                <td width=698 colspan=10 style='width:523.6pt;border:solid windowtext 1.0pt;
                   background:#F3F3F3;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
-                  <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt'>DESIGN BASIS </span><span
-                     lang=EN-AU style='font-size:9.0pt;color:black;font-weight:normal'>�</span><span
+                  <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt'>DESIGN BASIS: </span><span
+                     lang=EN-AU style='font-size:9.0pt;color:black;font-weight:normal'></span><span
                      lang=EN-AU style='font-size:8.0pt;color:black;font-weight:normal'>(please
                      list relevant Standards used in the design)</span>
                   </p>
