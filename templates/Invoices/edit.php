@@ -46,15 +46,37 @@ debug($session->read('previous_url'));?>
                 echo $this->Form->control('datecreated', ['label'=>"Date Created"]);
                 echo $this->Form->control('invdesc', ['label'=>"Invoice Description"]);
                 echo $this->Form->control('completedpercentage', ['label'=>"Completed Percentage"]);
-                echo $this->Form->control('total', ['label'=>"Subtotal", 'value' => $feeproposal->first()['Feeproposals']['total']]);
-                echo $this->Form->control('totalgst', ['label'=>"Total GST", 'value' => $feeproposal->first()['Feeproposals']['totalgst']]);
-                echo $this->Form->control('grandtotal', ['label'=>"Grand Total", 'value' => $feeproposal->first()['Feeproposals']['grandtotal']]);
+                echo $this->Form->control('feeproposaltotal', ['label'=>"Fee Proposal Total"]);
+                echo $this->Form->control('total', ['label'=>"Subtotal"]);
+                echo $this->Form->control('totalgst', ['label'=>"Total GST"]);
+                echo $this->Form->control('grandtotal', ['label'=>"Grand Total"]);
                 $days = ['7'=>'7','30'=>'30'];
                 echo $this->Form->control('paywithinday',['label' =>"Pay within how many days?",'options' => $days, 'empty' => false]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
+
+            <!-- <script>
+                $(document).ready(function() {
+                    $('input').keyup(function(ev) {
+                        var completedpercentage = (parseFloat($('#completedpercentage').val())* 0.01) || 0;
+                        var feeproposaltotal = (parseFloat($('#feeproposaltotal').val())* 0.01) || 0;
+                       
+                        var total = (parseFloat(completedpercentage) * parseFloat(feeproposaltotal)).toFixed(2);
+                        var divobj = document.getElementById('total');
+                        divobj.value = total;
+
+                        var totalgst = parseFloat(total * 0.1).toFixed(2);
+                        var divobj = document.getElementById('totalgst');
+                        divobj.value = totalgst;
+
+                        var grandtotal = (parseFloat(total) + parseFloat(totalgst)).toFixed(2);
+                        var divobj = document.getElementById('grandtotal');
+                        divobj.value = grandtotal;
+                    });
+                });
+            </script> -->
         </div>
     </div>
 </div>

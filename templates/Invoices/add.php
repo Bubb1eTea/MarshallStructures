@@ -51,10 +51,9 @@ debug($session->read('previous_url')); ?>
             <!-- <script>
                 $(document).ready(function() {
                     $('input').keyup(function(ev) {
-
-
                         var completedpercentage = (parseFloat($('#completedpercentage').val())* 0.01) || 0;
-                        var total = (parseFloat(completedpercentage) * <subtotal of fee proposal>).toFixed(2);
+                        var total = (parseFloat($('#total').val())* 0.01) || 0;
+                        var total = (parseFloat(completedpercentage) * compled).toFixed(2);
 
                         var divobj = document.getElementById('total');
                         divobj.value = total;
