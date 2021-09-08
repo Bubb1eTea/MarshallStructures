@@ -1,5 +1,14 @@
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Viccertificate $viccertificate
+ * @var string[]|\Cake\Collection\CollectionInterface $projects
+ * @var string[]|\Cake\Collection\CollectionInterface $companys
+ * @var string[]|\Cake\Collection\CollectionInterface $documentscertifieds
+ * @var string[]|\Cake\Collection\CollectionInterface $designstandards
+ */
+?>
 <html>
-
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
 <meta name=Generator content="Microsoft Word 15 (filtered)">
@@ -157,9 +166,11 @@ lang=EN-AU>CERTIFICATE OF COMPLIANCE FOR PROPOSED BUILDING WORK</span></b></p>
 
 <p class=Normal-Schedule style='margin-top:12.0pt'><b><span lang=EN-AU>&nbsp;</span></b></p>
 
+
+
 <p class=Normal-Schedule style='margin-top:12.0pt'><b><span lang=EN-AU>This
-certificate is issued to *</span></b><i><span lang=EN-AU>[Building Surveyors
-Name]</span></i></p>
+certificate is issued to *</span></b><i><span lang=EN-AU><!-- [Building Surveyors
+Name] --> <?= $clientname->first()['Clients']['firstname'].' '.$clientname->first()['Clients']['lastname'] ?> </span></i></p>
 
 <p class=Normal-Schedule><span lang=EN-AU>&nbsp;</span></p>
 
@@ -167,13 +178,13 @@ Name]</span></i></p>
  style='border-collapse:collapse;border:none'>
  <tr>
   <td width=85 valign=top style='width:63.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=Normal-Schedule><span lang=EN-AU>Address:</span> <!-- Insert address --> </p>
+  <p class=Normal-Schedule><span lang=EN-AU>Address:</span> <!-- Insert address --> <?= $viccertificate->company->streetname ?></p>
   </td>
   <td width=359 valign=top style='width:269.35pt;padding:0cm 5.4pt 0cm 5.4pt'>
   <p class=Normal-Schedule><span lang=EN-AU>&nbsp;</span> </p>
   </td>
   <td width=86 valign=top style='width:64.45pt;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=Normal-Schedule><span lang=EN-AU>Postcode: </span><!-- insert postcode --> </p>
+  <p class=Normal-Schedule><span lang=EN-AU>Postcode: </span><!-- insert postcode --> <?= $viccertificate->company->postcode ?></p>
   </td>
   <td width=71 valign=top style='width:53.45pt;padding:0cm 5.4pt 0cm 5.4pt'>
   <p class=Normal-Schedule align=right style='text-align:right'><span
@@ -182,7 +193,7 @@ Name]</span></i></p>
  </tr>
  <tr>
   <td width=85 valign=top style='width:63.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=Normal-Schedule><span lang=EN-AU>Email:</span> <!-- insert postcode --></p>
+  <p class=Normal-Schedule><span lang=EN-AU>Email:</span> <!-- insert email --> <?= $viccertificate->company->email ?></p>
   </td>
   <td width=359 valign=top style='width:269.35pt;padding:0cm 5.4pt 0cm 5.4pt'>
   <p class=Normal-Schedule><span lang=EN-AU>&nbsp;</span></p>
@@ -205,13 +216,13 @@ to the proposed building work at</span></b><span lang=EN-AU>: </span></p>
  style='border-collapse:collapse;border:none'>
  <tr>
   <td width=85 valign=top style='width:63.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=Normal-Schedule><span lang=EN-AU>Address:</span><!-- insert postcode --></p>
+  <p class=Normal-Schedule><span lang=EN-AU>Address:</span><!-- insert address --> <?= $viccertificate->project->streetname ?></p>
   </td>
   <td width=359 valign=top style='width:269.35pt;padding:0cm 5.4pt 0cm 5.4pt'>
   <p class=Normal-Schedule><span lang=EN-AU>&nbsp;</span></p>
   </td>
   <td width=86 valign=top style='width:64.45pt;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=Normal-Schedule><span lang=EN-AU>Postcode:</span><!-- insert postcode (issued to the proposed building work at) --></p>
+  <p class=Normal-Schedule><span lang=EN-AU>Postcode:</span><!-- insert postcode (issued to the proposed building work at) --> <?= $viccertificate->project->postcode ?></p>
   </td>
   <td width=71 valign=top style='width:53.45pt;padding:0cm 5.4pt 0cm 5.4pt'>
   <p class=Normal-Schedule align=right style='text-align:right'><span
@@ -412,7 +423,7 @@ requirements of the NCC </span></p>
 
 
 </table>
- 
+
 </table>
 
 <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>

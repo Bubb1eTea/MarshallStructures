@@ -119,19 +119,11 @@ class ViccertificatesController extends AppController
 
         $clientname = $this->Viccertificates->find('all');
         $clientname->join(['table'=>'Projects', 'type'=>'INNER', 'conditions'=>'Projects.id = project_id']);
-        $clientname->select(['Clients.firstname', 'Clients.lastname', 'Clients.phonenumber']);
+        $clientname->select(['Clients.firstname', 'Clients.lastname', 'Clients.phonenumber', 'Clients.email']);
         $clientname->join(['table'=>'Clients', 'type'=>'INNER', 'conditions'=>'Clients.id=client_id']);
         $clientname->where(['Viccertificates.id = '=>$id]);
 
-        $company = $this->Viccertificates->find('all');
-        $company->join(['table'=>'Projects', 'type'=>'INNER', 'conditions'=>'Projects.id = project_id']);
-        $company->join(['table'=>'Clients', 'type'=>'INNER', 'conditions'=>'Clients.id=client_id']);
-        $company->join(['table'=>'Companys', 'type'=>'INNER', 'conditions'=>'Companys.id=company_id']);
-        $company->select(['Companys.companyname','Companys.streetname', 'Companys.suburb', 'Companys.state', 'Companys.postcode']);
-        $company->where(['Viccertificates.id = '=>$id]);
-
         $this->set(compact('viccertificate'));
         $this->set(compact('clientname'));
-        $this->set(compact('company'));
     }
 }
