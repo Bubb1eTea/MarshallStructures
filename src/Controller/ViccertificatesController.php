@@ -115,4 +115,12 @@ class ViccertificatesController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+    public function viccertReportPreview($id=null)
+    {
+        $viccertificate = $this->Viccertificates->get($id, [
+            'contain' => ['Projects', 'Companys', 'Documentsproduceds', 'Documentscertifieds', 'Designstandards'],
+        ]);
+
+        $this->set(compact('viccertificate'));
+    }
 }
