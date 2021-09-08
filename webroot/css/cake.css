@@ -64,13 +64,7 @@ body {
         0 3px 6px 0 rgba(0, 0, 0, 0.07);
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> it2-ntcertgen
-=======
->>>>>>> it2-invprogen
 .contenter {
     padding: 5%;
     margin-left: 16%;
@@ -80,21 +74,9 @@ body {
     border-radius: 0.4rem;
     /* Thanks Stripe */
     box-shadow: 0 7px 14px 0 rgba(60, 66, 87, 0.1),
-<<<<<<< HEAD
-<<<<<<< HEAD
         0 3px 6px 0 rgba(0, 0, 0, 0.07);
 }
 
-=======
-}
-
-
->>>>>>> it2-ntcertgen
-=======
-        0 3px 6px 0 rgba(0, 0, 0, 0.07);
-}
-
->>>>>>> it2-invprogen
 .actions a {
     font-weight: bold;
     padding: 0 0.4rem;

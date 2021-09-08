@@ -32,11 +32,19 @@ class DesignstandardsController extends AppController
      */
     public function view($id = null)
     {
+
+        $projectname=$this->Designstandards->find('all');
+        $projectname->join(['table'=>'Designstandards_Ntcertificates', 'type'=>'INNER','conditions'=>'Designstandards.id=designstandard_id']);
+        $projectname->join(['table'=>'Ntcertificates', 'type'=>'INNER','conditions'=>'Ntcertificates.id=ntcertificate_id']);
+        $projectname->join(['table'=>'Projects', 'type'=>'INNER', 'conditions'=>'Projects.id = project_id']);
+        $projectname->select(['Projects.projectname']);
+        $projectname->where(['Designstandards.id'=>$id]);
         $designstandard = $this->Designstandards->get($id, [
             'contain' => ['Ntcertificates'],
         ]);
 
         $this->set(compact('designstandard'));
+        $this->set(compact('projectname'));
     }
 
     /**

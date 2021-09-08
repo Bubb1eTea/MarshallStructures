@@ -30,4 +30,7 @@ class Designstandard extends Entity
         'designdesc' => true,
         'ntcertificates' => true,
     ];
+    protected function _getDesignBasis(){
+        return $this->designcode. ' ' . $this->designdesc;
+    }
 }

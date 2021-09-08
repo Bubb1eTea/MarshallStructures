@@ -5,15 +5,15 @@
  */
 ?>
 <div class="designstandards index content">
-    <?= $this->Html->link(__('New Designstandard'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <?= $this->Html->link(__('New Design Standard'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Designstandards') ?></h3>
     <div class="table-responsive">
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('designcode') ?></th>
-                    <th><?= $this->Paginator->sort('designdesc') ?></th>
+                    <th><?= $this->Paginator->sort('id', ['label'=>'ID']) ?></th>
+                    <th><?= $this->Paginator->sort('designcode', ['label'=>'Design Code']) ?></th>
+                    <th><?= $this->Paginator->sort('designdesc', ['label'=>'Design Description']) ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -26,7 +26,7 @@
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $designstandard->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $designstandard->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $designstandard->id], ['confirm' => __('Are you sure you want to delete # {0}?', $designstandard->id)]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $designstandard->id], ['confirm' => __('Are you sure you want to delete design code {0}?', $designstandard->designcode)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

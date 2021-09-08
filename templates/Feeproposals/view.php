@@ -22,14 +22,10 @@ debug($session->read('previous_url')); ?>
     </aside>
     <div class="column-responsive column-80">
         <div class="feeproposals view content">
-<<<<<<< HEAD
             <h3><?= 'Fee Proposal #'.($feeproposal->id) ?></h3>
-=======
-            <h3><?= h($feeproposal->id) ?>
                 <buttoner style='float: right;'> <?= $this->Html->link(__('Download to PDf'), ['action' => 'feeproposalReport', $feeproposal->id ], ['class' => 'button float-right']); ?></buttoner>
                 <buttoner style='float: right; padding-right:10px;'> <?= $this->Html->link(__('View Generated Template'), ['action' => 'feeproposalReportPreview', $feeproposal->id ], ['class' => 'button float-right']); ?></buttoner>
             </h3>
->>>>>>> it2-invprogen
             <table>
                 <tr>
                     <th><?= __('Fee Proposal ID') ?></th>

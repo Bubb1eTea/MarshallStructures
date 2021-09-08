@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
     "content-hash": "5fa3ade896f04715b0da85182c30f0a8",
-=======
-    "content-hash": "3f2db05c745699947fa737f1aedd5791",
->>>>>>> it2-invprogen
     "packages": [
         {
             "name": "cakephp/cakephp",
@@ -358,8 +354,6 @@
             "time": "2021-06-07T13:58:28+00:00"
         },
         {
-<<<<<<< HEAD
-=======
             "name": "dompdf/dompdf",
             "version": "v1.0.2",
             "source": {
@@ -432,7 +426,6 @@
             "time": "2021-01-08T14:18:52+00:00"
         },
         {
->>>>>>> it2-invprogen
             "name": "friendsofcake/cakepdf",
             "version": "4.1.1",
             "source": {
