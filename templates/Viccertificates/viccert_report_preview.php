@@ -232,7 +232,7 @@ to the proposed building work at</span></b><span lang=EN-AU>: </span></p>
 </table>
 
 <p class=Normal-Schedule style='margin-top:12.0pt'><b><span lang=EN-AU
-style='font-size:14.0pt;color:white'>Nature of </span></b><b><span lang=EN-AU
+style='font-size:14.0pt;color:black'>Nature of </span></b><b><span lang=EN-AU
 style='font-size:14.0pt'>proposed building work</span></b></p>
 
 <p class=Normal-Schedule><span lang=EN-AU>Construction of a <span> <!-- insert construction type--> <b> <?=$viccertificate->buildingtype?> </b></span></span></p>
@@ -375,7 +375,7 @@ lang=EN-AU>Documents setting out the design that is certified by this certificat
 </table>
 
 <p class=Normal-Schedule style='margin-top:12.0pt;page-break-after:avoid'><b><span
-lang=EN-AU style='color:white'>*Performance solution</span></b></p>
+lang=EN-AU style='color:black'>*Performance solution</span></b></p>
 
 <p class=Normal-Schedule style='margin-bottom:6.0pt'><span lang=EN-AU
 style='color:black'> <b>A performance solution forms part of the design certified by
