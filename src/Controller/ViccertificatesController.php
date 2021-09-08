@@ -111,6 +111,41 @@ class ViccertificatesController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+
+    public function viccertReport($id = null)
+    {
+        $this->viewBuilder()->enableAutoLayout(false);
+        $viccertificate = $this->Viccertificates->get($id, [
+            'contain' => ['Projects', 'Companys', 'Designstandards']]);
+        $this->viewBuilder()->setClassName('CakePdf.Pdf');
+        $this->viewBuilder()->setOption(
+            'pdfConfig',
+            [
+                'orientation' => 'portrait',
+                'download' => true, // This can be omitted if "filename" is specified.
+                'filename' => 'VIC Certificate_' . $id . '.pdf' //// This can be omitted if you want file name based on URL.
+            ]
+        );
+
+        $clientname = $this->Viccertificates->find('all');
+        $clientname->join(['table'=>'Projects', 'type'=>'INNER', 'conditions'=>'Projects.id = project_id']);
+        $clientname->select(['Clients.firstname', 'Clients.lastname', 'Clients.phonenumber', 'Clients.email']);
+        $clientname->join(['table'=>'Clients', 'type'=>'INNER', 'conditions'=>'Clients.id=client_id']);
+        $clientname->where(['Viccertificates.id = '=>$id]);
+
+        $designbasis = $this->Viccertificates->find('all');
+        $designbasis->join(['table'=>'Designstandards_Viccertificates', 'type'=>'INNER', 'conditions'=>'Viccertificates.id = Designstandards_Viccertificates.viccertificate_id']);
+        $designbasis->join(['table'=>'Designstandards', 'type'=>'INNER', 'conditions'=>'Designstandards.id = Designstandards_Viccertificates.designstandard_id']);
+        $designbasis->select(['Designstandards.designdesc','Designstandards.designcode']);
+        $designbasis->where(['Viccertificates.id = '=>$id]);
+
+        $this->set(compact('viccertificate'));
+        $this->set(compact('clientname'));
+        $this->set(compact('designbasis'));
+    }
+
+
     public function viccertReportPreview($id=null)
     {
         $viccertificate = $this->Viccertificates->get($id, [
