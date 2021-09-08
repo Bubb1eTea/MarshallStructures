@@ -270,7 +270,11 @@
                   <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt'>DESIGN BASIS: </span><span
                      lang=EN-AU style='font-size:9.0pt;color:black;font-weight:normal'></span><span
                      lang=EN-AU style='font-size:8.0pt;color:black;font-weight:normal'>(please
-                     list relevant Standards used in the design)</span>
+                     list relevant Standards used in the design)</span><br>
+                      <?php $designbasisarray=$designbasis->toList();
+                      for($x=0; $x<count($designbasisarray); $x++){?>
+                   <p><?=$designbasisarray[$x]['Designstandards']['designcode']?> - <?=$designbasisarray[$x]['Designstandards']['designdesc']?></p>
+                   <?php }?>
                   </p>
                   <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt;font-weight:normal'>&nbsp;</span></p>
                   <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt;font-weight:normal'>&nbsp;</span></p>

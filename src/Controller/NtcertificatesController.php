@@ -109,7 +109,7 @@ class NtcertificatesController extends AppController
 
         return $this->redirect(['action' => 'index']);
 
-        
+
     }
 
     public function ntcertificatesReportPreview($id = null)
@@ -118,6 +118,13 @@ class NtcertificatesController extends AppController
             'contain' => ['Projects', 'Designstandards'],
         ]);
 
+        $designbasis = $this->Ntcertificates->find('all');
+        $designbasis->join(['table'=>'Designstandards_Ntcertificates', 'type'=>'INNER', 'conditions'=>'Ntcertificates.id = Designstandards_Ntcertificates.Ntcertificate_id']);
+        $designbasis->join(['table'=>'Designstandards', 'type'=>'INNER', 'conditions'=>'Designstandards.id = Designstandards_Ntcertificates.designstandard_id']);
+        $designbasis->select(['Designstandards.id','Designstandards.designdesc','Designstandards.designcode']);
+        $designbasis->where(['Ntcertificates.id = '=>$id]);
+
         $this->set(compact('ntcertificate'));
+        $this->set(compact('designbasis'));
     }
 }
