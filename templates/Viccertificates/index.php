@@ -27,7 +27,7 @@ debug($session->read('previous_url')); ?>
                 <tr>
                     <td><?= $this->Number->format($viccertificate->id) ?></td>
                     <td><?= $viccertificate->has('project') ? $this->Html->link($viccertificate->project->projectname, ['controller' => 'Projects', 'action' => 'view', $viccertificate->project->id]) : '' ?></td>
-                    <td><?= date('D d/m/y h:m A', strtotime($viccertificate->dateofissue)) ?></td>
+                    <td><?= date('D d/m/y', strtotime($viccertificate->dateofissue)) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $viccertificate->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $viccertificate->id]) ?>

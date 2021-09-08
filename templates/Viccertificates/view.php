@@ -49,7 +49,7 @@ debug($session->read('previous_url')); ?>
                 </tr>
                 <tr>
                     <th><?= __('Date of Issue') ?></th>
-                    <td><?= date('D d/m/y h:m A', strtotime($viccertificate->dateofissue)) ?></td>
+                    <td><?= date('D d/m/y', strtotime($viccertificate->dateofissue)) ?></td>
                 </tr>
             </table>
             <div class="related">
