@@ -6,7 +6,13 @@
  * @var string[]|\Cake\Collection\CollectionInterface $designstandards
  */
 ?>
+<br>
+
+<button style = 'float: right;' onclick="history.go(-1);"> Back </button>
+<buttoner style='float: right; margin-right: 25px;padding: 0px;'> <?= $this->Html->link(__(' Download to pdf'), ['action' => 'feeproposalReport', $ntcertificate->id ], ['class' => 'button']); ?> </buttoner>
+
 <html>
+
    <head>
       <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
       <meta name=Generator content="Microsoft Word 15 (filtered)">
