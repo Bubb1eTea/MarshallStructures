@@ -30,7 +30,7 @@ debug($session->read('previous_url')); ?>
                     echo $this->Form->control('email', ['label'=>"Email"]);
                     echo $this->Form->control('phonenumber', ['label'=>"Phone Number"]);
                     echo $this->Form->control('position', ['label'=>"Position"]);
-                    echo $this->Html->link(__('Add New Company'), ['action' => '../companys/add'], ['class' => 'button float-right']);
+                    //echo $this->Html->link(__('Add New Company'), ['action' => '../companys/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('company_id', ['options' => $companys, 'empty' => true]);
                 ?>
             </fieldset>
