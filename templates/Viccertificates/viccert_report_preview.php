@@ -274,45 +274,66 @@ work relating to <!-- insert building work relation--><b> <?=$viccertificate->wo
 lang=EN-AU>Drawings Produced by *engineers name* relating to the design that is
 certified by this certificate</span></b></p>
 
-<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=604
- style='width:453.35pt;border-collapse:collapse;border:none'>
- <tr>
-  <td width=387 valign=top style='width:290.35pt;border:solid windowtext 1.0pt;
-  padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
-  3.0pt;margin-left:0cm'><b><span lang=EN-AU>Document no.</span></b></p>
-  </td>
-  <td width=142 valign=top style='width:106.3pt;border:solid windowtext 1.0pt;
-  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
-  3.0pt;margin-left:0cm'><b><span lang=EN-AU>Document date</span></b></p>
-  </td>
-  <td width=76 valign=top style='width:2.0cm;border:solid windowtext 1.0pt;
-  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
-  3.0pt;margin-left:0cm'><b><span lang=EN-AU>Revision</span></b></p>
-  </td>
- </tr>
- <tr>
-  <td width=387 valign=bottom style='width:290.35pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
-  3.0pt;margin-left:0cm'><b><span lang=EN-AU>&nbsp;</span></b><!-- insert Document here (drawing produced by engineer) --></p>
-  </td>
-  <td width=142 valign=top style='width:106.3pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=DraftHeading4 style='margin-left:119.05pt;text-indent:-119.05pt'><b><span
-  lang=EN-AU>&nbsp; </span></b><!-- insert Document date (drawing produced by engineer)-->  </p>
-  </td>
-  <td width=76 valign=top style='width:2.0cm;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=DraftHeading3 style='margin-left:93.55pt;text-indent:-93.55pt'><i><span
-  lang=EN-AU>&nbsp;</span></i><!-- insert revision (drwaeing produced by engineer) --></p>
-  </td>
- </tr>
-</table>
+    <table>
+        <tr>
+            <th>Document No.</th>
+            <th>Document Date</th>
+            <th>Document Revision</th>
+
+            <?php
+            $documentsproducedtext = $viccertificate->documentsproduced;
+            $documentsproducedarray=explode(";", $documentsproducedtext);
+            $count=count($documentsproducedarray);
+            $numofrows=ceil($count/3);
+
+            for($y=1; $y<=$numofrows;$y++){?>
+        <tr>
+            <td><?php if(!empty($documentsproducedarray[$y*3-3]))  echo $documentsproducedarray[$y*3-3]?></td>
+            <td><?php if(!empty($documentsproducedarray[$y*3-2]))  echo $documentsproducedarray[$y*3-2]?></td>
+            <td><?php if(!empty($documentsproducedarray[$y*3-1]))  echo $documentsproducedarray[$y*3-1]?></td>
+            <?php }?>
+        </tr>
+    </table>
+
+<!--<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=604-->
+<!-- style='width:453.35pt;border-collapse:collapse;border:none'>-->
+<!-- <tr>-->
+<!--  <td width=387 valign=top style='width:290.35pt;border:solid windowtext 1.0pt;-->
+<!--  padding:0cm 5.4pt 0cm 5.4pt'>-->
+<!--  <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:-->
+<!--  3.0pt;margin-left:0cm'><b><span lang=EN-AU>Document no.</span></b></p>-->
+<!--  </td>-->
+<!--  <td width=142 valign=top style='width:106.3pt;border:solid windowtext 1.0pt;-->
+<!--  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>-->
+<!--  <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:-->
+<!--  3.0pt;margin-left:0cm'><b><span lang=EN-AU>Document date</span></b></p>-->
+<!--  </td>-->
+<!--  <td width=76 valign=top style='width:2.0cm;border:solid windowtext 1.0pt;-->
+<!--  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>-->
+<!--  <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:-->
+<!--  3.0pt;margin-left:0cm'><b><span lang=EN-AU>Revision</span></b></p>-->
+<!--  </td>-->
+<!-- </tr>-->
+<!-- <tr>-->
+<!--  <td width=387 valign=bottom style='width:290.35pt;border:solid windowtext 1.0pt;-->
+<!--  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>-->
+<!--  <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:-->
+<!--  3.0pt;margin-left:0cm'><b><span lang=EN-AU>&nbsp;</span></b><- insert Document here (drawing produced by engineer) -></p>-->
+<!--  </td>-->
+<!--  <td width=142 valign=top style='width:106.3pt;border-top:none;border-left:-->
+<!--  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;-->
+<!--  padding:0cm 5.4pt 0cm 5.4pt'>-->
+<!--  <p class=DraftHeading4 style='margin-left:119.05pt;text-indent:-119.05pt'><b><span-->
+<!--  lang=EN-AU>&nbsp; </span></b><- insert Document date (drawing produced by engineer)->  </p>-->
+<!--  </td>-->
+<!--  <td width=76 valign=top style='width:2.0cm;border-top:none;border-left:none;-->
+<!--  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;-->
+<!--  padding:0cm 5.4pt 0cm 5.4pt'>-->
+<!--  <p class=DraftHeading3 style='margin-left:93.55pt;text-indent:-93.55pt'><i><span-->
+<!--  lang=EN-AU>&nbsp;</span></i><- insert revision (drwaeing produced by engineer) -></p>-->
+<!--  </td>-->
+<!-- </tr>-->
+<!--</table>-->
 
 <p class=Normal-Schedule style='margin-top:12.0pt;page-break-after:avoid'><b><span
 lang=EN-AU>&nbsp;</span></b></p>

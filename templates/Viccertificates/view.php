@@ -28,7 +28,6 @@ debug($session->read('previous_url')); ?>
         <td><?php if(!empty($documentsproducedarray[$y*3-2]))  echo $documentsproducedarray[$y*3-2]?></td>
         <td><?php if(!empty($documentsproducedarray[$y*3-1]))  echo $documentsproducedarray[$y*3-1]?></td>
         <?php }?>
-
     </tr>
     <!-- BELOW IS THE CODE FOR THE DOCUMENT CERTIFIED TABLE -->
     <table>
@@ -53,11 +52,9 @@ debug($session->read('previous_url')); ?>
             <td><?php if(!empty($documentscertifiedarray[$y*5-2])) echo $documentscertifiedarray[$y*5-2]?></td>
             <td><?php if(!empty($documentscertifiedarray[$y*5-1])) echo $documentscertifiedarray[$y*5-1]?></td>
             <?php }?>
-
         </tr>
-
-
 </table>
+
 <div class="row">
     <aside class="column">
         <div class="side-nav">
@@ -71,7 +68,7 @@ debug($session->read('previous_url')); ?>
     <div class="column-responsive column-80">
         <div class="viccertificates view content">
             <h3><?= h($viccertificate->id) ?>
-            
+
             <?= h($viccertificate->id) ?>
                 <buttoner style='float: right;'> <?= $this->Html->link(__('Download to PDf'), ['action' => 'viccertificatereport', $viccertificate->id ], ['class' => 'button float-right']); ?></buttoner>
                 <buttoner style='float: right; padding-right:10px;'> <?= $this->Html->link(__('View Generated Template'), ['action' => 'viccertReportPreview', $viccertificate->id ], ['class' => 'button float-right']); ?></buttoner>
