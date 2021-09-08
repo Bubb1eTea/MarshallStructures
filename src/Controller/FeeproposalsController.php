@@ -110,4 +110,60 @@ class FeeproposalsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    /**
+     * Generate fee proposal PDF file method
+     *
+     */
+    public function feeproposalReport($id = null)
+    {
+        $this->viewBuilder()->enableAutoLayout(false);
+        $feeproposal = $this->Feeproposals->get($id, [
+            'contain' => ['Projects']]);
+
+        $clientname = $this->Feeproposals->find('all');
+        $clientname->join(['table'=>'Projects', 'type'=>'INNER', 'conditions'=>'Projects.id = project_id']);
+        $clientname->select(['Clients.firstname', 'Clients.lastname', 'Clients.phonenumber']);
+        $clientname->join(['table'=>'Clients', 'type'=>'INNER', 'conditions'=>'Clients.id=client_id']);
+        $clientname->where(['Feeproposals.id = '=>$id]);
+
+        $this->viewBuilder()->setClassName('CakePdf.Pdf');
+        $this->viewBuilder()->setOption(
+            'pdfConfig',
+            [
+                'orientation' => 'portrait',
+                'download' => true, // This can be omitted if "filename" is specified.
+                'filename' => 'Invoice_' . $id . '.pdf' //// This can be omitted if you want file name based on URL.
+            ]
+        );
+
+        $this->set('feeproposal', $feeproposal);
+        $this->set(compact('clientname'));
+
+
+    }
+
+
+
+    /**
+     * Feeproposal_report_preview method
+     *
+     * @param string|null $id Feeproposal id.
+     */
+    public function feeproposalReportPreview($id = null)
+    {
+        $feeproposal = $this->Feeproposals->get($id, [
+            'contain' => ['Projects']]);
+
+        $clientname = $this->Feeproposals->find('all');
+        $clientname->join(['table'=>'Projects', 'type'=>'INNER', 'conditions'=>'Projects.id = project_id']);
+        $clientname->select(['Clients.firstname', 'Clients.lastname', 'Clients.phonenumber']);
+        $clientname->join(['table'=>'Clients', 'type'=>'INNER', 'conditions'=>'Clients.id=client_id']);
+        $clientname->where(['Feeproposals.id = '=>$id]);
+
+        $this->set(compact('feeproposal'));
+        $this->set(compact('clientname'));
+
+
+    }
 }
