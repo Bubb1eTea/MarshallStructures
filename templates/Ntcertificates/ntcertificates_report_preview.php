@@ -1,3 +1,11 @@
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Ntcertificate $ntcertificate
+ * @var string[]|\Cake\Collection\CollectionInterface $projects
+ * @var string[]|\Cake\Collection\CollectionInterface $designstandards
+ */
+?>
 <html>
    <head>
       <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
@@ -201,7 +209,7 @@
                <td width=349 style='width:261.8pt;border-top:none;border-left:none;
                   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
-                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Address:<!-- insert Address --> </span></p>
+                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Address: <!-- Insert location --> <?= $ntcertificate->project->streetname ?>, <?= $ntcertificate->project->suburb ?> </span></p>
                </td>
             </tr>
             <tr style='height:15.6pt'>
@@ -281,7 +289,7 @@
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Type of
-                     Construction (BCA volume 1 §C1.1):<!-- Insert BCA volume --> 
+                     Construction (BCA volume 1 §C1.1):<!-- Insert BCA volume -->
                   <?=$ntcertificate->constructiontype?></span>
                   </p>
                   <br>
@@ -366,7 +374,7 @@
                   <p class=NormalBold><span lang=EN-AU style='font-size:8.0pt;font-weight:normal'>Internal
                      Pressure Coefficients (C<sub>p,i</sub>):</span>
                   </p>
-                  
+
                   <!-- insert Inetrnal pressure Coefficients -->  <?=$ntcertificate->intpressure?>
                </td>
                <td width=481 colspan=6 style='width:360.55pt;border-top:none;border-left:
@@ -382,7 +390,7 @@
                   <p class=NormalBold><span lang=EN-AU style='font-size:8.0pt;font-weight:normal'>External
                      Pressure Coefficients (C<sub>p,e</sub>)</span>
                   </p>
-                  <!-- Insert external pressure Coefficients --> 
+                  <!-- Insert external pressure Coefficients -->
                </td>
                <td width=77 colspan=3 style='width:57.85pt;border-top:none;border-left:none;
                   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -423,22 +431,22 @@
                   <p class=NormalBold><span lang=EN-AU style='font-size:8.0pt;font-weight:normal'>Net
                      Pressure Coefficients: (C<sub>p,n</sub>)</span>
                   </p>
-                  <!-- Insert net pressure Coefficients -->  
+                  <!-- Insert net pressure Coefficients -->
                </td>
                <td width=77 colspan=3 style='width:57.85pt;border-top:none;border-left:none;
                   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                   <p class=NormalBold align=right style='text-align:right'><span lang=EN-AU
                      style='font-size:8.0pt;font-weight:normal'>Roof / Walls</span></p>
-                     
+
                </td>
                <td width=405 colspan=4 style='width:303.85pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                   <p class=NormalBold align=center style='text-align:center'><span lang=EN-AU
                      style='font-size:8.0pt'>&nbsp;</span></p>
-                     
-                  <!-- Insert floor/roof --> <?=$ntcertificate->netpressureroofwall?> 
+
+                  <!-- Insert floor/roof --> <?=$ntcertificate->netpressureroofwall?>
                </td>
             </tr>
             <tr style='height:15.6pt'>
@@ -447,8 +455,8 @@
                   <p class=NormalBold><span lang=EN-AU style='font-size:8.0pt;font-weight:normal'>Imposed
                      Loads, kPa </span>
                   </p>
-                  
-                  <!-- Insert imposed workload --> 
+
+                  <!-- Insert imposed workload -->
                </td>
                <td width=77 colspan=3 style='width:57.85pt;border-top:none;border-left:none;
                   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -461,7 +469,7 @@
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                   <p class=NormalBold align=center style='text-align:center'><span lang=EN-AU
                      style='font-size:8.0pt'>&nbsp;</span></p>
-                     
+
                   <!-- Insert floor/roof --><?=$ntcertificate->imposedloadfloorroof?>
                </td>
             </tr>
@@ -559,7 +567,7 @@
                   </p>
                   <p class=NormalBold style='line-height:150%'><span lang=EN-AU
                      style='font-size:8.0pt;line-height:150%'>&nbsp;</span></p>
-                     
+
                      <!-- insert company name --> <?=$ntcertificate->compname?>
                </td>
                <td width=320 colspan=2 style='width:239.95pt;border-top:none;border-left:
@@ -569,7 +577,7 @@
                      style='font-size:8.0pt;line-height:150%'>Company NT Registration Number</span></p>
                   <p class=NormalBold style='line-height:150%'><span lang=EN-AU
                      style='font-size:8.0pt;line-height:150%;font-weight:normal'>&nbsp;</span></p>
-                     
+
                      <!-- insert company NT registration number --> <?=$ntcertificate->compntregnum?>
                </td>
             </tr>
@@ -593,7 +601,7 @@
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></p>
                   <p class=MsoNormal><b><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></b></p>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></p>
-                  
+
                   <!-- insert name --> <?=$ntcertificate->name?>
                </td>
                <td width=141 valign=top style='width:106.0pt;border-top:none;border-left:
@@ -607,21 +615,21 @@
                   </p>
                   <p class=MsoNormal><b><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></b></p>
                   <p class=MsoNormal><b><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></b></p>
-                  
+
                   <!-- insert NT registration number --> <?=$ntcertificate->ntregnum?>
                </td>
                <td width=195 colspan=2 valign=top style='width:146.5pt;border-top:none;
                   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:41.2pt'>
                   <p class=MsoNormal><b><span lang=EN-AU style='font-size:8.0pt'>Signature </span></b></p>
-                  
+
                   <!-- insert Signature -->
                </td>
                <td width=150 valign=top style='width:112.15pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:41.2pt'>
                   <p class=MsoNormal><b><span lang=EN-AU style='font-size:8.0pt'>Date <!-- insert date --></span></b></p>
-                  
+
                   <!-- insert date --> <?=$ntcertificate->date?>
                </td>
             </tr>
