@@ -66,7 +66,7 @@ debug($session->read('previous_url')); ?>
                     echo $this->Form->control('constructiontype', ['label'=>'Type of Construction (BCA volume 1 §C1.1) eg. Type A fire-resisting construction', 'options'=>$constructiontype]);
                     echo $this->Form->control('workrelatingto', ['label'=>'Design or part of the design of building work relating to']);
                     echo $this->Form->control('drawingsproducedby', ['label'=>'Drawings produced by']);
-                    echo $this->Form->control('documentsproduced', ['label'=>'Drawings Produced by relating to the design that is certified by this certificate.
+                    echo $this->Form->control('documentsproduced', ['label'=>'Drawings relating to the design that is certified by this certificate.
                     Use a ; to separate document number, date and revision, e.g. 1;10/05/2020;3']);
                     echo $this->Form->control('documentscertified', ['label'=>'Documents setting out the design that is certified by this certificate
                     Use a ; to separate document number, date, type of document, pages and who it is prepared by, e.g. 1;10/05/2020;drawings;17;Ben']);
