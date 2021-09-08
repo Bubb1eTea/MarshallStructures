@@ -46,9 +46,9 @@ debug($session->read('previous_url'));?>
                 echo $this->Form->control('datecreated', ['label'=>"Date Created"]);
                 echo $this->Form->control('invdesc', ['label'=>"Invoice Description"]);
                 echo $this->Form->control('completedpercentage', ['label'=>"Completed Percentage"]);
-                echo $this->Form->control('total', ['label'=>"Subtotal"]);
-                echo $this->Form->control('totalgst', ['label'=>"Total GST"]);
-                echo $this->Form->control('grandtotal', ['label'=>"Grand Total"]);
+                echo $this->Form->control('total', ['label'=>"Subtotal", 'value' => $feeproposal->first()['Feeproposals']['total']]);
+                echo $this->Form->control('totalgst', ['label'=>"Total GST", 'value' => $feeproposal->first()['Feeproposals']['totalgst']]);
+                echo $this->Form->control('grandtotal', ['label'=>"Grand Total", 'value' => $feeproposal->first()['Feeproposals']['grandtotal']]);
                 $days = ['7'=>'7','30'=>'30'];
                 echo $this->Form->control('paywithinday',['label' =>"Pay within how many days?",'options' => $days, 'empty' => false]);
                 ?>
