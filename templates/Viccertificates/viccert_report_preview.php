@@ -231,9 +231,9 @@ to the proposed building work at</span></b><span lang=EN-AU>: </span></p>
  </tr>
 </table>
 
-<p class=Normal-Schedule style='margin-top:12.0pt'><b><span lang=EN-AU
-style='font-size:14.0pt;color:black'>Nature of </span></b><b><span lang=EN-AU
-style='font-size:14.0pt'>proposed building work</span></b></p>
+<p class=Normal-Schedule style='margin-top:12.0pt'><span lang=EN-AU
+style='font-size:14.0pt;color:black'> </span><b><span lang=EN-AU
+style='font-size:14.0pt'>Nature of proposed building work</span></b></p>
 
 <p class=Normal-Schedule><span lang=EN-AU>Construction of a <span> <!-- insert construction type--> <b> <?=$viccertificate->buildingtype?> </b></span></span></p>
 
