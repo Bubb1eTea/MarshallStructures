@@ -357,66 +357,26 @@ lang=EN-AU>Documents setting out the design that is certified by this certificat
 lang=EN-AU style='color:white'>*Performance solution</span></b></p>
 
 <p class=Normal-Schedule style='margin-bottom:6.0pt'><span lang=EN-AU
-style='color:red'>A performance solution forms part of the design certified by
+style='color:black'> <b>A performance solution forms part of the design certified by
 this certificate. The performance solution complies with the following performance
-requirements of the NCC </span></p>
+requirements of the NCC </b> </span></p>
 
-<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
- style='border-collapse:collapse;border:none'>
- <tr>
-  <td valign=top style='border:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
-  3.0pt;margin-left:0cm'><a name="_Hlk514789350"><b><span lang=EN-AU
-  style='color:red'>Relevant performance requirement</span></b></a></p>
-  </td>
-  <td valign=top style='border:solid windowtext 1.0pt;border-left:none;
-  padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
-  3.0pt;margin-left:0cm'><b><span lang=EN-AU style='color:red'>Details of
-  performance solution required by regulation 124</span></b></p>
-  </td>
- </tr>
- <tr>
-  <td valign=bottom style='border:solid windowtext 1.0pt;border-top:none;
-  padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
-  3.0pt;margin-left:0cm'><b><span lang=EN-AU style='color:red'>&nbsp;</span></b></p>
-  </td>
-  <td valign=bottom style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
-  border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=DraftHeading3><i><span lang=EN-AU style='font-size:11.0pt;
-  color:red'>[insert details of any of the following that the registered
-  building practitioner uses or relies on in determining that the performance
-  requirement complies with the performance solution</span></i></p>
-  <p class=DraftHeading4 style='margin-left:119.05pt;text-indent:-119.05pt'><i><span
-  lang=EN-AU style='font-size:11.0pt;color:red'>(i) the assessment method or
-  methods;</span></i></p>
-  <p class=DraftHeading4 style='margin-left:119.05pt;text-indent:-119.05pt'><i><span
-  lang=EN-AU style='font-size:11.0pt;color:red'>(ii) the details of any expert
-  judgement;</span></i></p>
-  <p class=DraftHeading4 style='margin-left:119.05pt;text-indent:-119.05pt'><i><span
-  lang=EN-AU style='font-size:11.0pt;color:red'>(iii) the details of any tests
-  or calculations;</span></i></p>
-  <p class=DraftHeading4 style='margin-left:119.05pt;text-indent:-119.05pt'><i><span
-  lang=EN-AU style='font-size:11.0pt;color:red'>(iv) the details of any
-  standards or other information.]</span></i></p>
-  </td>
- </tr>
+
  <table>
         <tr>
             <th>Relevant performance Requirements</th>
             <th>Details of performance solution required by regulation 124</th>
 
             <?php
-            $documentscertifiedtext = $viccertificate->documentscertified;
-            $documentscertifiedarray=explode(";", $documentscertifiedtext);
-            $count=count($documentscertifiedarray);
-            $numofrows=ceil($count/5);
+            $documentsperformancesolution = $viccertificate->performancereq;
+            $documentsperformancesolutionarray=explode(";", $documentsperformancesolution);
+            $count=count($documentsperformancesolutionarray);
+            $numofrows=ceil($count/2);
 
             for($y=1; $y<=$numofrows;$y++){?>
         <tr>
-            <td><?php if(!empty($documentscertifiedarray[$y*5-5])) echo $documentscertifiedarray[$y*5-5]?></td>
-            <td><?php if(!empty($documentscertifiedarray[$y*5-4])) echo $documentscertifiedarray[$y*5-4]?></td>
+            <td><?php if(!empty($documentsperformancesolutionarray[$y*2-2])) echo $documentsperformancesolutionarray[$y*2-2]?></td>
+            <td><?php if(!empty($documentsperformancesolutionarray[$y*2-1])) echo $documentsperformancesolutionarray[$y*2-1]?></td>
             <?php }?>
 
         </tr>
