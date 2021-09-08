@@ -106,7 +106,48 @@ class NtcertificatesController extends AppController
         } else {
             $this->Flash->error(__('The ntcertificate could not be deleted. Please, try again.'));
         }
-
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function ntcertReport($id = null)
+    {
+        $this->viewBuilder()->enableAutoLayout(false);
+        $ntcertificate = $this->Ntcertificates->get($id, [
+            'contain' => ['Projects', 'Designstandards']]);
+        $this->viewBuilder()->setClassName('CakePdf.Pdf');
+        $this->viewBuilder()->setOption(
+            'pdfConfig',
+            [
+                'orientation' => 'portrait',
+                'download' => true, // This can be omitted if "filename" is specified.
+                'filename' => 'NT Certificate_' . $id . '.pdf' //// This can be omitted if you want file name based on URL.
+            ]
+        );
+
+        $designbasis = $this->Ntcertificates->find('all');
+        $designbasis->join(['table'=>'Designstandards_Ntcertificates', 'type'=>'INNER', 'conditions'=>'Ntcertificates.id = Designstandards_Ntcertificates.Ntcertificate_id']);
+        $designbasis->join(['table'=>'Designstandards', 'type'=>'INNER', 'conditions'=>'Designstandards.id = Designstandards_Ntcertificates.designstandard_id']);
+        $designbasis->select(['Designstandards.id','Designstandards.designdesc','Designstandards.designcode']);
+        $designbasis->where(['Ntcertificates.id = '=>$id]);
+
+        $this->set(compact('ntcertificate'));
+        $this->set(compact('designbasis'));
+    }
+
+
+    public function ntcertificatesReportPreview($id = null)
+    {
+        $ntcertificate = $this->Ntcertificates->get($id, [
+            'contain' => ['Projects', 'Designstandards'],
+        ]);
+
+        $designbasis = $this->Ntcertificates->find('all');
+        $designbasis->join(['table'=>'Designstandards_Ntcertificates', 'type'=>'INNER', 'conditions'=>'Ntcertificates.id = Designstandards_Ntcertificates.Ntcertificate_id']);
+        $designbasis->join(['table'=>'Designstandards', 'type'=>'INNER', 'conditions'=>'Designstandards.id = Designstandards_Ntcertificates.designstandard_id']);
+        $designbasis->select(['Designstandards.id','Designstandards.designdesc','Designstandards.designcode']);
+        $designbasis->where(['Ntcertificates.id = '=>$id]);
+
+        $this->set(compact('ntcertificate'));
+        $this->set(compact('designbasis'));
     }
 }

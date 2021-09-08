@@ -4,8 +4,10 @@
  * @var \App\Model\Entity\Ntcertificate $ntcertificate
  */
 ?>
+
 <div class="row">
     <aside class="column">
+
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
             <?= $this->Html->link(__('Edit Ntcertificate'), ['action' => 'edit', $ntcertificate->id], ['class' => 'side-nav-item']) ?>
@@ -16,7 +18,10 @@
     </aside>
     <div class="column-responsive column-80">
         <div class="ntcertificates view content">
-            <h3><?= h($ntcertificate->name) ?></h3>
+            <h3><?= h($ntcertificate->name) ?>
+                <buttoner style='float: right;'> <?= $this->Html->link(__('Download to PDf'), ['action' => 'ntcertificatereport', $ntcertificate->id ], ['class' => 'button float-right']); ?></buttoner>
+                <buttoner style='float: right; padding-right:10px;'> <?= $this->Html->link(__('View Generated Template'), ['action' => 'ntcertificatesReportPreview', $ntcertificate->id ], ['class' => 'button float-right']); ?></buttoner>
+            </h3>
             <table>
                 <tr>
                     <th><?= __('Project') ?></th>
