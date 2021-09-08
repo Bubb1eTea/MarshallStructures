@@ -9,52 +9,6 @@ $session = $this->request->getSession();
 $session->write('previous_url', $session->read('url'));
 $session->write('url', 'viccertificates.view');
 debug($session->read('previous_url')); ?>
-<!-- BELOW IS THE CODE FOR THE DOCUMENT PRODUCED TABLE -->
-<table>
-    <tr>
-        <th>Document No.</th>
-        <th>Document Date</th>
-        <th>Document Revision</th>
-
-    <?php
-    $documentsproducedtext = $viccertificate->documentsproduced;
-    $documentsproducedarray=explode(";", $documentsproducedtext);
-    $count=count($documentsproducedarray);
-    $numofrows=ceil($count/3);
-
-        for($y=1; $y<=$numofrows;$y++){?>
-    <tr>
-        <td><?php if(!empty($documentsproducedarray[$y*3-3]))  echo $documentsproducedarray[$y*3-3]?></td>
-        <td><?php if(!empty($documentsproducedarray[$y*3-2]))  echo $documentsproducedarray[$y*3-2]?></td>
-        <td><?php if(!empty($documentsproducedarray[$y*3-1]))  echo $documentsproducedarray[$y*3-1]?></td>
-        <?php }?>
-    </tr>
-    <!-- BELOW IS THE CODE FOR THE DOCUMENT CERTIFIED TABLE -->
-    <table>
-        <tr>
-            <th>Document No.</th>
-            <th>Document Date</th>
-            <th>Type of Document</th>
-            <th>Number of Pages</th>
-            <th>Prepared By</th>
-
-            <?php
-            $documentscertifiedtext = $viccertificate->documentscertified;
-            $documentscertifiedarray=explode(";", $documentscertifiedtext);
-            $count=count($documentscertifiedarray);
-            $numofrows=ceil($count/5);
-
-            for($y=1; $y<=$numofrows;$y++){?>
-        <tr>
-            <td><?php if(!empty($documentscertifiedarray[$y*5-5])) echo $documentscertifiedarray[$y*5-5]?></td>
-            <td><?php if(!empty($documentscertifiedarray[$y*5-4])) echo $documentscertifiedarray[$y*5-4]?></td>
-            <td><?php if(!empty($documentscertifiedarray[$y*5-3])) echo $documentscertifiedarray[$y*5-3]?></td>
-            <td><?php if(!empty($documentscertifiedarray[$y*5-2])) echo $documentscertifiedarray[$y*5-2]?></td>
-            <td><?php if(!empty($documentscertifiedarray[$y*5-1])) echo $documentscertifiedarray[$y*5-1]?></td>
-            <?php }?>
-        </tr>
-</table>
-
 <div class="row">
     <aside class="column">
         <div class="side-nav">
@@ -69,7 +23,6 @@ debug($session->read('previous_url')); ?>
         <div class="viccertificates view content">
             <h3><?= h($viccertificate->id) ?>
 
-            <?= h($viccertificate->id) ?>
                 <buttoner style='float: right;'> <?= $this->Html->link(__('Download to PDf'), ['action' => 'viccertificatereport', $viccertificate->id ], ['class' => 'button float-right']); ?></buttoner>
                 <buttoner style='float: right; padding-right:10px;'> <?= $this->Html->link(__('View Generated Template'), ['action' => 'viccertReportPreview', $viccertificate->id ], ['class' => 'button float-right']); ?></buttoner>
             </h3>
