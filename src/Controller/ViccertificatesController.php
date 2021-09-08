@@ -123,7 +123,14 @@ class ViccertificatesController extends AppController
         $clientname->join(['table'=>'Clients', 'type'=>'INNER', 'conditions'=>'Clients.id=client_id']);
         $clientname->where(['Viccertificates.id = '=>$id]);
 
+        $designbasis = $this->Viccertificates->find('all');
+        $designbasis->join(['table'=>'Designstandards_Viccertificates', 'type'=>'INNER', 'conditions'=>'Viccertificates.id = Designstandards_Viccertificates.viccertificate_id']);
+        $designbasis->join(['table'=>'Designstandards', 'type'=>'INNER', 'conditions'=>'Designstandards.id = Designstandards_Viccertificates.designstandard_id']);
+        $designbasis->select(['Designstandards.designdesc','Designstandards.designcode']);
+        $designbasis->where(['Viccertificates.id = '=>$id]);
+
         $this->set(compact('viccertificate'));
         $this->set(compact('clientname'));
+        $this->set(compact('designbasis'));
     }
 }
