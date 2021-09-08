@@ -52,6 +52,8 @@ $cakeDescription = 'Marshall Structures';
                 <!--<a href="#">Invoices</a>-->
                 <tr><?= $this->Html->link('Fee Proposal','/feeproposals/index'); ?></tr>
                 <tr><?= $this->Html->link('Invoice','/invoices/index'); ?></tr>
+                <tr><?= $this->Html->link('NT Certificates','/ntcertificates/index'); ?></tr>
+                <tr><?= $this->Html->link('VIC Certificates','/viccertificates/index'); ?></tr>
             </table>
         <br>
     
