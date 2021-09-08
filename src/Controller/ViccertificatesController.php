@@ -118,7 +118,7 @@ class ViccertificatesController extends AppController
        public function viccertReportPreview($id=null)
     {
         $viccertificate = $this->Viccertificates->get($id, [
-            'contain' => ['Projects', 'Companys', 'Documentsproduceds', 'Documentscertifieds', 'Designstandards'],
+            'contain' => ['Projects', 'Companys', 'Designstandards'],
         ]);
 
         $this->set(compact('viccertificate'));
