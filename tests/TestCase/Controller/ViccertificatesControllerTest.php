@@ -25,8 +25,6 @@ class ViccertificatesControllerTest extends TestCase
         'app.Viccertificates',
         'app.Projects',
         'app.Companys',
-        'app.Documentsproduceds',
-        'app.Documentscertifieds',
         'app.Designstandards',
         'app.DesignstandardsViccertificates',
     ];
