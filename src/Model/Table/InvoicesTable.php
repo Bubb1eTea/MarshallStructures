@@ -68,7 +68,7 @@ class InvoicesTable extends Table
 
         $validator
             ->dateTime('datecreated')
-            ->notEmptyDateTime('datecreated');
+            ->notEmptyDateTime('datecreated','This field cannot be empty.');
 
         $validator
             ->scalar('invdesc')
@@ -76,28 +76,37 @@ class InvoicesTable extends Table
 
         $validator
             ->decimal('completedpercentage')
+            ->maxLength('completedpercentage', 12,'This field is too long.')
+            ->greaterThanOrEqual('completedpercentage', 0,'This field must be positive.')
+            ->lessThanOrEqual('completedpercentage',100,'This field should be less than or equal to 100.')
             ->requirePresence('completedpercentage', 'create')
-            ->notEmptyString('completedpercentage');
+            ->notEmptyString('completedpercentage', 'This field cannot be empty.');
 
         $validator
             ->decimal('total')
+            ->greaterThanOrEqual('total', 0,'This field must be positive.')
             ->requirePresence('total', 'create')
-            ->notEmptyString('total');
+            ->maxLength('total', 12,'This field is too long.')
+            ->notEmptyString('total', 'This field cannot be empty.');
 
         $validator
             ->decimal('totalgst')
+            ->greaterThanOrEqual('totalgst', 0,'This field must be positive.')
+            ->maxLength('totalgst', 12,'This field is too long.')
             ->requirePresence('totalgst', 'create')
-            ->notEmptyString('totalgst');
+            ->notEmptyString('totalgst', 'This field cannot be empty.');
 
         $validator
             ->decimal('grandtotal')
+            ->greaterThanOrEqual('grandtotal', 0,'This field must be positive.')
+            ->maxLength('grandtotal', 12,'This field is too long.')
             ->requirePresence('grandtotal', 'create')
-            ->notEmptyString('grandtotal');
+            ->notEmptyString('grandtotal', 'This field cannot be empty.');
 
         $validator
             ->integer('paywithinday')
             ->requirePresence('paywithinday', 'create')
-            ->notEmptyString('paywithinday');
+            ->notEmptyString('paywithinday', 'This field cannot be empty.');
 
         return $validator;
     }
