@@ -251,7 +251,7 @@ building only):</span><!-- insert rise in stories --> <b> <?=$viccertificate->ri
 
 <p class=Normal-Schedule><span lang=EN-AU>Type of construction:</span> <!-- insert type of construction --><b><?=$viccertificate->constructiontype?> </b></p>
 
-<p class=Normal-Schedule><span lang=EN-AU>Version of BCA applicable to certificate </span></p>
+<p class=Normal-Schedule><span lang=EN-AU>Version of BCA applicable to certificate: </span></p>
 
 <p class=Normal-Schedule style='margin-top:12.0pt'><b><span lang=EN-AU
 style='font-size:14.0pt'>Building classification</span></b></p>
