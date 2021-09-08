@@ -33,6 +33,7 @@ debug($session->read('previous_url')); ?>
                 <?php
                     echo $this->Html->link(__('Add New Project'), ['action' => '../projects/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true]);
+                    echo $this->Html->link(__('View All Fee Proposals'), ['action' => '../feeproposals'], ['class' => 'button float-right', 'target' => '_blank']);
                     echo $this->Form->control('feeproposal_id', ['options' => $feeproposals, 'empty' => true, 'label'=>"Fee Proposal"]);
                     echo $this->Form->control('datecreated', ['label'=>"Date Created"]);
                     echo $this->Form->control('invdesc', ['label'=>"Invoice Description"]);
@@ -49,12 +50,12 @@ debug($session->read('previous_url')); ?>
 
             <!-- <script>
                 $(document).ready(function() {
-                    $('input').keyup(function(ev) {      
-                        
+                    $('input').keyup(function(ev) {
+
 
                         var completedpercentage = (parseFloat($('#completedpercentage').val())* 0.01) || 0;
                         var total = (parseFloat(completedpercentage) * <subtotal of fee proposal>).toFixed(2);
-                        
+
                         var divobj = document.getElementById('total');
                         divobj.value = total;
 
