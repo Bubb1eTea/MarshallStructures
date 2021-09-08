@@ -442,13 +442,17 @@ Regulations 2018 or National Construction Code and Australian Standards</span></
   Standards</span></b></p>
   </td>
  </tr>
- <tr>
-  <td width=586 valign=bottom style='width:439.2pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
-  3.0pt;margin-left:0cm'><b><span lang=EN-AU>&nbsp;</span></b></p>
-  </td>
+    <?php $designbasisarray=$designbasis->toList();
+    for($x=0; $x<count($designbasisarray); $x++){?>
+<tr>
+      <td width=586 valign=bottom style='width:439.2pt;border:solid windowtext 1.0pt;
+      border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+          <?=$designbasisarray[$x]['Designstandards']['designcode']?> - <?=$designbasisarray[$x]['Designstandards']['designdesc']?>
+      <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+      3.0pt;margin-left:0cm'><b><span lang=EN-AU>&nbsp;</span></b></p>
+      </td>
  </tr>
+    <?php }?>
 </table>
 
 <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
