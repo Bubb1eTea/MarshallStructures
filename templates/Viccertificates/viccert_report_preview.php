@@ -438,7 +438,7 @@ Regulations 2018 or National Construction Code and Australian Standards</span></
 
 <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
 
-<p class=MsoNormal><span lang=EN-AU>I <!-- insert prepared or not--> the design, or part of the design, set out in the documents
+<p class=MsoNormal><span lang=EN-AU>I  <?=$viccertificate->prepared?> <!-- insert prepared or not--> the design, or part of the design, set out in the documents
 listed above.</span></p>
 
 <p class=MsoNormal><span lang=EN-AU>I certify that the design set out in the
