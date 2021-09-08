@@ -313,62 +313,33 @@ lang=EN-AU>Documents setting out the design that is certified by this certificat
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
  style='border-collapse:collapse;border:none'>
- <tr>
-  <td width=78 valign=top style='width:58.45pt;border:solid windowtext 1.0pt;
-  padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
-  3.0pt;margin-left:0cm'><b><span lang=EN-AU>Document no.</span></b></p>
-  </td>
-  <td width=101 valign=top style='width:76.0pt;border:solid windowtext 1.0pt;
-  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
-  3.0pt;margin-left:0cm'><b><span lang=EN-AU>Document date</span></b></p>
-  </td>
-  <td width=250 valign=top style='width:187.6pt;border:solid windowtext 1.0pt;
-  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
-  3.0pt;margin-left:0cm'><b><span lang=EN-AU>Type of document (e.g. drawings,
-  computations, specifications, calculations etc.)</span></b></p>
-  </td>
-  <td width=83 valign=top style='width:62.1pt;border:solid windowtext 1.0pt;
-  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
-  3.0pt;margin-left:0cm'><b><span lang=EN-AU>Number of pages</span></b></p>
-  </td>
-  <td width=89 valign=top style='width:66.65pt;border:solid windowtext 1.0pt;
-  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
-  3.0pt;margin-left:0cm'><b><span lang=EN-AU>Prepared by </span></b></p>
-  </td>
- </tr>
- <tr>
-  <td width=78 valign=bottom style='width:58.45pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
-  3.0pt;margin-left:0cm'><b><span lang=EN-AU>&nbsp;</span></b> <!-- insert document no --></p>
-  </td>
-  <td width=101 valign=top style='width:76.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=DraftHeading4 style='margin-left:119.05pt;text-indent:-119.05pt'><b><span
-  lang=EN-AU>&nbsp;</span></b> <!-- insert Document date --></p>
-  </td>
-  <td width=250 valign=bottom style='width:187.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0cm 5.4pt 0cm 5.4pt'>  <!-- insert type of document --></td>
-  <td width=83 valign=top style='width:62.1pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=DraftHeading3 style='margin-left:93.55pt;text-indent:-93.55pt'><i><span
-  lang=EN-AU>&nbsp;</span></i> <!-- insert number of pages --></p>
-  </td>
-  <td width=89 valign=top style='width:66.65pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=DraftHeading3 style='margin-left:93.55pt;text-indent:-93.55pt'><i><span
-  lang=EN-AU>&nbsp;</span></i> <!-- insert Prepared by --></p>
-  </td>
- </tr>
+ <table>
+        <tr>
+            <th>Document No.</th>
+            <th>Document Date</th>
+            <th>Type of Document</th>
+            <th>Number of Pages</th>
+            <th>Prepared By</th>
+
+            <?php
+            $documentscertifiedtext = $viccertificate->documentscertified;
+            $documentscertifiedarray=explode(";", $documentscertifiedtext);
+            $count=count($documentscertifiedarray);
+            $numofrows=ceil($count/5);
+
+            for($y=1; $y<=$numofrows;$y++){?>
+        <tr>
+            <td><?php if(!empty($documentscertifiedarray[$y*5-5])) echo $documentscertifiedarray[$y*5-5]?></td>
+            <td><?php if(!empty($documentscertifiedarray[$y*5-4])) echo $documentscertifiedarray[$y*5-4]?></td>
+            <td><?php if(!empty($documentscertifiedarray[$y*5-3])) echo $documentscertifiedarray[$y*5-3]?></td>
+            <td><?php if(!empty($documentscertifiedarray[$y*5-2])) echo $documentscertifiedarray[$y*5-2]?></td>
+            <td><?php if(!empty($documentscertifiedarray[$y*5-1])) echo $documentscertifiedarray[$y*5-1]?></td>
+            <?php }?>
+
+        </tr>
+
+
+</table>
 </table>
 
 <p class=Normal-Schedule style='margin-top:12.0pt;page-break-after:avoid'><b><span
@@ -420,6 +391,28 @@ requirements of the NCC </span></p>
   standards or other information.]</span></i></p>
   </td>
  </tr>
+ <table>
+        <tr>
+            <th>Relevant performance Requirements</th>
+            <th>Details of performance solution required by regulation 124</th>
+
+            <?php
+            $documentscertifiedtext = $viccertificate->documentscertified;
+            $documentscertifiedarray=explode(";", $documentscertifiedtext);
+            $count=count($documentscertifiedarray);
+            $numofrows=ceil($count/5);
+
+            for($y=1; $y<=$numofrows;$y++){?>
+        <tr>
+            <td><?php if(!empty($documentscertifiedarray[$y*5-5])) echo $documentscertifiedarray[$y*5-5]?></td>
+            <td><?php if(!empty($documentscertifiedarray[$y*5-4])) echo $documentscertifiedarray[$y*5-4]?></td>
+            <?php }?>
+
+        </tr>
+
+
+</table>
+ 
 </table>
 
 <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
