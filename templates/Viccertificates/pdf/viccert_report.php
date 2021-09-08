@@ -10,6 +10,7 @@
 ?>
 <br>
 
+
 <html>
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
@@ -248,13 +249,11 @@ building only):</span><!-- insert rise in stories --> <b> <?=$viccertificate->ri
 
 <p class=Normal-Schedule><span lang=EN-AU>Type of construction:</span> <!-- insert type of construction --><b><?=$viccertificate->constructiontype?> </b></p>
 
-<p class=Normal-Schedule><span lang=EN-AU>Version of BCA applicable to certificate </span></p>
+<p class=Normal-Schedule><span lang=EN-AU>Version of BCA applicable to certificate: </span></p>
 
 <p class=Normal-Schedule style='margin-top:12.0pt'><b><span lang=EN-AU
 style='font-size:14.0pt'>Building classification</span></b></p>
  <?=$viccertificate->buildingclass?>
-<br>
-<br>
 <br>
 
 <!-- insert building specification here (Dropdown list)-->
@@ -272,11 +271,21 @@ work relating to <!-- insert building work relation--><b> <?=$viccertificate->wo
 
 <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <p class=Normal-Schedule style='margin-top:12.0pt;page-break-after:avoid'><b><span
 lang=EN-AU>Drawings Produced by *engineers name* relating to the design that is
 certified by this certificate</span></b></p>
 
-    <table>
+<br>
+<br>
+    <table border="1">
         <tr>
             <th>Document No.</th>
             <th>Document Date</th>
@@ -347,7 +356,7 @@ lang=EN-AU>Documents setting out the design that is certified by this certificat
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
  style='border-collapse:collapse;border:none'>
- <table>
+ <table border="1">
         <tr>
             <th>Document No.</th>
             <th>Document Date</th>
@@ -385,7 +394,7 @@ this certificate. The performance solution complies with the following performan
 requirements of the NCC </b> </span></p>
 
 
- <table>
+ <table border = "1">
         <tr>
             <th>Relevant performance Requirements</th>
             <th>Details of performance solution required by regulation 124</th>
