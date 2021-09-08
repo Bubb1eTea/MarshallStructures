@@ -31,7 +31,7 @@ debug($session->read('previous_url')); ?>
             <fieldset>
                 <legend><?= __('Add Invoice') ?></legend>
                 <?php
-                    echo $this->Html->link(__('Add New Project'), ['action' => '../projects/add'], ['class' => 'button float-right']);
+                    //echo $this->Html->link(__('Add New Project'), ['action' => '../projects/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true]);
                     echo $this->Html->link(__('View All Fee Proposals'), ['action' => '../feeproposals'], ['class' => 'button float-right', 'target' => '_blank']);
                     echo $this->Form->control('feeproposal_id', ['options' => $feeproposals, 'empty' => true, 'label'=>"Fee Proposal"]);

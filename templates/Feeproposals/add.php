@@ -30,7 +30,7 @@ debug($session->read('previous_url')); ?>
             <fieldset>
                 <legend><?= __('Add Fee Proposal') ?></legend>
                 <?php
-                    echo $this->Html->link(__('Add New Project'), ['action' => '../projects/add'], ['class' => 'button float-right']);
+                    //echo $this->Html->link(__('Add New Project'), ['action' => '../projects/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true]);
                     echo $this->Form->control('guarantor',['label' =>"Guarantor (leave blank if none)"]);
                     echo $this->Form->control('scopeofservice',['label' =>"Scope of Service (provide a list)"]);
@@ -51,12 +51,12 @@ debug($session->read('previous_url')); ?>
 
             <script>
                 $(document).ready(function() {
-                    $('input').keyup(function(ev) {                               
+                    $('input').keyup(function(ev) {
                         var fixedfee = parseFloat($('#fixedfee').val()) || 0;
                         var hourlyrate = parseFloat($('#hourlyrate').val())  || 0;
                         var disbursement = parseFloat($('#disbursement').val())  || 0;
                         var total = (parseFloat(fixedfee) + parseFloat(hourlyrate) + parseFloat(disbursement)).toFixed(2);
-                        
+
                         var divobj = document.getElementById('total');
                         divobj.value = total;
 
