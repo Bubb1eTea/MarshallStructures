@@ -70,7 +70,12 @@ debug($session->read('previous_url')); ?>
     </aside>
     <div class="column-responsive column-80">
         <div class="viccertificates view content">
-            <h3><?= h($viccertificate->id) ?></h3>
+            <h3><?= h($viccertificate->id) ?>
+            
+            <?= h($viccertificate->id) ?>
+                <buttoner style='float: right;'> <?= $this->Html->link(__('Download to PDf'), ['action' => 'viccertificatereport', $viccertificate->id ], ['class' => 'button float-right']); ?></buttoner>
+                <buttoner style='float: right; padding-right:10px;'> <?= $this->Html->link(__('View Generated Template'), ['action' => 'viccertReportPreview', $viccertificate->id ], ['class' => 'button float-right']); ?></buttoner>
+            </h3>
             <table>
                 <tr>
                     <th><?= __('VIC Certificate ID') ?></th>
