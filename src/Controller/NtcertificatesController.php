@@ -109,7 +109,7 @@ class NtcertificatesController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    public function ntcertReport($id = null)
+    public function ntcertificatesReport($id = null)
     {
         $this->viewBuilder()->enableAutoLayout(false);
         $ntcertificate = $this->Ntcertificates->get($id, [
