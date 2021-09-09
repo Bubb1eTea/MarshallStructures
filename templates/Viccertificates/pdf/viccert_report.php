@@ -356,7 +356,7 @@ lang=EN-AU>Documents setting out the design that is certified by this certificat
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
  style='border-collapse:collapse;border:none'>
- <table border="1">
+ <table border="1" width="100%" style='border-collapse:collapse';>
         <tr>
             <th>Document No.</th>
             <th>Document Date</th>
@@ -394,7 +394,7 @@ this certificate. The performance solution complies with the following performan
 requirements of the NCC </b> </span></p>
 
 
- <table border = "1">
+ <table border="1" width="100%" style='border-collapse:collapse';>
         <tr>
             <th>Relevant performance Requirements</th>
             <th>Details of performance solution required by regulation 124</th>
