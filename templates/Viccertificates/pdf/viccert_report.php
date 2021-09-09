@@ -285,7 +285,7 @@ certified by this certificate</span></b></p>
 
 <br>
 <br>
-    <table border="1">
+    <table border="1" width="100%" style='border-collapse:collapse';>
         <tr>
             <th>Document No.</th>
             <th>Document Date</th>
