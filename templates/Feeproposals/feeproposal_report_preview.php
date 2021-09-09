@@ -269,7 +269,7 @@ margin-left:0cm;border:none;padding:0cm'><span lang=EN-AU style='font-size:
 <p class=MsoListParagraphCxSpFirst style='margin-top:2.0pt;margin-right:0cm;
 margin-bottom:6.0pt;margin-left:64.35pt;text-indent:-18.0pt'><span lang=EN-AU
 style='font-size:11.0pt;font-family:Symbol'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span lang=EN-AU style='font-size:11.0pt'> ◉  <?= $feeproposal->scopeofservice ?></span></p>
+</span></span><span lang=EN-AU style='font-size:11.0pt'> ◉  <?= nl2br($feeproposal->scopeofservice) ?></span></p>
 
 
 
@@ -311,7 +311,7 @@ margin-left:0cm;border:none;padding:0cm'><span lang=EN-AU style='font-size:
 
 <p class=MsoListParagraph style='margin-left:64.35pt;text-indent:-18.0pt'><span
 lang=EN-AU style='font-size:11.0pt;font-family:Symbol'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span lang=EN-AU style='font-size:11.0pt'>◉ <?= $feeproposal->documentsprovided ?><br>
+</span></span><span lang=EN-AU style='font-size:11.0pt'> <?= nl2br($feeproposal->documentsprovided) ?><br>
 <br>
 </span></p>
 
