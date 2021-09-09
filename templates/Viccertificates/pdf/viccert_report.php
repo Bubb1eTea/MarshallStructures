@@ -276,7 +276,7 @@ work relating to <!-- insert building work relation--><b> <?=$viccertificate->wo
 lang=EN-AU>Drawings Produced by *engineers name* relating to the design that is
 certified by this certificate</span></b></p>
 
-    <table>
+    <table border="1" width="100%" style='border-collapse:collapse';>
         <tr>
             <th>Document No.</th>
             <th>Document Date</th>
@@ -347,7 +347,7 @@ lang=EN-AU>Documents setting out the design that is certified by this certificat
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
  style='border-collapse:collapse;border:none'>
- <table>
+ <table border="1" width="100%" style='border-collapse:collapse';>
         <tr>
             <th>Document No.</th>
             <th>Document Date</th>
@@ -369,10 +369,7 @@ lang=EN-AU>Documents setting out the design that is certified by this certificat
             <td><?php if(!empty($documentscertifiedarray[$y*5-2])) echo $documentscertifiedarray[$y*5-2]?></td>
             <td><?php if(!empty($documentscertifiedarray[$y*5-1])) echo $documentscertifiedarray[$y*5-1]?></td>
             <?php }?>
-
         </tr>
-
-
 </table>
 </table>
 
@@ -384,8 +381,7 @@ style='color:black'> <b>A performance solution forms part of the design certifie
 this certificate. The performance solution complies with the following performance
 requirements of the NCC </b> </span></p>
 
-
- <table>
+ <table border="1" width="100%" style='border-collapse:collapse';>
         <tr>
             <th>Relevant performance Requirements</th>
             <th>Details of performance solution required by regulation 124</th>
@@ -401,12 +397,7 @@ requirements of the NCC </b> </span></p>
             <td><?php if(!empty($documentsperformancesolutionarray[$y*2-2])) echo $documentsperformancesolutionarray[$y*2-2]?></td>
             <td><?php if(!empty($documentsperformancesolutionarray[$y*2-1])) echo $documentsperformancesolutionarray[$y*2-1]?></td>
             <?php }?>
-
         </tr>
-
-
-</table>
-
 </table>
 
 <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
