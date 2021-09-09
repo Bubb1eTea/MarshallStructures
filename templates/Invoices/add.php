@@ -37,7 +37,8 @@ debug($session->read('previous_url')); ?>
                     echo $this->Form->control('feeproposal_id', ['options' => $feeproposals, 'empty' => true, 'label'=>"Fee Proposal"]);
                     echo $this->Form->control('datecreated', ['label'=>"Date Created"]);
                     echo $this->Form->control('invdesc', ['label'=>"Invoice Description"]);
-                    echo $this->Form->control('completedpercentage', ['label'=>"Completed Percentage"]);
+                    echo $this->Form->control('completedpercentage', ['label'=>"Completed Percentage", 'type' => "number"]);
+                    echo $this->Form->control('feeproposaltotal', ['label'=>"Fee Proposal Total"]);
                     echo $this->Form->control('total', ['label'=>"Subtotal"]);
                     echo $this->Form->control('totalgst', ['label'=>"Total GST"]);
                     echo $this->Form->control('grandtotal', ['label'=>"Grand Total"]);
@@ -48,12 +49,12 @@ debug($session->read('previous_url')); ?>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
 
-            <!-- <script>
+            <script>
                 $(document).ready(function() {
                     $('input').keyup(function(ev) {
-                        var completedpercentage = (parseFloat($('#completedpercentage').val())* 0.01) || 0;
-                        var total = (parseFloat($('#total').val())* 0.01) || 0;
-                        var total = (parseFloat(completedpercentage) * compled).toFixed(2);
+                        var completedpercentage = (parseFloat($('#completedpercentage').val())* 0.1) || 0;
+                        var feeproposaltotal = (parseFloat($('#feeproposaltotal').val())* 0.1) || 0;
+                        var total = (parseFloat(completedpercentage) * parseFloat(feeproposaltotal)).toFixed(2);
 
                         var divobj = document.getElementById('total');
                         divobj.value = total;
@@ -67,7 +68,7 @@ debug($session->read('previous_url')); ?>
                         divobj.value = grandtotal;
                     });
                 });
-            </script> -->
+            </script>
         </div>
     </div>
 </div>
