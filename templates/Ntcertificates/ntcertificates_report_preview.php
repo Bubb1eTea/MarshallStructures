@@ -674,123 +674,55 @@
          <p class=MsoNormal style='text-align:justify'><span lang=EN-AU>Inspection of
             construction is required at the stages indicated below.</span>
          </p>
-         <p class=MsoNormal style='text-align:justify'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 1. </span></b><span lang=EN-AU>Completion of
-            site preparation/site filling/excavations for footings prior to placement of
-            any reinforcement or concrete.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 2. </span></b><span lang=EN-AU>Completion of
-            preparations for placing of concrete strip footings including placement of
-            reinforcement.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 3. </span></b><span lang=EN-AU>Completion of
-            preparations for placing concrete slabs including compaction of fill and sand
-            blinding, placement of formwork, reinforcement, starter bars and cast in items.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 4. </span></b><span lang=EN-AU>Completion of
-            preparations for placing of concrete pier footings including reinforcement (if
-            any).</span>
-         </p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 5. </span></b><span lang=EN-AU>Starter bars and
-            cast in items after placing of concrete and prior to any covering up work.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 6 </span></b><span lang=EN-AU>Reinforcement to
-            walls completed prior to core filling (inspection holes and cleanout cores to
-            be completed).</span>
-         </p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 7. </span></b><span lang=EN-AU>Structural
-            steelwork and cold formed steelwork completed and prior to any covering up
-            work. Floor framing system completed before floors are laid or underside is
-            lined.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 8. </span></b><span lang=EN-AU>Suspended
-            concrete floor slabs with formwork, reinforcement and cast in items completed,
-            prior to placing of concrete.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 9. </span></b><span lang=EN-AU>Wall framing or
-            blockwork wall core filling completed (with windows fixed in place) and roof
-            framing with connections completed and prior to sheeting or lining.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:18.7pt;text-align:justify;text-indent:
-            -18.7pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:18.7pt;text-align:justify'><span
-            lang=EN-AU>Note: </span><b><span lang=EN-AU style='font-size:8.0pt;
-            line-height:120%;letter-spacing:-.15pt'>[ ]</span></b><span lang=EN-AU> Prior
-            lodgement of truss manufacturer's drawings, details and certification required.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:92.5pt;text-align:justify;text-indent:
-            -46.75pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><span lang=EN-AU> Prior lodgement of
-            windows manufacturer's drawings including fixings and certification required.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:18.7pt;text-align:justify;text-indent:
-            -18.7pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 10. </span></b><span lang=EN-AU>Structural wall
-            linings completed and prior to any covering up work.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 11. </span></b><span lang=EN-AU>Final inspection
-            upon completion of all structural work including fixings of external roof and
-            wall claddings, flashings, barges &amp; vents.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:18.7pt;text-align:justify;text-indent:
-            -18.7pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 12. </span></b><span lang=EN-AU>Other
-            Inspections as required by the building permit</span>
-         </p>
+<br>
+         <p style="font-size: 11pt">
+         [  ]<b>	1.</b>	Completion of site preparation/site filling/excavations for footings prior to placement of any reinforcement or concrete.
+                      </p> 
+                      <br>
+         <p style="font-size: 11pt">
+         [  ]<b>	2.</b>	Completion of preparations for placing of concrete strip footings including placement of reinforcement.
+                      </p><br>
+         <p style="font-size: 11pt">
+         [  ]<b>	3.</b>	Completion of preparations for placing concrete slabs including compaction of fill and sand blinding, placement of 
+         <teste style="padding-left: 4%">formwork, reinforcement, starter bars and cast in items.</teste>
+                      </p><br>
+         <p style="font-size: 11pt">
+         [  ]<b>	4.</b>	Completion of preparations for placing of concrete pier footings including reinforcement (if any).
+                      </p><br>
+         <p style="font-size: 11pt">
+         [  ]<b>	5.</b>	Starter bars and cast in items after placing of concrete and prior to any covering up work.
+                      </p>  <br>   
+                      <p style="font-size: 11pt">
+         [  ]<b>	6.</b>	Reinforcement to walls completed prior to core filling (inspection holes and cleanout cores to be completed).
+                      </p><br>
+                      <p style="font-size: 11pt">
+         [  ]<b>	7.</b>	Structural steelwork and cold formed steelwork completed and prior to any covering up work.  Floor framing system 
+         <teste style="padding-left: 4%">completed before floors are laid or underside is lined. </teste>
+                      </p><br>
+                      <p style="font-size: 11pt">
+         [  ]<b>	8.</b>	Suspended concrete floor slabs with formwork, reinforcement and cast in items completed, prior to placing of concrete.
+                      </p><br>
+                      <p style="font-size: 11pt">
+         [  ]<b>	9.</b>	Wall framing or blockwork wall core filling completed (with windows fixed in place) and roof framing with connections 
+         <teste style="padding-left: 4%">completed and prior to sheeting or lining. </teste>
+                      </p><br>
+                      <p style="font-size: 11pt; padding-left: 6%">
+                      Note:	[   ]	Prior lodgement of truss manufacturer’s drawings, details and certification required. <br>
+                              <teste style="padding-left: 5.25%">[   ]	Prior lodgement of windows manufacturer’s drawings including fixings and certification required. </teste>
+
+                      </p><br>
+                      
+                      <p style="font-size: 11pt"> 
+         [  ]<b>	10.</b>	Structural wall linings completed and prior to any covering up work.
+                      </p><br>
+                      <p style="font-size: 11pt">
+         [  ]<b>	11.</b>	Final inspection upon completion of all structural work including fixings of external roof and wall claddings, flashings, 
+         <teste style="padding-left: 5%">barges & vents.</teste>
+                      </p><br>
+                      <p style="font-size: 11pt">
+         [  ]<b>	12.</b>	Other Inspections as required by the building permit
+                      </p><br>
+
          <p class=MsoNormal style='text-align:justify'><b><span lang=EN-AU
             style='line-height:120%;letter-spacing:-.15pt'>&nbsp;</span></b></p>
          <p class=MsoNormal style='text-align:justify'><span lang=EN-AU>&nbsp;</span></p>
@@ -799,7 +731,7 @@
             Information:</span></b>
          </p>
          <p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-indent:
-            -18.0pt'><span lang=EN-AU>1)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+            -18.0pt'><span lang=EN-AU>1)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
             </span></span><span lang=EN-AU>The above inspections are required to be carried
             out by either the certifying engineer or the building certifier who issued the
             Building Permit for the work. (If no inspections are indicated refer to the
@@ -808,7 +740,7 @@
          <p class=MsoNormal style='margin-left:36.0pt;text-align:justify'><span
             lang=EN-AU>&nbsp;</span></p>
          <p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-indent:
-            -18.0pt'><span lang=EN-AU>2)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+            -18.0pt'><span lang=EN-AU>2)<span style='font:7.0pt "Times New Roman"'>&nbsp;
             </span></span><span lang=EN-AU>Where works are prescribed building works under
             the <i>NT Building Act</i>, the building certifier must be provided with a copy
             of the inspection record and no further works must be carried out by the
@@ -817,14 +749,14 @@
          </p>
          <p class=MsoListParagraph><span lang=EN-AU>&nbsp;</span></p>
          <p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-indent:
-            -18.0pt'><span lang=EN-AU>3)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+            -18.0pt'><span lang=EN-AU>3)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
             </span></span><span lang=EN-AU>Additional non structural inspections may be
             required during the course of construction before the issue of an Occupancy
             Permit (refer to building certifier for requirements).</span>
          </p>
          <p class=MsoListParagraph><span lang=EN-AU>&nbsp;</span></p>
          <p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-indent:
-            -18.0pt'><span lang=EN-AU>4)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+            -18.0pt'><span lang=EN-AU>4)<span style='font:7.0pt "Times New Roman"'>&nbsp;
             </span></span><span lang=EN-AU>Failure to obtain inspections may prevent the
             issue of an Occupancy Permit upon completion of the building works. </span>
          </p>
