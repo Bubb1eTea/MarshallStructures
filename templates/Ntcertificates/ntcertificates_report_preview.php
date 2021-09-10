@@ -179,13 +179,23 @@
    <body lang=EN-US link=blue vlink=purple style='word-wrap:break-word'>
     <div class = contenter>
       <div class=WordSection1>
+            <headerstart style="margin:auto;  width:100%;" align=center> <span>     
+            </headerstart>
+
+            <p class=MsoNormal align=center style='text-align:center'><b><span
+            lang=EN-AU style='color:black; font-size: 18px'>
+            
+            NORTHERN TERRITORY OF AUSTRALIA <br> BUILDING ACT <br> SECTION 40 – CERTIFICATE OF COMPLIANCE – STRUCTURAL DESIGN </span></b>
+         </p>
+         <br>
          <p class=MsoNormal align=center style='text-align:center'><b><i><span
-            lang=EN-AU style='color:maroon'>All sections must be completed - mark N/A to
-            any question that does not apply</span></i></b>
+            lang=EN-AU style='color:maroon'>
+            
+            All sections must be completed - mark N/A to any question that does not apply</span></i></b>
          </p>
          <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
          <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=698
-            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none'>
+            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none;   margin: auto;  padding: 10px;'>
             <tr style='height:15.6pt'>
                <td width=698 colspan=2 style='width:523.6pt;border:solid windowtext 1.0pt;
                   background:#F3F3F3;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
@@ -227,7 +237,7 @@
                <td width=349 style='width:261.8pt;border-top:none;border-left:none;
                   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
-                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Town / Hundred :<!-- Town --><?=$ntcertificate->townhundred?> </span></p>
+                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Town / Hundred: <!-- Town --><?=$ntcertificate->townhundred?> </span></p>
                </td>
             </tr>
             <tr style='height:15.6pt'>
@@ -236,8 +246,8 @@
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Description of
                      works :</span>
                   </p>
-                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></p>
-                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'><!-- Insert Description of work --><?=$ntcertificate->workdesc?> </span></p>
+                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'><?=$ntcertificate->workdesc?> </span></p>
+                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'><!-- Insert Description of work --></span></p>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></p>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></p>
                   <p class=MsoNormal><b><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></b></p>
@@ -246,10 +256,10 @@
          </table>
          <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
          <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=698
-            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none'>
+            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none;  margin: auto;  padding: 10px;'>
             <tr style='height:15.6pt'>
                <td width=698 style='width:523.6pt;border:solid windowtext 1.0pt;background:
-                  #F3F3F3;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
+                  #F3F3F3;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt; '>
                   <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt'>DOCUMENTS
                      ATTACHED</span>
                   </p>
@@ -270,7 +280,7 @@
          </table>
          <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
          <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=698
-            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none'>
+            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none;  margin: auto;  padding: 10px;'>
             <tr style='height:15.6pt'>
                <td width=698 colspan=10 style='width:523.6pt;border:solid windowtext 1.0pt;
                   background:#F3F3F3;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
@@ -291,7 +301,7 @@
             </tr>
             <tr style='height:15.6pt'>
                <td width=331 colspan=7 style='width:248.1pt;border:solid windowtext 1.0pt;
-                  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
+                  border-top:none;padding:0cm 0cm 0cm 5.4pt;height:15.6pt'>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Class of Building
                      (BCA):<!-- Insert BCA --> <?=$ntcertificate->buildingclass?></span>
                   </p>
@@ -301,12 +311,10 @@
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Type of
                      Construction (BCA volume 1 §C1.1):<!-- Insert BCA volume -->
-                  <?=$ntcertificate->constructiontype?></span>
                   </p>
-                  <br>
-                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>(eg. Type A fire-resisting
-                     construction)</span>
-                  </p>
+                  
+                      </p>
+                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'><?=$ntcertificate->constructiontype?> </p></span>
                   <br>
                </td>
             </tr>
@@ -321,26 +329,26 @@
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Annual
-                     Probability of Exceedance for Wind (BCA Table 1.2b):<!-- Insert annual Probability of excedance --> <b>1 in <!-- Insert probability --> <?=$ntcertificate->windexceedance?></b></span>
+                     Probability of Exceedance for Wind (BCA Table 1.2b):<!-- Insert annual Probability of excedance --> <br>1 in <!-- Insert probability --> <?=$ntcertificate->windexceedance?></span>
                   </p>
                </td>
             </tr>
             <tr style='height:14.8pt'>
                <td width=112 valign=top style='width:84.1pt;border:solid windowtext 1.0pt;
                   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:14.8pt'>
-                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Region:<!-- Insert region --> <?=$ntcertificate->region?> </span></p>
+                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Region:<!-- Insert region --> <br> <?=$ntcertificate->region?> <br> </span></p>
                </td>
                <td width=274 colspan=7 valign=top style='width:205.65pt;border-top:none;
                   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:14.8pt'>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Regional ultimate
-                     wind speed V<sub>R</sub>(m/s):<!-- Insert regional ultimate wind speed --> <?=$ntcertificate->windspeed?> </span>
+                     wind speed V<sub>R</sub>(m/s):<!-- Insert regional ultimate wind speed --> <br><?=$ntcertificate->windspeed?> </span>
                   </p>
                </td>
                <td width=150 valign=top style='width:112.2pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:14.8pt'>
-                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Terrain Category:<!-- Insert terrain category --> <?=$ntcertificate->terraincat?></span></p>
+                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Terrain Category:<!-- Insert terrain category --> <br> <?=$ntcertificate->terraincat?></span></p>
                </td>
                <td width=162 valign=top style='width:121.65pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -386,7 +394,7 @@
                      Pressure Coefficients (C<sub>p,i</sub>):</span>
                   </p>
 
-                  <!-- insert Inetrnal pressure Coefficients -->  <?=$ntcertificate->intpressure?>
+                  <!-- insert Inetrnal pressure Coefficients --> <awser style="font-size:8pt"> <?=$ntcertificate->intpressure?> </awser>
                </td>
                <td width=481 colspan=6 style='width:360.55pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -412,9 +420,9 @@
                <td width=405 colspan=4 style='width:303.85pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
-                  <p class=NormalBold align=center style='text-align:center'><span lang=EN-AU
-                     style='font-size:8.0pt'>&nbsp;</span></p>
-                     <!-- Insert walls --> <?=$ntcertificate->expressurewall?>
+                  <p  align=center style='text-align:left'><span lang=EN-AU
+                     style='font-size:8.0pt'><?=$ntcertificate->expressurewall?> </span></p>
+                     <!-- Insert walls -->
                </td>
             </tr>
             <tr style='height:15.6pt'>
@@ -431,9 +439,9 @@
                <td width=405 colspan=4 style='width:303.85pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
-                  <p class=NormalBold align=center style='text-align:center'><span lang=EN-AU
-                     style='font-size:8.0pt'>&nbsp;</span></p>
-                     <!-- Insert roof -->  <?=$ntcertificate->expressureroof?>
+                  <p  align=center style='text-align:left'><span lang=EN-AU
+                     style='font-size:8.0pt'><?=$ntcertificate->expressureroof?> </span></p>
+                     <!-- Insert roof --> 
                </td>
             </tr>
             <tr style='height:15.6pt'>
@@ -454,10 +462,10 @@
                <td width=405 colspan=4 style='width:303.85pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
-                  <p class=NormalBold align=center style='text-align:center'><span lang=EN-AU
-                     style='font-size:8.0pt'>&nbsp;</span></p>
+                  <p  align=center style='text-align:left'><span lang=EN-AU
+                     style='font-size:8.0pt'><?=$ntcertificate->netpressureroofwall?></span></p>
 
-                  <!-- Insert floor/roof --> <?=$ntcertificate->netpressureroofwall?>
+                  <!-- Insert floor/roof --> 
                </td>
             </tr>
             <tr style='height:15.6pt'>
@@ -478,10 +486,10 @@
                <td width=405 colspan=4 style='width:303.85pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
-                  <p class=NormalBold align=center style='text-align:center'><span lang=EN-AU
-                     style='font-size:8.0pt'>&nbsp;</span></p>
+                  <p  align=center style='text-align:left'><span lang=EN-AU
+                     style='font-size:8.0pt'><?=$ntcertificate->imposedloadfloorroof?></span></p>
 
-                  <!-- Insert floor/roof --><?=$ntcertificate->imposedloadfloorroof?>
+                  <!-- Insert floor/roof -->
                </td>
             </tr>
             <tr style='height:15.6pt'>
@@ -491,7 +499,7 @@
                      Category, EDC (Table 2.1 of AS 1170.4): <?=$ntcertificate->earthquakecat?></span>
                   </p>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Annual
-                     Probability of Exceedance for Earthquake Actions (BCA Table 1.2b):<!-- Insert annual probability --> <b>1 in <!-- Insert probability --> <?=$ntcertificate->earthexceedance?> </b></span>
+                     Probability of Exceedance for Earthquake Actions (BCA Table 1.2b):<!-- Insert annual probability --> 1 in <!-- Insert probability --> <?=$ntcertificate->earthexceedance?> </span>
                   </p>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Importance Level
                      (BCA):<!-- Insert importance level --> <?=$ntcertificate->importancelevel?><br> Hazard Factor, Z (Section
@@ -523,7 +531,7 @@
          </table>
          <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
          <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=698
-            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none'>
+            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none;  margin: auto;  padding: 10px;'>
             <tr style='height:15.6pt'>
                <td width=698 style='width:523.6pt;border:solid windowtext 1.0pt;background:
                   #F3F3F3;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
@@ -535,12 +543,12 @@
             </tr>
             <tr style='height:15.6pt'>
                <td width=698 style='width:523.6pt;border:solid windowtext 1.0pt;border-top:
-                  none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
+                  none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt' >
                   <p class=MsoNormal style='line-height:400%'><span lang=EN-AU
                      style='font-size:8.0pt;line-height:400%'>The following items are excluded and
                      shall be certified separately: </span>
                   </p>
-                  <?=$ntcertificate->exclusion?>
+                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> <?=$ntcertificate->exclusion?> </p> <br>
                </td>
             </tr>
             <tr style='height:39.1pt'>
@@ -551,13 +559,13 @@
                   <p class=NormalBold style='margin-left:18.0pt'><span lang=EN-AU
                      style='font-size:8.0pt'>&nbsp;</span>
                   </p>
-                  <?=$ntcertificate->comment?>
+                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> <?=$ntcertificate->comment?> </p>
                </td>
             </tr>
          </table>
          <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
          <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=698
-            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none'>
+            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none;  margin: auto;  padding: 10px;'>
             <tr style='height:24.2pt'>
                <td width=698 colspan=5 valign=bottom style='width:523.6pt;border:solid windowtext 1.0pt;
                   background:#F3F3F3;padding:0cm 5.4pt 0cm 5.4pt;height:24.2pt'>
@@ -579,7 +587,7 @@
                   <p class=NormalBold style='line-height:150%'><span lang=EN-AU
                      style='font-size:8.0pt;line-height:150%'>&nbsp;</span></p>
 
-                     <!-- insert company name --> <?=$ntcertificate->compname?>
+                     <!-- insert company name --> <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> <?=$ntcertificate->compname?> </p>
                </td>
                <td width=320 colspan=2 style='width:239.95pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -589,7 +597,7 @@
                   <p class=NormalBold style='line-height:150%'><span lang=EN-AU
                      style='font-size:8.0pt;line-height:150%;font-weight:normal'>&nbsp;</span></p>
 
-                     <!-- insert company NT registration number --> <?=$ntcertificate->compntregnum?>
+                     <!-- insert company NT registration number --> <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> <?=$ntcertificate->compntregnum?> </p>
                </td>
             </tr>
             <tr style='height:23.3pt'>
@@ -613,7 +621,7 @@
                   <p class=MsoNormal><b><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></b></p>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></p>
 
-                  <!-- insert name --> <?=$ntcertificate->name?>
+                  <!-- insert name --> <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> <?=$ntcertificate->name?> </p>
                </td>
                <td width=141 valign=top style='width:106.0pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -627,7 +635,7 @@
                   <p class=MsoNormal><b><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></b></p>
                   <p class=MsoNormal><b><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></b></p>
 
-                  <!-- insert NT registration number --> <?=$ntcertificate->ntregnum?>
+                  <!-- insert NT registration number -->  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> <?=$ntcertificate->ntregnum?> </p>
                </td>
                <td width=195 colspan=2 valign=top style='width:146.5pt;border-top:none;
                   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -641,7 +649,7 @@
                   padding:0cm 5.4pt 0cm 5.4pt;height:41.2pt'>
                   <p class=MsoNormal><b><span lang=EN-AU style='font-size:8.0pt'>Date <!-- insert date --></span></b></p>
 
-                  <!-- insert date --> <?=$ntcertificate->date?>
+                  <!-- insert date --> <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> <?=$ntcertificate->date?> </p>
                </td>
             </tr>
             <tr height=0>
