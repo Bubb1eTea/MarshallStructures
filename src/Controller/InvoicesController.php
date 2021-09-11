@@ -120,7 +120,10 @@ class InvoicesController extends AppController
     {
         $this->viewBuilder()->enableAutoLayout(false);
         $invoice = $this->Invoices->get($id, [
-            'contain' => ['Projects', 'Feeproposals']]);
+            'contain' => ['Projects' =>[
+                'Clients'=>['Companys']],
+                'Feeproposals'],
+        ]);
         $this->viewBuilder()->setClassName('CakePdf.Pdf');
         $this->viewBuilder()->setOption(
             'pdfConfig',
@@ -130,23 +133,7 @@ class InvoicesController extends AppController
                 'filename' => 'Invoice_' . $id . '.pdf' //// This can be omitted if you want file name based on URL.
             ]
         );
-
-        $clientname = $this->Invoices->find('all');
-        $clientname->join(['table'=>'Projects', 'type'=>'INNER', 'conditions'=>'Projects.id = project_id']);
-        $clientname->select(['Clients.firstname', 'Clients.lastname', 'Clients.phonenumber']);
-        $clientname->join(['table'=>'Clients', 'type'=>'INNER', 'conditions'=>'Clients.id=client_id']);
-        $clientname->where(['Invoices.id = '=>$id]);
-
-        $company = $this->Invoices->find('all');
-        $company->join(['table'=>'Projects', 'type'=>'INNER', 'conditions'=>'Projects.id = project_id']);
-        $company->join(['table'=>'Clients', 'type'=>'INNER', 'conditions'=>'Clients.id=client_id']);
-        $company->join(['table'=>'Companys', 'type'=>'INNER', 'conditions'=>'Companys.id=company_id']);
-        $company->select(['Companys.companyname','Companys.streetname', 'Companys.suburb', 'Companys.state', 'Companys.postcode']);
-        $company->where(['Invoices.id = '=>$id]);
-
         $this->set('invoice', $invoice);
-        $this->set(compact('clientname'));
-        $this->set(compact('company'));
     }
 
 
@@ -158,25 +145,10 @@ class InvoicesController extends AppController
     public function invoiceReportPreview($id = null)
     {
         $invoice = $this->Invoices->get($id, [
-            'contain' => ['Projects', 'Feeproposals'],
+            'contain' => ['Projects' =>[
+                'Clients'=>['Companys']],
+                'Feeproposals'],
         ]);
-
-        $clientname = $this->Invoices->find('all');
-        $clientname->join(['table'=>'Projects', 'type'=>'INNER', 'conditions'=>'Projects.id = project_id']);
-        $clientname->select(['Clients.firstname', 'Clients.lastname', 'Clients.phonenumber']);
-        $clientname->join(['table'=>'Clients', 'type'=>'INNER', 'conditions'=>'Clients.id=client_id']);
-        $clientname->where(['Invoices.id = '=>$id]);
-
-        $company = $this->Invoices->find('all');
-        $company->join(['table'=>'Projects', 'type'=>'INNER', 'conditions'=>'Projects.id = project_id']);
-        $company->join(['table'=>'Clients', 'type'=>'INNER', 'conditions'=>'Clients.id=client_id']);
-        $company->join(['table'=>'Companys', 'type'=>'INNER', 'conditions'=>'Companys.id=company_id']);
-        $company->select(['Companys.companyname','Companys.streetname', 'Companys.suburb', 'Companys.state', 'Companys.postcode']);
-        $company->where(['Invoices.id = '=>$id]);
-
         $this->set(compact('invoice'));
-        $this->set(compact('clientname'));
-        $this->set(compact('company'));
-
     }
 }
