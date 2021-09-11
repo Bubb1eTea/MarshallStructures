@@ -173,7 +173,7 @@ lang=EN-AU>CERTIFICATE OF COMPLIANCE FOR PROPOSED BUILDING WORK</span></b></p>
 
 <p class=Normal-Schedule style='margin-top:12.0pt'><b><span lang=EN-AU>This
 certificate is issued to *</span></b><i><span lang=EN-AU><!-- [Building Surveyors
-Name] --> <?= $clientname->first()['Clients']['firstname'].' '.$clientname->first()['Clients']['lastname'] ?> </span></i></p>
+Name] --> <?= $viccertificate['project']['client']['firstname'].' '.$viccertificate['project']['client']['lastname'] ?> </span></i></p>
 
 <p class=Normal-Schedule><span lang=EN-AU>&nbsp;</span></p>
 
@@ -434,12 +434,12 @@ Regulations 2018 or National Construction Code and Australian Standards</span></
   Standards</span></b></p>
   </td>
  </tr>
-    <?php $designbasisarray=$designbasis->toList();
-    for($x=0; $x<count($designbasisarray); $x++){?>
+    <?php
+    for($x=0; $x<count($viccertificate->designstandards); $x++){?>
 <tr>
       <td width=586 valign=bottom style='width:439.2pt;border:solid windowtext 1.0pt;
       border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
-          <?=$designbasisarray[$x]['Designstandards']['designcode']?> - <?=$designbasisarray[$x]['Designstandards']['designdesc']?>
+          <?=$viccertificate->designstandards[$x]['designcode']?> - <?=$viccertificate->designstandards[$x]['designdesc']?>
       <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
       3.0pt;margin-left:0cm'><b><span lang=EN-AU>&nbsp;</span></b></p>
       </td>
