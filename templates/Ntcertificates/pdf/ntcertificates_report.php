@@ -704,7 +704,7 @@
                       </p><br>
                       <p style="font-size: 11pt; padding-left: 6%">
                       Note:	[   ]	Prior lodgement of truss manufacturer’s drawings, details and certification required. <br>
-                              <teste style="padding-left: 5.25%">[   ]	Prior lodgement of windows manufacturer’s drawings including fixings and certification required. </teste>
+                              <teste style="padding-left: 5.1%">[   ]	Prior lodgement of windows manufacturer’s drawings including fixings and certification required. </teste>
 
                       </p><br>
                       
