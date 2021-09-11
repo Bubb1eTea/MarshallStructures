@@ -126,7 +126,7 @@ class FeeproposalsController extends AppController
             [
                 'orientation' => 'portrait',
                 'download' => true, // This can be omitted if "filename" is specified.
-                'filename' => 'Invoice_' . $id . '.pdf' //// This can be omitted if you want file name based on URL.
+                'filename' => 'Fee Proposal_' . $id . '.pdf' //// This can be omitted if you want file name based on URL.
             ]
         );
         $this->set('feeproposal', $feeproposal);
