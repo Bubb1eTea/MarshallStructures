@@ -179,18 +179,18 @@
    <body lang=EN-US link=blue vlink=purple style='word-wrap:break-word'>
     <div class = contenter>
       <div class=WordSection1>
-            <headerstart style="margin:auto;  width:100%;" align=center> <span>     
+            <headerstart style="margin:auto;  width:100%;" align=center> <span>
             </headerstart>
 
             <p class=MsoNormal align=center style='text-align:center'><b><span
             lang=EN-AU style='color:black; font-size: 18px'>
-            
+
             NORTHERN TERRITORY OF AUSTRALIA <br> BUILDING ACT <br> SECTION 40 – CERTIFICATE OF COMPLIANCE – STRUCTURAL DESIGN </span></b>
          </p>
          <br>
          <p class=MsoNormal align=center style='text-align:center'><b><i><span
             lang=EN-AU style='color:maroon'>
-            
+
             All sections must be completed - mark N/A to any question that does not apply</span></i></b>
          </p>
          <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
@@ -288,9 +288,9 @@
                      lang=EN-AU style='font-size:9.0pt;color:black;font-weight:normal'></span><span
                      lang=EN-AU style='font-size:8.0pt;color:black;font-weight:normal'>(please
                      list relevant Standards used in the design)</span><br>
-                      <?php $designbasisarray=$designbasis->toList();
-                      for($x=0; $x<count($designbasisarray); $x++){?>
-                   <p><?=$designbasisarray[$x]['Designstandards']['designcode']?> - <?=$designbasisarray[$x]['Designstandards']['designdesc']?></p>
+                      <?php
+                      for($x=0; $x<count($ntcertificate->designstandards); $x++){?>
+                   <p><?=$ntcertificate->designstandards[$x]['designcode']?> - <?=$ntcertificate->designstandards[$x]['designdesc']?></p>
                    <?php }?>
                   </p>
                   <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt;font-weight:normal'>&nbsp;</span></p>
@@ -312,7 +312,7 @@
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Type of
                      Construction (BCA volume 1 §C1.1):<!-- Insert BCA volume -->
                   </p>
-                  
+
                       </p>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'><?=$ntcertificate->constructiontype?> </p></span>
                   <br>
@@ -441,7 +441,7 @@
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                   <p  align=center style='text-align:left'><span lang=EN-AU
                      style='font-size:8.0pt'><?=$ntcertificate->expressureroof?> </span></p>
-                     <!-- Insert roof --> 
+                     <!-- Insert roof -->
                </td>
             </tr>
             <tr style='height:15.6pt'>
@@ -465,7 +465,7 @@
                   <p  align=center style='text-align:left'><span lang=EN-AU
                      style='font-size:8.0pt'><?=$ntcertificate->netpressureroofwall?></span></p>
 
-                  <!-- Insert floor/roof --> 
+                  <!-- Insert floor/roof -->
                </td>
             </tr>
             <tr style='height:15.6pt'>
@@ -677,13 +677,13 @@
 <br>
          <p style="font-size: 11pt">
          [  ]<b>	1.</b>	Completion of site preparation/site filling/excavations for footings prior to placement of any reinforcement or concrete.
-                      </p> 
+                      </p>
                       <br>
          <p style="font-size: 11pt">
          [  ]<b>	2.</b>	Completion of preparations for placing of concrete strip footings including placement of reinforcement.
                       </p><br>
          <p style="font-size: 11pt">
-         [  ]<b>	3.</b>	Completion of preparations for placing concrete slabs including compaction of fill and sand blinding, placement of 
+         [  ]<b>	3.</b>	Completion of preparations for placing concrete slabs including compaction of fill and sand blinding, placement of
          <teste style="padding-left: 4%">formwork, reinforcement, starter bars and cast in items.</teste>
                       </p><br>
          <p style="font-size: 11pt">
@@ -691,19 +691,19 @@
                       </p><br>
          <p style="font-size: 11pt">
          [  ]<b>	5.</b>	Starter bars and cast in items after placing of concrete and prior to any covering up work.
-                      </p>  <br>   
+                      </p>  <br>
                       <p style="font-size: 11pt">
          [  ]<b>	6.</b>	Reinforcement to walls completed prior to core filling (inspection holes and cleanout cores to be completed).
                       </p><br>
                       <p style="font-size: 11pt">
-         [  ]<b>	7.</b>	Structural steelwork and cold formed steelwork completed and prior to any covering up work.  Floor framing system 
+         [  ]<b>	7.</b>	Structural steelwork and cold formed steelwork completed and prior to any covering up work.  Floor framing system
          <teste style="padding-left: 4%">completed before floors are laid or underside is lined. </teste>
                       </p><br>
                       <p style="font-size: 11pt">
          [  ]<b>	8.</b>	Suspended concrete floor slabs with formwork, reinforcement and cast in items completed, prior to placing of concrete.
                       </p><br>
                       <p style="font-size: 11pt">
-         [  ]<b>	9.</b>	Wall framing or blockwork wall core filling completed (with windows fixed in place) and roof framing with connections 
+         [  ]<b>	9.</b>	Wall framing or blockwork wall core filling completed (with windows fixed in place) and roof framing with connections
          <teste style="padding-left: 4%">completed and prior to sheeting or lining. </teste>
                       </p><br>
                       <p style="font-size: 11pt; padding-left: 6%">
@@ -711,12 +711,12 @@
                               <teste style="padding-left: 5.1%">[   ]	Prior lodgement of windows manufacturer’s drawings including fixings and certification required. </teste>
 
                       </p><br>
-                      
-                      <p style="font-size: 11pt"> 
+
+                      <p style="font-size: 11pt">
          [  ]<b>	10.</b>	Structural wall linings completed and prior to any covering up work.
                       </p><br>
                       <p style="font-size: 11pt">
-         [  ]<b>	11.</b>	Final inspection upon completion of all structural work including fixings of external roof and wall claddings, flashings, 
+         [  ]<b>	11.</b>	Final inspection upon completion of all structural work including fixings of external roof and wall claddings, flashings,
          <teste style="padding-left: 5%">barges & vents.</teste>
                       </p><br>
                       <p style="font-size: 11pt">
