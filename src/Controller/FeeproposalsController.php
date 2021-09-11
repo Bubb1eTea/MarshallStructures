@@ -119,13 +119,9 @@ class FeeproposalsController extends AppController
     {
         $this->viewBuilder()->enableAutoLayout(false);
         $feeproposal = $this->Feeproposals->get($id, [
-            'contain' => ['Projects']]);
-
-        $clientname = $this->Feeproposals->find('all');
-        $clientname->join(['table'=>'Projects', 'type'=>'INNER', 'conditions'=>'Projects.id = project_id']);
-        $clientname->select(['Clients.firstname', 'Clients.lastname', 'Clients.phonenumber']);
-        $clientname->join(['table'=>'Clients', 'type'=>'INNER', 'conditions'=>'Clients.id=client_id']);
-        $clientname->where(['Feeproposals.id = '=>$id]);
+            'contain' => ['Projects'=>[
+                'Clients'=>[
+                    'Companys']]]]);
 
         $this->viewBuilder()->setClassName('CakePdf.Pdf');
         $this->viewBuilder()->setOption(
@@ -138,7 +134,6 @@ class FeeproposalsController extends AppController
         );
 
         $this->set('feeproposal', $feeproposal);
-        $this->set(compact('clientname'));
 
 
     }
@@ -153,16 +148,11 @@ class FeeproposalsController extends AppController
     public function feeproposalReportPreview($id = null)
     {
         $feeproposal = $this->Feeproposals->get($id, [
-            'contain' => ['Projects']]);
-
-        $clientname = $this->Feeproposals->find('all');
-        $clientname->join(['table'=>'Projects', 'type'=>'INNER', 'conditions'=>'Projects.id = project_id']);
-        $clientname->select(['Clients.firstname', 'Clients.lastname', 'Clients.phonenumber']);
-        $clientname->join(['table'=>'Clients', 'type'=>'INNER', 'conditions'=>'Clients.id=client_id']);
-        $clientname->where(['Feeproposals.id = '=>$id]);
+            'contain' => ['Projects'=>[
+                            'Clients'=>[
+                            'Companys']]]]);
 
         $this->set(compact('feeproposal'));
-        $this->set(compact('clientname'));
 
 
     }
