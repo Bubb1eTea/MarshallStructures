@@ -284,12 +284,13 @@
                      lang=EN-AU style='font-size:9.0pt;color:black;font-weight:normal'></span><span
                      lang=EN-AU style='font-size:8.0pt;color:black;font-weight:normal'>(please
                      list relevant Standards used in the design)</span><br>
-                      <?php
+                      
+                  </p>
+                  <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt;font-weight:normal'>&nbsp;
+                  <?php
                       for($x=0; $x<count($ntcertificate->designstandards); $x++){?>
                    <p><?=$ntcertificate->designstandards[$x]['designcode']?> - <?=$ntcertificate->designstandards[$x]['designdesc']?></p>
-                   <?php }?>
-                  </p>
-                  <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt;font-weight:normal'>&nbsp;</span></p>
+                   <?php }?></span></p>
                   <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt;font-weight:normal'>&nbsp;</span></p>
                   <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt;font-weight:normal'>&nbsp;</span></p>
                   <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt'>&nbsp;</span></p>
@@ -390,7 +391,7 @@
                      Pressure Coefficients (C<sub>p,i</sub>):</span>
                   </p>
 
-                  <!-- insert Inetrnal pressure Coefficients --> <awser style="font-size:8pt"> <?=$ntcertificate->intpressure?> </awser>
+                  <!-- insert Inetrnal pressure Coefficients --> <awser style="font-size:8pt"> <?=$ntcertificate->intpressure?> <br></awser>
                </td>
                <td width=481 colspan=6 style='width:360.55pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -679,8 +680,8 @@
          [  ]<b>	2.</b>	Completion of preparations for placing of concrete strip footings including placement of reinforcement.
                       </p><br>
          <p style="font-size: 11pt">
-         [  ]<b>	3.</b>	Completion of preparations for placing concrete slabs including compaction of fill and sand blinding, placement of
-         <teste style="padding-left: 4%">formwork, reinforcement, starter bars and cast in items.</teste>
+         [  ]<b>	3.</b>	Completion of preparations for placing concrete slabs including compaction of fill and sand blinding, placement<teste style="padding-left: 4.4%"> of
+         formwork, reinforcement, starter bars and cast in items.</teste>
                       </p><br>
          <p style="font-size: 11pt">
          [  ]<b>	4.</b>	Completion of preparations for placing of concrete pier footings including reinforcement (if any).
@@ -692,19 +693,19 @@
          [  ]<b>	6.</b>	Reinforcement to walls completed prior to core filling (inspection holes and cleanout cores to be completed).
                       </p><br>
                       <p style="font-size: 11pt">
-         [  ]<b>	7.</b>	Structural steelwork and cold formed steelwork completed and prior to any covering up work.  Floor framing system
-         <teste style="padding-left: 4%">completed before floors are laid or underside is lined. </teste>
+         [  ]<b>	7.</b>	Structural steelwork and cold formed steelwork completed and prior to any covering up work.  Floor framing <teste style="padding-left: 4.4%"> system
+         completed before floors are laid or underside is lined. </teste>
                       </p><br>
                       <p style="font-size: 11pt">
-         [  ]<b>	8.</b>	Suspended concrete floor slabs with formwork, reinforcement and cast in items completed, prior to placing of concrete.
+         [  ]<b>	8.</b>	Suspended concrete floor slabs with formwork, reinforcement and cast in items completed, prior to placing of  <teste style="padding-left: 4.4%"> concrete.
                       </p><br>
                       <p style="font-size: 11pt">
-         [  ]<b>	9.</b>	Wall framing or blockwork wall core filling completed (with windows fixed in place) and roof framing with connections
-         <teste style="padding-left: 4%">completed and prior to sheeting or lining. </teste>
+         [  ]<b>	9.</b>	Wall framing or blockwork wall core filling completed (with windows fixed in place) and roof framing with <teste style="padding-left: 4.4%">connections
+         completed and prior to sheeting or lining. </teste>
                       </p><br>
                       <p style="font-size: 11pt; padding-left: 6%">
                       Note:	[   ]	Prior lodgement of truss manufacturer’s drawings, details and certification required. <br>
-                              <teste style="padding-left: 5.1%">[   ]	Prior lodgement of windows manufacturer’s drawings including fixings and certification required. </teste>
+                              <teste style="padding-left: 5.46%">[   ]	Prior lodgement of windows manufacturer’s drawings including fixings and certification required. </teste>
 
                       </p><br>
 
@@ -712,8 +713,8 @@
          [  ]<b>	10.</b>	Structural wall linings completed and prior to any covering up work.
                       </p><br>
                       <p style="font-size: 11pt">
-         [  ]<b>	11.</b>	Final inspection upon completion of all structural work including fixings of external roof and wall claddings, flashings,
-         <teste style="padding-left: 5%">barges & vents.</teste>
+         [  ]<b>	11.</b>	Final inspection upon completion of all structural work including fixings of external roof and wall claddings,  <teste style="padding-left: 5.5%">flashings,
+        barges & vents.</teste>
                       </p><br>
                       <p style="font-size: 11pt">
          [  ]<b>	12.</b>	Other Inspections as required by the building permit
@@ -726,6 +727,7 @@
          <p class=MsoNormal style='text-align:justify'><b><span lang=EN-AU>Important
             Information:</span></b>
          </p>
+         <br>
          <p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-indent:
             -18.0pt'><span lang=EN-AU>1)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
             </span></span><span lang=EN-AU>The above inspections are required to be carried
