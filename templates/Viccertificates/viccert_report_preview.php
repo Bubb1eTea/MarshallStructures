@@ -266,7 +266,7 @@ work relating to <!-- insert building work relation--><?=$viccertificate->workre
 lang=EN-AU>Drawings Produced by *engineers name* relating to the design that is
 certified by this certificate</span></b></p>
 
-    <table border="1">
+    <table border="1" width="100%" style="collapse: collapse">
         <tr>
             <th>&nbsp Document No.</th>
             <th>Document Date</th>
