@@ -6,7 +6,9 @@
  * @var string[]|\Cake\Collection\CollectionInterface $designstandards
  */
 ?>
+<br>
 <html>
+
    <head>
       <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
       <meta name=Generator content="Microsoft Word 15 (filtered)">
@@ -171,14 +173,25 @@
       </style>
    </head>
    <body lang=EN-US link=blue vlink=purple style='word-wrap:break-word'>
+    <div class = contenter>
       <div class=WordSection1>
+            <headerstart style="margin:auto;  width:100%;" align=center> <span>
+            </headerstart>
+
+            <p class=MsoNormal align=center style='text-align:center'><b><span
+            lang=EN-AU style='color:black; font-size: 18px'>
+
+            NORTHERN TERRITORY OF AUSTRALIA <br> BUILDING ACT <br> SECTION 40 – CERTIFICATE OF COMPLIANCE – STRUCTURAL DESIGN </span></b>
+         </p>
+         <br>
          <p class=MsoNormal align=center style='text-align:center'><b><i><span
-            lang=EN-AU style='color:maroon'>All sections must be completed - mark N/A to
-            any question that does not apply</span></i></b>
+            lang=EN-AU style='color:maroon'>
+
+            All sections must be completed - mark N/A to any question that does not apply</span></i></b>
          </p>
          <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
          <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=698
-            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none'>
+            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none;   margin: auto;  padding: 10px;'>
             <tr style='height:15.6pt'>
                <td width=698 colspan=2 style='width:523.6pt;border:solid windowtext 1.0pt;
                   background:#F3F3F3;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
@@ -220,7 +233,7 @@
                <td width=349 style='width:261.8pt;border-top:none;border-left:none;
                   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
-                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Town / Hundred :<!-- Town --><?=$ntcertificate->townhundred?> </span></p>
+                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Town / Hundred: <!-- Town --><?=$ntcertificate->townhundred?> </span></p>
                </td>
             </tr>
             <tr style='height:15.6pt'>
@@ -229,8 +242,8 @@
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Description of
                      works :</span>
                   </p>
-                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></p>
-                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'><!-- Insert Description of work --><?=$ntcertificate->workdesc?> </span></p>
+                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'><?=$ntcertificate->workdesc?> </span></p>
+                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'><!-- Insert Description of work --></span></p>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></p>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></p>
                   <p class=MsoNormal><b><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></b></p>
@@ -239,10 +252,10 @@
          </table>
          <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
          <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=698
-            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none'>
+            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none;  margin: auto;  padding: 10px;'>
             <tr style='height:15.6pt'>
                <td width=698 style='width:523.6pt;border:solid windowtext 1.0pt;background:
-                  #F3F3F3;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
+                  #F3F3F3;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt; '>
                   <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt'>DOCUMENTS
                      ATTACHED</span>
                   </p>
@@ -263,7 +276,7 @@
          </table>
          <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
          <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=698
-            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none'>
+            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none;  margin: auto;  padding: 10px;'>
             <tr style='height:15.6pt'>
                <td width=698 colspan=10 style='width:523.6pt;border:solid windowtext 1.0pt;
                   background:#F3F3F3;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
@@ -271,12 +284,13 @@
                      lang=EN-AU style='font-size:9.0pt;color:black;font-weight:normal'></span><span
                      lang=EN-AU style='font-size:8.0pt;color:black;font-weight:normal'>(please
                      list relevant Standards used in the design)</span><br>
-                      <?php $designbasisarray=$designbasis->toList();
-                      for($x=0; $x<count($designbasisarray); $x++){?>
-                   <p><?=$designbasisarray[$x]['Designstandards']['designcode']?> - <?=$designbasisarray[$x]['Designstandards']['designdesc']?></p>
-                   <?php }?>
+
                   </p>
-                  <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt;font-weight:normal'>&nbsp;</span></p>
+                  <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt;font-weight:normal'>&nbsp;
+                  <?php
+                      for($x=0; $x<count($ntcertificate->designstandards); $x++){?>
+                   <p><?=$ntcertificate->designstandards[$x]['designcode']?> - <?=$ntcertificate->designstandards[$x]['designdesc']?></p>
+                   <?php }?></span></p>
                   <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt;font-weight:normal'>&nbsp;</span></p>
                   <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt;font-weight:normal'>&nbsp;</span></p>
                   <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt'>&nbsp;</span></p>
@@ -284,7 +298,7 @@
             </tr>
             <tr style='height:15.6pt'>
                <td width=331 colspan=7 style='width:248.1pt;border:solid windowtext 1.0pt;
-                  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
+                  border-top:none;padding:0cm 0cm 0cm 5.4pt;height:15.6pt'>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Class of Building
                      (BCA):<!-- Insert BCA --> <?=$ntcertificate->buildingclass?></span>
                   </p>
@@ -294,12 +308,10 @@
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Type of
                      Construction (BCA volume 1 §C1.1):<!-- Insert BCA volume -->
-                  <?=$ntcertificate->constructiontype?></span>
                   </p>
-                  <br>
-                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>(eg. Type A fire-resisting
-                     construction)</span>
-                  </p>
+
+                      </p>
+                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'><?=$ntcertificate->constructiontype?> </p></span>
                   <br>
                </td>
             </tr>
@@ -314,26 +326,26 @@
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Annual
-                     Probability of Exceedance for Wind (BCA Table 1.2b):<!-- Insert annual Probability of excedance --> <b>1 in <!-- Insert probability --> <?=$ntcertificate->windexceedance?></b></span>
+                     Probability of Exceedance for Wind (BCA Table 1.2b):<!-- Insert annual Probability of excedance --> <br>1 in <!-- Insert probability --> <?=$ntcertificate->windexceedance?></span>
                   </p>
                </td>
             </tr>
             <tr style='height:14.8pt'>
                <td width=112 valign=top style='width:84.1pt;border:solid windowtext 1.0pt;
                   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:14.8pt'>
-                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Region:<!-- Insert region --> <?=$ntcertificate->region?> </span></p>
+                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Region:<!-- Insert region --> <br> <?=$ntcertificate->region?> <br> </span></p>
                </td>
                <td width=274 colspan=7 valign=top style='width:205.65pt;border-top:none;
                   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:14.8pt'>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Regional ultimate
-                     wind speed V<sub>R</sub>(m/s):<!-- Insert regional ultimate wind speed --> <?=$ntcertificate->windspeed?> </span>
+                     wind speed V<sub>R</sub>(m/s):<!-- Insert regional ultimate wind speed --> <br><?=$ntcertificate->windspeed?> </span>
                   </p>
                </td>
                <td width=150 valign=top style='width:112.2pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:14.8pt'>
-                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Terrain Category:<!-- Insert terrain category --> <?=$ntcertificate->terraincat?></span></p>
+                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Terrain Category:<!-- Insert terrain category --> <br> <?=$ntcertificate->terraincat?></span></p>
                </td>
                <td width=162 valign=top style='width:121.65pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -379,7 +391,7 @@
                      Pressure Coefficients (C<sub>p,i</sub>):</span>
                   </p>
 
-                  <!-- insert Inetrnal pressure Coefficients -->  <?=$ntcertificate->intpressure?>
+                  <!-- insert Inetrnal pressure Coefficients --> <awser style="font-size:8pt"> <?=$ntcertificate->intpressure?> <br></awser>
                </td>
                <td width=481 colspan=6 style='width:360.55pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -405,9 +417,9 @@
                <td width=405 colspan=4 style='width:303.85pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
-                  <p class=NormalBold align=center style='text-align:center'><span lang=EN-AU
-                     style='font-size:8.0pt'>&nbsp;</span></p>
-                     <!-- Insert walls --> <?=$ntcertificate->expressurewall?>
+                  <p  align=center style='text-align:left'><span lang=EN-AU
+                     style='font-size:8.0pt'><?=$ntcertificate->expressurewall?> </span></p>
+                     <!-- Insert walls -->
                </td>
             </tr>
             <tr style='height:15.6pt'>
@@ -424,9 +436,9 @@
                <td width=405 colspan=4 style='width:303.85pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
-                  <p class=NormalBold align=center style='text-align:center'><span lang=EN-AU
-                     style='font-size:8.0pt'>&nbsp;</span></p>
-                     <!-- Insert roof -->  <?=$ntcertificate->expressureroof?>
+                  <p  align=center style='text-align:left'><span lang=EN-AU
+                     style='font-size:8.0pt'><?=$ntcertificate->expressureroof?> </span></p>
+                     <!-- Insert roof -->
                </td>
             </tr>
             <tr style='height:15.6pt'>
@@ -447,10 +459,10 @@
                <td width=405 colspan=4 style='width:303.85pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
-                  <p class=NormalBold align=center style='text-align:center'><span lang=EN-AU
-                     style='font-size:8.0pt'>&nbsp;</span></p>
+                  <p  align=center style='text-align:left'><span lang=EN-AU
+                     style='font-size:8.0pt'><?=$ntcertificate->netpressureroofwall?></span></p>
 
-                  <!-- Insert floor/roof --> <?=$ntcertificate->netpressureroofwall?>
+                  <!-- Insert floor/roof -->
                </td>
             </tr>
             <tr style='height:15.6pt'>
@@ -471,10 +483,10 @@
                <td width=405 colspan=4 style='width:303.85pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
-                  <p class=NormalBold align=center style='text-align:center'><span lang=EN-AU
-                     style='font-size:8.0pt'>&nbsp;</span></p>
+                  <p  align=center style='text-align:left'><span lang=EN-AU
+                     style='font-size:8.0pt'><?=$ntcertificate->imposedloadfloorroof?></span></p>
 
-                  <!-- Insert floor/roof --><?=$ntcertificate->imposedloadfloorroof?>
+                  <!-- Insert floor/roof -->
                </td>
             </tr>
             <tr style='height:15.6pt'>
@@ -484,7 +496,7 @@
                      Category, EDC (Table 2.1 of AS 1170.4): <?=$ntcertificate->earthquakecat?></span>
                   </p>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Annual
-                     Probability of Exceedance for Earthquake Actions (BCA Table 1.2b):<!-- Insert annual probability --> <b>1 in <!-- Insert probability --> <?=$ntcertificate->earthexceedance?> </b></span>
+                     Probability of Exceedance for Earthquake Actions (BCA Table 1.2b):<!-- Insert annual probability --> 1 in <!-- Insert probability --> <?=$ntcertificate->earthexceedance?> </span>
                   </p>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Importance Level
                      (BCA):<!-- Insert importance level --> <?=$ntcertificate->importancelevel?><br> Hazard Factor, Z (Section
@@ -516,7 +528,7 @@
          </table>
          <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
          <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=698
-            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none'>
+            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none;  margin: auto;  padding: 10px;'>
             <tr style='height:15.6pt'>
                <td width=698 style='width:523.6pt;border:solid windowtext 1.0pt;background:
                   #F3F3F3;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
@@ -528,12 +540,12 @@
             </tr>
             <tr style='height:15.6pt'>
                <td width=698 style='width:523.6pt;border:solid windowtext 1.0pt;border-top:
-                  none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
+                  none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt' >
                   <p class=MsoNormal style='line-height:400%'><span lang=EN-AU
                      style='font-size:8.0pt;line-height:400%'>The following items are excluded and
                      shall be certified separately: </span>
                   </p>
-                  <?=$ntcertificate->exclusion?>
+                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> <?=$ntcertificate->exclusion?> </p> <br>
                </td>
             </tr>
             <tr style='height:39.1pt'>
@@ -544,13 +556,13 @@
                   <p class=NormalBold style='margin-left:18.0pt'><span lang=EN-AU
                      style='font-size:8.0pt'>&nbsp;</span>
                   </p>
-                  <?=$ntcertificate->comment?>
+                  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> <?=$ntcertificate->comment?> </p>
                </td>
             </tr>
          </table>
          <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
          <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=698
-            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none'>
+            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none;  margin: auto;  padding: 10px;'>
             <tr style='height:24.2pt'>
                <td width=698 colspan=5 valign=bottom style='width:523.6pt;border:solid windowtext 1.0pt;
                   background:#F3F3F3;padding:0cm 5.4pt 0cm 5.4pt;height:24.2pt'>
@@ -572,7 +584,7 @@
                   <p class=NormalBold style='line-height:150%'><span lang=EN-AU
                      style='font-size:8.0pt;line-height:150%'>&nbsp;</span></p>
 
-                     <!-- insert company name --> <?=$ntcertificate->compname?>
+                     <!-- insert company name --> <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> <?=$ntcertificate->compname?> </p>
                </td>
                <td width=320 colspan=2 style='width:239.95pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -582,7 +594,7 @@
                   <p class=NormalBold style='line-height:150%'><span lang=EN-AU
                      style='font-size:8.0pt;line-height:150%;font-weight:normal'>&nbsp;</span></p>
 
-                     <!-- insert company NT registration number --> <?=$ntcertificate->compntregnum?>
+                     <!-- insert company NT registration number --> <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> <?=$ntcertificate->compntregnum?> </p>
                </td>
             </tr>
             <tr style='height:23.3pt'>
@@ -606,7 +618,7 @@
                   <p class=MsoNormal><b><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></b></p>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></p>
 
-                  <!-- insert name --> <?=$ntcertificate->name?>
+                  <!-- insert name --> <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> <?=$ntcertificate->name?> </p>
                </td>
                <td width=141 valign=top style='width:106.0pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -620,7 +632,7 @@
                   <p class=MsoNormal><b><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></b></p>
                   <p class=MsoNormal><b><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></b></p>
 
-                  <!-- insert NT registration number --> <?=$ntcertificate->ntregnum?>
+                  <!-- insert NT registration number -->  <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> <?=$ntcertificate->ntregnum?> </p>
                </td>
                <td width=195 colspan=2 valign=top style='width:146.5pt;border-top:none;
                   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -634,7 +646,7 @@
                   padding:0cm 5.4pt 0cm 5.4pt;height:41.2pt'>
                   <p class=MsoNormal><b><span lang=EN-AU style='font-size:8.0pt'>Date <!-- insert date --></span></b></p>
 
-                  <!-- insert date --> <?=$ntcertificate->date?>
+                  <!-- insert date --> <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> <?=$ntcertificate->date?> </p>
                </td>
             </tr>
             <tr height=0>
@@ -659,123 +671,55 @@
          <p class=MsoNormal style='text-align:justify'><span lang=EN-AU>Inspection of
             construction is required at the stages indicated below.</span>
          </p>
-         <p class=MsoNormal style='text-align:justify'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 1. </span></b><span lang=EN-AU>Completion of
-            site preparation/site filling/excavations for footings prior to placement of
-            any reinforcement or concrete.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 2. </span></b><span lang=EN-AU>Completion of
-            preparations for placing of concrete strip footings including placement of
-            reinforcement.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 3. </span></b><span lang=EN-AU>Completion of
-            preparations for placing concrete slabs including compaction of fill and sand
-            blinding, placement of formwork, reinforcement, starter bars and cast in items.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 4. </span></b><span lang=EN-AU>Completion of
-            preparations for placing of concrete pier footings including reinforcement (if
-            any).</span>
-         </p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 5. </span></b><span lang=EN-AU>Starter bars and
-            cast in items after placing of concrete and prior to any covering up work.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 6 </span></b><span lang=EN-AU>Reinforcement to
-            walls completed prior to core filling (inspection holes and cleanout cores to
-            be completed).</span>
-         </p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 7. </span></b><span lang=EN-AU>Structural
-            steelwork and cold formed steelwork completed and prior to any covering up
-            work. Floor framing system completed before floors are laid or underside is
-            lined.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 8. </span></b><span lang=EN-AU>Suspended
-            concrete floor slabs with formwork, reinforcement and cast in items completed,
-            prior to placing of concrete.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 9. </span></b><span lang=EN-AU>Wall framing or
-            blockwork wall core filling completed (with windows fixed in place) and roof
-            framing with connections completed and prior to sheeting or lining.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:18.7pt;text-align:justify;text-indent:
-            -18.7pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:18.7pt;text-align:justify'><span
-            lang=EN-AU>Note: </span><b><span lang=EN-AU style='font-size:8.0pt;
-            line-height:120%;letter-spacing:-.15pt'>[ ]</span></b><span lang=EN-AU> Prior
-            lodgement of truss manufacturer's drawings, details and certification required.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:92.5pt;text-align:justify;text-indent:
-            -46.75pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><span lang=EN-AU> Prior lodgement of
-            windows manufacturer's drawings including fixings and certification required.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:18.7pt;text-align:justify;text-indent:
-            -18.7pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 10. </span></b><span lang=EN-AU>Structural wall
-            linings completed and prior to any covering up work.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 11. </span></b><span lang=EN-AU>Final inspection
-            upon completion of all structural work including fixings of external roof and
-            wall claddings, flashings, barges &amp; vents.</span>
-         </p>
-         <p class=MsoNormal style='margin-left:18.7pt;text-align:justify;text-indent:
-            -18.7pt'><span lang=EN-AU>&nbsp;</span></p>
-         <p class=MsoNormal style='margin-left:37.4pt;text-align:justify;text-indent:
-            -37.4pt'><b><span lang=EN-AU style='font-size:8.0pt;line-height:120%;
-            letter-spacing:-.15pt'>[ ]</span></b><b><span lang=EN-AU style='line-height:
-            120%;letter-spacing:-.15pt'> 12. </span></b><span lang=EN-AU>Other
-            Inspections as required by the building permit</span>
-         </p>
+<br>
+         <p style="font-size: 11pt">
+         [  ]<b>	1.</b>	Completion of site preparation/site filling/excavations for footings prior to placement of any reinforcement or concrete.
+                      </p>
+                      <br>
+         <p style="font-size: 11pt">
+         [  ]<b>	2.</b>	Completion of preparations for placing of concrete strip footings including placement of reinforcement.
+                      </p><br>
+         <p style="font-size: 11pt">
+         [  ]<b>	3.</b>	Completion of preparations for placing concrete slabs including compaction of fill and sand blinding, placement<teste style="padding-left: 4.4%"> of
+         formwork, reinforcement, starter bars and cast in items.</teste>
+                      </p><br>
+         <p style="font-size: 11pt">
+         [  ]<b>	4.</b>	Completion of preparations for placing of concrete pier footings including reinforcement (if any).
+                      </p><br>
+         <p style="font-size: 11pt">
+         [  ]<b>	5.</b>	Starter bars and cast in items after placing of concrete and prior to any covering up work.
+                      </p>  <br>
+                      <p style="font-size: 11pt">
+         [  ]<b>	6.</b>	Reinforcement to walls completed prior to core filling (inspection holes and cleanout cores to be completed).
+                      </p><br>
+                      <p style="font-size: 11pt">
+         [  ]<b>	7.</b>	Structural steelwork and cold formed steelwork completed and prior to any covering up work.  Floor framing <teste style="padding-left: 4.4%"> system
+         completed before floors are laid or underside is lined. </teste>
+                      </p><br>
+                      <p style="font-size: 11pt">
+         [  ]<b>	8.</b>	Suspended concrete floor slabs with formwork, reinforcement and cast in items completed, prior to placing of  <teste style="padding-left: 4.4%"> concrete.
+                      </p><br>
+                      <p style="font-size: 11pt">
+         [  ]<b>	9.</b>	Wall framing or blockwork wall core filling completed (with windows fixed in place) and roof framing with <teste style="padding-left: 4.4%">connections
+         completed and prior to sheeting or lining. </teste>
+                      </p><br>
+                      <p style="font-size: 11pt; padding-left: 6%">
+                      Note:	[   ]	Prior lodgement of truss manufacturer’s drawings, details and certification required. <br>
+                              <teste style="padding-left: 5.46%">[   ]	Prior lodgement of windows manufacturer’s drawings including fixings and certification required. </teste>
+
+                      </p><br>
+
+                      <p style="font-size: 11pt">
+         [  ]<b>	10.</b>	Structural wall linings completed and prior to any covering up work.
+                      </p><br>
+                      <p style="font-size: 11pt">
+         [  ]<b>	11.</b>	Final inspection upon completion of all structural work including fixings of external roof and wall claddings,  <teste style="padding-left: 5.5%">flashings,
+        barges & vents.</teste>
+                      </p><br>
+                      <p style="font-size: 11pt">
+         [  ]<b>	12.</b>	Other Inspections as required by the building permit
+                      </p><br>
+
          <p class=MsoNormal style='text-align:justify'><b><span lang=EN-AU
             style='line-height:120%;letter-spacing:-.15pt'>&nbsp;</span></b></p>
          <p class=MsoNormal style='text-align:justify'><span lang=EN-AU>&nbsp;</span></p>
@@ -783,8 +727,9 @@
          <p class=MsoNormal style='text-align:justify'><b><span lang=EN-AU>Important
             Information:</span></b>
          </p>
+         <br>
          <p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-indent:
-            -18.0pt'><span lang=EN-AU>1)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+            -18.0pt'><span lang=EN-AU>1)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
             </span></span><span lang=EN-AU>The above inspections are required to be carried
             out by either the certifying engineer or the building certifier who issued the
             Building Permit for the work. (If no inspections are indicated refer to the
@@ -793,7 +738,7 @@
          <p class=MsoNormal style='margin-left:36.0pt;text-align:justify'><span
             lang=EN-AU>&nbsp;</span></p>
          <p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-indent:
-            -18.0pt'><span lang=EN-AU>2)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+            -18.0pt'><span lang=EN-AU>2)<span style='font:7.0pt "Times New Roman"'>&nbsp;
             </span></span><span lang=EN-AU>Where works are prescribed building works under
             the <i>NT Building Act</i>, the building certifier must be provided with a copy
             of the inspection record and no further works must be carried out by the
@@ -802,14 +747,14 @@
          </p>
          <p class=MsoListParagraph><span lang=EN-AU>&nbsp;</span></p>
          <p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-indent:
-            -18.0pt'><span lang=EN-AU>3)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+            -18.0pt'><span lang=EN-AU>3)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
             </span></span><span lang=EN-AU>Additional non structural inspections may be
             required during the course of construction before the issue of an Occupancy
             Permit (refer to building certifier for requirements).</span>
          </p>
          <p class=MsoListParagraph><span lang=EN-AU>&nbsp;</span></p>
          <p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-indent:
-            -18.0pt'><span lang=EN-AU>4)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+            -18.0pt'><span lang=EN-AU>4)<span style='font:7.0pt "Times New Roman"'>&nbsp;
             </span></span><span lang=EN-AU>Failure to obtain inspections may prevent the
             issue of an Occupancy Permit upon completion of the building works. </span>
          </p>
