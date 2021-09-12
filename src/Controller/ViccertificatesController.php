@@ -149,23 +149,9 @@ class ViccertificatesController extends AppController
     public function viccertReportPreview($id=null)
     {
         $viccertificate = $this->Viccertificates->get($id, [
-            'contain' => ['Projects', 'Companys', 'Designstandards'],
-        ]);
-
-        $clientname = $this->Viccertificates->find('all');
-        $clientname->join(['table'=>'Projects', 'type'=>'INNER', 'conditions'=>'Projects.id = project_id']);
-        $clientname->select(['Clients.firstname', 'Clients.lastname', 'Clients.phonenumber', 'Clients.email']);
-        $clientname->join(['table'=>'Clients', 'type'=>'INNER', 'conditions'=>'Clients.id=client_id']);
-        $clientname->where(['Viccertificates.id = '=>$id]);
-
-        $designbasis = $this->Viccertificates->find('all');
-        $designbasis->join(['table'=>'Designstandards_Viccertificates', 'type'=>'INNER', 'conditions'=>'Viccertificates.id = Designstandards_Viccertificates.viccertificate_id']);
-        $designbasis->join(['table'=>'Designstandards', 'type'=>'INNER', 'conditions'=>'Designstandards.id = Designstandards_Viccertificates.designstandard_id']);
-        $designbasis->select(['Designstandards.designdesc','Designstandards.designcode']);
-        $designbasis->where(['Viccertificates.id = '=>$id]);
+            'contain' => ['Projects'=>[
+                'Clients'], 'Companys', 'Designstandards']]);
 
         $this->set(compact('viccertificate'));
-        $this->set(compact('clientname'));
-        $this->set(compact('designbasis'));
     }
 }
