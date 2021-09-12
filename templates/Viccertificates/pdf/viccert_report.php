@@ -263,7 +263,7 @@ work relating to <!-- insert building work relation--><?=$viccertificate->workre
 lang=EN-AU>Drawings Produced by *engineers name* relating to the design that is
 certified by this certificate</span></b></p>
 
-    <table border="1">
+    <table border="1" width=100% style="collapse: collapse">
         <tr>
             <th>Document No.</th>
             <th>Document Date</th>
@@ -334,7 +334,7 @@ lang=EN-AU>Documents setting out the design that is certified by this certificat
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
  style='border-collapse:collapse;border:none'>
- <table border="1">
+ <table border="1" width=100% style="collapse: collapse">
         <tr>
             <th>     Document No.</th>
             <th>Document Date</th>
@@ -372,7 +372,7 @@ this certificate. The performance solution complies with the following performan
 requirements of the NCC </span></p>
 
 
- <table border = "1">
+<table border="1" width=100% style="collapse: collapse">
         <tr>
             <th> Relevant performance Requirements</th>
             <th>Details of performance solution required by regulation 124</th>
@@ -402,7 +402,7 @@ requirements of the NCC </span></p>
 complies with the following provisions of Building Act 1993, Building
 Regulations 2018 or National Construction Code and Australian Standards</span></p>
 
-<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=100% style="collapse: collapse">
  style='border-collapse:collapse;border:none'>
  <tr>
   <td width=586 valign=top style='width:439.2pt;border:solid windowtext 1.0pt;
