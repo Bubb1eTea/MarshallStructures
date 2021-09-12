@@ -89,11 +89,11 @@ p.DraftHeading3, li.DraftHeading3, div.DraftHeading3
 	punctuation-wrap:simple;
 	text-autospace:none;
 	font-size:12.0pt;
-	font-family:"Times New Roman",serif;}
+	font-family:"Calibri",sans-serif;}
 span.DraftHeading3Char
 	{mso-style-name:"Draft Heading 3 Char";
 	mso-style-link:"Draft Heading 3";
-	font-family:"Times New Roman",serif;}
+	font-family:"Calibri",sans-serif;}
 span.DraftHeading4Char
 	{mso-style-name:"Draft Heading 4 Char";
 	mso-style-link:"Draft Heading 4";}
@@ -240,16 +240,16 @@ to the proposed building work at</span></b><span lang=EN-AU>: </span></p>
 style='font-size:14.0pt;color:black'> </span><b><span lang=EN-AU
 style='font-size:14.0pt'>Nature of proposed building work</span></b></p>
 
-<p class=Normal-Schedule><span lang=EN-AU>Construction of a <span> <!-- insert construction type--> <b> <?=$viccertificate->buildingtype?> </b></span></span></p>
+<p class=Normal-Schedule><span lang=EN-AU>Construction of a <span> <!-- insert construction type-->  <?=$viccertificate->buildingtype?> </span></span></p>
 
-<p class=Normal-Schedule><span lang=EN-AU>Storeys contained: </span> <!-- insert stories contained --> <b> <?=$viccertificate->numberofstorey?> </b></p>
+<p class=Normal-Schedule><span lang=EN-AU>Storeys contained: </span> <!-- insert stories contained --> <?=$viccertificate->numberofstorey?> </p>
 
 <p class=Normal-Schedule><span lang=EN-AU>Rise in storeys (for Class 2-9
-building only):</span><!-- insert rise in stories --> <b> <?=$viccertificate->riseinstory?> </b></p>
+building only):</span><!-- insert rise in stories -->  <?=$viccertificate->riseinstory?> </p>
 
-<p class=Normal-Schedule><span lang=EN-AU>Effective height: <b> <?=$viccertificate->effectiveheight?> </b> <!-- insert Effective height --></span></p>
+<p class=Normal-Schedule><span lang=EN-AU>Effective height:  <?=$viccertificate->effectiveheight?>  <!-- insert Effective height --></span></p>
 
-<p class=Normal-Schedule><span lang=EN-AU>Type of construction:</span> <!-- insert type of construction --><b><?=$viccertificate->constructiontype?> </b></p>
+<p class=Normal-Schedule><span lang=EN-AU>Type of construction:</span> <!-- insert type of construction --><?=$viccertificate->constructiontype?> </p>
 
 <p class=Normal-Schedule><span lang=EN-AU>Version of BCA applicable to certificate </span></p>
 
@@ -269,7 +269,7 @@ style='font-size:14.0pt'>Building classification</span></b></p>
 107%'>Prescribed class of building work for which this certificate is issued:</span></b></p>
 
 <p class=MsoNormal><span lang=EN-AU>Design or part of the design of building
-work relating to <!-- insert building work relation--><b> <?=$viccertificate->workrelatingto?></b> </span></p>
+work relating to <!-- insert building work relation--><?=$viccertificate->workrelatingto?> </span></p>
 
 <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
 
@@ -378,12 +378,12 @@ lang=EN-AU>Documents setting out the design that is certified by this certificat
 </table>
 
 <p class=Normal-Schedule style='margin-top:12.0pt;page-break-after:avoid'><b><span
-lang=EN-AU style='color:black'>*Performance solution</span></b></p>
+lang=EN-AU style='color:black'>Performance solution</span></b></p>
 
 <p class=Normal-Schedule style='margin-bottom:6.0pt'><span lang=EN-AU
-style='color:black'> <b>A performance solution forms part of the design certified by
+style='color:black'> A performance solution forms part of the design certified by
 this certificate. The performance solution complies with the following performance
-requirements of the NCC </b> </span></p>
+requirements of the NCC </span></p>
 
 
  <table border = "1">
@@ -412,9 +412,9 @@ requirements of the NCC </b> </span></p>
 
 <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
 
-<p class=MsoNormal><b><span lang=EN-AU>The design certified by this certificate
+<p class=MsoNormal><span lang=EN-AU>The design certified by this certificate
 complies with the following provisions of Building Act 1993, Building
-Regulations 2018 or National Construction Code and Australian Standards</span></b></p>
+Regulations 2018 or National Construction Code and Australian Standards</span></p>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
  style='border-collapse:collapse;border:none'>
