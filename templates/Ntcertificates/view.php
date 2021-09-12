@@ -23,10 +23,10 @@ debug($session->read('previous_url')); ?>
     <div class="column-responsive column-80">
         <div class="ntcertificates view content">
             <h3>NT Certificate #<?= h($ntcertificate->id) ?> for <?= h($ntcertificate->project->projectname)?>
-                <buttoner style='float: right;'> <?= $this->Html->link(__('Download to PDf'), ['action' => 'ntcertificatereport', $ntcertificate->id ], ['class' => 'button float-right']); ?></buttoner>
+                <buttoner style='float: right;'> <?= $this->Html->link(__('Download to PDf'), ['action' => 'ntcertificatesReport', $ntcertificate->id ], ['class' => 'button float-right']); ?></buttoner>
                 <buttoner style='float: right; padding-right:10px;'> <?= $this->Html->link(__('View Generated Template'), ['action' => 'ntcertificatesReportPreview', $ntcertificate->id ], ['class' => 'button float-right']); ?></buttoner>
             </h3>
-            
+
             <table>
                 <tr>
                     <th><?= __('NT Certificate ID') ?></th>
