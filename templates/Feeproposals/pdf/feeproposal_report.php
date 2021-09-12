@@ -234,9 +234,10 @@ margin-left:0cm;text-align:justify'><b><span lang=EN-AU style='font-size:11.0pt'
 </span></b></p>
 
 <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm;text-align:justify'><b><span lang=EN-AU style='font-size:11.0pt'>CLIENT: <?=$clientname->first()['Clients']['firstname'].' '.$clientname->first()['Clients']['lastname']?></span></b></p>
+margin-left:0cm;text-align:justify'><b><span lang=EN-AU style='font-size:11.0pt'>CLIENT: <?=$feeproposal['project']['client']['firstname'].' '.$feeproposal['project']['client']['lastname']?></span></b></p>
 
- <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm'><b><span lang=EN-AU style='font-size:11.0pt'>GUARANTOR: <?=$feeproposal->guarantor?></span></b></p>
 
 <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
@@ -267,26 +268,10 @@ margin-left:0cm;border:none;padding:0cm'><span lang=EN-AU style='font-size:
 <p class=MsoListParagraphCxSpFirst style='margin-top:2.0pt;margin-right:0cm;
 margin-bottom:6.0pt;margin-left:64.35pt;text-indent:-18.0pt'><span lang=EN-AU
 style='font-size:11.0pt;font-family:Symbol'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span lang=EN-AU style='font-size:11.0pt'> ◉  <?= $feeproposal->scopeofservice ?></span></p>
+</span></span><span lang=EN-AU style='font-size:11.0pt'> <?= nl2br($feeproposal->scopeofservice) ?> p</span></p>
 
 
 
-<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:1.0cm'><span lang=EN-AU style='font-size:11.0pt'>Marshall Structures shall also engage a geotechnical engineer on behalf of the client to proform site investigation and determination of soil bearing capacity. Fees for these works are quoted from Home &amp; Industruial Consulting Engineers and listed in section 3, fees and disbursements, below. </span></p>
-
-<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm;text-indent:1.0cm'><span lang=EN-AU style='font-size:11.0pt'>Excluded from the scope are the following:</span></p>
-
-<p class=MsoListParagraphCxSpFirst style='margin-top:2.0pt;margin-right:0cm;
-margin-bottom:6.0pt;margin-left:64.35pt;text-indent:-18.0pt'><span lang=EN-AU style='font-size:11.0pt;font-family:Symbol'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span lang=EN-AU style='font-size:11.0pt'>◉ Design of in-ground pool shell and associated footings</span></p>
-
-
-<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:1.0cm'><span lang=EN-AU style='font-size:11.0pt'>Included in the scope of feels is allocation for three design meetings, site meetings or site inspections. Additional meetings and inspections required in addition this those allocated may be carried our at request for a fixed fee of $450 plus gst.</span></p>
-
-<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:1.0cm'><span lang=EN-AU>&#8194;</span></p>
 
 <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>2.<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -309,7 +294,7 @@ margin-left:0cm;border:none;padding:0cm'><span lang=EN-AU style='font-size:
 
 <p class=MsoListParagraph style='margin-left:64.35pt;text-indent:-18.0pt'><span
 lang=EN-AU style='font-size:11.0pt;font-family:Symbol'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span lang=EN-AU style='font-size:11.0pt'>◉ <?= $feeproposal->documentsprovided ?><br>
+</span></span><span lang=EN-AU style='font-size:11.0pt'> <?= nl2br($feeproposal->documentsprovided) ?><br>
 <br>
 </span></p>
 
