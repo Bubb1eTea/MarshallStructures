@@ -190,17 +190,17 @@
             All sections must be completed - mark N/A to any question that does not apply</span></i></b>
          </p>
          <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
-         <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=698
-            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none;   margin: auto;  padding: 10px;'>
+         <table border=1 cellspacing=0 cellpadding=0 width="100%"
+            style='margin-left:5.4pt;border-collapse:collapse;border:none;   margin: auto;  padding: 10px;'>
             <tr style='height:15.6pt'>
-               <td width=698 colspan=2 style='width:523.6pt;border:solid windowtext 1.0pt;
+               <td width="100%" colspan=2 style='border:solid windowtext 1.0pt;
                   background:#F3F3F3;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                   <p class=MsoNormal><b><span lang=EN-AU style='font-size:9.0pt'>PROPERTY<span
                      style='color:black'> / PROJECT DETAILS</span></span></b></p>
                </td>
             </tr>
             <tr style='height:15.6pt'>
-               <td width=698 colspan=2 style='width:523.6pt;border:solid windowtext 1.0pt;
+               <td width="100%" colspan=2 style='border:solid windowtext 1.0pt;
                   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                   <p class=MsoNormal>
                      <span lang=EN-AU style='font-size:8.0pt'>
@@ -210,7 +210,7 @@
                </td>
             </tr>
             <tr style='height:15.6pt'>
-               <td width=349 style='width:261.8pt;border:solid windowtext 1.0pt;border-top:
+               <td width="50%" style='border:solid windowtext 1.0pt;border-top:
                   none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                   <p class=MsoNormal>
                      <span lang=EN-AU style='font-size:8.0pt'>
@@ -219,25 +219,25 @@
                      </span>
                   </p>
                </td>
-               <td width=349 style='width:261.8pt;border-top:none;border-left:none;
+               <td width="50%" style='border-top:none;border-left:none;
                   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Address: <!-- Insert location --> <?= $ntcertificate->project->streetname ?>, <?= $ntcertificate->project->suburb ?> </span></p>
                </td>
             </tr>
             <tr style='height:15.6pt'>
-               <td width=349 style='width:261.8pt;border:solid windowtext 1.0pt;border-top:
+               <td width="50%" style='border:solid windowtext 1.0pt;border-top:
                   none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Location:<!-- Insert location --> <?=$ntcertificate->location?> </span></p>
                </td>
-               <td width=349 style='width:261.8pt;border-top:none;border-left:none;
+               <td width="50%" style='border-top:none;border-left:none;
                   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Town / Hundred: <!-- Town --><?=$ntcertificate->townhundred?> </span></p>
                </td>
             </tr>
             <tr style='height:15.6pt'>
-               <td width=698 colspan=2 style='width:523.6pt;border:solid windowtext 1.0pt;
+               <td width="100%" colspan=2 style='border:solid windowtext 1.0pt;
                   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Description of
                      works :</span>
@@ -251,10 +251,10 @@
             </tr>
          </table>
          <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
-         <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=698
+         <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
             style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none;  margin: auto;  padding: 10px;'>
             <tr style='height:15.6pt'>
-               <td width=698 style='width:523.6pt;border:solid windowtext 1.0pt;background:
+               <td width="100%" style='border:solid windowtext 1.0pt;background:
                   #F3F3F3;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt; '>
                   <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt'>DOCUMENTS
                      ATTACHED</span>
@@ -262,13 +262,13 @@
                </td>
             </tr>
             <tr style='height:15.6pt'>
-               <td width=698 style='width:523.6pt;border:solid windowtext 1.0pt;border-top:
+               <td width="100%" style='border:solid windowtext 1.0pt;border-top:
                   none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Drawing Nos:<!-- Insert drawing nos --> <?=$ntcertificate->drawingno?> </span></p>
                </td>
             </tr>
             <tr style='height:15.6pt'>
-               <td width=698 style='width:523.6pt;border:solid windowtext 1.0pt;border-top:
+               <td width="100%" style='border:solid windowtext 1.0pt;border-top:
                   none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                   <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Other:<!-- Insert other notes --> <?=$ntcertificate->other?> </span></p>
                </td>
@@ -527,10 +527,10 @@
             </tr>
          </table>
          <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
-         <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=698
-            style='width:523.6pt;margin-left:5.4pt;border-collapse:collapse;border:none;  margin: auto;  padding: 10px;'>
+         <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+            style='margin-left:5.4pt;border-collapse:collapse;border:none;  margin: auto;  padding: 10px;'>
             <tr style='height:15.6pt'>
-               <td width=698 style='width:523.6pt;border:solid windowtext 1.0pt;background:
+               <td width="100%" style='border:solid windowtext 1.0pt;background:
                   #F3F3F3;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                   <p class=MsoNormal><b><span lang=EN-AU style='font-size:9.0pt'>COMMENTS /
                      EXCLUSIONS</span></b><span lang=EN-AU style='font-size:9.0pt;color:black'>
@@ -539,7 +539,7 @@
                </td>
             </tr>
             <tr style='height:15.6pt'>
-               <td width=698 style='width:523.6pt;border:solid windowtext 1.0pt;border-top:
+               <td width="100%" style='border:solid windowtext 1.0pt;border-top:
                   none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt' >
                   <p class=MsoNormal style='line-height:400%'><span lang=EN-AU
                      style='font-size:8.0pt;line-height:400%'>The following items are excluded and
@@ -549,7 +549,7 @@
                </td>
             </tr>
             <tr style='height:39.1pt'>
-               <td width=698 valign=top style='width:523.6pt;border:solid windowtext 1.0pt;
+               <td width="100%" valign=top style='border:solid windowtext 1.0pt;
                   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:39.1pt'>
                   <p class=NormalBold style='line-height:normal'><span lang=EN-AU
                      style='font-size:8.0pt;font-weight:normal'>Comments:</span></p>
