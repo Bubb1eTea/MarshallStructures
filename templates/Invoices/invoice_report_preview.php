@@ -9,13 +9,15 @@
 
 <br>
 <div class="column-responsive column-80">
-<!--    <div class="invoices view content">-->
+    <!--    <div class="invoices view content">-->
 
-        <h3>
-            <button style = 'float: right;' onclick="history.go(-1);"> Back </button>
-            <buttoner style='float: right; margin-right: 25px;'> <?= $this->Html->link(__('Download to pdf'), ['action' => 'invoiceReport', $invoice->id ], ['class' => 'button float-right']); ?> </buttoner>
-        </h3>
-<!--    </div>-->
+    <h3>
+        <button style='float: right;' onclick="history.go(-1);"> Back </button>
+        <buttoner style='float: right; margin-right: 25px;'>
+            <?= $this->Html->link(__('Download to pdf'), ['action' => 'invoiceReport', $invoice->id ], ['class' => 'button float-right']); ?>
+        </buttoner>
+    </h3>
+    <!--    </div>-->
 </div>
 <br>
 <html>
