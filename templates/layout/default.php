@@ -54,9 +54,10 @@ $cakeDescription = 'Marshall Structures';
                 <tr><?= $this->Html->link('Invoice','/invoices/index'); ?></tr>
                 <tr><?= $this->Html->link('NT Certificates','/ntcertificates/index'); ?></tr>
                 <tr><?= $this->Html->link('VIC Certificates','/viccertificates/index'); ?></tr>
+                <tr><?= $this->Html->link('Design Basis','/designstandards/index'); ?></tr>
             </table>
         <br>
-    
+
     </div>
     <div class="toper"></div>
     <span style="color:black;font-size:30px;cursor:pointer; position:fixed; z-index:2; left: 10px;" onclick="openNav()">&#9776; </span>
@@ -69,7 +70,7 @@ $cakeDescription = 'Marshall Structures';
         function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
         }
-        
+
     </script>
     <nav class="top-nav">
         <div class="top-nav-title">
