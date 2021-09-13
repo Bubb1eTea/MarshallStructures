@@ -17,7 +17,7 @@ debug($session->read('previous_url')); ?>
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id', ['label'=>'ID']) ?></th>
-                    <th><?= $this->Paginator->sort('project_id', ['label'=>'Project ID']) ?></th>
+                    <th><?= $this->Paginator->sort('project_id', ['label'=>'Project Name']) ?></th>
                     <th><?= $this->Paginator->sort('date', ['label'=>'Date of Issue']) ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
