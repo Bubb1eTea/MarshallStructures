@@ -60,6 +60,12 @@ class ProjectsTable extends Table
             'targetForeignKey' => 'associate_id',
             'joinTable' => 'associates_projects',
         ]);
+        $this->hasMany('Ntcertificates', [
+            'foreignKey' => 'project_id',
+        ]);
+        $this->hasMany('Viccertificates', [
+            'foreignKey' => 'project_id',
+        ]);
     }
 
     /**

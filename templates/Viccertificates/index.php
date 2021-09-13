@@ -17,6 +17,7 @@ debug($session->read('previous_url')); ?>
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id', ['label'=>'ID']) ?></th>
+                    <th><?= $this->Paginator->sort('project_id', ['label'=>'MS Code']) ?></th>
                     <th><?= $this->Paginator->sort('project_id', ['label'=>'Project Name']) ?></th>
                     <th><?= $this->Paginator->sort('dateofissue', ['label'=>'Date of Issue']) ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
@@ -26,6 +27,7 @@ debug($session->read('previous_url')); ?>
                 <?php foreach ($viccertificates as $viccertificate): ?>
                 <tr>
                     <td><?= $this->Number->format($viccertificate->id) ?></td>
+                    <td><?= $viccertificate->has('project') ? $this->Html->link($viccertificate->project->msnumber, ['controller' => 'Projects', 'action' => 'view', $viccertificate->project->id]) : '' ?></td>
                     <td><?= $viccertificate->has('project') ? $this->Html->link($viccertificate->project->projectname, ['controller' => 'Projects', 'action' => 'view', $viccertificate->project->id]) : '' ?></td>
                     <td><?= date('D d/m/y', strtotime($viccertificate->dateofissue)) ?></td>
                     <td class="actions">

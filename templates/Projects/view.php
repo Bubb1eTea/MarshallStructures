@@ -160,8 +160,41 @@ debug($session->read('previous_url')); ?>
                     </table>
                 </div>
                 <?php endif; ?>
+            </div>            
+            <div class="related">
+                <h4><?= __('Related Certificates') ?></h4>
+                <?php if (!empty($project->ntcertificates) or !empty($project->viccertificates)) : ?>
+                <div class="table-responsive">
+                    <table>
+                        <tr>
+                            <th><?= __('ID') ?></th>
+                            <th><?= __('Date of Issue') ?></th>
+                            <th class="actions"><?= __('Actions') ?></th>
+                        </tr>
+                        <?php foreach ($project->ntcertificates as $ntcertificates) : ?>
+                        <tr>
+                            <td><?= h($ntcertificates->id) ? $this->Html->link($ntcertificates->id, ['controller' => 'ntcertificates', 'action' => 'view', $ntcertificates->id]) : '' ?></td>
+                            <td><?= date('D d/m/y',strtotime($ntcertificates->date)) ?></td>
+                            <td class="actions">
+                                <?= $this->Html->link(__('View'), ['controller' => 'ntcertificates', 'action' => 'view', $ntcertificates->id]) ?>
+                                <?= $this->Html->link(__('Edit'), ['controller' => 'ntcertificates', 'action' => 'edit', $ntcertificates->id]) ?>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                        <?php foreach ($project->viccertificates as $viccertificates) : ?>
+                        <tr>
+                            <td><?= h($viccertificates->id) ? $this->Html->link($viccertificates->id, ['controller' => 'viccertificates', 'action' => 'view', $viccertificates->id]) : '' ?></td>
+                            <td><?= date('D d/m/y',strtotime($viccertificates->date)) ?></td>
+                            <td class="actions">
+                                <?= $this->Html->link(__('View'), ['controller' => 'viccertificates', 'action' => 'view', $viccertificates->id]) ?>
+                                <?= $this->Html->link(__('Edit'), ['controller' => 'viccertificates', 'action' => 'edit', $viccertificates->id]) ?>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </table>
+                </div>
+                <?php endif; ?>
             </div>
-
         </div>
     </div>
 </div>
