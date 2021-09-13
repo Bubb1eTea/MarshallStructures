@@ -169,7 +169,7 @@ Name] --> <?= $viccertificate['project']['client']['firstname'].' '.$viccertific
  style='border-collapse:collapse;border:none'>
  <tr>
   <td width=85 valign=top style='width:63.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=Normal-Schedule><span lang=EN-AU>Address:</span> <!-- Insert address --> <?= $viccertificate->company->streetname ?></p>
+  <p class=Normal-Schedule><span lang=EN-AU>Address:</span> <!-- Insert address --> <?= $viccertificate->company->streetname ?>, <?= $viccertificate->company->suburb ?></p>
   </td>
   <td width=359 valign=top style='width:269.35pt;padding:0cm 5.4pt 0cm 5.4pt'>
   <p class=Normal-Schedule><span lang=EN-AU>&nbsp;</span> </p>
@@ -207,7 +207,7 @@ to the proposed building work at</span></b><span lang=EN-AU>: </span></p>
  style='border-collapse:collapse;border:none'>
  <tr>
   <td width=85 valign=top style='width:63.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=Normal-Schedule><span lang=EN-AU>Address:</span><!-- insert address --> <?= $viccertificate->project->streetname ?></p>
+  <p class=Normal-Schedule><span lang=EN-AU>Address:</span><!-- insert address --> <?= $viccertificate->project->streetname ?>, <?= $viccertificate->project->suburb ?></p>
   </td>
   <td width=359 valign=top style='width:269.35pt;padding:0cm 5.4pt 0cm 5.4pt'>
   <p class=Normal-Schedule><span lang=EN-AU>&nbsp;</span></p>
