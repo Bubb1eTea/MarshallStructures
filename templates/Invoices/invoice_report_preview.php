@@ -97,10 +97,10 @@
         <tr style='height:72.0pt'>
             <td width=367 valign=top style='width:275.4pt;padding:0cm 5.4pt 0cm 5.4pt;height:72.0pt'>
                 <p class=MsoNormal><span lang=EN-GB>Attn: <b><?=$invoice['project']['client']['firstname'].' '.$invoice['project']['client']['firstname']?></b></span></p>
-                <p class=MsoNormal><span lang=EN-GB>Client Company: <b> <?=$invoice['project']['client']['company']['companyname']?></b></span></p>
-                <p class=MsoNormal><span lang=EN-GB>Client Company Address: <b> <?=$invoice['project']['client']['company']['streetname']?></b></span></p>
-                <p class=MsoNormal><span lang=EN-GB>Client Company Suburb, State: <b><?=$invoice['project']['client']['company']['suburb']?>, <?= $invoice['project']['client']['company']['state'] ?> <?=$invoice['project']['client']['company']['postcode']?></b></span></p>
-                <p class=MsoNormal><span lang=EN-GB>Client Phone Number: <b> <?=$invoice['project']['client']['phonenumber']?></b></span></p>
+                <p class=MsoNormal><span lang=EN-GB>Company: <b> <?=$invoice['project']['client']['company']['companyname']?></b></span></p>
+                <p class=MsoNormal><span lang=EN-GB>Address: <b> <?=$invoice['project']['client']['company']['streetname']?></b></span></p>
+                <p class=MsoNormal><span lang=EN-GB>Suburb, State: <b><?=$invoice['project']['client']['company']['suburb']?>, <?= $invoice['project']['client']['company']['state'] ?> <?=$invoice['project']['client']['company']['postcode']?></b></span></p>
+                <p class=MsoNormal><span lang=EN-GB>Phone Number: <b> <?=$invoice['project']['client']['phonenumber']?></b></span></p>
             </td>
             <td width=367 valign=top style='width:275.4pt;padding:0cm 5.4pt 0cm 5.4pt;height:72.0pt'>
                 <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
