@@ -186,9 +186,9 @@
 
         </style></head><body lang=EN-US style='word-wrap:break-word'><div class="contenter"><div class=WordSection1><p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center'><b><span lang=EN-AU>Building Act 1993</span></b></p><p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center'><i><span lang=EN-AU>Section 238(1)(a) </span></i></p><p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center'><b><span lang=EN-AU>Building Regulations 2018</span></b></p><p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center'><i><span lang=EN-AU>Regulation 126</span></i></p><p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center'><b><span lang=EN-AU>&nbsp;
         </span></b></p><p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center'><b><span lang=EN-AU>CERTIFICATE OF COMPLIANCE FOR PROPOSED BUILDING WORK</span></b></p><p class=Normal-Schedule style='margin-top:12.0pt'><b><span lang=EN-AU>&nbsp;
-        </span></b></p><p class=Normal-Schedule style='margin-top:12.0pt'><b><span lang=EN-AU>This certificate is issued to </span></b><i><span lang=EN-AU>< !-- [Building Surveyors Name]
+        </span></b></p><p class=Normal-Schedule style='margin-top:12.0pt'><b><span lang=EN-AU>This certificate is issued to </span></b><i><span lang=EN-AU>
 
-        -->
+
         <?=$viccertificate['project']['client']['firstname'].' '.$viccertificate['project']['client']['lastname'] ?>
 
     </span></i></p>
@@ -496,7 +496,7 @@
     <p class=Normal-Schedule><span lang=EN-AU>Building practitioner registration
             no.: EC 61367</span></p>
 
-    <p class=Normal-Schedule><span lang=EN-AU>Date of issue of certificate:</span><!-- insert date of issue-->
+    <p class=Normal-Schedule><span lang=EN-AU>Date of issue of certificate:</span><?= date('d/m/y', strtotime($viccertificate->dateofissue)) ?>
     </p>
 
     <p class=Normal-Schedule><span lang=EN-AU>Signature:</span><!-- insert signature -->
