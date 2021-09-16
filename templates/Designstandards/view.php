@@ -4,6 +4,13 @@
  * @var \App\Model\Entity\Designstandard $designstandard
  */
 ?>
+
+<?php session_start();
+$session = $this->request->getSession();
+$session->write('previous_url', $session->read('url'));
+$session->write('url', 'designstandards.view');
+debug($session->read('previous_url')); ?>
+
 <div class="row">
     <aside class="column">
         <div class="side-nav">

@@ -5,6 +5,15 @@
  * @var string[]|\Cake\Collection\CollectionInterface $ntcertificates
  */
 ?>
+
+<?php session_start();
+$session = $this->request->getSession();
+$session->write('previous_url', $session->read('url'));
+$session->write('url', 'designstandards.edit');
+debug($session->read('previous_url')); ?>
+<style>
+    .error-message {color:red;}
+</style>
 <div class="row">
     <aside class="column">
         <div class="side-nav">

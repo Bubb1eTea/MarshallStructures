@@ -4,6 +4,13 @@
  * @var \App\Model\Entity\Designstandard[]|\Cake\Collection\CollectionInterface $designstandards
  */
 ?>
+
+<?php session_start();
+$session = $this->request->getSession();
+$session->write('previous_url', $session->read('url'));
+$session->write('url', 'designstandards.index');
+debug($session->read('previous_url')); ?>
+
 <div class="designstandards index content">
     <?= $this->Html->link(__('New Design Standard'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Design Standards') ?></h3>
