@@ -85,6 +85,10 @@ th {
     white-space: nowrap;
 }
 
+.checkboxer{
+    font-size: xx-large;
+}
+
 /* Nav bar */
 .top-nav {
     display: flex;

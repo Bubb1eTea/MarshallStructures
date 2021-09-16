@@ -8,6 +8,28 @@
  * @var \Cake\Collection\CollectionInterface|string[] $designstandards
  */
 ?>
+
+<?php 
+
+$labels =  array();
+for($i=1; $i <= 100; $i++){
+$concat = "designstandards-ids-". $i; 
+array_push($labels, $concat);
+}
+
+?>
+
+<style>
+<?php 
+for($i=1; $i <= 100; $i++){ ?>
+label[for=<?php echo $labels[$i-1] ?>]{
+    font-size:small;
+    margin: 0px;
+    font-weight: normal;
+}
+<?php } ?>
+</style>
+
 <?php session_start();
 $session = $this->request->getSession();
 $session->write('previous_url', $session->read('url'));
@@ -72,7 +94,7 @@ debug($session->read('previous_url')); ?>
                     Use a ; to separate document number, date, type of document, pages and who it is prepared by, e.g. 1;10/05/2020;drawings;17;Ben']);
                     echo $this->Form->control('performancereq', ['label'=>'Relevant performance requirement']);
                     echo $this->Form->control('performancesolution',['label'=>'Details of performance solution required by regulation 124']);
-                    echo $this->Form->control('designstandards._ids', ['options' => $designstandards, 'label' => "Design Basis (hold 'ctrl' when selecting more than one)"]);
+                    echo $this->Form->control('designstandards._ids', array('label' => "Design Basis (hold 'ctrl' when selecting more than one)", 'options' => $designstandards, 'multiple' => 'checkbox'));
                     $prepared = ['prepared'=>'prepared', 'did not prepare'=>'did not prepare'];
                     echo $this->Form->control('prepared', ['label'=>'I ______ the design', 'options'=>$prepared]);
                     echo $this->Form->control('dateofissue', ['label'=>'Date of Issue']);

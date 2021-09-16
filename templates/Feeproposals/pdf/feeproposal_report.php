@@ -304,10 +304,13 @@ margin-left:0cm;
 margin-left:0cm;
         text-align:justify'><b><span lang=EN-AU style='font-size:11.0pt'>CLIENT: <?=$feeproposal['project']['client']['firstname'].''.$feeproposal['project']['client']['lastname']?></span></b></p>
 
+<?php $guarCheck = $feeproposal->guarantor;
+    if(!empty($guarCheck)){ ?>
 
         <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm'><b><span lang=EN-AU style='font-size:11.0pt'>GUARANTOR: <?=$feeproposal->guarantor?></span></b></p>
-
+    <?php } ?>
+    
         <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm'><b><span lang=EN-AU style='font-size:11.0pt'>CONSULTANT: MARSHALL STRUCTURES</span></b></p>
 
