@@ -426,10 +426,8 @@ style='font-size:11.0pt'>On the Client's present instructions, the estimate tota
         text-align:left;
         line-height:normal'><span lang=EN-AU  style='font-size:11.0pt'> <b> <?= $feeproposal->total ?> </b> for our fees relating to the principal building plus GST</span></p>
 
-        < !--<p class=J15 align=left style='margin-top:6.0pt;margin-right:0cm;margin-bottom:
 
-        -->
-    <!--6.0pt;margin-left:5.0cm;text-align:left;text-indent:-69.75pt;line-height:normal'><span-->
+    <!--<p class=J15 align=left style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:5.0cm;text-align:left;text-indent:-69.75pt;line-height:normal'><span-->
     <!--lang=EN-AU style='font-size:11.0pt'><- insert -> for our fees relating to-->
     <!--the design of building stormwater services plus GST; </span></p>-->
     <!---->
