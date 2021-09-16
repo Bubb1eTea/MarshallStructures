@@ -467,52 +467,14 @@ margin-left:1.0cm;margin-right:0cm'>
 margin-left:1.0cm;text-indent:-1.0cm;border:none;padding:0cm'><a name="_Hlk517776747"></a><a
                 name="_Hlk517773099"></a><a name="_Hlk517772716"><span lang=EN-AU style='font-size:11.0pt'>(a)<span
                         style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    </span></span><span lang=EN-AU style='font-size:11.0pt'>The Consultant will issue invoices to the
-                    Client at delivery of key project milestone documentation as follows:</span></a></p>
-
-        <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:1.0cm;text-indent:-1.0cm;border:none;padding:0cm'><span lang=EN-AU>(i)<span
-                    style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </span></span><span lang=EN-AU style='font-size:11.0pt'>10% of principal building design fees upon
-                completion of concept design</span></p>
-
-        <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:1.0cm;text-indent:-1.0cm;border:none;padding:0cm'><span lang=EN-AU>(ii)<span
-                    style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </span></span><span lang=EN-AU style='font-size:11.0pt'>30% of principal building design fees upon
-                completion of detail design coordination</span></p>
-
-        <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:1.0cm;text-indent:-1.0cm;border:none;padding:0cm'><span lang=EN-AU>(iii)<span
-                    style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
-                lang=EN-AU style='font-size:11.0pt'>50% of principal building fees plus and all
-                fees relating to building stormwater services upon issue of construction issue
-                documentation &amp; regulation 126 certification of design.</span></p>
-
-        <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:1.0cm;text-indent:-1.0cm;border:none;padding:0cm'><span lang=EN-AU>(iv)<span
-                    style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
-                lang=EN-AU style='font-size:11.0pt'>10% of principal building fees upon
-                builder's completion of structural elements on site OR until a period of six
-                months after the date of issue of construction documentation, whichever comes
-                first.</span></p>
-
-        <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:1.0cm;text-indent:-1.0cm;border:none;padding:0cm'><span lang=EN-AU>(v)<span
-                    style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </span></span><span lang=EN-AU style='font-size:11.0pt'>Fees relating to
-                geotechnical site investigation upon issue of site investigation report by Home
-                and Industrial Consulting Engineers</span></p>
+                    </span></span><span lang=EN-AU style='font-size:11.0pt'>The Consultant will issue end of month invoices to the Client based on the Services that have been provided for the relevant month. Invoices may also be issued at key milestones, such as construction issues.</span></a></p>
 
     </div>
 
     <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>(b)<span
                 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span><span style='font-size:11.0pt'>Payment claims are made under the <i>Building
-                and Construction Industry Security of Payment Act 2002 </i>(<b>Act</b>). All
-            monies payable to the Consultant by the Client to be paid within 30 days of
-            date of invoice. </span></p>
+            </span></span><span style='font-size:11.0pt'>Payment claims are made under the Building and Construction Industry Security of Payment Act 2002 (Act). All monies payable to the Consultant by the Client to be paid within 30 days of the date of invoice. </span></p>
 
     <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm'><span lang=EN-AU style='font-size:11.0pt'>&nbsp;</span></p>
