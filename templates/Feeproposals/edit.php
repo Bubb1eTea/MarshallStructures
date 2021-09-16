@@ -39,7 +39,6 @@ debug($session->read('previous_url'));?>
                     echo $this->Form->control('guarantor',['label' =>"Guarantor (leave blank if none)"]);
                     echo $this->Form->control('scopeofservice',['label' =>"Scope of Service (provide a list)"]);
                     echo $this->Form->control('documentsprovided',['label' =>"Documents Provided (provide a list)"]);
-                    echo $this->Form->control('feebreakdown', ['label' =>"OPTIONAL - Fee Breakdown (provide a list)"]);
                     echo $this->Form->control('fixedfee', ['label' =>"Fixed Fee"]);
                     echo $this->Form->control('hourlyrate', ['label' =>"Hourly Rate"]);
                     echo $this->Form->control('disbursement',['label' =>"Disbursement"]);
@@ -55,12 +54,12 @@ debug($session->read('previous_url'));?>
 
             <script>
                 $(document).ready(function() {
-                    $('input').keyup(function(ev) {                               
+                    $('input').keyup(function(ev) {
                         var fixedfee = parseFloat($('#fixedfee').val()) || 0;
                         var hourlyrate = parseFloat($('#hourlyrate').val())  || 0;
                         var disbursement = parseFloat($('#disbursement').val())  || 0;
                         var total = (parseFloat(fixedfee) + parseFloat(hourlyrate) + parseFloat(disbursement)).toFixed(2);
-                        
+
                         var divobj = document.getElementById('total');
                         divobj.value = total;
 

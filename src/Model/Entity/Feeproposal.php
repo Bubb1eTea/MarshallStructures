@@ -13,7 +13,6 @@ use Cake\ORM\Entity;
  * @property string|null $guarantor
  * @property string $scopeofservice
  * @property string $documentsprovided
- * @property string|null $feebreakdown
  * @property string|null $fixedfee
  * @property string|null $hourlyrate
  * @property string|null $disbursement
@@ -42,7 +41,6 @@ class Feeproposal extends Entity
         'guarantor' => true,
         'scopeofservice' => true,
         'documentsprovided' => true,
-        'feebreakdown' => true,
         'fixedfee' => true,
         'hourlyrate' => true,
         'disbursement' => true,

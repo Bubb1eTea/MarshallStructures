@@ -88,10 +88,6 @@ class FeeproposalsTable extends Table
             ->notBlank('documentsprovided', 'This field cannot be empty.');
 
         $validator
-            ->scalar('feebreakdown')
-            ->allowEmptyString('feebreakdown');
-
-        $validator
             ->decimal('fixedfee')
             ->greaterThanOrEqual('fixedfee', 0,'This field must be positive.')
             ->maxLength('fixedfee',12,'This field is too long.')
