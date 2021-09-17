@@ -47,27 +47,27 @@ $cakeDescription = 'Marshall Structures';
                 if($session->read('url') !== null && ($session->read('url') =='projects.add' ||
                     $session->read('url') =='projects.edit' || $session->read('url') =='projects.index' ||
                     $session->read('url') =='projects.view')) {?>
-                    <tr><u><b><?= $this->Html->link('Project','/projects/index'); ?></b></u></tr>
+                    <tr><div class="highlight"><b><?= $this->Html->link('Project','/projects/index'); ?></b></div></tr>
                 <?php } else {?>
                     <tr><?= $this->Html->link('Project','/projects/index'); ?></tr>
                 <?php } if($session->read('url') !== null && ($session->read('url') =='associates.add' ||
                     $session->read('url') =='associates.edit' || $session->read('url') =='associates.index' ||
                     $session->read('url') =='associates.view')) { ?>
-                    <tr><u><b><?= $this->Html->link('Associate','/associates/index'); ?></b></u></tr>
+                    <tr><div class="highlight"><b><?= $this->Html->link('Associate','/associates/index'); ?></b></div></tr>
                 <?php } else {?>
                     <tr><?= $this->Html->link('Associate','/associates/index'); ?></tr>
                 <?php } if($session->read('url') !== null && ($session->read('url') =='clients.add' ||
                     $session->read('url') =='clients.edit' || $session->read('url') =='clients.index' ||
                     $session->read('url') =='clients.view')) { ?>
                 <!--<a href="#"><i class="material-icons fa-fw"style="font-size:24px; vertical-align: middle;">person</i>Client</a> -->
-                    <tr><u><b><?= $this->Html->link('Client','/clients/index'); ?></b></u></tr>
+                    <tr><div class="highlight"><b><?= $this->Html->link('Client','/clients/index'); ?></b></div></tr>
                 <?php } else {?>
                     <tr><?= $this->Html->link('Client','/clients/index'); ?></tr>
                 <?php } if($session->read('url') !== null && ($session->read('url') =='companys.add' ||
                     $session->read('url') =='companys.edit' || $session->read('url') =='companys.index' ||
                     $session->read('url') =='companys.view')) { ?>
                 <!--<a href="#"><i class='far fa-building fa-fw' style="font-size:24px;vertical-align: middle;"></i>Company</a> -->
-                    <tr><u><b><?= $this->Html->link('Company','/companys/index'); ?></b></u></tr>
+                    <tr><div class="highlight"><b><?= $this->Html->link('Company','/companys/index'); ?></b></div></tr>
                 <?php } else {?>
                     <tr><?= $this->Html->link('Company','/companys/index'); ?></tr>
                 <?php } if($session->read('url') !== null && ($session->read('url') =='feeproposals.add' ||
@@ -75,31 +75,31 @@ $cakeDescription = 'Marshall Structures';
                     $session->read('url') =='feeproposals.view')) { ?>
                 <!--<a href="#"><i class="material-icons fa-fw" style="font-size:24px;vertical-align: middle;">group</i>Associates</a> -->
                 <!--<a href="#">Invoices</a>-->
-                    <tr><u><b><?= $this->Html->link('Fee Proposal','/feeproposals/index'); ?></b></u></tr>
+                    <tr><div class="highlight"><b><?= $this->Html->link('Fee Proposal','/feeproposals/index'); ?></b></div></tr>
                 <?php } else {?>
                     <tr><?= $this->Html->link('Fee Proposal','/feeproposals/index'); ?></tr>
                 <?php } if($session->read('url') !== null && ($session->read('url') =='invoices.add' ||
                     $session->read('url') =='invoices.edit' || $session->read('url') =='invoices.index' ||
                     $session->read('url') =='invoices.view')) { ?>
-                    <tr><u><b><?= $this->Html->link('Invoice','/invoices/index'); ?></u></b></tr>
+                    <tr><div class="highlight"><b><?= $this->Html->link('Invoice','/invoices/index'); ?></div></b></tr>
                 <?php } else {?>
                     <tr><?= $this->Html->link('Invoice','/invoices/index'); ?></tr>
                 <?php } if($session->read('url') !== null && ($session->read('url') =='ntcertificates.add' ||
                     $session->read('url') =='ntcertificates.edit' || $session->read('url') =='ntcertificates.index' ||
                     $session->read('url') =='ntcertificates.view')) { ?>
-                    <tr><u><b><?= $this->Html->link('NT Certificates','/ntcertificates/index'); ?></b></u></tr>
+                    <tr><div class="highlight"><b><?= $this->Html->link('NT Certificates','/ntcertificates/index'); ?></b></div></tr>
                 <?php } else {?>
                     <tr><?= $this->Html->link('NT Certificates','/ntcertificates/index'); ?></tr>
                 <?php } if($session->read('url') !== null && ($session->read('url') =='viccertificates.add' ||
                     $session->read('url') =='viccertificates.edit' || $session->read('url') =='viccertificates.index' ||
                     $session->read('url') =='viccertificates.view')) { ?>
-                    <tr><u><b><?= $this->Html->link('VIC Certificates','/viccertificates/index'); ?></b></u></tr>
+                    <tr><div class="highlight"><b><?= $this->Html->link('VIC Certificates','/viccertificates/index'); ?></b></div></tr>
                 <?php } else {?>
                     <tr><?= $this->Html->link('VIC Certificates','/viccertificates/index'); ?></tr>
                 <?php } if($session->read('url') !== null && ($session->read('url') =='designstandards.add' ||
                     $session->read('url') =='designstandards.edit' || $session->read('url') =='designstandards.index' ||
                     $session->read('url') =='designstandards.view')) { ?>
-                    <tr><u><b><?= $this->Html->link('Design Basis','/designstandards/index'); ?></b></u></tr>
+                    <tr><div class="highlight"><b><?= $this->Html->link('Design Basis','/designstandards/index'); ?></b></div></tr>
                 <?php } else {?>
                     <tr><?= $this->Html->link('Design Basis','/designstandards/index'); ?></tr>
                 <?php } ?>
@@ -112,7 +112,7 @@ $cakeDescription = 'Marshall Structures';
 
     <script> //script for animating opening and closing
         function openNav() {
-        document.getElementById("mySidenav").style.width = "12%";
+        document.getElementById("mySidenav").style.width = "200px";
         }
 
         function closeNav() {
