@@ -48,7 +48,7 @@ debug($session->read('previous_url'));?>
                     echo $this->Form->control('feeproposal_id', ['options' => $feeproposals, 'empty' => true, 'label'=>"Fee Proposal"]);
                     echo $this->Form->control('datecreated', ['label'=>"Date Created"]);
                     echo $this->Form->control('invdesc', ['label'=>"Invoice Description"]);
-                    echo $this->Form->control('completedpercentage', ['label'=>"Completed Percentage", 'type' => "number"]);
+                    echo $this->Form->control('completedpercentage', ['label'=>"Completed Percentage", 'placeholder' => '%', 'type' => "number"]);
                     echo $this->Form->control('feeproposaltotal', ['label'=>"Fee Proposal Total"]);
                     echo $this->Form->control('total', ['label'=>"Subtotal"]);
                     echo $this->Form->control('totalgst', ['label'=>"Total GST"]);
