@@ -65,7 +65,7 @@
 <div class="contenter">
 <div class=WordSection1>
 
-    <p class=MsoNormal><img width=338 height=77 id="Picture 1" src="http://localhost/team078-app_fit3048/webroot/img/Logo_2.jpg">
+    <p class=MsoNormal><img width=338 height=77 id="Picture 1" src="https://i.imgur.com/M5t7FpO.png">
         <b>
             <span lang=EN-GB style='font-size:18.0pt; margin-left: 9%;'> </span>
         </b>
@@ -221,6 +221,18 @@
     <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
 
     <p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB>THANK YOU FOR YOUR BUSINESS!</span></b></p>
+
+    <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+    <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+    <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+    <p class=MsoNormal><strong><u>Bank Information</u></strong></p>
+    <p class=MsoNormal>Bank West<br>
+    Account Name: &nbsp; &nbsp; Marshall Structures
+    <br>BSB Number: &nbsp; &nbsp; &nbsp; 302-162
+    <br>Account Number: 16 52 478</p>
 
 </div>
 
