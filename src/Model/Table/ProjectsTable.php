@@ -141,6 +141,11 @@ class ProjectsTable extends Table
             ->scalar('projdesc')
             ->allowEmptyString('projdesc');
 
+        $validator
+            ->scalar('invoiceclientname')
+            ->maxLength('invoiceclientname', 100, 'This field is too long.')
+            ->allowEmptyString('invoiceclientname');
+
         return $validator;
     }
 
