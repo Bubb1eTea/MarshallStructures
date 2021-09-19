@@ -49,6 +49,14 @@ debug($session->read('previous_url'));?>
                     echo $this->Form->control('client_id', ['label'=>"Client", 'options' => $clients, 'empty' => true]);
                     //echo $this->Html->link(__('Add New Associate'), ['action' => '../associates/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('associates._ids', ['label'=>"Associate (hold 'ctrl' when selecting more than one)", 'options' => $associates]);
+
+                    $invoiceclientnameoptions=[];
+                    for($associate=0; $associate<count($project['associates']); $associate++) {
+                        $associatefullname=$project['associates'][$associate]['firstname'].' '.$project['associates'][$associate]['lastname'];
+                        $invoiceclientnameoptions+= array($associatefullname=>$associatefullname);
+                    }
+
+                    echo $this->Form->control('invoiceclientname', ['label'=>"Project Client Name: (For Invoicing Purpose)", 'options' => $invoiceclientnameoptions, 'empty' => true]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

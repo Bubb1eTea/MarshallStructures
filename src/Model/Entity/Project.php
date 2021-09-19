@@ -19,6 +19,8 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenDate|null $duedate
  * @property string|null $projdesc
  * @property int|null $client_id
+ * @property string|null invoiceclientname
+
  *
  * @property \App\Model\Entity\Client $client
  * @property \App\Model\Entity\Feeproposal[] $feeproposals
@@ -51,5 +53,6 @@ class Project extends Entity
         'feeproposals' => true,
         'invoices' => true,
         'associates' => true,
+        'invoiceclientname'=>true,
     ];
 }
