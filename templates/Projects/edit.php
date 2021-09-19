@@ -56,9 +56,6 @@ debug($session->read('previous_url'));?>
                         $invoiceclientnameoptions+= array($associatefullname=>$associatefullname);
                       }
 
-                      if(!empty($project->client['company']))
-                          $invoiceclientnameoptions+= array([$project->client['company']['companyname']=>$project->client['company']['companyname']]);
-
                       debug($invoiceclientnameoptions);
                     echo $this->Form->control('invoiceclientname', ['label'=>"Project Client Name: (For Invoicing Purpose)", 'options' => $invoiceclientnameoptions, 'empty' => true]);
                     ?>
