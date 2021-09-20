@@ -55,6 +55,7 @@
 <div class=WordSection1>
 
     <p class=MsoNormal><img width=338 height=77 id="Picture 1" src="https://i.imgur.com/M5t7FpO.png">
+
         <b>
             <span lang=EN-GB style='font-size:18.0pt; margin-left: 9%;'> </span>
         </b>
@@ -71,7 +72,7 @@
                 <p class=MsoNormal><span lang=EN-GB>P | 0424 488 649 &nbsp; E | BMarshall@MarshallStructures.com.au</span></p>
             </td>
             <td width=187 valign=top style='width:140.4pt;padding:0cm 5.4pt 0cm 5.4pt'>
-                <p class=MsoNormal style='text-indent:.4pt'><b><span lang=EN-GB>JOB NUMBER: <?= $invoice->project->id ?></span></b></p>
+                <p class=MsoNormal style='text-indent:.4pt'><b><span lang=EN-GB>MS CODE: <?= $invoice->project->id ?></span></b></p>
                 <p class=MsoNormal style='text-indent:.4pt'><b><span lang=EN-GB>INVOICE No: <?= $invoice->id ?></span></b></p>
                 <p class=MsoNormal style='text-indent:.4pt'><b><span lang=EN-GB>DATE: </span></b><b><span lang=EN-GB><?= date('d/m/y', strtotime($invoice->datecreated)) ?></span></b></p>
                 <p class=MsoNormal style='text-indent:.4pt'><span lang=EN-GB>&nbsp;</span></p>
@@ -210,7 +211,7 @@
     <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
 
     <p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB>THANK YOU FOR YOUR BUSINESS!</span></b></p>
-    
+
     <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
 
     <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
