@@ -54,7 +54,7 @@
 <div class="contenter">
 <div class=WordSection1>
 
-    <p class=MsoNormal><img width=338 height=77 id="Picture 1" src="https://i.imgur.com/M5t7FpO.png">
+    <p class=MsoNormal><img width=338 height=77 id="Picture 1" src="http://localhost/team078-app_fit3048/webroot/img/Logo_2.png">
 
         <b>
             <span lang=EN-GB style='font-size:18.0pt; margin-left: 9%;'> </span>
