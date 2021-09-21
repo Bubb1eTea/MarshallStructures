@@ -100,8 +100,8 @@ debug($session->read('previous_url')); ?>
                 </tr>
             </table>
             <div class="related">
-                <h4><?= __('Related Invoices') ?></h4>
                 <?php if (!empty($feeproposal->invoices)) : ?>
+                    <h4><?= __('Related Invoices') ?></h4>
                     <div class="table-responsive">
                     <table>
                         <tr>
