@@ -1,31 +1,31 @@
-.searchbar{
+.searchbar {
     text-align: left;
     width: 100px;
 }
 
-.searchtitle{
+.searchtitle {
     margin: auto;
 }
 
-.clearbutton{
+.clearbutton {
     text-align: right;
     width: 154px;
 }
 
-.clearbutton a.button{
+.clearbutton a.button {
     width: 154px;
-    
+
 }
 
-.submit{
+.submit {
     text-align: right;
 }
 
-.submitbox{
+.submitbox {
     width: 100px;
     padding-right: 0%;
 }
 
-input[type="submit"]{
+input[type="submit"] {
     width: 154px;
 }
