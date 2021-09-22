@@ -48,6 +48,7 @@ debug($session->read('previous_url')); ?>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
 
+            <?php debug($projects)?>
             <script>
                 $(document).ready(function() {
                     $('input').keyup(function(ev) {
@@ -67,7 +68,25 @@ debug($session->read('previous_url')); ?>
                         var divobj = document.getElementById('grandtotal');
                         divobj.value = grandtotal;
                     });
-                });
+
+                    document.getElementById('project-id').addEventListener('change', function(){
+                        var projectid = $('#project-id').val();
+
+                        $.ajax({
+                            url: "<?= $this->Url->build(['controller' => 'Feeproposals', 'action' => 'add']) ?>",
+                            method: "POST",
+                            data: {id: projectid},
+                            headers: {
+                                'X-CSRF-Token': $('[name="_csrfToken"]').val()
+                            },
+                            success: function(data){
+                                var count = <?php echo $count?>
+                                var guarobj = document.getElementById('guarantor');
+                                guarobj.value = count;
+                            }
+                        })
+                    })
+                })
             </script>
         </div>
     </div>
