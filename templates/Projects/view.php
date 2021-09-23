@@ -21,7 +21,7 @@ debug($session->read('previous_url')); ?>
     </aside>
     <div class="column-responsive column-80">
         <div class="projects view content">
-            <h3><?= h($project->projectname) ?></h3>
+            <h3><?= h($project->msnumber) ?>: <?= h($project->projectname) ?></h3>
             <table>
                 <tr>
                     <th><?= __('MS Code') ?></th>
@@ -160,7 +160,7 @@ debug($session->read('previous_url')); ?>
                     </table>
                 </div>
                 <?php endif; ?>
-            </div>            
+            </div>
             <div class="related">
                 <h4><?= __('Related Certificates') ?></h4>
                 <?php if (!empty($project->ntcertificates) or !empty($project->viccertificates)) : ?>
