@@ -12,11 +12,20 @@ debug($session->read('previous_url')); ?>
 <div class="viccertificates index content">
     <?= $this->Html->link(__('New VIC Certificate'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('VIC Certificates') ?></h3>
+
+    <!--     Search function-->
+    <table>
+        <th class="searchbar"><h4 class="searchtitle"><?= ('Search') ?></h4></th>
+        <th><?= $this->Form->create(null,['type'=>'get']) ?><?= $this->Form->control('key',['label'=>'','value'=>$this->request->getQuery('key')]) ?></th>
+        <th class="submitbox"><?= $this->Form->submit() ?></th>
+        <th class="clearbutton"><?= $this->Html->link(('Clear'), ['action' => 'index'], ['class' => 'button']) ?><?= $this->Form->end() ?></th>
+    </table>
+
     <div class="table-responsive">
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('id', ['label'=>'ID']) ?></th>
+
                     <th><?= $this->Paginator->sort('project_id', ['label'=>'MS Code']) ?></th>
                     <th><?= $this->Paginator->sort('project_id', ['label'=>'Project Name']) ?></th>
                     <th><?= $this->Paginator->sort('dateofissue', ['label'=>'Date of Issue']) ?></th>
@@ -26,7 +35,7 @@ debug($session->read('previous_url')); ?>
             <tbody>
                 <?php foreach ($viccertificates as $viccertificate): ?>
                 <tr>
-                    <td><?= $this->Number->format($viccertificate->id) ?></td>
+
                     <td><?= $viccertificate->has('project') ? $this->Html->link($viccertificate->project->msnumber, ['controller' => 'Projects', 'action' => 'view', $viccertificate->project->id]) : '' ?></td>
                     <td><?= $viccertificate->has('project') ? $this->Html->link($viccertificate->project->projectname, ['controller' => 'Projects', 'action' => 'view', $viccertificate->project->id]) : '' ?></td>
                     <td><?= date('D d/m/y', strtotime($viccertificate->dateofissue)) ?></td>

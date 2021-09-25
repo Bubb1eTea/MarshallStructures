@@ -27,10 +27,9 @@ debug($session->read('previous_url')); ?>
                 <buttoner style='float: right; padding-right:10px;'> <?= $this->Html->link(__('View Generated Template'), ['action' => 'viccertReportPreview', $viccertificate->id ], ['class' => 'button float-right']); ?></buttoner>
             </h3>
             <table>
-                <tr>
-                    <th><?= __('VIC Certificate ID') ?></th>
-                    <td><?= $this->Number->format($viccertificate->id) ?></td>
-                </tr>
+
+
+
                 <tr>
                     <th><?= __('Last Modified') ?></th>
                     <td><?= date('D d/m/y h:m A',strtotime($viccertificate->lastmodified)) ?></td>
