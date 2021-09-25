@@ -25,7 +25,7 @@ debug($session->read('previous_url')); ?>
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('id', ['label'=>'ID']) ?></th>
+
                     <th><?= $this->Paginator->sort('project_id', ['label'=>'MS Code']) ?></th>
                     <th><?= $this->Paginator->sort('project_id', ['label'=>'Project Name']) ?></th>
                     <th><?= $this->Paginator->sort('date', ['label'=>'Date of Issue']) ?></th>
@@ -35,7 +35,7 @@ debug($session->read('previous_url')); ?>
             <tbody>
                 <?php foreach ($ntcertificates as $ntcertificate): ?>
                 <tr>
-                    <td><?= $this->Number->format($ntcertificate->id) ?></td>
+
                     <td><?= $ntcertificate->has('project') ? $this->Html->link($ntcertificate->project->msnumber, ['controller' => 'Projects', 'action' => 'view', $ntcertificate->project->id]) : '' ?></td>
                     <td><?= $ntcertificate->has('project') ? $this->Html->link($ntcertificate->project->projectname, ['controller' => 'Projects', 'action' => 'view', $ntcertificate->project->id]) : '' ?></td>
                     <td><?= date('D d/m/y', strtotime($ntcertificate->date)) ?></td>

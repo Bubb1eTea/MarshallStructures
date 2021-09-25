@@ -28,10 +28,9 @@ debug($session->read('previous_url')); ?>
             </h3>
 
             <table>
-                <tr>
-                    <th><?= __('NT Certificate ID') ?></th>
-                    <td><?= $this->Number->format($ntcertificate->id) ?></td>
-                </tr>
+
+
+
                 <tr>
                     <th><?= __('Last Modified') ?></th>
                     <td><?= date('D d/m/y h:m A',strtotime($ntcertificate->lastmodified)) ?></td>
