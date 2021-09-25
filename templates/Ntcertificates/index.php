@@ -12,6 +12,15 @@ debug($session->read('previous_url')); ?>
 <div class="ntcertificates index content">
     <?= $this->Html->link(__('New NT Certificate'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('NT Certificates') ?></h3>
+
+    <!--     Search function-->
+    <table>
+        <th class="searchbar"><h4 class="searchtitle"><?= ('Search') ?></h4></th>
+        <th><?= $this->Form->create(null,['type'=>'get']) ?><?= $this->Form->control('key',['label'=>'','value'=>$this->request->getQuery('key')]) ?></th>
+        <th class="submitbox"><?= $this->Form->submit() ?></th>
+        <th class="clearbutton"><?= $this->Html->link(('Clear'), ['action' => 'index'], ['class' => 'button']) ?><?= $this->Form->end() ?></th>
+    </table>
+
     <div class="table-responsive">
         <table>
             <thead>

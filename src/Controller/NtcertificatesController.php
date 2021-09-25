@@ -23,6 +23,17 @@ class NtcertificatesController extends AppController
         ];
         $ntcertificates = $this->paginate($this->Ntcertificates);
 
+        $key = $this->request->getQuery('key');
+
+        if($key){
+            $query = $this->Ntcertificates->find("all")
+                ->where(['Or'=>['projectname like'=>'%'.$key.'%']]);
+        }else{
+            $query = $this->Ntcertificates;
+        }
+
+        $ntcertificates = $this->paginate($query);
+
         $this->set(compact('ntcertificates'));
     }
 
