@@ -21,7 +21,7 @@ debug($session->read('previous_url')); ?>
     </aside>
     <div class="column-responsive column-80">
         <div class="viccertificates view content">
-            <h3><?= h($viccertificate->id) ?>
+            <h3>VIC Certificate for: '<?= h($viccertificate->project->projectname) ?>'
 
                 <buttoner style='float: right;'> <?= $this->Html->link(__('Download to PDf'), ['action' => 'viccertReport', $viccertificate->id ], ['class' => 'button float-right']); ?></buttoner>
                 <buttoner style='float: right; padding-right:10px;'> <?= $this->Html->link(__('View Generated Template'), ['action' => 'viccertReportPreview', $viccertificate->id ], ['class' => 'button float-right']); ?></buttoner>
