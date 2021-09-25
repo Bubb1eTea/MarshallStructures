@@ -23,6 +23,17 @@ class ViccertificatesController extends AppController
         ];
         $viccertificates = $this->paginate($this->Viccertificates);
 
+        $key = $this->request->getQuery('key');
+
+        if($key){
+            $query = $this->Viccertificates->find("all")
+                ->where(['Or'=>['projectname like'=>'%'.$key.'%']]);
+        }else{
+            $query = $this->Viccertificates;
+        }
+
+        $viccertificates = $this->paginate($query);
+
         $this->set(compact('viccertificates'));
     }
 
