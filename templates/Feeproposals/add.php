@@ -32,6 +32,7 @@ debug($session->read('previous_url')); ?>
                 <?php
                     //echo $this->Html->link(__('Add New Project'), ['action' => '../projects/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true]);
+                    echo $this->Form->control('feeproposalnum', ['label'=>"Fee Proposal Number", 'empty' => true]);
                     echo $this->Form->control('guarantor',['label' =>"Guarantor (leave blank if none)"]);
                     echo $this->Form->control('scopeofservice',['label' =>"Scope of Service (provide a list)"]);
                     echo $this->Form->control('documentsprovided',['label' =>"Documents Provided (provide a list)"]);
@@ -68,24 +69,6 @@ debug($session->read('previous_url')); ?>
                         var divobj = document.getElementById('grandtotal');
                         divobj.value = grandtotal;
                     });
-
-                    document.getElementById('project-id').addEventListener('change', function(){
-                        var projectid = $('#project-id').val();
-
-                        $.ajax({
-                            url: "<?= $this->Url->build(['controller' => 'Feeproposals', 'action' => 'add']) ?>",
-                            method: "POST",
-                            data: {id: projectid},
-                            headers: {
-                                'X-CSRF-Token': $('[name="_csrfToken"]').val()
-                            },
-                            success: function(data){
-                                var count = <?php echo $count?>
-                                var guarobj = document.getElementById('guarantor');
-                                guarobj.value = count;
-                            }
-                        })
-                    })
                 })
             </script>
         </div>

@@ -38,6 +38,7 @@ debug($session->read('previous_url'));?>
                 <legend><?= __('Edit Fee Proposal #'.$feeproposal->id) ?></legend>
                 <?php
                     echo $this->Form->control('project_id', ['options' => $projects, 'empty' => false]);
+                    echo $this->Form->control('feeproposalnum', ['label'=>"Fee Proposal Number", 'empty' => true]);
                     echo $this->Form->control('guarantor',['label' =>"Guarantor (leave blank if none)"]);
                     echo $this->Form->control('scopeofservice', ['label' =>"Scope of Service (provide a list)"]);
                     echo $this->Form->control('documentsprovided',['label' =>"Documents Provided (provide a list)"]);
