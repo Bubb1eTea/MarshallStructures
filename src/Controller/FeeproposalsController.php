@@ -161,11 +161,18 @@ class FeeproposalsController extends AppController
         $this->set(compact('feeproposal'));
     }
 
-    public function receive(){
-        $id=$this->request->getData('id');
-        $project = $this->Feeproposals->Projects->get($id, [
-            'contain' => ['Feeproposals']]);
-        debug($project);
+    public function test($id=null)
+    {
+        $this->loadModel('Projects');
+        $this->autoRender = false;
+        $this->layout = false;
+        $project = $this->Projects->get($id, [
+            'contain' => ['Clients', 'Associates', 'Feeproposals', 'Invoices', 'Ntcertificates', 'Viccertificates'],
+        ]);
+
         $this->set(compact('project'));
+        echo json_encode( (count($project->feeproposals )));
+        exit;
+
     }
 }

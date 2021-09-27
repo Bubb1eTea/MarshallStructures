@@ -7,8 +7,8 @@
 ?>
 <?php debug($feeproposal);?>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>-->
 
 <?php session_start();
 $session = $this->request->getSession();
@@ -55,7 +55,9 @@ debug($session->read('previous_url'));?>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
 
-            <script>
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+            <?php debug($projects)?>
+            <script type="text/javascript">
                 $(document).ready(function() {
                     $('input').keyup(function(ev) {
                         var fixedfee = parseFloat($('#fixedfee').val()) || 0;
@@ -73,6 +75,49 @@ debug($session->read('previous_url'));?>
                         var grandtotal = (parseFloat(total) + parseFloat(totalgst)).toFixed(2);
                         var divobj = document.getElementById('grandtotal');
                         divobj.value = grandtotal;
+                    });
+
+                    document.getElementById('project-id').addEventListener('change', function(){
+                        var projectid = $('#project-id').val();
+                        var urlnew = "<?= $this->Url->build(['controller' => 'Feeproposals', 'action' => 'test']) ?>"+'/'+projectid;
+                        var csrfToken = $('meta[name="csrfToken"]').attr('content');
+
+                        $.ajax({
+                            type: 'get',
+                            url: urlnew,
+                            datatype: 'json',
+                            headers: {  'X-CSRF-TOKEN': csrfToken   },
+                            success: function (result) {
+
+                                var invoiceNum=parseInt(result)+1;
+                                console.log(invoiceNum);
+                                if(result)
+                                {
+                                    document.getElementById('feeproposalnum').value=invoiceNum ;
+                                }
+                                else
+                                {
+                                    document.getElementById('feeproposalnum').value=1 ;
+                                }
+
+                            },
+                            error: function (result) {
+                                //  console.log(result);
+                            }
+                        });
+                        /*
+                       $.ajax({
+                           type: 'get',
+                           url: urlnew,
+                           datatype: 'json',
+                           headers:{'X-CSRF-Token':<?= json_encode($this->request->getParam('_csrfToken')) ?>},
+                             success: function (result) {
+                              console.log(json.parse(result));
+                            }
+
+
+                        });
+                        */
                     });
                 });
             </script>
