@@ -20,7 +20,7 @@ debug($session->read('previous_url')); ?>
                     <th><?= $this->Paginator->sort('datecreated',['label'=>'Date Created']) ?></th>
                     <th><?= $this->Paginator->sort('project_id', ['label' =>"MS Code"]) ?></th>
                     <th><?= $this->Paginator->sort('project_id', ['label' =>"Project Name"]) ?></th>
-                    <th><?= $this->Paginator->sort('feeproposalnum', ['label' =>"Fee Proposal Number"]) ?></th>
+                    <th><?= $this->Paginator->sort('feeproposalnum', ['label' =>"Fee Proposal No."]) ?></th>
                     <th><?= $this->Paginator->sort('guarantor', ['label' =>"Guarantor"]) ?></th>
                     <th><?= $this->Paginator->sort('grandtotal', ['label' =>"Grand Total"]) ?></th>
                     <th class="actions"><?= __('Actions') ?></th>

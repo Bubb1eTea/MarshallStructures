@@ -162,4 +162,19 @@ class InvoicesController extends AppController
         ]);
         $this->set(compact('invoice'));
     }
+
+    public function test($id=null)
+    {
+        $this->loadModel('Projects');
+        $this->autoRender = false;
+        $this->layout = false;
+        $project = $this->Projects->get($id, [
+            'contain' => ['Clients', 'Associates', 'Feeproposals', 'Invoices', 'Ntcertificates', 'Viccertificates'],
+        ]);
+
+        $this->set(compact('project'));
+        echo json_encode( (count($project->invoices )));
+        exit;
+
+    }
 }

@@ -79,6 +79,48 @@ debug($session->read('previous_url'));?>
                         var divobj = document.getElementById('grandtotal');
                         divobj.value = grandtotal;
                     });
+                    document.getElementById('project-id').addEventListener('change', function(){
+                        var projectid = $('#project-id').val();
+                        var urlnew = "<?= $this->Url->build(['controller' => 'Invoices', 'action' => 'test']) ?>"+'/'+projectid;
+                        var csrfToken = $('meta[name="csrfToken"]').attr('content');
+
+                        $.ajax({
+                            type: 'get',
+                            url: urlnew,
+                            datatype: 'json',
+                            headers: {  'X-CSRF-TOKEN': csrfToken   },
+                            success: function (result) {
+
+                                var invoiceNum=parseInt(result)+1;
+                                console.log(invoiceNum);
+                                if(result)
+                                {
+                                    document.getElementById('invoicenum').value=invoiceNum ;
+                                }
+                                else
+                                {
+                                    document.getElementById('invoicenum').value=1 ;
+                                }
+
+                            },
+                            error: function (result) {
+                                //  console.log(result);
+                            }
+                        });
+                        /*
+                       $.ajax({
+                           type: 'get',
+                           url: urlnew,
+                           datatype: 'json',
+                           headers:{'X-CSRF-Token':<?= json_encode($this->request->getParam('_csrfToken')) ?>},
+                             success: function (result) {
+                              console.log(json.parse(result));
+                            }
+
+
+                        });
+                        */
+                    });
                 });
             </script>
         </div>

@@ -22,25 +22,17 @@ debug($session->read('previous_url')); ?>
     </aside>
     <div class="column-responsive column-80">
         <div class="invoices view content">
-            <h3><?= 'Invoice #'.h($invoice->id) ?> <buttoner style='float: right;'> <?= $this->Html->link(__('Download to pdf'), ['action' => 'invoiceReport', $invoice->id ], ['class' => 'button float-right']); ?>
+            <h3><?= 'Invoice #'.($invoice->id).' for Project '.($invoice->project->msnumber) ?> <buttoner style='float: right;'> <?= $this->Html->link(__('Download to pdf'), ['action' => 'invoiceReport', $invoice->id ], ['class' => 'button float-right']); ?>
                 <buttoner style='float: right; padding-right:10px;'> <?= $this->Html->link(__('View Generated Template'), ['action' => 'invoiceReportPreview', $invoice->id], ['class' => 'button float-right']); ?></buttoner> </h3>
-                
+
             <table>
-                <tr>
-                    <th><?= __('Invoice ID') ?></th>
-                    <td><?= h($invoice->id) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('MS Code') ?></th>
-                    <td><?= $invoice->has('project') ? $this->Html->link($invoice->project->msnumber, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></td>
-                </tr>
                 <tr>
                     <th><?= __('Project Name') ?></th>
                     <td><?= $invoice->has('project') ? $this->Html->link($invoice->project->projectname, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Referenced Fee Proposal ID') ?></th>
-                    <td><?= $invoice->has('feeproposal') ? $this->Html->link($invoice->feeproposal->id, ['controller' => 'Feeproposals', 'action' => 'view', $invoice->feeproposal->id]) : '' ?></td>
+                    <th><?= __('Referenced Fee Proposal No.') ?></th>
+                    <td><?= $invoice->has('feeproposal') ? $this->Html->link($invoice->feeproposal->feeproposalnum, ['controller' => 'Feeproposals', 'action' => 'view', $invoice->feeproposal->id]) : '' ?></td>
                 </tr>
             </table>
                 <tr>

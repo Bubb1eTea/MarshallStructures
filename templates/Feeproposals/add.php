@@ -82,11 +82,11 @@ debug($session->read('previous_url')); ?>
                             headers: {  'X-CSRF-TOKEN': csrfToken   },
                             success: function (result) {
 
-                                var invoiceNum=parseInt(result)+1;
-                                console.log(invoiceNum);
+                                var feeProposalNum=parseInt(result)+1;
+                                console.log(feeProposalNum);
                                 if(result)
                                 {
-                                    document.getElementById('feeproposalnum').value=invoiceNum ;
+                                    document.getElementById('feeproposalnum').value=feeProposalNum ;
                                 }
                                 else
                                 {
