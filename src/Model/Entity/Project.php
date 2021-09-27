@@ -20,7 +20,6 @@ use Cake\ORM\Entity;
  * @property string|null $projdesc
  * @property int|null $client_id
  * @property int|null $associate_id
- * @property string|null invoiceclientname
 
  *
  * @property \App\Model\Entity\Client $client
@@ -57,6 +56,5 @@ class Project extends Entity
         'feeproposals' => true,
         'invoices' => true,
         'associates' => true,
-        'invoiceclientname'=>true,
     ];
 }
