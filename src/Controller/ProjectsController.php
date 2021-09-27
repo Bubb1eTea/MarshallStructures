@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Filesystem\Folder;
+
 /**
  * Projects Controller
  *
@@ -66,6 +68,10 @@ class ProjectsController extends AppController
         if ($this->request->is('post')) {
             $project = $this->Projects->patchEntity($project, $this->request->getData());
             if ($this->Projects->save($project)) {
+
+                $foldername = implode(' - ', array($project->msnumber, $project->projectname));
+                mkdir( "msdir/" . $foldername, 0777, TRUE);
+
                 $this->Flash->success(__('The project has been saved.'));
 
                 $session = $this->request->getSession();
