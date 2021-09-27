@@ -69,8 +69,15 @@ class ProjectsController extends AppController
             $project = $this->Projects->patchEntity($project, $this->request->getData());
             if ($this->Projects->save($project)) {
 
-                $foldername = implode(' - ', array($project->msnumber, $project->projectname));
-                mkdir( "msdir/" . $foldername, 0777, TRUE);
+                //Folder creation
+                $foldername = "msdir/" . $project->msnumber. " - " .$project->projectname;
+                mkdir($foldername, 0777, TRUE);
+
+                mkdir($foldername . "/Administration", 0777, TRUE);
+                mkdir($foldername . "/Design", 0777, TRUE);
+                mkdir($foldername . "/Drafting", 0777, TRUE);
+                mkdir($foldername . "/Incoming", 0777, TRUE);
+                mkdir($foldername . "/Outgoing", 0777, TRUE);
 
                 $this->Flash->success(__('The project has been saved.'));
 
