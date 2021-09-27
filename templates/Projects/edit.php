@@ -56,7 +56,7 @@ debug($session->read('previous_url'));?>
                         $invoiceclientnameoptions+= array($associatefullname=>$associatefullname);
                     }
 
-                    echo $this->Form->control('invoiceclientname', ['label'=>"Project Client Name: (For Invoicing Purpose)", 'options' => $invoiceclientnameoptions, 'empty' => true]);
+                    echo $this->Form->control('associate_id', ['options' => $associates, 'empty' => true]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

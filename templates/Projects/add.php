@@ -6,6 +6,9 @@
  * @var \Cake\Collection\CollectionInterface|string[] $associates
  */
 ?>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
+
 <?php session_start();
 $session = $this->request->getSession();
 $session->write('previous_url', $session->read('url'));
@@ -45,8 +48,9 @@ debug($session->read('previous_url')); ?>
                     echo $this->Form->control('client_id', ['options' => $clients, 'empty' => true]);
                     //echo $this->Html->link(__('Add New Associate'), ['action' => '../associates/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('associates._ids', ['label'=>"Associate (hold 'ctrl' when selecting more than one)", 'options' => $associates, 'empty' => true]);
+                    echo $this->Form->control('associate_id', ['options' => $associates, 'empty' => true]);
                     echo $this->Form->control('invoiceclientname', ['label'=>"Project Client Name: (For Invoicing Purpose)"]);
-                    ?>
+                ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
