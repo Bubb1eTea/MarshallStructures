@@ -32,7 +32,7 @@ debug($session->read('previous_url')); ?>
                 <?php
                     //echo $this->Html->link(__('Add New Project'), ['action' => '../projects/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true]);
-                    echo $this->Form->control('feeproposalnum', ['label'=>"Fee Proposal Number", 'empty' => true]);
+                    echo $this->Form->control('feeproposalnum', ['label'=>"Fee Proposal Number"]);
                     echo $this->Form->control('guarantor',['label' =>"Guarantor (leave blank if none)"]);
                     echo $this->Form->control('scopeofservice',['label' =>"Scope of Service (provide a list)"]);
                     echo $this->Form->control('documentsprovided',['label' =>"Documents Provided (provide a list)"]);

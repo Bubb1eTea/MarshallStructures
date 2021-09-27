@@ -108,6 +108,9 @@ class InvoicesTable extends Table
             ->requirePresence('paywithinday', 'create')
             ->notEmptyString('paywithinday', 'This field cannot be empty.');
 
+        $validator
+            ->integer('invoicenum');
+
         return $validator;
     }
 

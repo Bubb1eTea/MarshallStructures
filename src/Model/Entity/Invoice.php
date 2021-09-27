@@ -18,7 +18,8 @@ use Cake\ORM\Entity;
  * @property string $totalgst
  * @property string $grandtotal
  * @property int $paywithinday
- *
+ * @property int $invoicenum
+
  * @property \App\Model\Entity\Project $project
  * @property \App\Model\Entity\Feeproposal $feeproposal
  */
@@ -45,5 +46,6 @@ class Invoice extends Entity
         'paywithinday' => true,
         'project' => true,
         'feeproposal' => true,
+        'invoicenum' => true,
     ];
 }
