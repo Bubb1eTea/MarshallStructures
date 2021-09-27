@@ -12,7 +12,7 @@ use Cake\Validation\Validator;
  * Projects Model
  *
  * @property \App\Model\Table\ClientsTable&\Cake\ORM\Association\BelongsTo $Clients
- * @property \App\Model\Table\ClientsTable&\Cake\ORM\Association\BelongsTo $InvoiceAssociate
+ * @property \App\Model\Table\AssociatesTable&\Cake\ORM\Association\BelongsTo $Associate
  * @property \App\Model\Table\FeeproposalsTable&\Cake\ORM\Association\HasMany $Feeproposals
  * @property \App\Model\Table\InvoicesTable&\Cake\ORM\Association\HasMany $Invoices
  * @property \App\Model\Table\AssociatesTable&\Cake\ORM\Association\BelongsToMany $Associates
@@ -158,7 +158,7 @@ class ProjectsTable extends Table
     public function buildRules(RulesChecker $rules): RulesChecker
     {
         $rules->add($rules->existsIn(['client_id'], 'Clients'), ['errorField' => 'client_id']);
-        $rules->add($rules->existsIn(['associate_id'], 'Clients'), ['errorField' => 'associate_id']);
+        $rules->add($rules->existsIn(['associate_id'], 'Associates'), ['errorField' => 'associate_id']);
 
         $rules->add($rules->isUnique(['msnumber']));
 

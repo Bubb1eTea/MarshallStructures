@@ -23,7 +23,7 @@ use Cake\ORM\Entity;
 
  *
  * @property \App\Model\Entity\Client $client
- * @property \App\Model\Entity\Client $associate
+ * @property \App\Model\Entity\Associate $associate
  * @property \App\Model\Entity\Feeproposal[] $feeproposals
  * @property \App\Model\Entity\Invoice[] $invoices
  * @property \App\Model\Entity\Associate[] $associates
