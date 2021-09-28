@@ -337,12 +337,7 @@ margin-left:0cm'><b><span lang=EN-AU style='font-size:11.0pt'>PROJECT TITLE: <?=
 
         <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm'><span lang=EN-AU style='font-size:11.0pt'><br>
-<br></span></p><p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
+<br></span></p><p class='Newhdg' align=left style='text-align:left'><span lang=EN-AU>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;
         &nbsp;
         &nbsp;
         &nbsp;
@@ -375,11 +370,6 @@ margin-left:1.0cm'><span lang=EN-AU>&#8194;</span></p>
         &nbsp;
         &nbsp;
         &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
         </span></span><span lang=EN-AU>Documents provided by the Client for the Services</span></p><div style='border:none;border-top:solid windowtext 1.0pt;padding:6.0pt 0cm 0cm 0cm;
 margin-left:1.0cm;
         margin-right:0cm'>
@@ -402,11 +392,6 @@ margin-left:0cm;
         &nbsp;
         &nbsp;
         </span></span><span lang=EN-AU style='font-size:11.0pt'><?=nl2br($feeproposal->documentsprovided) ?><br><br></span></p><p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
         &nbsp;
         &nbsp;
         &nbsp;

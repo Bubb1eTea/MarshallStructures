@@ -68,6 +68,14 @@
             font-weight: normal;
         }
 
+        .spacefix{
+            margin: 7px;
+        }
+        
+        .spacefix2{
+            margin: 9px;
+        }
+
         h3 {
             mso-style-link: "Heading 3 Char";
             margin-top: 0cm;
@@ -106,6 +114,7 @@
             font-family: "Arial", sans-serif;
             font-weight: normal;
         }
+
 
         h6 {
             mso-style-link: "Heading 6 Char";
@@ -332,17 +341,8 @@ margin-left:0cm'><b><span lang=EN-AU style='font-size:11.0pt'>PROJECT TITLE: <?=
 
         <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm'><span lang=EN-AU style='font-size:11.0pt'><br>
-<br></span></p><p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        </span></span><span lang=EN-AU>Scope of Services</span></p><div style='border:none;border-top:solid windowtext 1.0pt;padding:6.0pt 0cm 0cm 0cm;
+<br></span></p><p class='Newhdg' align=left style='text-align:left'><span lang=EN-AU>1. <span class=spacefix> </span>
+        </span><span lang=EN-AU>Scope of Services</span></p><div style='border:none;border-top:solid windowtext 1.0pt;padding:0.0pt 0cm 0cm 0cm;
 margin-left:1.0cm;
         margin-right:0cm'>
 
@@ -362,17 +362,10 @@ style='font-size:11.0pt;font-family:Symbol'><span style='font:7.0pt "Times New R
         &nbsp;
         &nbsp;
         &nbsp;
-        </span></span><span lang=EN-AU style='font-size:11.0pt'><?=nl2br($feeproposal->scopeofservice) ?>p</span></p><p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        </span></span><span lang=EN-AU>Documents provided by the Client for the Services</span></p><div style='border:none;border-top:solid windowtext 1.0pt;padding:6.0pt 0cm 0cm 0cm;
+        </span></span><span lang=EN-AU style='font-size:11.0pt'><?=nl2br($feeproposal->scopeofservice) ?><br>
+        
+        </span></p><p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>2. <span class='spacefix'> </span>
+        </span><span lang=EN-AU>Documents provided by the Client for the Services</span></p><div style='border:none;border-top:solid windowtext 1.0pt;padding:6.0pt 0cm 0cm 0cm;
 margin-left:1.0cm;
         margin-right:0cm'>
 
@@ -380,30 +373,16 @@ margin-left:1.0cm;
 margin-left:0cm;
         border:none;
         padding:0cm'><span lang=EN-AU style='font-size: 11.0pt;
-        color:blue'>&nbsp;</span></p>
+        '>The Consultant will render the Services by relying upon a briefing and all information concerning the Client's requirements in relation to the Project as follows-</span></p>
 
-        </div><p class=MsoNormal style='margin-left:1.0cm'><span lang=EN-AU style='font-size:
-11.0pt'>The Consultant</span><span style='font-size:11.0pt'> will render the Services by relying upon a briefing and all information concerning the Client's requirements in relation to the Project as follows-</span></p><p class=MsoNormal style='margin-left:1.0cm'><span lang=EN-AU style='font-size:
-11.0pt'>&nbsp;</span></p>
+        </div>
 
         <p class=MsoListParagraph style='margin-left:64.35pt;text-indent:-18.0pt'><span lang=EN-AU style='font-size:11.0pt;font-family:Symbol'><span style='font:7.0pt "Times New Roman"'>&nbsp;
         &nbsp;
         &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        </span></span><span lang=EN-AU style='font-size:11.0pt'><?=nl2br($feeproposal->documentsprovided) ?><br><br></span></p><p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        </span></span><span lang=EN-AU>Fees and Disbursements</span></p><div style='border:none;border-top:solid windowtext 1.0pt;padding:6.0pt 0cm 0cm 0cm;
+        </span></span><span lang=EN-AU style='font-size:11.0pt'><?=nl2br($feeproposal->documentsprovided) ?><br><br></span></p>
+        <p class='Newhdg' align=left style='text-align:left'><span lang=EN-AU>3. <span class=spacefix> </span>
+        </span><span lang=EN-AU>Fees and Disbursements</span></p><div style='border:none;border-top:solid windowtext 1.0pt;padding:6.0pt 0cm 0cm 0cm;
 margin-left:1.0cm;
         margin-right:0cm'>
 
@@ -461,8 +440,8 @@ style='font-size:11.0pt'>On the Client's present instructions, the estimate tota
                 <?= $feeproposal->grandtotal ?> </b> for total plus GST. </span></p>
 
     <p class=MsoNormal style='margin-left:1.0cm;text-indent:-1.0cm;page-break-after:
-avoid'><b><span lang=EN-AU style='font-size:11.0pt'>4.<span
-                    style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+avoid'><b><span lang=EN-AU style='font-size:11.0pt'>4.&nbsp;<span
+                    class='spacefix' style='font:7.0pt "Times New Roman"'> </span>
                 </span></span></b><b><span lang=EN-AU style='font-size:11.0pt'>Billing and payment
                 arrangements</span></b></p>
 
@@ -485,8 +464,8 @@ margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>
     <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm'><span lang=EN-AU style='font-size:11.0pt'>&nbsp;</span></p>
 
-    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>5.<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>5.&nbsp;<span class='spacefix2'
+                style='font:7.0pt "Times New Roman"'>
             </span></span><span lang=EN-AU>Interest charged</span></p>
 
     <div style='border:none;border-top:solid windowtext 1.0pt;padding:6.0pt 0cm 0cm 0cm;
@@ -504,21 +483,18 @@ margin-left:0cm;border:none;padding:0cm'><span lang=EN-AU style='font-size:
 
     </div>
 
-    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>6.<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>6.&nbsp;<span class='spacefix2'
+                style='font:7.0pt "Times New Roman"'>
             </span></span><span lang=EN-AU>Guarantor</span></p>
 
     <div style='border:none;border-top:solid windowtext 1.0pt;padding:1.0pt 0cm 0cm 0cm;
 margin-left:1.0cm;margin-right:0cm'>
 
-        <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm;border:none;padding:0cm'><span lang=EN-AU style='font-size:
-11.0pt'>&nbsp;</span></p>
-
     </div>
 
     <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:1.0cm'><span style='font-size:11.0pt'>The Guarantor and their
+margin-left:1.0cm'><span style='font-size:11.0pt'> <br>
+            The Guarantor and their
             respective executors and administrators jointly and severally covenant that if
             at any time the Client defaults from paying the bills, they will forthwith on demand
             indemnify the Consultant against any losses, costs, charges and expenses
@@ -528,8 +504,8 @@ margin-left:1.0cm'><span style='font-size:11.0pt'>The Guarantor and their
     <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm'><span lang=EN-AU style='font-size:11.0pt'>&nbsp;</span></p>
 
-    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>7.<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>7.&nbsp;<span class='spacefix2'
+                style='font:7.0pt "Times New Roman"'>
             </span></span><span lang=EN-AU>Briefing other experts</span></p>
 
     <div style='border:none;border-top:solid windowtext 1.0pt;padding:6.0pt 0cm 0cm 0cm;
@@ -551,8 +527,8 @@ margin-left:0cm;border:none;padding:0cm'><span lang=EN-AU style='font-size:
     <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm'><span lang=EN-AU style='font-size:11.0pt'>&nbsp;</span></p>
 
-    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>8.<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>8. &nbsp;<span class='spacefix' 
+                style='font:7.0pt "Times New Roman"'>
             </span></span><span lang=EN-AU>General Conditions</span></p>
 
     <div style='border:none;border-top:solid windowtext 1.0pt;padding:1.0pt 0cm 0cm 0cm;
@@ -846,8 +822,8 @@ margin-bottom:8.0pt;margin-left:99.25pt;text-indent:-1.0cm;line-height:107%'><sp
     <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:1.0cm'><span lang=EN-AU style='font-size:11.0pt'>&nbsp;</span></p>
 
-    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>9.<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>9. &nbsp;<span class='spacefix'
+                style='font:7.0pt "Times New Roman"'>
             </span></span><span lang=EN-AU>Termination of this agreement</span></p>
 
     <div style='border:none;border-top:solid windowtext 1.0pt;padding:6.0pt 0cm 0cm 0cm;
@@ -883,8 +859,8 @@ margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>
             <br>
         </span></p>
 
-    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>10.<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>10.<span class='spacefix'
+                style='font:7.0pt "Times New Roman"'>
             </span></span><span lang=EN-AU>Electronic communication</span></p>
 
     <div style='border:none;border-top:solid windowtext 1.0pt;padding:6.0pt 0cm 0cm 0cm;
