@@ -130,6 +130,7 @@ class FeeproposalsController extends AppController
         $this->viewBuilder()->enableAutoLayout(false);
         $feeproposal = $this->Feeproposals->get($id, [
             'contain' => ['Projects'=>[
+                'Invoiceaddressees',
                 'Clients'=>[
                     'Companys']]]]);
 
