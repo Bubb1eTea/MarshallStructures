@@ -38,7 +38,7 @@ debug($session->read('previous_url')); ?>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $feeproposal->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $feeproposal->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $feeproposal->id], ['confirm' => __('Are you sure you want to delete fee proposal #{0}?', $feeproposal->id)]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $feeproposal->id], ['confirm' => __('Are you sure you want to delete fee proposal #{0} for project '.$feeproposal->project->msnumber.'?', $feeproposal->feeproposalnum)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

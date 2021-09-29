@@ -24,9 +24,9 @@ debug($session->read('previous_url'));?>
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
             <?= $this->Form->postLink(
-                __('Delete'),
+                __('Delete Invoice'),
                 ['action' => 'delete', $invoice->id],
-                ['confirm' => __('Are you sure you want to delete invoice #{0}?', $invoice->id), 'class' => 'side-nav-item']
+                ['confirm' => __('Are you sure you want to delete invoice #{0} for project '.$invoice->project->msnumber.'?', $invoice->invoicenum), 'class' => 'side-nav-item']
             ) ?>
             <?= $this->Html->link(__('List Invoices'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
@@ -35,7 +35,7 @@ debug($session->read('previous_url'));?>
         <div class="invoices form content">
             <?= $this->Form->create($invoice) ?>
             <fieldset>
-                <legend><?= __('Edit Invoice #'.$invoice->id) ?></legend>
+                <legend><?= __('Edit Invoice #'.$invoice->invoicenum.' for project '.$invoice->project->msnumber) ?></legend>
                 <?php
                 // debug($feeproposal->first());
                 // debug($feeproposal->first()['Feeproposals']['total']);

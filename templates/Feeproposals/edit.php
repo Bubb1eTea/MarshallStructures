@@ -23,11 +23,7 @@ debug($session->read('previous_url'));?>
     <aside class="column">
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $feeproposal->id],
-                ['confirm' => __('Are you sure you want to delete fee proposal #{0}?', $feeproposal->id), 'class' => 'side-nav-item']
-            ) ?>
+            <?= $this->Form->postLink(__('Delete Fee Proposal'), ['action' => 'delete', $feeproposal->id], ['confirm' => __('Are you sure you want to delete fee proposal #{0} for project '.$feeproposal->project->msnumber.'?', $feeproposal->feeproposalnum)]) ?>
             <?= $this->Html->link(__('List Fee Proposals'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
@@ -35,7 +31,7 @@ debug($session->read('previous_url'));?>
         <div class="feeproposals form content">
             <?= $this->Form->create($feeproposal) ?>
             <fieldset>
-                <legend><?= __('Edit Fee Proposal #'.$feeproposal->id) ?></legend>
+                <legend><?= __('Edit Fee Proposal #'.$feeproposal->feeproposalnum.' for project '.$feeproposal->project->msnumber) ?></legend>
                 <?php
                     echo $this->Form->control('project_id', ['options' => $projects, 'empty' => false]);
                     echo $this->Form->control('feeproposalnum', ['label'=>"Fee Proposal Number"]);
