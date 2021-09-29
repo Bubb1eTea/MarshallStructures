@@ -140,6 +140,17 @@ class ProjectsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $project = $this->Projects->get($id);
         if ($this->Projects->delete($project)) {
+
+            $foldername = "msdir/" . $project->msnumber. " - " .$project->projectname;
+            
+            rmdir($foldername . "/Administration");
+            rmdir($foldername . "/Design");
+            rmdir($foldername . "/Drafting");
+            rmdir($foldername . "/Incoming");
+            rmdir($foldername . "/Outgoing");
+
+            rmdir($foldername);
+
             $this->Flash->success(__('The project has been deleted.'));
         } else {
             $this->Flash->error(__('The project could not be deleted. Please, try again.'));
