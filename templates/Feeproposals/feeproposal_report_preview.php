@@ -5,6 +5,7 @@
  * @var string[]|\Cake\Collection\CollectionInterface $projects
  */
 ?>
+<?php debug($feeproposal);?>
 <br>
 
 <html>

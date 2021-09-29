@@ -156,6 +156,7 @@ class FeeproposalsController extends AppController
     {
         $feeproposal = $this->Feeproposals->get($id, [
             'contain' => ['Projects'=>[
+                'Invoiceaddressees',
                 'Clients'=>[
                 'Companys']]]]);
         $this->set(compact('feeproposal'));

@@ -49,7 +49,7 @@ debug($session->read('previous_url'));?>
                     echo $this->Form->control('client_id', ['label'=>"Client", 'options' => $clients, 'empty' => true]);
                     //echo $this->Html->link(__('Add New Associate'), ['action' => '../associates/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('associates._ids', ['label'=>"Associate (hold 'ctrl' when selecting more than one)", 'options' => $associates]);
-                    echo $this->Form->control('associate_id', ['label'=>"Associate (addressee of invoice)",'options' => $associates, 'empty' => true]);
+                    echo $this->Form->control('invoiceaddressee_id', ['label'=>"Associate (addressee of invoice)",'options' => $associates, 'empty' => true]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
