@@ -49,7 +49,7 @@ class ProjectsController extends AppController
     public function view($id = null)
     {
         $project = $this->Projects->get($id, [
-            'contain' => ['Clients', 'Associates', 'Feeproposals', 'Invoices', 'Ntcertificates', 'Viccertificates'],
+            'contain' => ['Clients', 'Associates', 'Invoiceaddressees', 'Feeproposals', 'Invoices', 'Ntcertificates', 'Viccertificates'],
         ]);
 
         $this->set(compact('project'));
