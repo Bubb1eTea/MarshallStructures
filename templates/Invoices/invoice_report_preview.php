@@ -6,7 +6,7 @@
  * @var string[]|\Cake\Collection\CollectionInterface $feeproposals
  */
 ?>
-
+<?php debug($invoice);?>
 <br>
 <div class="column-responsive column-80">
     <!--    <div class="invoices view content">-->
@@ -96,11 +96,27 @@
            style='border-collapse:collapse'>
         <tr style='height:72.0pt'>
             <td width=367 valign=top style='width:275.4pt;padding:0cm 5.4pt 0cm 5.4pt;height:72.0pt'>
-                <p class=MsoNormal><span lang=EN-GB>Attn: <b><?=$invoice['project']['client']['firstname'].' '.$invoice['project']['client']['firstname']?></b></span></p>
-                <p class=MsoNormal><span lang=EN-GB>Company: <b> <?=$invoice['project']['client']['company']['companyname']?></b></span></p>
-                <p class=MsoNormal><span lang=EN-GB>Address: <b> <?=$invoice['project']['client']['company']['streetname']?></b></span></p>
-                <p class=MsoNormal><span lang=EN-GB>Suburb, State: <b><?=$invoice['project']['client']['company']['suburb']?>, <?= $invoice['project']['client']['company']['state'] ?> <?=$invoice['project']['client']['company']['postcode']?></b></span></p>
-                <p class=MsoNormal><span lang=EN-GB>Phone Number: <b> <?=$invoice['project']['client']['phonenumber']?></b></span></p>
+                <?php $clientCheck = $invoice->project->client;
+                $invoiceAddresseeCheck=$invoice->project->invoiceaddressee;
+                if(!empty($clientCheck)){?>
+                    <p class=MsoNormal><span lang=EN-GB>Attn: <b><?=$invoice['project']['client']['firstname'].' '.$invoice['project']['client']['lastname']?></b></span></p>
+                    <p class=MsoNormal><span lang=EN-GB>Company: <b> <?=$invoice['project']['client']['company']['companyname']?></b></span></p>
+                    <p class=MsoNormal><span lang=EN-GB>Address: <b> <?=$invoice['project']['client']['company']['streetname']?></b></span></p>
+                    <p class=MsoNormal><span lang=EN-GB>Suburb, State: <b><?=$invoice['project']['client']['company']['suburb']?>, <?= $invoice['project']['client']['company']['state'] ?> <?=$invoice['project']['client']['company']['postcode']?></b></span></p>
+                    <p class=MsoNormal><span lang=EN-GB>Phone Number: <b> <?=$invoice['project']['client']['phonenumber']?></b></span></p>
+                <?php } elseif(!empty($invoiceAddresseeCheck)) {?>
+                    <p class=MsoNormal><span lang=EN-GB>Attn: <b><?=$invoice['project']['invoiceaddressee']['firstname'].' '.$invoice['project']['invoiceaddressee']['lastname']?></b></span></p>
+                    <p class=MsoNormal><span lang=EN-GB>Company: <b> <?=$invoice['project']['invoiceaddressee']['company']['companyname']?></b></span></p>
+                    <p class=MsoNormal><span lang=EN-GB>Address: <b> <?=$invoice['project']['invoiceaddressee']['company']['streetname']?></b></span></p>
+                    <p class=MsoNormal><span lang=EN-GB>Suburb, State: <b><?=$invoice['project']['invoiceaddressee']['company']['suburb']?>, <?= $invoice['project']['invoiceaddressee']['company']['state'] ?> <?=$invoice['project']['invoiceaddressee']['company']['postcode']?></b></span></p>
+                    <p class=MsoNormal><span lang=EN-GB>Phone Number: <b> <?=$invoice['project']['invoiceaddressee']['phonenumber']?></b></span></p>
+                <?php } else {?>
+                    <p class=MsoNormal><span lang=EN-GB>Attn: </span></p>
+                    <p class=MsoNormal><span lang=EN-GB>Company: </span></p>
+                    <p class=MsoNormal><span lang=EN-GB>Address: </span></p>
+                    <p class=MsoNormal><span lang=EN-GB>Suburb, State: </span></p>
+                    <p class=MsoNormal><span lang=EN-GB>Phone Number: </span></p>
+                <?php }?>
             </td>
             <td width=367 valign=top style='width:275.4pt;padding:0cm 5.4pt 0cm 5.4pt;height:72.0pt'>
                 <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>

@@ -132,6 +132,7 @@ class InvoicesController extends AppController
         $this->viewBuilder()->enableAutoLayout(false);
         $invoice = $this->Invoices->get($id, [
             'contain' => ['Projects' =>[
+                'Invoiceaddressees',
                 'Clients'=>['Companys']],
                 'Feeproposals'],
         ]);
@@ -157,6 +158,7 @@ class InvoicesController extends AppController
     {
         $invoice = $this->Invoices->get($id, [
             'contain' => ['Projects' =>[
+                'Invoiceaddressees'=>['Companys'],
                 'Clients'=>['Companys']],
                 'Feeproposals'],
         ]);
