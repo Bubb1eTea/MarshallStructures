@@ -27,7 +27,6 @@ class ViccertificatesTableTest extends TestCase
         'app.Viccertificates',
         'app.Projects',
         'app.Companys',
-        'app.Documentscertifieds',
         'app.Designstandards',
     ];
 

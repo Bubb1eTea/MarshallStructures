@@ -62,7 +62,7 @@ class ViccertificatesController extends AppController
         $projects = $this->Viccertificates->Projects->find('list', ['limit' => 200]);
         $companys = $this->Viccertificates->Companys->find('list', ['limit' => 200]);
         $designstandards = $this->Viccertificates->Designstandards->find('list', ['limit' => 200]);
-        $this->set(compact('viccertificate', 'projects', 'companys',  'designstandards'));
+        $this->set(compact('viccertificate', 'projects', 'companys', 'designstandards'));
     }
 
     /**
@@ -89,7 +89,7 @@ class ViccertificatesController extends AppController
         $projects = $this->Viccertificates->Projects->find('list', ['limit' => 200]);
         $companys = $this->Viccertificates->Companys->find('list', ['limit' => 200]);
         $designstandards = $this->Viccertificates->Designstandards->find('list', ['limit' => 200]);
-        $this->set(compact('viccertificate', 'projects', 'companys',  'designstandards'));
+        $this->set(compact('viccertificate', 'projects', 'companys', 'designstandards'));
     }
 
     /**
@@ -110,35 +110,5 @@ class ViccertificatesController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
-    }
-
-
-    public function viccertReport($id = null)
-    {
-        $this->viewBuilder()->enableAutoLayout(false);
-        $viccertificate = $this->Viccertificates->get($id, [
-            'contain' => ['Projects'=>[
-                'Clients'], 'Companys', 'Designstandards']]);
-        $this->viewBuilder()->setClassName('CakePdf.Pdf');
-        $this->viewBuilder()->setOption(
-            'pdfConfig',
-            [
-                'orientation' => 'portrait',
-                'download' => true, // This can be omitted if "filename" is specified.
-                'filename' => 'VIC Certificate_' . $id . '.pdf' //// This can be omitted if you want file name based on URL.
-            ]
-        );
-
-        $this->set(compact('viccertificate'));
-    }
-
-
-    public function viccertReportPreview($id=null)
-    {
-        $viccertificate = $this->Viccertificates->get($id, [
-            'contain' => ['Projects'=>[
-                'Clients'], 'Companys', 'Designstandards']]);
-
-        $this->set(compact('viccertificate'));
     }
 }
