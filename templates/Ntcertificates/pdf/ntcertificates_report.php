@@ -748,7 +748,8 @@ border-top:none;
     <br>
     <p class=MsoNormal style="font-size: 11pt">
         [ ]<b> 1.</b> Completion of site preparation/site filling/excavations for footings prior to placement of any
-        reinforcement or concrete.
+        
+        <teste style="padding-left: 4.8%">reinforcement or concrete. </teste>
     </p>
     <br>
     <p class=MsoNormal style="font-size: 11pt">
@@ -757,7 +758,7 @@ border-top:none;
     </p><br>
     <p class=MsoNormal style="font-size: 11pt">
         [ ]<b> 3.</b> Completion of preparations for placing concrete slabs including compaction of fill and sand
-        blinding, placement<teste style="padding-left: 4.4%"> of
+        blinding,<teste style="padding-left: 4.8%"> placement of
             formwork, reinforcement, starter bars and cast in items.</teste>
     </p><br>
     <p class=MsoNormal style="font-size: 11pt">
@@ -768,25 +769,25 @@ border-top:none;
     </p> <br>
     <p class=MsoNormal style="font-size: 11pt">
         [ ]<b> 6.</b> Reinforcement to walls completed prior to core filling (inspection holes and cleanout cores to be
-        completed).
+        <teste style="padding-left: 4.8%"> completed). </teste>
     </p><br>
     <p class=MsoNormal style="font-size: 11pt">
         [ ]<b> 7.</b> Structural steelwork and cold formed steelwork completed and prior to any covering up work. Floor
-        framing <teste style="padding-left: 4.4%"> system
+        <teste style="padding-left: 4.8%">framing  system
             completed before floors are laid or underside is lined. </teste>
     </p><br>
     <p class=MsoNormal style="font-size: 11pt">
         [ ]<b> 8.</b> Suspended concrete floor slabs with formwork, reinforcement and cast in items completed, prior to
-        placing of <teste style="padding-left: 4.4%"> concrete.
+        <teste style="padding-left: 4.8%">placing of  concrete.
     </p><br>
     <p class=MsoNormal style="font-size: 11pt">
         [ ]<b> 9.</b> Wall framing or blockwork wall core filling completed (with windows fixed in place) and roof
-        framing with <teste style="padding-left: 4.4%">connections
+        framing <teste style="padding-left: 4.8%"> with connections
             completed and prior to sheeting or lining. </teste>
     </p><br>
     <p class=MsoNormal style="font-size: 11pt; padding-left: 6%">
         Note: [ ] Prior lodgement of truss manufacturer’s drawings, details and certification required. <br>
-        <teste style="padding-left: 5.46%">[ ] Prior lodgement of windows manufacturer’s drawings including fixings and
+        <teste style="padding-left: 5.95%">[ ] Prior lodgement of windows manufacturer’s drawings including fixings and
             certification required. </teste>
 
     </p><br>
@@ -796,7 +797,7 @@ border-top:none;
     </p><br>
     <p class=MsoNormal style="font-size: 11pt">
         [ ]<b> 11.</b> Final inspection upon completion of all structural work including fixings of external roof and
-        wall claddings, <teste style="padding-left: 5.5%">flashings,
+        wall <teste style="padding-left: 5.8%"> claddings, flashings,
             barges & vents.</teste>
     </p><br>
     <p class=MsoNormal style="font-size: 11pt">
