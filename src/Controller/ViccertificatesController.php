@@ -50,8 +50,18 @@ class ViccertificatesController extends AppController
     public function add()
     {
         $viccertificate = $this->Viccertificates->newEmptyEntity();
+        $viccertificate->documentsproduceds = array();
+        $action = $this->request->getQuery("action");
+
         if ($this->request->is('post')) {
             $viccertificate = $this->Viccertificates->patchEntity($viccertificate, $this->request->getData(), ['associated'=>['Documentsproduceds','Documentscertifieds']]);
+
+            if ($action && $action == "addTask") {
+                $documentsproduced1 = $this->Documentproduceds->newEmptyEntity();
+                array_push($viccertificate->documentsproduceds, $documentsproduced1);
+                pr($viccertificate->documentsproduceds);
+            }
+
             if ($this->Viccertificates->save($viccertificate)) {
                 $this->Flash->success(__('The viccertificate has been saved.'));
 

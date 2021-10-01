@@ -6,6 +6,8 @@
  * @var \Cake\Collection\CollectionInterface|string[] $companys
  * @var \Cake\Collection\CollectionInterface|string[] $designstandards
  */
+use Cake\Routing\Router;
+
 ?>
 <div class="row">
     <aside class="column">
@@ -31,15 +33,20 @@
                     echo $this->Form->control('buildingclass');
                     echo $this->Form->control('workrelatingto');
                     echo $this->Form->control('drawingsproducedby');
+                    echo $this->Form->control('documentsproduceds.0.documentno');
+                    echo $this->Form->control('documentsproduceds.0.documentdate');
+                    echo $this->Form->control('documentsproduceds.0.revision');
                     echo $this->Form->control('performancereq');
                     echo $this->Form->control('performancesolution');
                     echo $this->Form->control('prepared');
                     echo $this->Form->control('dateofissue', ['empty' => true]);
                     echo $this->Form->control('designstandards._ids', ['options' => $designstandards]);
                 ?>
+
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
-        </div>
+
+            </div>
     </div>
 </div>
