@@ -2,6 +2,7 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Documentscertified $documentscertified
+ * @var \Cake\Collection\CollectionInterface|string[] $viccertificates
  */
 ?>
 <div class="row">
@@ -22,6 +23,7 @@
                     echo $this->Form->control('type');
                     echo $this->Form->control('numberofpage');
                     echo $this->Form->control('preparedby');
+                    echo $this->Form->control('viccertificate_id', ['options' => $viccertificates]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

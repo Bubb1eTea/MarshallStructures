@@ -18,6 +18,9 @@ class DocumentsproducedsController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Viccertificates'],
+        ];
         $documentsproduceds = $this->paginate($this->Documentsproduceds);
 
         $this->set(compact('documentsproduceds'));
@@ -56,7 +59,8 @@ class DocumentsproducedsController extends AppController
             }
             $this->Flash->error(__('The documentsproduced could not be saved. Please, try again.'));
         }
-        $this->set(compact('documentsproduced'));
+        $viccertificates = $this->Documentsproduceds->Viccertificates->find('list', ['limit' => 200]);
+        $this->set(compact('documentsproduced', 'viccertificates'));
     }
 
     /**
@@ -80,7 +84,8 @@ class DocumentsproducedsController extends AppController
             }
             $this->Flash->error(__('The documentsproduced could not be saved. Please, try again.'));
         }
-        $this->set(compact('documentsproduced'));
+        $viccertificates = $this->Documentsproduceds->Viccertificates->find('list', ['limit' => 200]);
+        $this->set(compact('documentsproduced', 'viccertificates'));
     }
 
     /**

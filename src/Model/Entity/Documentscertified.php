@@ -9,13 +9,14 @@ use Cake\ORM\Entity;
  * Documentscertified Entity
  *
  * @property int $id
- * @property int|null $documentno
- * @property \Cake\I18n\FrozenTime $documentdate
+ * @property int $documentno
+ * @property \Cake\I18n\FrozenDate $documentdate
  * @property string|null $type
  * @property int|null $numberofpage
  * @property string|null $preparedby
+ * @property int $viccertificate_id
  *
- * @property \App\Model\Entity\Viccertificate[] $viccertificates
+ * @property \App\Model\Entity\Viccertificate $viccertificate
  */
 class Documentscertified extends Entity
 {
@@ -34,6 +35,7 @@ class Documentscertified extends Entity
         'type' => true,
         'numberofpage' => true,
         'preparedby' => true,
-        'viccertificates' => true,
+        'viccertificate_id' => true,
+        'viccertificate' => true,
     ];
 }

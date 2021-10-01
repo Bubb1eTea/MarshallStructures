@@ -9,11 +9,12 @@ use Cake\ORM\Entity;
  * Documentsproduced Entity
  *
  * @property int $id
- * @property int|null $documentno
- * @property \Cake\I18n\FrozenTime $documentdate
- * @property int|null $revision
+ * @property int $documentno
+ * @property \Cake\I18n\FrozenDate $documentdate
+ * @property int $revision
+ * @property int $viccertificate_id
  *
- * @property \App\Model\Entity\Viccertificate[] $viccertificates
+ * @property \App\Model\Entity\Viccertificate $viccertificate
  */
 class Documentsproduced extends Entity
 {
@@ -30,6 +31,7 @@ class Documentsproduced extends Entity
         'documentno' => true,
         'documentdate' => true,
         'revision' => true,
-        'viccertificates' => true,
+        'viccertificate_id' => true,
+        'viccertificate' => true,
     ];
 }

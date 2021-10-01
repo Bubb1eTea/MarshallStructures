@@ -2,6 +2,7 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Documentsproduced $documentsproduced
+ * @var string[]|\Cake\Collection\CollectionInterface $viccertificates
  */
 ?>
 <div class="row">
@@ -25,6 +26,7 @@
                     echo $this->Form->control('documentno');
                     echo $this->Form->control('documentdate');
                     echo $this->Form->control('revision');
+                    echo $this->Form->control('viccertificate_id', ['options' => $viccertificates]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

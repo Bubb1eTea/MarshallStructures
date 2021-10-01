@@ -23,8 +23,6 @@
                     <th><?= $this->Paginator->sort('buildingclass') ?></th>
                     <th><?= $this->Paginator->sort('workrelatingto') ?></th>
                     <th><?= $this->Paginator->sort('drawingsproducedby') ?></th>
-                    <th><?= $this->Paginator->sort('documentsproduced_id') ?></th>
-                    <th><?= $this->Paginator->sort('documentscertified_id') ?></th>
                     <th><?= $this->Paginator->sort('prepared') ?></th>
                     <th><?= $this->Paginator->sort('dateofissue') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
@@ -45,8 +43,6 @@
                     <td><?= h($viccertificate->buildingclass) ?></td>
                     <td><?= h($viccertificate->workrelatingto) ?></td>
                     <td><?= h($viccertificate->drawingsproducedby) ?></td>
-                    <td><?= $this->Number->format($viccertificate->documentsproduced_id) ?></td>
-                    <td><?= $this->Number->format($viccertificate->documentscertified_id) ?></td>
                     <td><?= h($viccertificate->prepared) ?></td>
                     <td><?= h($viccertificate->dateofissue) ?></td>
                     <td class="actions">
