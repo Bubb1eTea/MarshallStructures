@@ -63,8 +63,10 @@ class DocumentscertifiedsTable extends Table
 
         $validator
             ->integer('documentno')
+            ->maxLength('documentno', 5, 'This field is too long.')
+            ->greaterThanOrEqual('documentno', 0,'This field must be positive.')
             ->requirePresence('documentno', 'create')
-            ->notEmptyString('documentno');
+            ->notEmptyString('documentno', 'This field cannot be empty.');
 
         $validator
             ->date('documentdate')
@@ -73,17 +75,19 @@ class DocumentscertifiedsTable extends Table
 
         $validator
             ->scalar('type')
-            ->maxLength('type', 70)
-            ->allowEmptyString('type');
+            ->maxLength('type', 50, 'This field is too long.')
+            ->notEmptyString('type', 'This field cannot be empty.');
 
         $validator
             ->integer('numberofpage')
-            ->allowEmptyString('numberofpage');
+            ->maxLength('numberofpage', 5, 'This field is too long.')
+            ->greaterThanOrEqual('numberofpage', 0,'This field must be positive.')
+            ->notEmptyString('numberofpage', 'This field cannot be empty.');
 
         $validator
             ->scalar('preparedby')
-            ->maxLength('preparedby', 120)
-            ->allowEmptyString('preparedby');
+            ->maxLength('preparedby', 60, 'This field is too long.')
+            ->notEmptyString('preparedby', 'This field cannot be empty.');
 
         return $validator;
     }

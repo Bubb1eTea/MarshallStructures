@@ -64,7 +64,7 @@ class DocumentsproducedsTable extends Table
         $validator
             ->integer('documentno')
             ->requirePresence('documentno', 'create')
-            ->notEmptyString('documentno');
+            ->notEmptyString('documentno', 'This field cannot be empty.');
 
         $validator
             ->date('documentdate')
@@ -74,7 +74,8 @@ class DocumentsproducedsTable extends Table
         $validator
             ->integer('revision')
             ->requirePresence('revision', 'create')
-            ->notEmptyString('revision');
+            ->greaterThanOrEqual('revision', 0,'This field must be positive.')
+            ->notEmptyString('revision', 'This field cannot be empty.');
 
         return $validator;
     }
