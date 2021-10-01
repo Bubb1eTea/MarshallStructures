@@ -25,7 +25,6 @@
                     echo $this->Form->control('documentno');
                     echo $this->Form->control('documentdate');
                     echo $this->Form->control('revision');
-                    echo $this->Form->control('viccertificate_id');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

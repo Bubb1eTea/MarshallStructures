@@ -11,7 +11,7 @@ use Cake\Validation\Validator;
 /**
  * Documentscertifieds Model
  *
- * @property \App\Model\Table\ViccertificatesTable&\Cake\ORM\Association\BelongsTo $Viccertificates
+ * @property \App\Model\Table\ViccertificatesTable&\Cake\ORM\Association\HasMany $Viccertificates
  *
  * @method \App\Model\Entity\Documentscertified newEmptyEntity()
  * @method \App\Model\Entity\Documentscertified newEntity(array $data, array $options = [])
@@ -43,9 +43,8 @@ class DocumentscertifiedsTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('Viccertificates', [
-            'foreignKey' => 'viccertificate_id',
-            'joinType' => 'INNER',
+        $this->hasMany('Viccertificates', [
+            'foreignKey' => 'documentscertified_id',
         ]);
     }
 
@@ -63,17 +62,15 @@ class DocumentscertifiedsTable extends Table
 
         $validator
             ->integer('documentno')
-            ->requirePresence('documentno', 'create')
-            ->notEmptyString('documentno');
+            ->allowEmptyString('documentno');
 
         $validator
-            ->date('documentdate')
-            ->requirePresence('documentdate', 'create')
-            ->notEmptyDate('documentdate');
+            ->dateTime('documentdate')
+            ->notEmptyDateTime('documentdate');
 
         $validator
             ->scalar('type')
-            ->maxLength('type', 70)
+            ->maxLength('type', 20)
             ->allowEmptyString('type');
 
         $validator
@@ -82,23 +79,9 @@ class DocumentscertifiedsTable extends Table
 
         $validator
             ->scalar('preparedby')
-            ->maxLength('preparedby', 120)
+            ->maxLength('preparedby', 100)
             ->allowEmptyString('preparedby');
 
         return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules): RulesChecker
-    {
-        $rules->add($rules->existsIn(['viccertificate_id'], 'Viccertificates'), ['errorField' => 'viccertificate_id']);
-
-        return $rules;
     }
 }

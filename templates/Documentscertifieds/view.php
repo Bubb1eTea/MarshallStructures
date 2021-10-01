@@ -39,10 +39,6 @@
                     <td><?= $this->Number->format($documentscertified->numberofpage) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Viccertificate Id') ?></th>
-                    <td><?= $this->Number->format($documentscertified->viccertificate_id) ?></td>
-                </tr>
-                <tr>
                     <th><?= __('Documentdate') ?></th>
                     <td><?= h($documentscertified->documentdate) ?></td>
                 </tr>
@@ -56,7 +52,6 @@
                             <th><?= __('Id') ?></th>
                             <th><?= __('Project Id') ?></th>
                             <th><?= __('Company Id') ?></th>
-                            <th><?= __('Lastmodified') ?></th>
                             <th><?= __('Buildingtype') ?></th>
                             <th><?= __('Numberofstorey') ?></th>
                             <th><?= __('Riseinstory') ?></th>
@@ -65,6 +60,8 @@
                             <th><?= __('Buildingclass') ?></th>
                             <th><?= __('Workrelatingto') ?></th>
                             <th><?= __('Drawingsproducedby') ?></th>
+                            <th><?= __('Documentsproduced Id') ?></th>
+                            <th><?= __('Documentscertified Id') ?></th>
                             <th><?= __('Performancereq') ?></th>
                             <th><?= __('Performancesolution') ?></th>
                             <th><?= __('Prepared') ?></th>
@@ -76,7 +73,6 @@
                             <td><?= h($viccertificates->id) ?></td>
                             <td><?= h($viccertificates->project_id) ?></td>
                             <td><?= h($viccertificates->company_id) ?></td>
-                            <td><?= h($viccertificates->lastmodified) ?></td>
                             <td><?= h($viccertificates->buildingtype) ?></td>
                             <td><?= h($viccertificates->numberofstorey) ?></td>
                             <td><?= h($viccertificates->riseinstory) ?></td>
@@ -85,6 +81,8 @@
                             <td><?= h($viccertificates->buildingclass) ?></td>
                             <td><?= h($viccertificates->workrelatingto) ?></td>
                             <td><?= h($viccertificates->drawingsproducedby) ?></td>
+                            <td><?= h($viccertificates->documentsproduced_id) ?></td>
+                            <td><?= h($viccertificates->documentscertified_id) ?></td>
                             <td><?= h($viccertificates->performancereq) ?></td>
                             <td><?= h($viccertificates->performancesolution) ?></td>
                             <td><?= h($viccertificates->prepared) ?></td>

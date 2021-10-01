@@ -67,6 +67,14 @@
                     <td><?= $this->Number->format($viccertificate->effectiveheight) ?></td>
                 </tr>
                 <tr>
+                    <th><?= __('Documentsproduced Id') ?></th>
+                    <td><?= $this->Number->format($viccertificate->documentsproduced_id) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Documentscertified Id') ?></th>
+                    <td><?= $this->Number->format($viccertificate->documentscertified_id) ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Lastmodified') ?></th>
                     <td><?= h($viccertificate->lastmodified) ?></td>
                 </tr>

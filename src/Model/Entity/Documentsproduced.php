@@ -9,10 +9,9 @@ use Cake\ORM\Entity;
  * Documentsproduced Entity
  *
  * @property int $id
- * @property int $documentno
- * @property \Cake\I18n\FrozenDate $documentdate
- * @property int $revision
- * @property int $viccertificate_id
+ * @property int|null $documentno
+ * @property \Cake\I18n\FrozenTime $documentdate
+ * @property int|null $revision
  *
  * @property \App\Model\Entity\Viccertificate[] $viccertificates
  */
@@ -31,7 +30,6 @@ class Documentsproduced extends Entity
         'documentno' => true,
         'documentdate' => true,
         'revision' => true,
-        'viccertificate_id' => true,
         'viccertificates' => true,
     ];
 }

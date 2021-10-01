@@ -4,8 +4,6 @@
  * @var \App\Model\Entity\Viccertificate $viccertificate
  * @var \Cake\Collection\CollectionInterface|string[] $projects
  * @var \Cake\Collection\CollectionInterface|string[] $companys
- * @var \Cake\Collection\CollectionInterface|string[] $documentsproduceds
- * @var \Cake\Collection\CollectionInterface|string[] $documentscertifieds
  * @var \Cake\Collection\CollectionInterface|string[] $designstandards
  */
 ?>
@@ -33,6 +31,8 @@
                     echo $this->Form->control('buildingclass');
                     echo $this->Form->control('workrelatingto');
                     echo $this->Form->control('drawingsproducedby');
+                    echo $this->Form->control('documentsproduced_id');
+                    echo $this->Form->control('documentscertified_id');
                     echo $this->Form->control('performancereq');
                     echo $this->Form->control('performancesolution');
                     echo $this->Form->control('prepared');

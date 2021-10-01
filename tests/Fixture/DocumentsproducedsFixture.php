@@ -18,16 +18,11 @@ class DocumentsproducedsFixture extends TestFixture
     // phpcs:disable
     public $fields = [
         'id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
-        'documentno' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        'documentdate' => ['type' => 'date', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
-        'revision' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        'viccertificate_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        '_indexes' => [
-            'FK_VICCERTIFICATES_DOCUMENTSPRODUCEDS' => ['type' => 'index', 'columns' => ['viccertificate_id'], 'length' => []],
-        ],
+        'documentno' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'documentdate' => ['type' => 'timestamp', 'length' => null, 'precision' => null, 'null' => false, 'default' => 'current_timestamp()', 'comment' => ''],
+        'revision' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
-            'FK_VICCERTIFICATES_DOCUMENTSPRODUCEDS' => ['type' => 'foreign', 'columns' => ['viccertificate_id'], 'references' => ['viccertificates', 'id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
         ],
         '_options' => [
             'engine' => 'InnoDB',
@@ -46,9 +41,8 @@ class DocumentsproducedsFixture extends TestFixture
             [
                 'id' => 1,
                 'documentno' => 1,
-                'documentdate' => '2021-10-01',
+                'documentdate' => 1630903444,
                 'revision' => 1,
-                'viccertificate_id' => 1,
             ],
         ];
         parent::init();

@@ -17,7 +17,6 @@
                     <th><?= $this->Paginator->sort('type') ?></th>
                     <th><?= $this->Paginator->sort('numberofpage') ?></th>
                     <th><?= $this->Paginator->sort('preparedby') ?></th>
-                    <th><?= $this->Paginator->sort('viccertificate_id') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -30,7 +29,6 @@
                     <td><?= h($documentscertified->type) ?></td>
                     <td><?= $this->Number->format($documentscertified->numberofpage) ?></td>
                     <td><?= h($documentscertified->preparedby) ?></td>
-                    <td><?= $this->Number->format($documentscertified->viccertificate_id) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $documentscertified->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $documentscertified->id]) ?>
