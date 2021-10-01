@@ -51,7 +51,7 @@ class ViccertificatesController extends AppController
     {
         $viccertificate = $this->Viccertificates->newEmptyEntity();
         if ($this->request->is('post')) {
-            $viccertificate = $this->Viccertificates->patchEntity($viccertificate, $this->request->getData());
+            $viccertificate = $this->Viccertificates->patchEntity($viccertificate, $this->request->getData(), ['associated'=>['Documentsproduceds','Documentscertifieds']]);
             if ($this->Viccertificates->save($viccertificate)) {
                 $this->Flash->success(__('The viccertificate has been saved.'));
 
@@ -78,7 +78,7 @@ class ViccertificatesController extends AppController
             'contain' => ['Designstandards'],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $viccertificate = $this->Viccertificates->patchEntity($viccertificate, $this->request->getData());
+            $viccertificate = $this->Viccertificates->patchEntity($viccertificate, $this->request->getData(), ['associated'=>['Documentsproduceds','Documentscertifieds']]);
             if ($this->Viccertificates->save($viccertificate)) {
                 $this->Flash->success(__('The viccertificate has been saved.'));
 
