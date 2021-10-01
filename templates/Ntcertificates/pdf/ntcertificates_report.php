@@ -572,10 +572,10 @@ border-top:none;
                 </p>
                 <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Importance Level
                         (BCA):
-                        <!-- Insert importance level --> <?=$ntcertificate->importancelevel?><br> Hazard Factor, Z
+                        <!-- Insert importance level --> <?=$ntcertificate->importancelevel?> &nbsp;&nbsp;&nbsp; Hazard Factor, Z
                         (Section
                         3):
-                        <!-- Insert Hazard Factor --><?=$ntcertificate->hazardfactor?> <br> Class of Sub-Soil (Section
+                        <!-- Insert Hazard Factor --><?=$ntcertificate->hazardfactor?> &nbsp;&nbsp;&nbsp; Class of Sub-Soil (Section
                         4):
                         <!-- Insert Class of Sub-Soil --> <?=$ntcertificate->subsoilclass?> </span>
                 </p>
@@ -586,7 +586,7 @@ border-top:none;
                   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                 <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Safe Foundation
                         Bearing Capacity, kPa:
-                        <!-- Insert safe foundation bearing capacity --> <?=$ntcertificate->bearingcap?> <br> <b>
+                        <!-- Insert safe foundation bearing capacity --> <?=$ntcertificate->bearingcap?> &nbsp;&nbsp;&nbsp; <b>
                             <!-- Insert site classification -->
                         </b>Site classification (AS2870): <?=$ntcertificate->siteclass?> </span>
                 </p>
@@ -620,8 +620,8 @@ border-top:none;
         <tr style='height:15.6pt'>
             <td width="100%" style='border:solid windowtext 1.0pt;border-top:
                   none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
-                <p class=MsoNormal style='line-height:400%'><span lang=EN-AU
-                        style='font-size:8.0pt;line-height:400%'>The following items are excluded and
+                <p class=MsoNormal style='line-height:150%'><span lang=EN-AU
+                        style='font-size:8.0pt;line-height:150%'>The following items are excluded and
                         shall be certified separately: </span>
                 </p>
                 <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> <?=$ntcertificate->exclusion?> </p> <br>
@@ -632,8 +632,6 @@ border-top:none;
                   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:39.1pt'>
                 <p class=NormalBold style='line-height:normal'><span lang=EN-AU
                         style='font-size:8.0pt;font-weight:normal'>Comments:</span></p>
-                <p class=NormalBold style='margin-left:18.0pt'><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span>
-                </p>
                 <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> <?=$ntcertificate->comment?> </p>
             </td>
         </tr>
@@ -657,10 +655,8 @@ border-top:none;
                         style='font-size:8.0pt;line-height:150%'>Company Name </span><span lang=EN-AU
                         style='font-size:6.0pt;line-height:150%'>if certification issued
                         on behalf of a corporation</span><span lang=EN-AU style='font-size:8.0pt;
-                        line-height:150%'> </span> <br>
+                        line-height:150%'> </span> 
                 </p>
-                <p class=NormalBold style='line-height:150%'><span lang=EN-AU
-                        style='font-size:8.0pt;line-height:150%'>&nbsp;</span></p>
 
                 <!-- insert company name -->
                 <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> <?=$ntcertificate->compname?> </p>
@@ -670,8 +666,7 @@ border-top:none;
                   padding:0cm 5.4pt 0cm 5.4pt;height:18.0pt'>
                 <p class=NormalBold style='line-height:150%'><span lang=EN-AU
                         style='font-size:8.0pt;line-height:150%'>Company NT Registration Number</span></p>
-                <p class=NormalBold style='line-height:150%'><span lang=EN-AU
-                        style='font-size:8.0pt;line-height:150%;font-weight:normal'>&nbsp;</span></p>
+                
 
                 <!-- insert company NT registration number -->
                 <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> <?=$ntcertificate->compntregnum?> </p>
@@ -694,12 +689,9 @@ border-top:none;
                   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:41.2pt'>
                 <p class=MsoNormal><b><span lang=EN-AU style='font-size:8.0pt'>Name </span></b><b><span lang=EN-AU
                             style='font-size:6.0pt'>(see *below)</span></b></p>
-                <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></p>
-                <p class=MsoNormal><b><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></b></p>
-                <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></p>
 
                 <!-- insert name -->
-                <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> <?=$ntcertificate->name?> </p>
+                <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> Ben Marshall </p>
             </td>
             <td width=141 valign=top style='width:106.0pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -710,8 +702,6 @@ border-top:none;
                 <p class=MsoNormal><b><span lang=EN-AU style='font-size:8.0pt'>NT
                             Registration Number</span></b>
                 </p>
-                <p class=MsoNormal><b><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></b></p>
-                <p class=MsoNormal><b><span lang=EN-AU style='font-size:8.0pt'>&nbsp;</span></b></p>
 
                 <!-- insert NT registration number -->
                 <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> <?=$ntcertificate->ntregnum?> </p>
@@ -756,60 +746,60 @@ border-top:none;
             construction is required at the stages indicated below.</span>
     </p>
     <br>
-    <p style="font-size: 11pt">
+    <p class=MsoNormal style="font-size: 11pt">
         [ ]<b> 1.</b> Completion of site preparation/site filling/excavations for footings prior to placement of any
         reinforcement or concrete.
     </p>
     <br>
-    <p style="font-size: 11pt">
+    <p class=MsoNormal style="font-size: 11pt">
         [ ]<b> 2.</b> Completion of preparations for placing of concrete strip footings including placement of
         reinforcement.
     </p><br>
-    <p style="font-size: 11pt">
+    <p class=MsoNormal style="font-size: 11pt">
         [ ]<b> 3.</b> Completion of preparations for placing concrete slabs including compaction of fill and sand
         blinding, placement<teste style="padding-left: 4.4%"> of
             formwork, reinforcement, starter bars and cast in items.</teste>
     </p><br>
-    <p style="font-size: 11pt">
+    <p class=MsoNormal style="font-size: 11pt">
         [ ]<b> 4.</b> Completion of preparations for placing of concrete pier footings including reinforcement (if any).
     </p><br>
-    <p style="font-size: 11pt">
+    <p class=MsoNormal style="font-size: 11pt">
         [ ]<b> 5.</b> Starter bars and cast in items after placing of concrete and prior to any covering up work.
     </p> <br>
-    <p style="font-size: 11pt">
+    <p class=MsoNormal style="font-size: 11pt">
         [ ]<b> 6.</b> Reinforcement to walls completed prior to core filling (inspection holes and cleanout cores to be
         completed).
     </p><br>
-    <p style="font-size: 11pt">
+    <p class=MsoNormal style="font-size: 11pt">
         [ ]<b> 7.</b> Structural steelwork and cold formed steelwork completed and prior to any covering up work. Floor
         framing <teste style="padding-left: 4.4%"> system
             completed before floors are laid or underside is lined. </teste>
     </p><br>
-    <p style="font-size: 11pt">
+    <p class=MsoNormal style="font-size: 11pt">
         [ ]<b> 8.</b> Suspended concrete floor slabs with formwork, reinforcement and cast in items completed, prior to
         placing of <teste style="padding-left: 4.4%"> concrete.
     </p><br>
-    <p style="font-size: 11pt">
+    <p class=MsoNormal style="font-size: 11pt">
         [ ]<b> 9.</b> Wall framing or blockwork wall core filling completed (with windows fixed in place) and roof
         framing with <teste style="padding-left: 4.4%">connections
             completed and prior to sheeting or lining. </teste>
     </p><br>
-    <p style="font-size: 11pt; padding-left: 6%">
+    <p class=MsoNormal style="font-size: 11pt; padding-left: 6%">
         Note: [ ] Prior lodgement of truss manufacturer’s drawings, details and certification required. <br>
         <teste style="padding-left: 5.46%">[ ] Prior lodgement of windows manufacturer’s drawings including fixings and
             certification required. </teste>
 
     </p><br>
 
-    <p style="font-size: 11pt">
+    <p class=MsoNormal style="font-size: 11pt">
         [ ]<b> 10.</b> Structural wall linings completed and prior to any covering up work.
     </p><br>
-    <p style="font-size: 11pt">
+    <p class=MsoNormal style="font-size: 11pt">
         [ ]<b> 11.</b> Final inspection upon completion of all structural work including fixings of external roof and
         wall claddings, <teste style="padding-left: 5.5%">flashings,
             barges & vents.</teste>
     </p><br>
-    <p style="font-size: 11pt">
+    <p class=MsoNormal style="font-size: 11pt">
         [ ]<b> 12.</b> Other Inspections as required by the building permit
     </p><br>
 
