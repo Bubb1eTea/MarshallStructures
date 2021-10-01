@@ -20,8 +20,6 @@ use Cake\ORM\Entity;
  * @property string|null $buildingclass
  * @property string|null $workrelatingto
  * @property string|null $drawingsproducedby
- * @property int|null $documentsproduced_id
- * @property int|null $documentscertified_id
  * @property string|null $performancereq
  * @property string|null $performancesolution
  * @property string|null $prepared
@@ -29,6 +27,8 @@ use Cake\ORM\Entity;
  *
  * @property \App\Model\Entity\Project $project
  * @property \App\Model\Entity\Company $company
+ * @property \App\Model\Entity\Documentsproduced $documentsproduced
+ * @property \App\Model\Entity\Documentscertified $documentscertified
  * @property \App\Model\Entity\Designstandard[] $designstandards
  */
 class Viccertificate extends Entity
@@ -54,14 +54,14 @@ class Viccertificate extends Entity
         'buildingclass' => true,
         'workrelatingto' => true,
         'drawingsproducedby' => true,
-        'documentsproduced_id' => true,
-        'documentscertified_id' => true,
         'performancereq' => true,
         'performancesolution' => true,
         'prepared' => true,
         'dateofissue' => true,
         'project' => true,
         'company' => true,
+        'documentsproduced' => true,
+        'documentscertified' => true,
         'designstandards' => true,
     ];
 }

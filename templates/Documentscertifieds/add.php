@@ -22,6 +22,7 @@
                     echo $this->Form->control('type');
                     echo $this->Form->control('numberofpage');
                     echo $this->Form->control('preparedby');
+                    echo $this->Form->control('viccertificate_id');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

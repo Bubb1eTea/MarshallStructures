@@ -15,6 +15,7 @@
                     <th><?= $this->Paginator->sort('documentno') ?></th>
                     <th><?= $this->Paginator->sort('documentdate') ?></th>
                     <th><?= $this->Paginator->sort('revision') ?></th>
+                    <th><?= $this->Paginator->sort('viccertificate_id') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -25,6 +26,7 @@
                     <td><?= $this->Number->format($documentsproduced->documentno) ?></td>
                     <td><?= h($documentsproduced->documentdate) ?></td>
                     <td><?= $this->Number->format($documentsproduced->revision) ?></td>
+                    <td><?= $this->Number->format($documentsproduced->viccertificate_id) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $documentsproduced->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $documentsproduced->id]) ?>

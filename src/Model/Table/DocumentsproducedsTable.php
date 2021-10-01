@@ -11,7 +11,7 @@ use Cake\Validation\Validator;
 /**
  * Documentsproduceds Model
  *
- * @property \App\Model\Table\ViccertificatesTable&\Cake\ORM\Association\HasMany $Viccertificates
+ * @property \App\Model\Table\ViccertificatesTable&\Cake\ORM\Association\BelongsTo $Viccertificates
  *
  * @method \App\Model\Entity\Documentsproduced newEmptyEntity()
  * @method \App\Model\Entity\Documentsproduced newEntity(array $data, array $options = [])
@@ -43,8 +43,9 @@ class DocumentsproducedsTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->hasMany('Viccertificates', [
-            'foreignKey' => 'documentsproduced_id',
+        $this->belongsTo('Viccertificates', [
+            'foreignKey' => 'viccertificate_id',
+            'joinType' => 'INNER',
         ]);
     }
 
@@ -62,16 +63,33 @@ class DocumentsproducedsTable extends Table
 
         $validator
             ->integer('documentno')
-            ->allowEmptyString('documentno');
+            ->requirePresence('documentno', 'create')
+            ->notEmptyString('documentno');
 
         $validator
-            ->dateTime('documentdate')
-            ->notEmptyDateTime('documentdate');
+            ->date('documentdate')
+            ->requirePresence('documentdate', 'create')
+            ->notEmptyDate('documentdate');
 
         $validator
             ->integer('revision')
-            ->allowEmptyString('revision');
+            ->requirePresence('revision', 'create')
+            ->notEmptyString('revision');
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules): RulesChecker
+    {
+        $rules->add($rules->existsIn(['viccertificate_id'], 'Viccertificates'), ['errorField' => 'viccertificate_id']);
+
+        return $rules;
     }
 }
