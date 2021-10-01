@@ -363,12 +363,12 @@ border-top:none;
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                 <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Type of
-                        Construction (BCA volume 1 §C1.1):
+                        Construction (BCA volume 1 §C1.1): <?=$ntcertificate->constructiontype?>
                         <!-- Insert BCA volume -->
                 </p>
 
                 </p>
-                <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'><?=$ntcertificate->constructiontype?> </p>
+                <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> </p>
                 </span>
                 <br>
             </td>
@@ -395,21 +395,21 @@ border-top:none;
             <td width=112 valign=top style='width:84.1pt;border:solid windowtext 1.0pt;
                   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:14.8pt'>
                 <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Region:
-                        <!-- Insert region --> <br> <?=$ntcertificate->region?> <br> </span></p>
+                        <!-- Insert region -->  <?=$ntcertificate->region?> <br> </span></p>
             </td>
             <td width=274 colspan=7 valign=top style='width:205.65pt;border-top:none;
                   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:14.8pt'>
                 <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Regional ultimate
                         wind speed V<sub>R</sub>(m/s):
-                        <!-- Insert regional ultimate wind speed --> <br><?=$ntcertificate->windspeed?> </span>
+                        <!-- Insert regional ultimate wind speed --> <?=$ntcertificate->windspeed?> </span>
                 </p>
             </td>
             <td width=150 valign=top style='width:112.2pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:14.8pt'>
                 <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Terrain Category:
-                        <!-- Insert terrain category --> <br> <?=$ntcertificate->terraincat?></span></p>
+                        <!-- Insert terrain category -->  <?=$ntcertificate->terraincat?></span></p>
             </td>
             <td width=162 valign=top style='width:121.65pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -423,20 +423,20 @@ border-top:none;
         <tr style='height:15.6pt'>
             <td width=112 style='width:84.1pt;border:solid windowtext 1.0pt;border-top:
                   none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
-                <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>M<sub>z,cat </sub>:
+                <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>M<sub>z,cat </sub>: &nbsp;
                         <!-- Insert MzCat --> <?=$ntcertificate->mz?> </span></p>
             </td>
             <td width=87 style='width:65.4pt;border-top:none;border-left:none;border-bottom:
                   solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
                   height:15.6pt'>
                 <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>M<sub>s </sub>:
-                        <!-- Insert ms --> <?=$ntcertificate->ms?> </span></p>
+                        <!-- Insert ms --> &nbsp; <?=$ntcertificate->ms?> </span></p>
             </td>
             <td width=87 colspan=3 style='width:65.45pt;border-top:none;border-left:none;
                   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
                 <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>M<sub>t</sub> :
-                        <!-- Insert mt --> <?=$ntcertificate->mt?></span></p>
+                        <!-- Insert mt -->&nbsp; <?=$ntcertificate->mt?></span></p>
             </td>
             <td width=100 colspan=3 style='width:74.8pt;border-top:none;border-left:none;
                   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -461,13 +461,13 @@ border-top:none;
                 </p>
 
                 <!-- insert Inetrnal pressure Coefficients -->
-                <awser style="font-size:8pt"> <?=$ntcertificate->intpressure?> <br></awser>
+                
             </td>
             <td width=481 colspan=6 style='width:360.55pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
-                <p class=NormalBold align=center style='text-align:center'><span lang=EN-AU
-                        style='font-size:8.0pt'>&nbsp;</span></p>
+                <p class=Normal align=center style='text-align:center'><span lang=EN-AU
+                        style='font-size:8.0pt'>&nbsp;<awser style="font-size:8pt"> <?=$ntcertificate->intpressure?> <br></awser></span></p>
             </td>
         </tr>
         <tr style='height:15.6pt'>
@@ -487,7 +487,7 @@ border-top:none;
             <td width=405 colspan=4 style='width:303.85pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
-                <p align=center style='text-align:left'><span lang=EN-AU
+                <p align=center style='text-align:center'><span lang=EN-AU
                         style='font-size:8.0pt'><?=$ntcertificate->expressurewall?> </span></p>
                 <!-- Insert walls -->
             </td>
@@ -506,7 +506,7 @@ border-top:none;
             <td width=405 colspan=4 style='width:303.85pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
-                <p align=center style='text-align:left'><span lang=EN-AU
+                <p align=center style='text-align:center'><span lang=EN-AU
                         style='font-size:8.0pt'><?=$ntcertificate->expressureroof?> </span></p>
                 <!-- Insert roof -->
             </td>
@@ -529,7 +529,7 @@ border-top:none;
             <td width=405 colspan=4 style='width:303.85pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
-                <p align=center style='text-align:left'><span lang=EN-AU
+                <p align=center style='text-align:center'><span lang=EN-AU
                         style='font-size:8.0pt'><?=$ntcertificate->netpressureroofwall?></span></p>
 
                 <!-- Insert floor/roof -->
@@ -553,7 +553,7 @@ border-top:none;
             <td width=405 colspan=4 style='width:303.85pt;border-top:none;border-left:
                   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
                   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt'>
-                <p align=center style='text-align:left'><span lang=EN-AU
+                <p align=center style='text-align:center'><span lang=EN-AU
                         style='font-size:8.0pt'><?=$ntcertificate->imposedloadfloorroof?></span></p>
 
                 <!-- Insert floor/roof -->
@@ -567,8 +567,8 @@ border-top:none;
                 </p>
                 <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Annual
                         Probability of Exceedance for Earthquake Actions (BCA Table 1.2b):
-                        <!-- Insert annual probability --> 1 in
-                        <!-- Insert probability --> <?=$ntcertificate->earthexceedance?> </span>
+                        <!-- Insert annual probability --> <b>1 in
+                        <!-- Insert probability --> <?=$ntcertificate->earthexceedance?> </span> </b>
                 </p>
                 <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Importance Level
                         (BCA):
