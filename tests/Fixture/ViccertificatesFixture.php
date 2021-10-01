@@ -60,7 +60,7 @@ class ViccertificatesFixture extends TestFixture
                 'id' => 1,
                 'project_id' => 1,
                 'company_id' => 1,
-                'lastmodified' => 1633072908,
+                'lastmodified' => 1633092871,
                 'buildingtype' => 'Lorem ipsum dolor sit amet',
                 'numberofstorey' => 1,
                 'riseinstory' => 1,

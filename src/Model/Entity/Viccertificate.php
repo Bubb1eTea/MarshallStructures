@@ -27,8 +27,8 @@ use Cake\ORM\Entity;
  *
  * @property \App\Model\Entity\Project $project
  * @property \App\Model\Entity\Company $company
- * @property \App\Model\Entity\Documentsproduced $documentsproduced
- * @property \App\Model\Entity\Documentscertified $documentscertified
+ * @property \App\Model\Entity\Documentscertified[] $documentscertifieds
+ * @property \App\Model\Entity\Documentsproduced[] $documentsproduceds
  * @property \App\Model\Entity\Designstandard[] $designstandards
  */
 class Viccertificate extends Entity
@@ -60,8 +60,8 @@ class Viccertificate extends Entity
         'dateofissue' => true,
         'project' => true,
         'company' => true,
-        'documentsproduced' => true,
-        'documentscertified' => true,
+        'documentscertifieds' => true,
+        'documentsproduceds' => true,
         'designstandards' => true,
     ];
 }

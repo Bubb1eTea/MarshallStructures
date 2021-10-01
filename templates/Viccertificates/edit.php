@@ -4,8 +4,6 @@
  * @var \App\Model\Entity\Viccertificate $viccertificate
  * @var string[]|\Cake\Collection\CollectionInterface $projects
  * @var string[]|\Cake\Collection\CollectionInterface $companys
- * @var string[]|\Cake\Collection\CollectionInterface $documentsproduceds
- * @var string[]|\Cake\Collection\CollectionInterface $documentscertifieds
  * @var string[]|\Cake\Collection\CollectionInterface $designstandards
  */
 ?>

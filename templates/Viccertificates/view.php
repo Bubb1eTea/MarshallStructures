@@ -114,6 +114,72 @@
                 </div>
                 <?php endif; ?>
             </div>
+            <div class="related">
+                <h4><?= __('Related Documentscertifieds') ?></h4>
+                <?php if (!empty($viccertificate->documentscertifieds)) : ?>
+                <div class="table-responsive">
+                    <table>
+                        <tr>
+                            <th><?= __('Id') ?></th>
+                            <th><?= __('Documentno') ?></th>
+                            <th><?= __('Documentdate') ?></th>
+                            <th><?= __('Type') ?></th>
+                            <th><?= __('Numberofpage') ?></th>
+                            <th><?= __('Preparedby') ?></th>
+                            <th><?= __('Viccertificate Id') ?></th>
+                            <th class="actions"><?= __('Actions') ?></th>
+                        </tr>
+                        <?php foreach ($viccertificate->documentscertifieds as $documentscertifieds) : ?>
+                        <tr>
+                            <td><?= h($documentscertifieds->id) ?></td>
+                            <td><?= h($documentscertifieds->documentno) ?></td>
+                            <td><?= h($documentscertifieds->documentdate) ?></td>
+                            <td><?= h($documentscertifieds->type) ?></td>
+                            <td><?= h($documentscertifieds->numberofpage) ?></td>
+                            <td><?= h($documentscertifieds->preparedby) ?></td>
+                            <td><?= h($documentscertifieds->viccertificate_id) ?></td>
+                            <td class="actions">
+                                <?= $this->Html->link(__('View'), ['controller' => 'Documentscertifieds', 'action' => 'view', $documentscertifieds->id]) ?>
+                                <?= $this->Html->link(__('Edit'), ['controller' => 'Documentscertifieds', 'action' => 'edit', $documentscertifieds->id]) ?>
+                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Documentscertifieds', 'action' => 'delete', $documentscertifieds->id], ['confirm' => __('Are you sure you want to delete # {0}?', $documentscertifieds->id)]) ?>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </table>
+                </div>
+                <?php endif; ?>
+            </div>
+            <div class="related">
+                <h4><?= __('Related Documentsproduceds') ?></h4>
+                <?php if (!empty($viccertificate->documentsproduceds)) : ?>
+                <div class="table-responsive">
+                    <table>
+                        <tr>
+                            <th><?= __('Id') ?></th>
+                            <th><?= __('Documentno') ?></th>
+                            <th><?= __('Documentdate') ?></th>
+                            <th><?= __('Revision') ?></th>
+                            <th><?= __('Viccertificate Id') ?></th>
+                            <th class="actions"><?= __('Actions') ?></th>
+                        </tr>
+                        <?php foreach ($viccertificate->documentsproduceds as $documentsproduceds) : ?>
+                        <tr>
+                            <td><?= h($documentsproduceds->id) ?></td>
+                            <td><?= h($documentsproduceds->documentno) ?></td>
+                            <td><?= h($documentsproduceds->documentdate) ?></td>
+                            <td><?= h($documentsproduceds->revision) ?></td>
+                            <td><?= h($documentsproduceds->viccertificate_id) ?></td>
+                            <td class="actions">
+                                <?= $this->Html->link(__('View'), ['controller' => 'Documentsproduceds', 'action' => 'view', $documentsproduceds->id]) ?>
+                                <?= $this->Html->link(__('Edit'), ['controller' => 'Documentsproduceds', 'action' => 'edit', $documentsproduceds->id]) ?>
+                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Documentsproduceds', 'action' => 'delete', $documentsproduceds->id], ['confirm' => __('Are you sure you want to delete # {0}?', $documentsproduceds->id)]) ?>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </table>
+                </div>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </div>
