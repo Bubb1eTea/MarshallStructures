@@ -27,7 +27,7 @@ class NtcertificatesController extends AppController
 
         if($key){
             $query = $this->Ntcertificates->find("all")
-                ->where(['Or'=>['projectname like'=>'%'.$key.'%']]);
+                ->where(['Or'=>['projectname like'=>'%'.$key.'%','msnumber like'=>$key+0]]);
         }else{
             $query = $this->Ntcertificates;
         }

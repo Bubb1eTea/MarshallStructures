@@ -27,7 +27,7 @@ class ViccertificatesController extends AppController
 
         if($key){
             $query = $this->Viccertificates->find("all")
-                ->where(['Or'=>['projectname like'=>'%'.$key.'%']]);
+                ->where(['Or'=>['projectname like'=>'%'.$key.'%','msnumber like'=>$key+0]]);
         }else{
             $query = $this->Viccertificates;
         }
