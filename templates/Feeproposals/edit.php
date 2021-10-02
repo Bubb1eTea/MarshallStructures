@@ -16,6 +16,9 @@ $session->write('feeproposals_id',$feeproposal->id);
 debug($session->read('previous_url'));?>
 <style>
     .error-message {color:red;}
+
+    .control_left{float:left;width: 55%}
+    .control_right{float:right; width: 45%}
 </style>
 <div class="row">
     <aside class="column">
@@ -33,21 +36,42 @@ debug($session->read('previous_url'));?>
         <div class="feeproposals form content">
             <?= $this->Form->create($feeproposal) ?>
             <fieldset>
-                <legend><?= __('Edit Fee Proposal #'.$feeproposal->id) ?></legend>
-                <?php
-                    echo $this->Form->control('project_id', ['options' => $projects, 'empty' => false]);
-                    echo $this->Form->control('guarantor',['label' =>"Guarantor (leave blank if none)"]);
-                    echo $this->Form->control('scopeofservice', ['label' =>"Scope of Service (provide a list)"]);
-                    echo $this->Form->control('documentsprovided',['label' =>"Documents Provided (provide a list)"]);
-                    echo $this->Form->control('fixedfee', ['label' =>"Fixed Fee"]);
-                    echo $this->Form->control('hourlyrate', ['label' =>"Hourly Rate"]);
-                    echo $this->Form->control('disbursement',['label' =>"Disbursement"]);
-                    echo $this->Form->control('total',['label' =>"Subtotal", array('readonly' => 'readonly')]);
-                    echo $this->Form->control('totalgst',['label' =>"Total GST", array('readonly' => 'readonly')]);
-                    echo $this->Form->control('grandtotal', ['label' =>"Grand Total", array('readonly' => 'readonly')]);
+                <legend><?= __('Add Fee Proposal') ?></legend>
+                <div class="control_left">
+                    <?php
+                    //echo $this->Html->link(__('Add New Project'), ['action' => '../projects/add'], ['class' => 'button float-right']);
+                    echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true, 'style'=>'width:82%']);
+                    ?>
+                </div>
+                <div class="control_right">
+                    <?php    echo $this->Form->control('guarantor',['label' =>"Guarantor (leave blank if none)"]);?>
+                </div>
+                <?php    echo $this->Form->control('scopeofservice',['label' =>"Scope of Service (provide a list)"]);?>
+                <?php    echo $this->Form->control('documentsprovided',['label' =>"Documents Provided (provide a list)"]);?>
+                <div class="control_left">
+                    <?php    echo $this->Form->control('fixedfee', ['label' =>"Fixed Fee", 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                    <?php    echo $this->Form->control('hourlyrate', ['label' =>"Hourly Rate"]);?>
+                </div>
+                <div class="control_left">
+                    <?php    echo $this->Form->control('disbursement',['label' =>"Disbursement", 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                    <?php    echo $this->Form->control('total',['label' =>"Subtotal", array('readonly' => 'readonly')]);?>
+                </div>
+                <div class="control_left">
+                    <?php    echo $this->Form->control('totalgst',['label' =>"Total GST", array('readonly' => 'readonly'), 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                    <?php    echo $this->Form->control('grandtotal', ['label' =>"Grand Total", array('readonly' => 'readonly')]);?>
+                </div>
+                <div class="control_left">
+                    <?php
                     $days = ['7'=>'7','30'=>'30'];
-                    echo $this->Form->control('paywithinday', ['label' =>"Pay within how many days?",'options' => $days, 'empty' => false]);
-                ?>
+                    echo $this->Form->control('paywithinday', ['label' =>"Pay within how many days?",'options' => $days, 'empty' => false, 'style'=>'width:82%']);
+                    ?>
+                </div>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
