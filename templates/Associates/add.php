@@ -14,6 +14,9 @@ debug($session->read('previous_url')); ?>
 <style>
     select[multiple="multiple"] { height:15rem;}
     .error-message {color:red;}
+
+    .control_left{float:left;width: 55%}
+    .control_right{float:right; width: 45%}
 </style>
 <div class="row">
     <aside class="column">
@@ -27,18 +30,28 @@ debug($session->read('previous_url')); ?>
             <?= $this->Form->create($associate) ?>
             <fieldset>
                 <legend><?= __('Add Associate') ?></legend>
-                <?php
-                    echo $this->Form->control('firstname', ['label'=>"First Name"]);
-                    echo $this->Form->control('lastname', ['label'=>"Last Name"]);
-                    echo $this->Form->control('email', ['label'=>"Email"]);
-                    echo $this->Form->control('phonenumber', ['label'=>"Phone Number"]);
-                    //echo $this->Html->link(__('Add New Company'), ['action' => '../companys/add'], ['class' => 'button float-right']);
-                    echo $this->Form->control('company_id', ['label'=>"Company", 'options' => $companys, 'empty' => true]);
-                    echo $this->Form->control('position', ['label'=>"Position"]);
-                    echo $this->Form->control('role', ['label'=>"Role"]);
-                    //echo $this->Html->link(__('Add New Project'), ['action' => '../projects/add'], ['class' => 'button float-right']);
-                    echo $this->Form->control('projects._ids', ['label'=>"Projects", 'options' => $projects]);
-                ?>
+                <div class="control_left">
+                    <?php echo $this->Form->control('firstname', ['label'=>"First Name", 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                    <?php echo $this->Form->control('lastname', ['label'=>"Last Name"]);?>
+                </div>
+                <div class="control_left">
+                    <?php echo $this->Form->control('email', ['label'=>"Email", 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                    <?php echo $this->Form->control('phonenumber', ['label'=>"Phone Number"]);?>
+                </div>
+<!--                echo $this->Html->link(__('Add New Company'), ['action' => '../companys/add'], ['class' => 'button float-right']);-->
+                    <?php echo $this->Form->control('company_id', ['label'=>"Company", 'options' => $companys, 'empty' => true]);?>
+                <div class="control_left">
+                    <?php echo $this->Form->control('position', ['label'=>"Position", 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                    <?php echo $this->Form->control('role', ['label'=>"Role"]); ?>
+                </div>
+<!--                echo $this->Html->link(__('Add New Project'), ['action' => '../projects/add'], ['class' => 'button float-right']);-->
+                    <?php echo $this->Form->control('projects._ids', ['label'=>"Projects", 'options' => $projects]); ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>

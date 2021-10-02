@@ -47,12 +47,13 @@ debug($session->read('previous_url'));?>
                     <?php echo $this->Form->control('phonenumber', ['label'=>"Phone Number"]);?>
                 </div>
                 <div class="control_left">
-                    <?php echo $this->Form->control('position', ['label'=>"Position", 'style'=>'width:82%']);?>
+                    <?php
+                        //echo $this->Html->link(__('Add New Company'), ['action' => '../companys/add'], ['class' => 'button float-right']);
+                        echo $this->Form->control('company_id', ['options' => $companys, 'empty' => true, 'style'=>'width:82%']);
+                    ?>
                 </div>
                 <div class="control_right">
-                    <?php //echo $this->Html->link(__('Add New Company'), ['action' => '../companys/add'], ['class' => 'button float-right']);
-                    echo $this->Form->control('company_id', ['options' => $companys, 'empty' => true]);
-                    ?>
+                    <?php echo $this->Form->control('position', ['label'=>"Position"]);?>
                 </div>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
