@@ -17,6 +17,9 @@ $session->write('invoices_id',$invoice->id);
 debug($session->read('previous_url'));?>
 <style>
     .error-message {color:red;}
+
+    .control_left{float:left;width: 55%}
+    .control_right{float:right; width: 45%}
 </style>
 
 <div class="row">
@@ -35,27 +38,42 @@ debug($session->read('previous_url'));?>
         <div class="invoices form content">
             <?= $this->Form->create($invoice) ?>
             <fieldset>
-                <legend><?= __('Edit Invoice #'.$invoice->id) ?></legend>
-                <?php
-                // debug($feeproposal->first());
-                // debug($feeproposal->first()['Feeproposals']['total']);
-                // debug($feeproposal->first()['Feeproposals']['totalgst']);
-                // debug($feeproposal->first()['Feeproposals']['grandtotal']);
-
+                <legend><?= __('Add Invoice') ?></legend>
+                <div class="control_left">
+                    <?php
                     //echo $this->Html->link(__('Add New Project'), ['action' => '../projects/add'], ['class' => 'button float-right']);
-                    echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true]);
-                    echo $this->Html->link(__('View All Fee Proposals'), ['action' => '../feeproposals'], ['class' => 'button float-right', 'target' => '_blank']);
-                    echo $this->Form->control('feeproposal_id', ['options' => $feeproposals, 'empty' => true, 'label'=>"Fee Proposal"]);
-                    echo $this->Form->control('datecreated', ['label'=>"Date Created"]);
-                    echo $this->Form->control('invdesc', ['label'=>"Invoice Description"]);
-                    echo $this->Form->control('completedpercentage', ['label'=>"Completed Percentage", 'placeholder' => '%', 'type' => "number"]);
-                    echo $this->Form->control('feeproposaltotal', ['label'=>"Fee Proposal Total"]);
-                    echo $this->Form->control('total', ['label'=>"Subtotal"]);
-                    echo $this->Form->control('totalgst', ['label'=>"Total GST"]);
-                    echo $this->Form->control('grandtotal', ['label'=>"Grand Total"]);
+                    echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true, 'style'=>'width:82%']);
+                    ?>
+                </div>
+                <div class="control_right">
+                    <?php    echo $this->Html->link(__('View All Fee Proposals'), ['action' => '../feeproposals'], ['class' => 'button float-right', 'target' => '_blank']);?>
+                    <?php    echo $this->Form->control('feeproposal_id', ['options' => $feeproposals, 'empty' => true, 'label'=>"Fee Proposal"]);?>
+                </div>
+                <?php
+                echo $this->Form->control('datecreated', ['label'=>"Date Created", 'style'=>'width:45.1%']);
+                echo $this->Form->control('invdesc', ['label'=>"Invoice Description"]);
+                ?>
+                <div class="control_left">
+                    <?php    echo $this->Form->control('completedpercentage', ['label'=>"Completed Percentage", 'placeholder' => '%', 'type' => "number", 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                    <?php    echo $this->Form->control('feeproposaltotal', ['label'=>"Fee Proposal Total"]);?>
+                </div>
+                <div class="control_left">
+                    <?php    echo $this->Form->control('total', ['label'=>"Subtotal", 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                    <?php    echo $this->Form->control('totalgst', ['label'=>"Total GST"]);?>
+                </div>
+                <div class="control_left">
+                    <?php    echo $this->Form->control('grandtotal', ['label'=>"Grand Total", 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                    <?php
                     $days = ['7'=>'7','30'=>'30'];
                     echo $this->Form->control('paywithinday',['label' =>"Pay within how many days?",'options' => $days, 'empty' => false]);
-                ?>
+                    ?>
+                </div>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
