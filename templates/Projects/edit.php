@@ -15,6 +15,9 @@ debug($session->read('previous_url'));?>
 <style>
     select[multiple="multiple"] { height:15rem;}
     .error-message {color:red;}
+
+    .control_left{float:left;width: 55%}
+    .control_right{float:right; width: 45%}/* incase you have applied some styles related to width*/
 </style>
 <div class="row">
     <aside class="column">
@@ -37,14 +40,31 @@ debug($session->read('previous_url'));?>
                     echo $this->Form->control('msnumber', ['label'=>"MS Code"]);
                     echo $this->Form->control('projectname', ['label'=>"Project Name"]);
                     echo $this->Form->control('streetname', ['label'=>"Street Name"]);
-                    echo $this->Form->control('suburb', ['label'=>"Suburb"]);
-                    echo $this->Form->control('postcode', ['label'=>"Postcode"]);
-                    $states = ['NSW'=>'NSW','QLD'=>'QLD','SA'=>'SA', 'TAS'=>'TAS','VIC	'=>'VIC	','WA'=>'WA'];
-                    echo $this->Form->control('state', ['label'=>"State", 'options' => $states, 'empty' => false]);
+                ?>
+                <div class="control_left">
+                    <?php
+                    echo $this->Form->control('postcode', array('label'=>"Postcode", 'style'=>'width:82%; '));
+                    ?>
+                </div>
+                <div class="control_right">
+                    <?php
+                    $states = ['VIC'=>'VIC','NSW'=>'NSW','QLD'=>'QLD','SA'=>'SA', 'TAS'=>'TAS','WA'=>'WA', 'NT'=>'NT'];
+                    echo $this->Form->control('state', array('label'=>"State", 'options' => $states, 'empty' => false, 'style'=>'width:100%; '));
+                    ?>
+                </div>
+                <div class="control_left">
+                    <?php
                     $phases = ['Proposal'=>'Proposal','Conceptual'=>'Conceptual','Design'=>'Design', 'Construction'=>'Construction','Completion'=>'Completion'];
-                    echo $this->Form->control('phase', ['label'=>"Phase", 'options' => $phases, 'empty' => false]);
+                    echo $this->Form->control('phase', ['label'=>"Phase", 'options' => $phases, 'empty' => false, 'style'=>'width:82%']);
+                    ?>
+                </div>
+                <div class="control_right">
+                    <?php
+                    echo $this->Form->control('duedate', ['label'=>"Due Date", 'empty' => true, 'style'=>'width:100%']);
+                    ?>
+                </div>
+                <?php
                     echo $this->Form->control('projdesc', ['label'=>"Project Description"]);
-                    echo $this->Form->control('duedate', ['label'=>"Due Date", 'empty' => true]);
                     //echo $this->Html->link(__('Add New Client'), ['action' => '../clients/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('client_id', ['label'=>"Client", 'options' => $clients, 'empty' => true]);
                     //echo $this->Html->link(__('Add New Associate'), ['action' => '../associates/add'], ['class' => 'button float-right']);
