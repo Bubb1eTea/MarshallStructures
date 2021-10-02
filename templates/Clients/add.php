@@ -12,6 +12,9 @@ $session->write('url', 'clients.add');
 debug($session->read('previous_url')); ?>
 <style>
     .error-message {color:red;}
+
+    .control_left{float:left;width: 55%}
+    .control_right{float:right; width: 45%}
 </style>
 <div class="row">
     <aside class="column">
@@ -25,14 +28,26 @@ debug($session->read('previous_url')); ?>
             <?= $this->Form->create($client) ?>
             <fieldset>
                 <legend><?= __('Add Client') ?></legend>
-                <?php echo $this->Form->control('firstname', ['label'=>"First Name"]);
-                    echo $this->Form->control('lastname', ['label'=>"Last Name"]);
-                    echo $this->Form->control('email', ['label'=>"Email"]);
-                    echo $this->Form->control('phonenumber', ['label'=>"Phone Number"]);
-                    echo $this->Form->control('position', ['label'=>"Position"]);
-                    //echo $this->Html->link(__('Add New Company'), ['action' => '../companys/add'], ['class' => 'button float-right']);
-                    echo $this->Form->control('company_id', ['options' => $companys, 'empty' => true]);
-                ?>
+                <div class="control_left">
+                    <?php echo $this->Form->control('firstname', ['label'=>"First Name", 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                    <?php echo $this->Form->control('lastname', ['label'=>"Last Name"]);?>
+                </div>
+                <div class="control_left">
+                    <?php echo $this->Form->control('email', ['label'=>"Email", 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                    <?php echo $this->Form->control('phonenumber', ['label'=>"Phone Number"]);?>
+                </div>
+                <div class="control_left">
+                    <?php echo $this->Form->control('position', ['label'=>"Position", 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                    <?php //echo $this->Html->link(__('Add New Company'), ['action' => '../companys/add'], ['class' => 'button float-right']);
+                        echo $this->Form->control('company_id', ['options' => $companys, 'empty' => true]);
+                    ?>
+                </div>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
