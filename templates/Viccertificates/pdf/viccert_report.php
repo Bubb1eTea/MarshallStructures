@@ -244,7 +244,7 @@
                 <p class=Normal-Schedule><span lang=EN-AU>&nbsp;</span></p>
             </td>
             <td width=86 valign=top style='width:64.45pt;padding:0cm 5.4pt 0cm 5.4pt'>
-                <p class=Normal-Schedule><span lang=EN-AU>Postcode:</span>
+                <p style="padding-left: 93px" class=Normal-Schedule><span lang=EN-AU>Postcode:</span>
                     <!-- insert postcode (issued to the proposed building work at) -->
                     <?= $viccertificate->project->postcode ?></p>
             </td>
@@ -257,7 +257,7 @@
     <p class=Normal-Schedule style='margin-top:12.0pt'><span lang=EN-AU style='font-size:14.0pt;color:black'>
         </span><b><span lang=EN-AU style='font-size:14.0pt'>Nature of proposed building work</span></b></p>
 
-    <p class=Normal-Schedule><span lang=EN-AU>Construction of a <span>
+    <p class=Normal-Schedule><span lang=EN-AU>Construction of <span>
                 <!-- insert construction type--> <?=$viccertificate->buildingtype?> </span></span></p>
 
     <p class=Normal-Schedule><span lang=EN-AU>Storeys contained: </span> <!-- insert stories contained -->

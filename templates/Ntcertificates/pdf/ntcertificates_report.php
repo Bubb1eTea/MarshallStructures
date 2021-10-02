@@ -246,7 +246,7 @@ background:#F3F3F3;
 border-top:none;
         padding:0cm 5.4pt 0cm 5.4pt;
         height:15.6pt'>
-<p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Owner (if known): < !-- Insert owner
+<p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'>Owner (if known): <!-- Insert owner
 
         -->
         <?=$ntcertificate->name?>
