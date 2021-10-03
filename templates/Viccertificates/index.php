@@ -9,6 +9,9 @@ $session = $this->request->getSession();
 $session->write('previous_url', $session->read('url'));
 $session->write('url', 'viccertificates.index');
 debug($session->read('previous_url')); ?>
+
+<?= $this->Html->css(['project']) ?>
+
 <div class="viccertificates index content">
     <?= $this->Html->link(__('New VIC Certificate'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('VIC Certificates') ?></h3>

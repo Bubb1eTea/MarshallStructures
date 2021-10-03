@@ -9,6 +9,9 @@ $session = $this->request->getSession();
 $session->write('previous_url', $session->read('url'));
 $session->write('url', 'ntcertificates.index');
 debug($session->read('previous_url')); ?>
+
+<?= $this->Html->css(['project']) ?>
+
 <div class="ntcertificates index content">
     <?= $this->Html->link(__('New NT Certificate'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('NT Certificates') ?></h3>
