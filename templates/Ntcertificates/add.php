@@ -13,18 +13,18 @@ use PhpParser\Node\Stmt\Label;
 ?>
 
 
-<?php 
+<?php
 
 $labels =  array();
 for($i=1; $i <= 100; $i++){
-$concat = "designstandards-ids-". $i; 
+$concat = "designstandards-ids-". $i;
 array_push($labels, $concat);
 }
 
 ?>
 
 <style>
-<?php 
+<?php
 for($i=1; $i <= 100; $i++){ ?>
 label[for=<?php echo $labels[$i-1] ?>]{
     font-size:small;
@@ -45,6 +45,11 @@ debug($session->read('previous_url')); ?>
 <style>
     select[multiple="multiple"] { height:30rem;}
     .error-message {color: #ff0000;}
+
+    .control_left{float:left;width: 55%}
+    .control_right{float:right; width: 45%}
+    .control_three{float:left; width: 30%;margin-inline: 15px}
+    .control_left_long{float:left;width: 50%}
 </style>
 <div class="row">
     <aside class="column">
@@ -58,11 +63,19 @@ debug($session->read('previous_url')); ?>
             <?= $this->Form->create($ntcertificate) ?>
             <fieldset>
                 <legend><?= __('Add NT Certificate') ?></legend>
+                <div class="control_left">
+                    <?php    echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true, 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                    <?php    echo $this->Form->control('lotportionnum', ['label' => "Lot/Portion Number"]);?>
+                </div>
+                <div class="control_left">
+                    <?php    echo $this->Form->control('location', ['label' => "Location", 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                    <?php    echo $this->Form->control('townhundred', ['label' => "Town/Hundred"]);?>
+                </div>
                 <?php
-                    echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true]);
-                    echo $this->Form->control('lotportionnum', ['label' => "Lot/Portion Number"]);
-                    echo $this->Form->control('location', ['label' => "Location"]);
-                    echo $this->Form->control('townhundred', ['label' => "Town/Hundred"]);
                     echo $this->Form->control('workdesc', ['label' => "Description of works"]);
                     echo $this->Form->control('drawingno', ['label' => "Drawing No."]);
                     echo $this->Form->control('other', ['label' => "Other"]);
@@ -124,44 +137,77 @@ debug($session->read('previous_url')); ?>
                                 'W' => 'W refer fig 3.1 AS1170.2'];
                     echo $this->Form->control('region', ['label' => "Region", 'options' => $region]);
                     echo $this->Html->image("regionalwindspeed.jpg");
-                    echo $this->Form->control('windspeed', ['label' => "Regional ultimate wind speed Vʳ (m/s)"]);
-
-                    $terraincat = [ '1aaa' => '1',
-                                    '2' => '2',
-                                    '2.5' => '2.5',
-                                    '3' => '3',
-                                    '4' => '4',
-                                    '5' => '5'];
-                    echo $this->Form->control('terraincat', ['label' => "Terrain Category", 'options' => $terraincat]);
-
-                    echo $this->Form->control('referenceheight', ['label' => "Reference height (m)"]);
-                    echo $this->Form->control('mz', ['label' => "Mᶻ⸴ᶜᵃᵗ"]);
-                    echo $this->Form->control('ms', ['label' => "Mˢ"]);
-                    echo $this->Form->control('mt', ['label' => "Mᵗ"]);
-                    echo $this->Form->control('windspeedrefheight', ['label' => "Vᵈᵉˢθ  Design Wind Speed at reference height (m/s)"]);
-                    echo $this->Form->control('intpressure', ['label' => "Internal Pressure Coefficients (Cₚ,ᵢ)"]);
-                    echo $this->Form->control('expressurewall', ['label' => "External Pressure Coefficients (Cₚ,ₑ) Walls"]);
-                    echo $this->Form->control('expressureroof', ['label' => "External Pressure Coefficients (Cₚ,ₑ) Roof"]);
-                    echo $this->Form->control('netpressureroofwall', ['label' => "Net Pressure Coefficients (Cₚ,ₙ) Roof / Walls"]);
-                    echo $this->Form->control('imposedloadfloorroof', ['label' => "Imposed Loads, kPa Floor / Roof"]);
-
+                ?>
+                <div class="control_left">
+                    <?php    echo $this->Form->control('windspeed', ['label' => "Regional ultimate wind speed Vʳ (m/s)", 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                    <?php
+                        $terraincat = [ '1aaa' => '1',
+                                        '2' => '2',
+                                        '2.5' => '2.5',
+                                        '3' => '3',
+                                        '4' => '4',
+                                        '5' => '5'];
+                        echo $this->Form->control('terraincat', ['label' => "Terrain Category", 'options' => $terraincat]);
+                    ?>
+                </div>
+                <?php    echo $this->Form->control('referenceheight', ['label' => "Reference height (m)", 'style'=>'width:45.1%']);?>
+                <div class="control_three">
+                    <?php    echo $this->Form->control('mz', ['label' => "Mᶻ⸴ᶜᵃᵗ"]);?>
+                </div>
+                <div class="control_three">
+                    <?php    echo $this->Form->control('ms', ['label' => "Mˢ"]);?>
+                </div>
+                <div class="control_three">
+                    <?php    echo $this->Form->control('mt', ['label' => "Mᵗ", ]);?>
+                </div>
+                <div class="control_left">
+                    <?php    echo $this->Form->control('windspeedrefheight', ['label' => "Vᵈᵉˢθ  Design Wind Speed at reference height (m/s)", 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                    <?php    echo $this->Form->control('intpressure', ['label' => "Internal Pressure Coefficients (Cₚ,ᵢ)"]);?>
+                </div>
+                <div class="control_three">
+                    <?php    echo $this->Form->control('expressurewall', ['label' => "External Pressure Coefficients (Cₚ,ₑ) Walls"]);?>
+                </div>
+                <div class="control_three">
+                    <?php    echo $this->Form->control('expressureroof', ['label' => "External Pressure Coefficients (Cₚ,ₑ) Roof"]);?>
+                </div>
+                <div class="control_three">
+                    <?php    echo $this->Form->control('netpressureroofwall', ['label' => "Net Pressure Coefficients (Cₚ,ₙ) Roof / Walls"]);?>
+                </div>
+                <?php    echo $this->Form->control('imposedloadfloorroof', ['label' => "Imposed Loads, kPa Floor / Roof", 'style'=>'width:45.1%']);?>
+                <div class="control_left_long">
+                <?php
                     $earthquakecat = [  'I' => 'I',
                                         'II' => 'II',
                                         'III' => 'III'];
-                    echo $this->Form->control('earthquakecat', ['label' => "Earthquake Design Category, EDC (Table 2.1 of AS 1170.4)", 'options' => $earthquakecat]);
-                    echo $this->Form->control('earthexceedance', ['label' => "Annual Probability of Exceedance for Earthquake Actions (BCA Table 1.2b)"]);
-                    echo $this->Form->control('importancelevel', ['label' => "Importance Level (BCA)"]);
-                    echo $this->Form->control('hazardfactor', ['label' => "Hazard Factor, Z (Section 3)"]);
-
+                    echo $this->Form->control('earthquakecat', ['label' => "Earthquake Design Category, EDC (Table 2.1 of AS 1170.4)", 'options' => $earthquakecat, 'style'=>'width:90.2%']);
+                ?>
+                </div>
+                <div class="control_right">
+                <?php    echo $this->Form->control('earthexceedance', ['label' => "Annual Probability of Exceedance for Earthquake Actions (BCA Table 1.2b)"]);?>
+                </div>
+                <?php    echo $this->Form->control('importancelevel', ['label' => "Importance Level (BCA)", 'style'=>'width:45.1%']);?>
+                <div class="control_left">
+                <?php    echo $this->Form->control('hazardfactor', ['label' => "Hazard Factor, Z (Section 3)", 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                <?php
                     $subsoilclass = [   'Ae' => 'Ae',
                                         'Be' => 'Be',
                                         'Ce' => 'Ce',
                                         'De' => 'De',
                                         'Ed' => 'Ed'];
                     echo $this->Form->control('subsoilclass', ['label' => "Class of Sub-Soil (Section 4)", 'options' => $subsoilclass]);
-
-                    echo $this->Form->control('bearingcap', ['label' => "Safe Foundation Bearing Capacity, kPa"]);
-
+                ?>
+                </div>
+                <div class="control_left">
+                <?php    echo $this->Form->control('bearingcap', ['label' => "Safe Foundation Bearing Capacity, kPa", 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                <?php
                     $siteclass = [  'A' => 'A',
                                     'S' => 'S',
                                     'M' => 'M',
@@ -171,14 +217,25 @@ debug($session->read('previous_url')); ?>
                                     'H2' => 'H2',
                                     'P' => 'P'];
                     echo $this->Form->control('siteclass', ['label' => "Site Classification (AS2870)", 'options' => $siteclass]);
+                ?>
+                </div>
+                <?php
                     echo $this->Form->control('exclusion', ['label' => "The following items are excluded and shall be certified separately"]);
                     echo $this->Form->control('comment', ['label' => "Comments"]);
-                    echo $this->Form->control('compname', ['label' => "Company Name"]);
-                    echo $this->Form->control('compntregnum', ['label' => "Company NT Registration Number"]);
-                    echo $this->Form->control('name', ['label' => "Name"]);
-                    echo $this->Form->control('ntregnum', ['label' => "Nominee/Individual NT Registration Number"]);
-                    echo $this->Form->control('date', ['label' => "Date of Issue", 'empty' => true]);
                 ?>
+                <div class="control_left">
+                <?php    echo $this->Form->control('compname', ['label' => "Company Name", 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                <?php    echo $this->Form->control('compntregnum', ['label' => "Company NT Registration Number"]);?>
+                </div>
+                <div class="control_left">
+                <?php    echo $this->Form->control('name', ['label' => "Name", 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                <?php    echo $this->Form->control('ntregnum', ['label' => "Nominee/Individual NT Registration Number"]);?>
+                </div>
+                <?php    echo $this->Form->control('date', ['label' => "Date of Issue", 'empty' => false, 'style'=>'width:45.1%']);?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
