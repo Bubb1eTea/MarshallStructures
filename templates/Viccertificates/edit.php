@@ -10,18 +10,18 @@
 ?>
 
 
-<?php 
+<?php
 
 $labels =  array();
 for($i=1; $i <= 100; $i++){
-$concat = "designstandards-ids-". $i; 
+$concat = "designstandards-ids-". $i;
 array_push($labels, $concat);
 }
 
 ?>
 
 <style>
-<?php 
+<?php
 for($i=1; $i <= 100; $i++){ ?>
 label[for=<?php echo $labels[$i-1] ?>]{
     font-size:small;
@@ -40,6 +40,10 @@ debug($session->read('previous_url')); ?>
 <style>
     select[multiple="multiple"] { height:30rem;}
     .error-message {color: #ff0000;}
+
+    .control_left{float:left;width: 55%}
+    .control_right{float:right; width: 45%}
+    .control_left_long{float:left;width: 50%}
 </style>
 <div class="row">
     <aside class="column">
@@ -57,21 +61,30 @@ debug($session->read('previous_url')); ?>
         <div class="viccertificates form content">
             <?= $this->Form->create($viccertificate) ?>
             <fieldset>
-                <legend><?= __('Edit VIC Certificate') ?></legend>
-                <?php
-                echo $this->Form->control('project_id', ['options' => $projects]);
-                echo $this->Form->control('company_id', ['options' => $companys, 'empty' => true, 'label'=>'Surveyor: This certificate is issued to']);
-                $building= ['a new building'=>'a new building',
-                    'an extension'=>'an extension',
-                    'an alteration'=>'an alteration',
-                    'a change of use'=>'a change of use',
-                    'a demolition'=>'a demonlition',
-                    'a removal'=>'a removal',
-                    'a re-erection of a building'=>'a re-erection of a building'];
-                echo $this->Form->control('buildingtype', ['options'=>$building, 'empty'=>true, 'label'=>'Construction of a']);
-                echo $this->Form->control('numberofstorey', ['label'=>'Number of Storeys']);
-                echo $this->Form->control('riseinstory', ['label'=>'Rise in Storeys']);
-                echo $this->Form->control('effectiveheight', ['label'=>'Effective Height']);
+                <legend><?= __('Add VIC Certificate') ?></legend>
+                <?php    echo $this->Form->control('project_id', ['options' => $projects]);?>
+                <div class="control_left">
+                    <?php    echo $this->Form->control('company_id', ['options' => $companys, 'empty' => true, 'label'=>'Surveyor: This certificate is issued to', 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                    <?php
+                    $building= ['a new building'=>'a new building',
+                        'an extension'=>'an extension',
+                        'an alteration'=>'an alteration',
+                        'a change of use'=>'a change of use',
+                        'a demolition'=>'a demonlition',
+                        'a removal'=>'a removal',
+                        'a re-erection of a building'=>'a re-erection of a building'];
+                    echo $this->Form->control('buildingtype', ['options'=>$building, 'empty'=>true, 'label'=>'Construction of a']);
+                    ?>
+                </div>
+                <div class="control_left">
+                    <?php    echo $this->Form->control('numberofstorey', ['label'=>'Number of Storeys', 'style'=>'width:82%']);?>
+                </div>
+                <div class="control_right">
+                    <?php    echo $this->Form->control('riseinstory', ['label'=>'Rise in Storeys']);?>
+                </div>
+                <?php    echo $this->Form->control('effectiveheight', ['label'=>'Effective Height', 'style'=>'width:45.1%']);
                 $buildingclass = [   'Class 1a'  => 'Class 1a  - A detached house / A group of two or more attached dwelling each separated by a fire-resisting wall',
                     'Class 1b'  => 'Class 1b  - A boarding house, guest house hostel with total area not exceeding 300m² and in which not more than 12 persons would ordinarily be resident / 3 or more single dwellings located in one allotment and used for short-term holiday accommodation',
                     'Class 2'   => 'Class 2   - A building containing 2 or more sole-occupancy units each being a separate dwelling',
@@ -90,21 +103,35 @@ debug($session->read('previous_url')); ?>
                     'Class 10c' => 'Class 10c - A private bushfire shelter'];
                 echo $this->Form->control('buildingclass', ['label'=>'Class of Building (BCA)', 'options'=>$buildingclass]);
                 echo $this->Html->image("buildingtype.jpg");
-                $constructiontype=['N/A'=>'N/A', 'A'=>'A', 'B'=>'B', 'C'=>'C'];
-                echo $this->Form->control('constructiontype', ['label'=>'Type of Construction (BCA volume 1 §C1.1) eg. Type A fire-resisting construction', 'options'=>$constructiontype]);
-                echo $this->Form->control('workrelatingto', ['label'=>'Design or part of the design of building work relating to']);
-                echo $this->Form->control('drawingsproducedby', ['label'=>'Drawings produced by']);
-                echo $this->Form->control('documentsproduced', ['label'=>'Drawings relating to the design that is certified by this certificate.
+                ?>
+                <div class="control_left_long">
+                    <?php
+                    $constructiontype=['N/A'=>'N/A', 'A'=>'A', 'B'=>'B', 'C'=>'C'];
+                    echo $this->Form->control('constructiontype', ['label'=>'Type of Construction (BCA volume 1 §C1.1) eg. Type A fire-resisting construction', 'options'=>$constructiontype, 'style'=>'width:90.2%']);
+                    ?>
+                </div>
+                <div class="control_right">
+                    <?php    echo $this->Form->control('workrelatingto', ['label'=>'Design or part of the design of building work relating to']);?>
+                </div>
+                <?php
+                echo $this->Form->control('drawingsproducedby', ['label'=>'Drawings produced by', 'style'=>'width:45.1%']);
+                echo $this->Form->control('documentsproduced', ['label'=>'Drawings relating to the design that is certified by this certificate.?>
                     Use a ; to separate document number, date and revision, e.g. 1;10/05/2020;3']);
                 echo $this->Form->control('documentscertified', ['label'=>'Documents setting out the design that is certified by this certificate
                     Use a ; to separate document number, date, type of document, pages and who it is prepared by, e.g. 1;10/05/2020;drawings;17;Ben']);
                 echo $this->Form->control('performancereq', ['label'=>'Relevant performance requirement']);
                 echo $this->Form->control('performancesolution',['label'=>'Details of performance solution required by regulation 124']);
                 echo $this->Form->control('designstandards._ids', array('label' => "Design Basis (hold 'ctrl' when selecting more than one)", 'options' => $designstandards, 'multiple' => 'checkbox'));
-                $prepared = ['prepared'=>'prepared', 'did not prepare'=>'did not prepare'];
-                echo $this->Form->control('prepared', ['label'=>'I ______ the design', 'options'=>$prepared]);
-                echo $this->Form->control('dateofissue', ['label'=>'Date of Issue']);
                 ?>
+                <div class="control_left">
+                    <?php
+                    $prepared = ['prepared'=>'prepared', 'did not prepare'=>'did not prepare'];
+                    echo $this->Form->control('prepared', ['label'=>'I ______ the design', 'options'=>$prepared, 'style'=>'width:82%']);
+                    ?>
+                </div>
+                <div class="control_right">
+                    <?php    echo $this->Form->control('dateofissue', ['label'=>'Date of Issue']);?>
+                </div>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
