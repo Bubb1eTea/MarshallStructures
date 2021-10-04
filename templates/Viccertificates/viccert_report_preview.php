@@ -458,8 +458,7 @@
         <tr>
             <td width=586 valign=bottom style='width:439.2pt;border:solid windowtext 1.0pt;
       border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
-                <?=$viccertificate->designstandards[$x]['designcode']?> -
-                <?=$viccertificate->designstandards[$x]['designdesc']?>
+                <?=$viccertificate->designstandards[$x]['designcode']?> 
                 <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
       3.0pt;margin-left:0cm'><b><span lang=EN-AU>&nbsp;</span></b></p>
             </td>

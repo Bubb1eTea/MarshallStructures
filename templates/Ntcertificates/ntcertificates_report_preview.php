@@ -345,8 +345,7 @@ border-top:none;
                         list relevant Standards used in the design)</span><br>
                     <?php
                       for($x=0; $x<count($ntcertificate->designstandards); $x++){?>
-                    <p><?=$ntcertificate->designstandards[$x]['designcode']?> -
-                        <?=$ntcertificate->designstandards[$x]['designdesc']?></p>
+                    <p><?=$ntcertificate->designstandards[$x]['designcode']?> </p>
                     <?php }?>
                 </p>
                 <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt;font-weight:normal'>&nbsp; </span></p>

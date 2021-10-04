@@ -202,7 +202,7 @@
         <tr>
             <td width=85 valign=top style='width:63.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
                 <p class=Normal-Schedule><span lang=EN-AU>Address:</span> <!-- Insert address -->
-                    <?= $viccertificate->company->streetname ?>, <?= $viccertificate->company->suburb ?></p>
+                    <?= $viccertificate->company->streetname ?>, <?= $viccertificate->company->suburb ?>, <?= $viccertificate->company->state ?></p>
             </td>
             <td width=359 valign=top style='width:269.35pt;padding:0cm 5.4pt 0cm 5.4pt'>
                 <p class=Normal-Schedule><span lang=EN-AU>&nbsp;</span> </p>
@@ -241,7 +241,7 @@
         <tr>
             <td width=85 valign=top style='width:63.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
                 <p class=Normal-Schedule><span lang=EN-AU>Address:</span><!-- insert address -->
-                    <?= $viccertificate->project->streetname ?>, <?= $viccertificate->project->suburb ?></p>
+                    <?= $viccertificate->project->streetname ?>, <?= $viccertificate->project->suburb ?>, <?= $viccertificate->project->state ?> </p>
             </td>
             <td width=359 valign=top style='width:269.35pt;padding:0cm 5.4pt 0cm 5.4pt'>
                 <p class=Normal-Schedule><span lang=EN-AU>&nbsp;</span></p>
@@ -260,7 +260,7 @@
     <p class=Normal-Schedule style='margin-top:12.0pt'><span lang=EN-AU style='font-size:14.0pt;color:black'>
         </span><b><span lang=EN-AU style='font-size:14.0pt'>Nature of proposed building work</span></b></p>
 
-    <p class=Normal-Schedule><span lang=EN-AU>Construction of <span>
+    <p class=Normal-Schedule><span lang=EN-AU>Construction of<span>
                 <!-- insert construction type--> <?=$viccertificate->buildingtype?> </span></span></p>
 
     <p class=Normal-Schedule><span lang=EN-AU>Storeys contained: </span> <!-- insert stories contained -->
@@ -403,7 +403,7 @@
     </table>
 
     <p class=Normal-Schedule style='margin-top:12.0pt;page-break-after:avoid'><b><span lang=EN-AU
-                style='color:black'>Performance solution</span></b></p>
+                style='color:black'> <br> <br> Performance solution</span></b></p> 
 
     <p class=Normal-Schedule style='margin-bottom:6.0pt'><span lang=EN-AU style='color:black'> A performance solution
             forms part of the design certified by
@@ -458,8 +458,7 @@
         <tr>
             <td width=586 valign=bottom style='width:439.2pt;border:solid windowtext 1.0pt;
       border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
-                <?=$viccertificate->designstandards[$x]['designcode']?> -
-                <?=$viccertificate->designstandards[$x]['designdesc']?>
+                <?=$viccertificate->designstandards[$x]['designcode']?>
                 <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
       3.0pt;margin-left:0cm'><b><span lang=EN-AU>&nbsp;</span></b></p>
             </td>

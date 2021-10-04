@@ -343,8 +343,7 @@ border-top:none;
                 <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt;font-weight:normal'>&nbsp;
                         <?php
                       for($x=0; $x<count($ntcertificate->designstandards); $x++){?>
-                        <p><?=$ntcertificate->designstandards[$x]['designcode']?> -
-                            <?=$ntcertificate->designstandards[$x]['designdesc']?></p>
+                        <p><?=$ntcertificate->designstandards[$x]['designcode']?> </p>
                         <?php }?></span></p>
                 <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt;font-weight:normal'>&nbsp;</span></p>
                 <p class=NormalBold><span lang=EN-AU style='font-size:9.0pt;font-weight:normal'>&nbsp;</span></p>
@@ -704,7 +703,7 @@ border-top:none;
                 </p>
 
                 <!-- insert NT registration number -->
-                <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> <?=$ntcertificate->ntregnum?> </p>
+                <p class=MsoNormal><span lang=EN-AU style='font-size:8.0pt'> 301783ES </p>
             </td>
             <td width=195 colspan=2 valign=top style='width:146.5pt;border-top:none;
                   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -822,7 +821,7 @@ border-top:none;
     <p class=MsoNormal style='margin-left:36.0pt;text-align:justify'><span lang=EN-AU>&nbsp;</span></p>
     <p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-indent:
             -18.0pt'><span lang=EN-AU>2)<span style='font:7.0pt "Times New Roman"'>&nbsp;
-            </span></span><span lang=EN-AU>Where works are prescribed building works under
+            </span></span><span class=spacefix lang=EN-AU>&nbsp;Where works are prescribed building works under
             the <i>NT Building Act</i>, the building certifier must be provided with a copy
             of the inspection record and no further works must be carried out by the
             builder until the building certifier issues a release to proceed with further
