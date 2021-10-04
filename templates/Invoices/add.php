@@ -132,6 +132,35 @@ debug($session->read('previous_url')); ?>
                             });
                         }
                     });
+
+                    document.getElementById('feeproposal-id').addEventListener('change', function(){
+                        var feeproposalid = $('#feeproposal-id').val();
+                        var urlnew = "<?= $this->Url->build(['controller' => 'Invoices', 'action' => 'feeproposaltotal']) ?>"+'/'+feeproposalid;
+                        var csrfToken = $('meta[name="csrfToken"]').attr('content');
+
+                        document.getElementById('completedpercentage').value = '';
+                        document.getElementById('total').value = '';
+                        document.getElementById('totalgst').value = '';
+                        document.getElementById('grandtotal').value = '';
+
+                        $.ajax({
+                            type: 'get',
+                            url: urlnew,
+                            datatype: 'json',
+                            headers: {'X-CSRF-TOKEN': csrfToken},
+                            success: function (result) {
+                                $jsonresult=JSON.parse(result);
+
+                                if (result) {
+                                    document.getElementById('feeproposaltotal').value = $jsonresult;
+                                }
+
+                            },
+                            error: function (result) {
+                                //  console.log(result);
+                            }
+                        });
+                    });
                 });
             </script>
         </div>

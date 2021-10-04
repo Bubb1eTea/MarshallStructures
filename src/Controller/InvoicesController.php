@@ -195,4 +195,17 @@ class InvoicesController extends AppController
         exit;
 
     }
+
+    public function feeproposaltotal($id=null)
+    {
+        $this->loadModel('Feeproposals');
+        $this->autoRender = false;
+        $this->layout = false;
+        $feeproposal = $this->Feeproposals->get($id);
+
+        $this->set(compact('feeproposal'));
+        echo json_encode($feeproposal->grandtotal);
+        exit;
+
+    }
 }
