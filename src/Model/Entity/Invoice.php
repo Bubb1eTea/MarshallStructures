@@ -13,7 +13,7 @@ use Cake\ORM\Entity;
  * @property int $feeproposal_id
  * @property \Cake\I18n\FrozenTime $datecreated
  * @property string|null $invdesc
-* @property int $feeproposaltotal
+* @property string $feeproposaltotal
  * @property string $completedpercentage
  * @property string $total
  * @property string $totalgst
