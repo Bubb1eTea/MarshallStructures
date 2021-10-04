@@ -72,6 +72,7 @@ debug($session->read('previous_url')); ?>
                     document.getElementById('project-id').addEventListener('change', function(){
                         var projectid = $('#project-id').val();
                         var urlnew = "<?= $this->Url->build(['controller' => 'Invoices', 'action' => 'test']) ?>"+'/'+projectid;
+                        var urlnew1 = "<?= $this->Url->build(['controller' => 'Invoices', 'action' => 'feeproposalnum']) ?>"+'/'+projectid;
                         var csrfToken = $('meta[name="csrfToken"]').attr('content');
 
                         $.ajax({
@@ -90,6 +91,34 @@ debug($session->read('previous_url')); ?>
                                 else
                                 {
                                     document.getElementById('invoicenum').value=1 ;
+                                }
+
+                            },
+                            error: function (result) {
+                                //  console.log(result);
+                            }
+                        });
+
+                        $.ajax({
+                            type: 'get',
+                            url: urlnew1,
+                            datatype: 'json',
+                            headers: {  'X-CSRF-TOKEN': csrfToken   },
+                            success: function (result) {
+
+                                if(result)
+                                {
+                                    document.getElementById('feeproposal-id').innerHTML = "";
+                                    $jsonresult= JSON.parse(result);
+                                    var listItems="";
+                                    for(i=0;i<$jsonresult.length;i++) {
+                                        listItems += '<option value="' + $jsonresult[i]['id'] + '">' + $jsonresult[i]['feeproposalnum'] + '</option>';
+                                    }
+                                    $('#feeproposal-id').html(listItems);
+                                }
+                                else
+                                {
+                                    document.getElementById('feeproposal-id').innerHTML = "";
                                 }
 
                             },

@@ -41,7 +41,7 @@ class FeeproposalsTable extends Table
         parent::initialize($config);
 
         $this->setTable('feeproposals');
-        $this->setDisplayField('id');
+        $this->setDisplayField('feeproposalnum');
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Projects', [

@@ -79,7 +79,7 @@ class InvoicesController extends AppController
     public function edit($id = null)
     {
         $invoice = $this->Invoices->get($id, [
-            'contain' => ['Projects'],
+            'contain' => ['Projects'=>['Feeproposals']],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $invoice = $this->Invoices->patchEntity($invoice, $this->request->getData());
@@ -101,6 +101,7 @@ class InvoicesController extends AppController
 
         $this->set(compact('invoice', 'projects', 'feeproposals'));
         $this->set(compact('feeproposal'));
+
     }
 
     /**
@@ -176,6 +177,21 @@ class InvoicesController extends AppController
 
         $this->set(compact('project'));
         echo json_encode( (count($project->invoices )));
+        exit;
+
+    }
+
+    public function feeproposalnum($id=null)
+    {
+        $this->loadModel('Projects');
+        $this->autoRender = false;
+        $this->layout = false;
+        $project = $this->Projects->get($id, [
+            'contain' => ['Clients', 'Associates', 'Feeproposals', 'Invoices', 'Ntcertificates', 'Viccertificates'],
+        ]);
+
+        $this->set(compact('project'));
+        echo json_encode($project->feeproposals);
         exit;
 
     }
