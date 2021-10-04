@@ -54,7 +54,7 @@ debug($session->read('previous_url'));?>
                     echo $this->Form->control('total', ['label'=>"Subtotal"]);
                     echo $this->Form->control('totalgst', ['label'=>"Total GST"]);
                     echo $this->Form->control('grandtotal', ['label'=>"Grand Total"]);
-                    $days = ['7'=>'7','30'=>'30'];
+                    $days = ['7'=>'7 days','30'=>'30 days'];
                     echo $this->Form->control('paywithinday',['label' =>"Pay within how many days?",'options' => $days, 'empty' => false]);
                 ?>
             </fieldset>
