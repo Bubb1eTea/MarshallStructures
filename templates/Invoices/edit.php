@@ -168,19 +168,6 @@ debug($session->read('previous_url'));?>
                                 }
                             });
                         }
-                        /*
-                       $.ajax({
-                           type: 'get',
-                           url: urlnew,
-                           datatype: 'json',
-                           headers:{'X-CSRF-Token':<?= json_encode($this->request->getParam('_csrfToken')) ?>},
-                             success: function (result) {
-                              console.log(json.parse(result));
-                            }
-
-
-                        });
-                        */
                     });
                 });
             </script>
