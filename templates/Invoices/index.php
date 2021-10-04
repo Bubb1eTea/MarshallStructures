@@ -35,7 +35,7 @@ debug($session->read('previous_url')); ?>
                     <td><?= $invoice->has('project') ? $this->Html->link($invoice->project->msnumber, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></td>
                     <td><?= $invoice->has('project') ? $this->Html->link($invoice->project->projectname, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></td>
                     <td><?= $this->Number->format($invoice->invoicenum) ?></td>
-                    <td><?= $invoice->has('feeproposal') ? $this->Html->link($invoice->feeproposal->id, ['controller' => 'Feeproposals', 'action' => 'view', $invoice->feeproposal->id]) : '' ?></td>
+                    <td><?= $invoice->has('feeproposal') ? $this->Html->link($invoice->feeproposal->feeproposalnum, ['controller' => 'Feeproposals', 'action' => 'view', $invoice->feeproposal->id]) : '' ?></td>
                     <td><?= $this->Number->format($invoice->completedpercentage, ['after' => '%']) ?></td>
                     <td><?= $this->Number->format($invoice->grandtotal, ['places' => 2, 'before' => '$']) ?></td>
                     <td><?= date('d/m/y', strtotime($invoice->datecreated. ' + ' .$invoice->paywithinday.' days')) ?></td>
