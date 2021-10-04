@@ -57,6 +57,42 @@ debug($session->read('previous_url'));?>
 
             <script>
                 $(document).ready(function() {
+                    var projectid = $('#project-id').val();
+                    var urlnew = "<?= $this->Url->build(['controller' => 'Invoices', 'action' => 'test']) ?>"+'/'+projectid;
+                    var urlnew1 = "<?= $this->Url->build(['controller' => 'Invoices', 'action' => 'feeproposalnum']) ?>"+'/'+projectid;
+                    var csrfToken = $('meta[name="csrfToken"]').attr('content');
+                    var feeproposalid = $('#feeproposal-id').val();
+                    var feeproposalobj = document.getElementById("feeproposal-id");
+                    var feeproposalnum = feeproposalobj.options[feeproposalobj.selectedIndex].text;
+
+                    $.ajax({
+                        type: 'get',
+                        url: urlnew1,
+                        datatype: 'json',
+                        headers: {'X-CSRF-TOKEN': csrfToken},
+                        success: function (result) {
+
+                            if (result) {
+                                document.getElementById('feeproposal-id').innerHTML = "";
+                                $jsonresult = JSON.parse(result);
+                                var listItems = "";
+
+                                listItems += '<option value="' + feeproposalid + '">' + feeproposalnum + '</option>';
+
+                                    for (i = 0; i < $jsonresult.length; i++) {
+                                        if($jsonresult[i]['id']!=feeproposalid) {
+                                            listItems += '<option value="' + $jsonresult[i]['id'] + '">' + $jsonresult[i]['feeproposalnum'] + '</option>';
+                                        }
+                                    }
+                                $('#feeproposal-id').html(listItems);
+                            }
+
+                        },
+                        error: function (result) {
+                            //  console.log(result);
+                        }
+                    });
+
                     $('input').keyup(function(ev) {
                         var completedpercentage = (parseFloat($('#completedpercentage').val())* 0.1) || 0;
                         var feeproposaltotal = (parseFloat($('#feeproposaltotal').val())* 0.1) || 0;
@@ -75,10 +111,6 @@ debug($session->read('previous_url'));?>
                     });
 
                     document.getElementById('project-id').addEventListener('change', function(){
-                        var projectid = $('#project-id').val();
-                        var urlnew = "<?= $this->Url->build(['controller' => 'Invoices', 'action' => 'test']) ?>"+'/'+projectid;
-                        var urlnew1 = "<?= $this->Url->build(['controller' => 'Invoices', 'action' => 'feeproposalnum']) ?>"+'/'+projectid;
-                        var csrfToken = $('meta[name="csrfToken"]').attr('content');
 
                         if(projectid==='*'){
                             document.getElementById('invoicenum').value='' ;
