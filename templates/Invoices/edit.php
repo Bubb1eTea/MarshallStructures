@@ -34,27 +34,22 @@ debug($session->read('previous_url'));?>
         <div class="invoices form content">
             <?= $this->Form->create($invoice) ?>
             <fieldset>
-                <legend><?= __('Edit Invoice #'.$invoice->invoicenum.' for project '.$invoice->project->msnumber) ?></legend>
+                <legend><?= __('Add Invoice') ?></legend>
                 <?php
-                // debug($feeproposal->first());
-                // debug($feeproposal->first()['Feeproposals']['total']);
-                // debug($feeproposal->first()['Feeproposals']['totalgst']);
-                // debug($feeproposal->first()['Feeproposals']['grandtotal']);
-
-                    //echo $this->Html->link(__('Add New Project'), ['action' => '../projects/add'], ['class' => 'button float-right']);
-                    echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true]);
-                    echo $this->Form->control('invoicenum', ['label'=>'Invoice Number']);
-                    echo $this->Html->link(__('View All Fee Proposals'), ['action' => '../feeproposals'], ['class' => 'button float-right', 'target' => '_blank']);
-                    echo $this->Form->control('feeproposal_id', ['options' => $feeproposals, 'empty' => true, 'label'=>"Fee Proposal"]);
-                    echo $this->Form->control('datecreated', ['label'=>"Date Created"]);
-                    echo $this->Form->control('invdesc', ['label'=>"Invoice Description"]);
-                    echo $this->Form->control('completedpercentage', ['label'=>"Completed Percentage", 'placeholder' => '%', 'type' => "number"]);
-                    echo $this->Form->control('feeproposaltotal', ['label'=>"Fee Proposal Total"]);
-                    echo $this->Form->control('total', ['label'=>"Subtotal"]);
-                    echo $this->Form->control('totalgst', ['label'=>"Total GST"]);
-                    echo $this->Form->control('grandtotal', ['label'=>"Grand Total"]);
-                    $days = ['7'=>'7 days','30'=>'30 days'];
-                    echo $this->Form->control('paywithinday',['label' =>"Pay within how many days?",'options' => $days, 'empty' => false]);
+                //echo $this->Html->link(__('Add New Project'), ['action' => '../projects/add'], ['class' => 'button float-right']);
+                echo $this->Form->control('project_id', ['options' => $projects,'empty' =>['*'=>'SELECT...']]);
+                echo $this->Form->control('invoicenum', ['label'=>'Invoice Number']);
+                echo $this->Html->link(__('Add a Fee Proposal'), ['action' => '../feeproposals/add'], ['class' => 'button float-right', 'target' => '_blank']);
+                echo $this->Form->control('feeproposal_id', ['options' => $feeproposals, 'label'=>"Fee Proposal", 'empty'=>true]);
+                echo $this->Form->control('datecreated', ['label'=>"Date Created"]);
+                echo $this->Form->control('invdesc', ['label'=>"Invoice Description"]);
+                echo $this->Form->control('completedpercentage', ['label'=>"Completed Percentage", 'placeholder' => '%', 'type' => "number"]);
+                echo $this->Form->control('feeproposaltotal', ['label'=>"Fee Proposal Total"]);
+                echo $this->Form->control('total', ['label'=>"Subtotal"]);
+                echo $this->Form->control('totalgst', ['label'=>"Total GST"]);
+                echo $this->Form->control('grandtotal', ['label'=>"Grand Total"]);
+                $days = ['7'=>'7 days','30'=>'30 days'];
+                echo $this->Form->control('paywithinday',['label' =>"Pay within how many days?",'options' => $days, 'empty' => false]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
@@ -78,34 +73,69 @@ debug($session->read('previous_url'));?>
                         var divobj = document.getElementById('grandtotal');
                         divobj.value = grandtotal;
                     });
+
                     document.getElementById('project-id').addEventListener('change', function(){
                         var projectid = $('#project-id').val();
                         var urlnew = "<?= $this->Url->build(['controller' => 'Invoices', 'action' => 'test']) ?>"+'/'+projectid;
+                        var urlnew1 = "<?= $this->Url->build(['controller' => 'Invoices', 'action' => 'feeproposalnum']) ?>"+'/'+projectid;
                         var csrfToken = $('meta[name="csrfToken"]').attr('content');
 
-                        $.ajax({
-                            type: 'get',
-                            url: urlnew,
-                            datatype: 'json',
-                            headers: {  'X-CSRF-TOKEN': csrfToken   },
-                            success: function (result) {
+                        if(projectid==='*'){
+                            document.getElementById('invoicenum').value='' ;
+                            document.getElementById('feeproposal-id').innerHTML = "";
 
-                                var invoiceNum=parseInt(result)+1;
-                                console.log(invoiceNum);
-                                if(result)
-                                {
-                                    document.getElementById('invoicenum').value=invoiceNum ;
-                                }
-                                else
-                                {
-                                    document.getElementById('invoicenum').value=1 ;
-                                }
+                        }
+                        else {
+                            $.ajax({
+                                type: 'get',
+                                url: urlnew,
+                                datatype: 'json',
+                                headers: {'X-CSRF-TOKEN': csrfToken},
+                                success: function (result) {
 
-                            },
-                            error: function (result) {
-                                //  console.log(result);
-                            }
-                        });
+                                    var invoiceNum = parseInt(result) + 1;
+                                    console.log(invoiceNum);
+                                    if (result) {
+                                        document.getElementById('invoicenum').value = invoiceNum;
+                                    } else {
+                                        document.getElementById('invoicenum').value = 1;
+                                    }
+
+                                },
+                                error: function (result) {
+                                    //  console.log(result);
+                                }
+                            });
+
+                            $.ajax({
+                                type: 'get',
+                                url: urlnew1,
+                                datatype: 'json',
+                                headers: {'X-CSRF-TOKEN': csrfToken},
+                                success: function (result) {
+
+                                    if (result) {
+                                        document.getElementById('feeproposal-id').innerHTML = "";
+                                        $jsonresult = JSON.parse(result);
+                                        var listItems = "";
+                                        if ($jsonresult.length === 0) {
+                                            listItems += '<option disabled selected value>' + "NO FEE PROPOSALS FOR THIS PROJECT." + '</option>';
+                                        } else {
+                                            listItems += '<option value=empty>' + "SELECT..." + '</option>';
+
+                                            for (i = 0; i < $jsonresult.length; i++) {
+                                                listItems += '<option value="' + $jsonresult[i]['id'] + '">' + $jsonresult[i]['feeproposalnum'] + '</option>';
+                                            }
+                                        }
+                                        $('#feeproposal-id').html(listItems);
+                                    }
+
+                                },
+                                error: function (result) {
+                                    //  console.log(result);
+                                }
+                            });
+                        }
                         /*
                        $.ajax({
                            type: 'get',
