@@ -22,16 +22,8 @@ debug($session->read('previous_url')); ?>
     </aside>
     <div class="column-responsive column-80">
         <div class="projects view content">
-            <h3><?= h($project->projectname) ?></h3>
+            <h3><?= h($project->project_display) ?></h3>
             <table>
-                <tr>
-                    <th><?= __('MS Code') ?></th>
-                    <td><?= h($project->msnumber) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Project Name') ?></th>
-                    <td><?= h($project->projectname) ?></td>
-                </tr>
                 <tr>
                     <th><?= __('Street Name') ?></th>
                     <td><?= h($project->streetname) ?></td>
