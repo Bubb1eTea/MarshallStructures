@@ -168,7 +168,7 @@
                 <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB>&nbsp;</span></p>
             </td>
             <td width="45%" colspan=2 valign=top style='width:45.02%;border:none;border-right:solid windowtext 1.0pt;padding:0cm 10.8pt 0cm 10.8pt'>
-                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB>GST</span></p>
+                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB>SALES TAX</span></p>
             </td>
             <td width="14%" valign=top style='width:14.16%;border:none;border-right:solid windowtext 1.0pt;padding:0cm 10.8pt 0cm 10.8pt'>
                 <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->totalgst ?></span></p>
@@ -179,7 +179,7 @@
                 <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB>&nbsp;</span></p>
             </td>
             <td width="45%" colspan=2 valign=top style='width:45.02%;border:none;border-right:solid windowtext 1.0pt;padding:0cm 10.8pt 0cm 10.8pt'>
-                <p class=MsoNormal align=right style='text-align:right'><b><span lang=EN-GB>TOTALDUE</span></b></p>
+                <p class=MsoNormal align=right style='text-align:right'><b><span lang=EN-GB>TOTAL DUE</span></b></p>
             </td>
             <td width="14%" valign=top style='width:14.16%;border:solid windowtext 1.0pt;border-left:none;padding:0cm 10.8pt 0cm 10.8pt'>
                 <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->grandtotal ?></span></p>
