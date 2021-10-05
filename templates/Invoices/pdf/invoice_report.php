@@ -127,7 +127,7 @@
                 <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->completedpercentage ?>%</span></p>
             </td>
             <td width="14%" valign=top style='width:14.16%;border:none;border-right:solid windowtext 1.0pt;padding:0cm 10.8pt 0cm 10.8pt'>
-                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->total ?>$</span></p>
+                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->total ?></span></p>
             </td>
         </tr>
         <tr style='page-break-inside:avoid'>
@@ -160,7 +160,7 @@
                 <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB>SUBTOTAL</span></p>
             </td>
             <td width="14%" valign=top style='width:14.16%;border:none;border-right:solid windowtext 1.0pt;padding:0cm 10.8pt 0cm 10.8pt'>
-                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB> <?= $invoice->total ?>$ </span></p>
+                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB> <?= $invoice->total ?></span></p>
             </td>
         </tr>
         <tr style='page-break-inside:avoid'>
@@ -171,7 +171,7 @@
                 <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB>GST</span></p>
             </td>
             <td width="14%" valign=top style='width:14.16%;border:none;border-right:solid windowtext 1.0pt;padding:0cm 10.8pt 0cm 10.8pt'>
-                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->totalgst ?>$</span></p>
+                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->totalgst ?></span></p>
             </td>
         </tr>
         <tr style='page-break-inside:avoid'>
@@ -182,7 +182,7 @@
                 <p class=MsoNormal align=right style='text-align:right'><b><span lang=EN-GB>TOTALDUE</span></b></p>
             </td>
             <td width="14%" valign=top style='width:14.16%;border:solid windowtext 1.0pt;border-left:none;padding:0cm 10.8pt 0cm 10.8pt'>
-                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->grandtotal ?>$</span></p>
+                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->grandtotal ?></span></p>
             </td>
         </tr>
         <tr height=0>
