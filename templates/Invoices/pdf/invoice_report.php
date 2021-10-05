@@ -57,9 +57,10 @@
     <p class=MsoNormal><img width=338 height=77 id="Picture 1" src="http://localhost/team078-app_fit3048/webroot/img/Logo_2.png">
 
         <b>
-            <span lang=EN-GB style='font-size:18.0pt; margin-left: 9%;'> </span>
-        </b>
+            <span lang=EN-GB style='font-size:18.0pt; margin-left: 20%;'> </span>
+
         <span lang=EN-GB style='font-size:28.0pt;font-family:"Arial Black",sans-serif;color:gray'>INVOICE</span>
+        </b>
     </p>
 
     <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
