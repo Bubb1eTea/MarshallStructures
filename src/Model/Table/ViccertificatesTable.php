@@ -97,7 +97,7 @@ class ViccertificatesTable extends Table
 
         $validator
             ->scalar('buildingclass')
-            ->maxLength('buildingclass', 200)
+            ->maxLength('buildingclass', 500)
             ->allowEmptyString('buildingclass');
 
         $validator
