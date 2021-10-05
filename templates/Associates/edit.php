@@ -6,6 +6,29 @@
  * @var string[]|\Cake\Collection\CollectionInterface $projects
  */
 ?>
+
+<?php 
+
+$labels =  array();
+for($i=1; $i <= 100; $i++){
+$concat = "projects-ids-". $i; 
+array_push($labels, $concat);
+}
+
+?>
+
+<style>
+<?php 
+for($i=1; $i <= 100; $i++){ ?>
+label[for=<?php echo $labels[$i-1] ?>]{
+    font-size:small;
+    margin: 0px;
+    font-weight: normal;
+}
+<?php } ?>
+</style>
+
+
 <?php session_start();
 $session = $this->request->getSession();
 $session->write('previous_url', $session->read('url'));
@@ -43,7 +66,7 @@ debug($session->read('previous_url'));?>
                     echo $this->Form->control('position', ['label'=>"Position"]);
                     echo $this->Form->control('role', ['label'=>"Role"]);
                     //echo $this->Html->link(__('Add New Project'), ['action' => '../projects/add'], ['class' => 'button float-right']);
-                    echo $this->Form->control('projects._ids', ['label'=>"Projects", 'options' => $projects]);
+                    echo $this->Form->control('projects._ids', ['label'=>"Projects", 'options' => $projects,'multiple'=>'checkbox']);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
