@@ -75,7 +75,7 @@
             <td width=187 valign=top style='width:140.4pt;padding:0cm 5.4pt 0cm 5.4pt'>
                 <p class=MsoNormal style='text-indent:.4pt'><b><span lang=EN-GB>JOB NUMBER: <?= $invoice->project->msnumber ?></span></b></p>
                 <p class=MsoNormal style='text-indent:.4pt'><b><span lang=EN-GB>INVOICE No: <?= $invoice->id ?></span></b></p>
-                <p class=MsoNormal style='text-indent:.4pt'><b><span lang=EN-GB>DATE: </span></b><b><span lang=EN-GB><?= date('d/m/y', strtotime($invoice->datecreated)) ?></span></b></p>
+                <p class=MsoNormal style='text-indent:.4pt'><b><span lang=EN-GB>DATE: </span></b><b><span lang=EN-GB><?= date('d F, Y', strtotime($invoice->datecreated)) ?></span></b></p>
                 <p class=MsoNormal style='text-indent:.4pt'><span lang=EN-GB>&nbsp;</span></p>
             </td>
         </tr>
