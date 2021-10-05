@@ -44,7 +44,7 @@ class ProjectsTable extends Table
         parent::initialize($config);
 
         $this->setTable('projects');
-        $this->setDisplayField('projectname');
+        $this->setDisplayField('project_display');
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Clients', [

@@ -57,4 +57,8 @@ class Project extends Entity
         'invoices' => true,
         'associates' => true,
     ];
+
+    protected function _getProjectDisplay() {
+        return $this->msnumber . ' - ' . $this->projectname;
+    }
 }
