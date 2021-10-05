@@ -219,8 +219,8 @@
 
     <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
 
-    <p class=MsoNormal><strong><u>Bank Information</u></strong></p>
-    <p class=MsoNormal>Bank West<br>
+    <p class=MsoNormal style="color:#8a8a8a"><strong><u>Bank Information</u></strong></p>
+    <p class=MsoNormal style="color:#8a8a8a">Bank West<br>
     Account Name: &nbsp; &nbsp; Marshall Structures
     <br>BSB Number: &nbsp; &nbsp; &nbsp; 302-162
     <br>Account Number: 16 52 478</p>
