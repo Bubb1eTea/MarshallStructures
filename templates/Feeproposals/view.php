@@ -114,11 +114,11 @@ debug($session->read('previous_url')); ?>
                         </tr>
                         <?php foreach ($feeproposal->invoices as $invoices) : ?>
                             <tr>
-                                <td><?= date('d/m/y h:m A',strtotime($invoices->datecreated)) ?></td>
+                                <td><?= date('h:m A d F, Y',strtotime($invoices->datecreated)) ?></td>
                                 <td><?= h($invoices->id) ? $this->Html->link($invoices->id, ['controller' => 'invoices', 'action' => 'view', $invoices->id]) : '' ?></td>
                                 <td><?= $this->Number->format($invoices->completedpercentage, ['after' => '%']) ?></td>
                                 <td><?= $this->Number->format($invoices->grandtotal, ['places' => 2, 'before' => '$']) ?></td>
-                                <td><?= date('d/m/y', strtotime($invoices->datecreated. ' + ' .$invoices->paywithinday.' days')) ?></td>
+                                <td><?= date('d F, Y', strtotime($invoices->datecreated. ' + ' .$invoices->paywithinday.' days')) ?></td>
                                 <td class="actions">
                                     <?= $this->Html->link(__('View'), ['controller' => 'Invoices', 'action' => 'view', $invoices->id]) ?>
                                     <?= $this->Html->link(__('Edit'), ['controller' => 'Invoices', 'action' => 'edit', $invoices->id]) ?>
