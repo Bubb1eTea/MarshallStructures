@@ -263,7 +263,13 @@ legend {
     display: block;
     font-size: 2.0rem;
     font-weight: 700;
-    margin-bottom: 2.0rem
+    margin-bottom: 2.0rem;
+}
+
+legend{
+    font-weight: bolder;
+    font-size: xx-large;
+    color: black;
 }
 
 fieldset {

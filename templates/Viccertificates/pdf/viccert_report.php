@@ -21,6 +21,11 @@
         /* Font Definitions */
 
         /* Style Definitions */
+        html *
+        {
+        font-family: "Calibri, sans-serif" !important;
+        }
+
         p.MsoNormal,
         li.MsoNormal,
         div.MsoNormal {
@@ -32,7 +37,10 @@
             font-size: 11.0pt;
             font-family: "Calibri", sans-serif;
         }
-
+        p.MsoNormal2{
+            font-size: 11.0pt;
+            font-family: "Calibri", sans-serif;
+        }
         p.MsoFooter,
         li.MsoFooter,
         div.MsoFooter {
@@ -199,7 +207,7 @@
         <tr>
             <td width=85 valign=top style='width:63.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
                 <p class=Normal-Schedule><span lang=EN-AU>Address:</span> <!-- Insert address -->
-                    <?= $viccertificate->company->streetname ?>, <?= $viccertificate->company->suburb ?></p>
+                    <?= $viccertificate->company->streetname ?>, <?= $viccertificate->company->suburb ?>, <?= $viccertificate->company->state ?></p>
             </td>
             <td width=359 valign=top style='width:269.35pt;padding:0cm 5.4pt 0cm 5.4pt'>
                 <p class=Normal-Schedule><span lang=EN-AU>&nbsp;</span> </p>
@@ -238,13 +246,13 @@
         <tr>
             <td width=85 valign=top style='width:63.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
                 <p class=Normal-Schedule><span lang=EN-AU>Address:</span><!-- insert address -->
-                    <?= $viccertificate->project->streetname ?>, <?= $viccertificate->project->suburb ?></p>
+                    <?= $viccertificate->project->streetname ?>, <?= $viccertificate->project->suburb ?>, <?= $viccertificate->project->state ?> </p>
             </td>
             <td width=359 valign=top style='width:269.35pt;padding:0cm 5.4pt 0cm 5.4pt'>
                 <p class=Normal-Schedule><span lang=EN-AU>&nbsp;</span></p>
             </td>
             <td width=86 valign=top style='width:64.45pt;padding:0cm 5.4pt 0cm 5.4pt'>
-                <p class=Normal-Schedule><span lang=EN-AU>Postcode:</span>
+                <p style="padding-left: 96px" class=Normal-Schedule><span lang=EN-AU>Postcode:</span>
                     <!-- insert postcode (issued to the proposed building work at) -->
                     <?= $viccertificate->project->postcode ?></p>
             </td>
@@ -257,7 +265,7 @@
     <p class=Normal-Schedule style='margin-top:12.0pt'><span lang=EN-AU style='font-size:14.0pt;color:black'>
         </span><b><span lang=EN-AU style='font-size:14.0pt'>Nature of proposed building work</span></b></p>
 
-    <p class=Normal-Schedule><span lang=EN-AU>Construction of a <span>
+    <p class=Normal-Schedule><span lang=EN-AU>Construction of<span>
                 <!-- insert construction type--> <?=$viccertificate->buildingtype?> </span></span></p>
 
     <p class=Normal-Schedule><span lang=EN-AU>Storeys contained: </span> <!-- insert stories contained -->
@@ -272,11 +280,12 @@
     <p class=Normal-Schedule><span lang=EN-AU>Type of construction:</span>
         <!-- insert type of construction --><?=$viccertificate->constructiontype?> </p>
 
-    <p class=Normal-Schedule><span lang=EN-AU>Version of BCA applicable to certificate </span></p>
+    <p class=Normal-Schedule><span lang=EN-AU>Version of BCA applicable to certificate: <?=$viccertificate->buildingclass?></span></p>
 
     <p class=Normal-Schedule style='margin-top:12.0pt'><b><span lang=EN-AU style='font-size:14.0pt'>Building
                 classification</span></b></p>
-    <?=$viccertificate->buildingclass?>
+                <p class=MsoNormal>
+                <?=$viccertificate->buildingclass?> </p>
     <br>
 
     <!-- insert building specification here (Dropdown list)-->
@@ -299,11 +308,12 @@
                 *engineers name* relating to the design that is
                 certified by this certificate</span></b></p>
 
-    <table border="1" width=100% cellpadding="0px" cellspacing="0px">
-        <tr>
-            <th>Document No.</th>
-            <th>Document Date</th>
-            <th>Document Revision</th>
+    <table  border="1" width=100% cellpadding="0px" cellspacing="0px">
+        <tr >
+            <th><p class=MsoNormal2>Document No.</p></th>
+            <th><p class=MsoNormal2>Document Date</p></th>
+            <th><p class=MsoNormal2>Document Revision</p></th>
+
 
             <?php
             $documentsproducedtext = $viccertificate->documentsproduced;
@@ -370,11 +380,11 @@
     <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
         <table border="1" width=100% cellpadding="0px" cellspacing="0px">
             <tr>
-                <th> Document No.</th>
-                <th>Document Date</th>
-                <th>Type of Document</th>
-                <th>Number of Pages</th>
-                <th>Prepared By</th>
+                <th><p class=MsoNormal2> Document No. </p></th>
+                <th><p class=MsoNormal2>Document Date</p></th>
+                <th><p class=MsoNormal2>Type of Document <br>(e.g. drawings, computations,<br> specifications, calculations etc.)</p></th>
+                <th><p class=MsoNormal2>Number of Pages</p></th>
+                <th><p class=MsoNormal2>Prepared By</p></th>
 
                 <?php
             $documentscertifiedtext = $viccertificate->documentscertified;
@@ -396,20 +406,21 @@
 
         </table>
     </table>
-
+    <?php if(!empty($viccertificate->performancereq)) { ?> 
     <p class=Normal-Schedule style='margin-top:12.0pt;page-break-after:avoid'><b><span lang=EN-AU
-                style='color:black'>Performance solution</span></b></p>
+                style='color:black'> <br> <br> Performance solution</span></b></p> 
 
     <p class=Normal-Schedule style='margin-bottom:6.0pt'><span lang=EN-AU style='color:black'> A performance solution
             forms part of the design certified by
             this certificate. The performance solution complies with the following performance
             requirements of the NCC </span></p>
 
-
+   
+         
     <table border="1" width=100% cellpadding="0px" cellspacing="0px">
         <tr>
-            <th> Relevant performance Requirements</th>
-            <th>Details of performance solution required by regulation 124</th>
+            <th><p class=MsoNormal2> Relevant performance Requirements </p></th>
+            <th><p class=MsoNormal2>Details of performance solution required by regulation 124</p></th>
 
             <?php
             $documentsperformancesolution = $viccertificate->performancereq;
@@ -427,16 +438,16 @@
 
         </tr>
 
-
     </table>
 
     </table>
+<?php } ?>
 
     <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
 
-    <p class=MsoNormal><span lang=EN-AU>The design certified by this certificate
+    <p class=MsoNormal><span lang=EN-AU> <b>The design certified by this certificate
             complies with the following provisions of Building Act 1993, Building
-            Regulations 2018 or National Construction Code and Australian Standards</span></p>
+            Regulations 2018 or National Construction Code and Australian Standards</b></span></p>
 
     <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=100% style="collapse: collapse">
         style='border-collapse:collapse;border:none'>
@@ -453,8 +464,7 @@
         <tr>
             <td width=586 valign=bottom style='width:439.2pt;border:solid windowtext 1.0pt;
       border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
-                <?=$viccertificate->designstandards[$x]['designcode']?> -
-                <?=$viccertificate->designstandards[$x]['designdesc']?>
+                <?=$viccertificate->designstandards[$x]['designcode']?>
                 <p class=Normal-Schedule style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
       3.0pt;margin-left:0cm'><b><span lang=EN-AU>&nbsp;</span></b></p>
             </td>
@@ -471,10 +481,11 @@
     <p class=MsoNormal><span lang=EN-AU>I certify that the design set out in the
             documents listed above complies with the provisions set out above.</span></p>
 
-    <p class=MsoNormal><span lang=EN-AU style='color:red'>*I certify that the
+<?php if(!empty($viccertificate->performancereq)) { ?> 
+    <p class=MsoNormal><span lang=EN-AU style='color:black'>I certify that the
             performance solution referred to above complies with the performance
             requirements listed.</span></p>
-
+<?php }?>
     <p class=MsoNormal><span lang=EN-AU>I believe that I hold the required skills,
             experience and knowledge to issue this certificate and can demonstrate this if
             requested to do so.</span></p>
