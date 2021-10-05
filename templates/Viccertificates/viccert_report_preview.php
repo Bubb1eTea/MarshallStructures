@@ -403,19 +403,21 @@
         </table>
     </table>
 
+    <?php if(!empty($viccertificate->performancereq)) { ?> 
     <p class=Normal-Schedule style='margin-top:12.0pt;page-break-after:avoid'><b><span lang=EN-AU
-                style='color:black'>Performance solution</span></b></p>
+                style='color:black'> <br> <br> Performance solution</span></b></p> 
 
     <p class=Normal-Schedule style='margin-bottom:6.0pt'><span lang=EN-AU style='color:black'> A performance solution
             forms part of the design certified by
             this certificate. The performance solution complies with the following performance
             requirements of the NCC </span></p>
 
-
-    <table border="1">
+   
+         
+    <table border="1" width=100% cellpadding="0px" cellspacing="0px">
         <tr>
-            <th>&nbsp Relevant performance Requirements</th>
-            <th>Details of performance solution required by regulation 124</th>
+            <th><p class=MsoNormal2> Relevant performance Requirements </p></th>
+            <th><p class=MsoNormal2> Details of performance solution required by regulation 124</p></th>
 
             <?php
             $documentsperformancesolution = $viccertificate->performancereq;
@@ -425,7 +427,7 @@
 
             for($y=1; $y<=$numofrows;$y++){?>
         <tr>
-            <td><?php if(!empty($documentsperformancesolutionarray[$y*2-2])) echo "&nbsp "; echo $documentsperformancesolutionarray[$y*2-2]?>
+            <td><?php if(!empty($documentsperformancesolutionarray[$y*2-2])) echo $documentsperformancesolutionarray[$y*2-2]?>
             </td>
             <td><?php if(!empty($documentsperformancesolutionarray[$y*2-1])) echo $documentsperformancesolutionarray[$y*2-1]?>
             </td>
@@ -433,10 +435,10 @@
 
         </tr>
 
-
     </table>
 
     </table>
+<?php } ?>
 
     <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
 
@@ -475,10 +477,11 @@
     <p class=MsoNormal><span lang=EN-AU>I certify that the design set out in the
             documents listed above complies with the provisions set out above.</span></p>
 
-    <p class=MsoNormal><span lang=EN-AU style='color:red'>*I certify that the
+<?php if(!empty($viccertificate->performancereq)) { ?> 
+    <p class=MsoNormal><span lang=EN-AU style='color:black'>I certify that the
             performance solution referred to above complies with the performance
             requirements listed.</span></p>
-
+<?php }?>
     <p class=MsoNormal><span lang=EN-AU>I believe that I hold the required skills,
             experience and knowledge to issue this certificate and can demonstrate this if
             requested to do so.</span></p>

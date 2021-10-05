@@ -46,6 +46,12 @@
         }
 
         /* Style Definitions */
+
+        html *
+        {
+        font-family: "Arial, sans-serif" !important;
+        }
+
         p.MsoNormal,
         li.MsoNormal,
         div.MsoNormal {

@@ -21,6 +21,11 @@
         /* Font Definitions */
 
         /* Style Definitions */
+        html *
+        {
+        font-family: "Calibri, sans-serif" !important;
+        }
+
         p.MsoNormal,
         li.MsoNormal,
         div.MsoNormal {
@@ -401,7 +406,7 @@
 
         </table>
     </table>
-
+    <?php if(!empty($viccertificate->performancereq)) { ?> 
     <p class=Normal-Schedule style='margin-top:12.0pt;page-break-after:avoid'><b><span lang=EN-AU
                 style='color:black'> <br> <br> Performance solution</span></b></p> 
 
@@ -410,7 +415,8 @@
             this certificate. The performance solution complies with the following performance
             requirements of the NCC </span></p>
 
-
+   
+         
     <table border="1" width=100% cellpadding="0px" cellspacing="0px">
         <tr>
             <th><p class=MsoNormal2> Relevant performance Requirements </p></th>
@@ -432,10 +438,10 @@
 
         </tr>
 
-
     </table>
 
     </table>
+<?php } ?>
 
     <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
 
@@ -475,10 +481,11 @@
     <p class=MsoNormal><span lang=EN-AU>I certify that the design set out in the
             documents listed above complies with the provisions set out above.</span></p>
 
-    <p class=MsoNormal><span lang=EN-AU style='color:red'>*I certify that the
+<?php if(!empty($viccertificate->performancereq)) { ?> 
+    <p class=MsoNormal><span lang=EN-AU style='color:black'>I certify that the
             performance solution referred to above complies with the performance
             requirements listed.</span></p>
-
+<?php }?>
     <p class=MsoNormal><span lang=EN-AU>I believe that I hold the required skills,
             experience and knowledge to issue this certificate and can demonstrate this if
             requested to do so.</span></p>
