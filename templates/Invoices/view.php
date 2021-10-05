@@ -70,7 +70,7 @@ debug($session->read('previous_url')); ?>
                 </tr>
                 <tr>
                     <th><?= __('Date Created') ?></th>
-                    <td><?= date('h:m A d F, Y',strtotime($invoice->datecreated)) ?></td>
+                    <td><?= date('d F, Y',strtotime($invoice->datecreated)) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Pay within how many days?') ?></th>
