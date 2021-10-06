@@ -33,20 +33,19 @@ debug($session->read('previous_url')); ?>
             <?= $this->Form->create($invoice) ?>
             <fieldset>
                 <legend><?= __('Add Invoice') ?></legend>
-                        <?php echo $this->Form->control('invoicenum', ['label'=>'Invoice Number']);
-                        echo $this->Html->link(__('Add a Fee Proposal'), ['action' => '../feeproposals/add'], ['class' => 'button float-right', 'target' => '_blank']); ?>
+                <?php echo $this->Form->control('project_id', ['options' => $projects, 'empty' =>['*'=>'SELECT...']]);?>
                 <div class="control_left">
                     <?php
-                        //echo $this->Html->link(__('Add New Project'), ['action' => '../projects/add'], ['class' => 'button float-right']);
-                        echo $this->Form->control('project_id', ['options' => $projects, 'empty' =>['*'=>'SELECT...'], 'style'=>'width:82%']);
-
+                        echo $this->Form->control('invoicenum', ['label'=>'Invoice Number', 'style'=>'width:82%']);
                     ?>
                 </div>
                 <div class="control_right">
-                    <?php    echo $this->Form->control('feeproposal_id', ['options' => $feeproposals, 'empty' => true, 'label'=>"Fee Proposal"]);?>
+                    <?php
+                        echo $this->Html->link(__('Add a Fee Proposal'), ['action' => '../feeproposals/add'], ['class' => 'button float-right', 'target' => '_blank']);
+                        echo $this->Form->control('feeproposal_id', ['options' => $feeproposals, 'empty' => true, 'label'=>"Fee Proposal"]);
+                    ?>
                 </div>
                 <?php
-                    echo $this->Form->control('invoicenum', ['label'=>'Invoice Number']);
                     echo $this->Form->control('datecreated', ['label'=>"Date Created", 'style'=>'width:45.1%']);
                     echo $this->Form->control('invdesc', ['label'=>"Invoice Description"]);
                 ?>
