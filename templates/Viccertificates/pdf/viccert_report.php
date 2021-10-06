@@ -305,7 +305,7 @@
     <p class=MsoNormal><span lang=EN-AU>&nbsp;</span></p>
 
     <p class=Normal-Schedule style='margin-top:12.0pt;page-break-after:avoid'><b><span lang=EN-AU>Drawings Produced by
-                *engineers name* relating to the design that is
+                Ben Marshall relating to the design that is
                 certified by this certificate</span></b></p>
 
     <table  border="1" width=100% cellpadding="0px" cellspacing="0px">
