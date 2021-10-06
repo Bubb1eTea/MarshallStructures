@@ -48,9 +48,9 @@ debug($session->read('previous_url')); ?>
                     <td><?= $client->has('company') ? $this->Html->link($client->company->companyname, ['controller' => 'Companys', 'action' => 'view', $client->company->id]) : '' ?></td>
                 </tr>
             </table>
-            <div class="related">
-                <h4><?= __('Related Projects') ?></h4>
+            <div class="related">                
                 <?php if (!empty($client->projects)) : ?>
+                <h4><?= __('Related Projects') ?></h4>
                 <div class="table-responsive">
                     <table>
                         <tr>

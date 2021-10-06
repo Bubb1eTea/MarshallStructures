@@ -229,12 +229,6 @@ debug($session->read('previous_url')); ?>
                 <div class="control_right">
                     <?php    echo $this->Form->control('compntregnum', ['label' => "Company NT Registration Number"]);?>
                 </div>
-                <div class="control_left">
-                    <?php    echo $this->Form->control('name', ['label' => "Name", 'style'=>'width:82%']);?>
-                </div>
-                <div class="control_right">
-                    <?php    echo $this->Form->control('ntregnum', ['label' => "Nominee/Individual NT Registration Number"]);?>
-                </div>
                 <?php    echo $this->Form->control('date', ['label' => "Date of Issue", 'empty' => false, 'style'=>'width:45.1%']);?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

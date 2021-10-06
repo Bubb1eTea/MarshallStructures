@@ -70,7 +70,7 @@ debug($session->read('previous_url')); ?>
                 </tr>
                 <tr>
                     <th><?= __('Date Created') ?></th>
-                    <td><?= date('d/m/y h:m A',strtotime($invoice->datecreated)) ?></td>
+                    <td><?= date('d F, Y',strtotime($invoice->datecreated)) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Pay within how many days?') ?></th>
@@ -78,7 +78,7 @@ debug($session->read('previous_url')); ?>
                 </tr>
                 <tr>
                     <th><?= __('Date Due') ?></th>
-                    <td><?= date('d/m/y', strtotime($invoice->datecreated. ' + ' .$invoice->paywithinday.' days')) ?></td>
+                    <td><?= date('d F, Y', strtotime($invoice->datecreated. ' + ' .$invoice->paywithinday.' days')) ?></td>
                 </tr>
             </table>
         </div>
