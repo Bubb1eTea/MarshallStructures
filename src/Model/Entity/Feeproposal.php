@@ -19,7 +19,7 @@ use Cake\ORM\Entity;
  * @property string $total
  * @property string $totalgst
  * @property string $grandtotal
- * @property int $paywithinday
+ * @property int|null $paywithinday
  * @property int $feeproposalnum
 
  *
