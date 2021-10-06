@@ -7,18 +7,18 @@
  */
 ?>
 
-<?php 
+<?php
 
 $labels =  array();
 for($i=1; $i <= 100; $i++){
-$concat = "associates-ids-". $i; 
+$concat = "associates-ids-". $i;
 array_push($labels, $concat);
 }
 
 ?>
 
 <style>
-<?php 
+<?php
 for($i=1; $i <= 100; $i++){ ?>
 label[for=<?php echo $labels[$i-1] ?>]{
     font-size:small;
@@ -41,6 +41,8 @@ debug($session->read('previous_url')); ?>
     .control_left{float:left;width: 55%}
     .control_right{float:right; width: 45%}/* incase you have applied some styles related to width*/
 </style>
+
+
 <div class="row">
     <aside class="column">
         <div class="side-nav">
@@ -86,12 +88,37 @@ debug($session->read('previous_url')); ?>
                     //echo $this->Html->link(__('Add New Client'), ['action' => '../clients/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('client_id', ['options' => $clients, 'empty' => true]);
                     //echo $this->Html->link(__('Add New Associate'), ['action' => '../associates/add'], ['class' => 'button float-right']);
-                    echo $this->Form->control('associates._ids', ['label'=>"Associate (hold 'ctrl' when selecting more than one)", 'options' => $associates, 'empty' => true, 'multiple'=>'checkbox']);
+                    echo $this->Form->control('associates._ids', ['label'=>"Associate (hold 'ctrl' when selecting more than one)", 'options' => $associates, 'empty' => true, 'id'=>'associate-id']);
                     echo $this->Form->control('invoiceaddressee_id', ['label'=>"Associate (addressee of invoice)",'options' => $associates, 'empty' => true]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
+
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    var select = document.getElementById('associate-id');
+
+                    select.addEventListener('click', function(){
+                        document.getElementById('invoiceaddressee-id').innerHTML = "";
+
+                        var listItems = "";
+
+                        var selected = $('#associate-id').val();
+                        var selectedtext = $('#associate-id option:selected')
+                            .toArray().map(item => item.text);
+
+                        for(i=0;i<selected.length;i++){
+                            listItems += '<option value="' + selected[i] + '">' + selectedtext[i] + '</option>';
+                        }
+
+                        $('#invoiceaddressee-id').html(listItems);
+
+                    });
+
+                });
+            </script>
         </div>
     </div>
 </div>
