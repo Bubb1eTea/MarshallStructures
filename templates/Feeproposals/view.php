@@ -78,10 +78,6 @@ debug($session->read('previous_url')); ?>
                     <th><?= __('Grand Total') ?></th>
                     <td><?= $this->Number->format($feeproposal->grandtotal, ['places' => 2, 'before' => '$']) ?></td>
                 </tr>
-                <tr>
-                    <th><?= __('Pay within how many days?') ?></th>
-                    <td><?= $this->Number->format($feeproposal->paywithinday) ?> days</td>
-                </tr>
             </table>
             <div class="related">
                 <h4><?= __('Related Invoices') ?></h4>

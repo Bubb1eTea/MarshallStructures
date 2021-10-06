@@ -128,8 +128,7 @@ class FeeproposalsTable extends Table
 
         $validator
             ->integer('paywithinday')
-            ->requirePresence('paywithinday', 'create')
-            ->notEmptyString('paywithinday', 'This field cannot be empty.');
+            ->allowEmptyString('paywithinday', 'This field cannot be empty.');
 
         $validator
             ->integer('feeproposalnum')
