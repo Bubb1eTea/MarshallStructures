@@ -6,6 +6,28 @@
  * @var \Cake\Collection\CollectionInterface|string[] $associates
  */
 ?>
+
+<?php 
+
+$labels =  array();
+for($i=1; $i <= 100; $i++){
+$concat = "associates-ids-". $i; 
+array_push($labels, $concat);
+}
+
+?>
+
+<style>
+<?php 
+for($i=1; $i <= 100; $i++){ ?>
+label[for=<?php echo $labels[$i-1] ?>]{
+    font-size:small;
+    margin: 0px;
+    font-weight: normal;
+}
+<?php } ?>
+</style>
+
 <?php session_start();
 $session = $this->request->getSession();
 $session->write('previous_url', $session->read('url'));
@@ -63,7 +85,7 @@ debug($session->read('previous_url')); ?>
                     //echo $this->Html->link(__('Add New Client'), ['action' => '../clients/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('client_id', ['options' => $clients, 'empty' => true]);
                     //echo $this->Html->link(__('Add New Associate'), ['action' => '../associates/add'], ['class' => 'button float-right']);
-                    echo $this->Form->control('associates._ids', ['label'=>"Associate (hold 'ctrl' when selecting more than one)", 'options' => $associates, 'empty' => true]);
+                    echo $this->Form->control('associates._ids', ['label'=>"Associate (hold 'ctrl' when selecting more than one)", 'options' => $associates, 'empty' => true, 'multiple'=>'checkbox']);
                     echo $this->Form->control('invoiceclientname', ['label'=>"Project Client Name: (For Invoicing Purpose)"]);
                 ?>
             </fieldset>

@@ -101,6 +101,12 @@ th {
     font-size: xx-large;
 }
 
+
+.spacefix{
+    color: blue;
+    font-size: xx-large;           
+}
+
 /* Nav bar */
 .top-nav {
     display: flex;

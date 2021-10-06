@@ -68,6 +68,37 @@
             font-weight: normal;
         }
 
+        .spacefix{
+            margin: 7px;
+        }
+        
+        .spacefix2{
+            margin: 9px;
+        }
+        .spacefix20{
+            margin: 14px;
+        }
+        
+        .spacefix202{
+            margin: 16px;
+        }
+
+        .spacefix3{
+            margin: 5px;
+        }
+
+        
+        .spacefix3{
+            margin: 3px;
+        }
+        .spacefixer{
+            margin: 6px;
+        }
+        
+        .spacefix1px{
+            margin: 1px;
+        }
+
         h3 {
             mso-style-link: "Heading 3 Char";
             margin-top: 0cm;
@@ -106,6 +137,7 @@
             font-family: "Arial", sans-serif;
             font-weight: normal;
         }
+
 
         h6 {
             mso-style-link: "Heading 6 Char";
@@ -332,17 +364,8 @@ margin-left:0cm'><b><span lang=EN-AU style='font-size:11.0pt'>PROJECT TITLE: <?=
 
         <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm'><span lang=EN-AU style='font-size:11.0pt'><br>
-<br></span></p><p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        </span></span><span lang=EN-AU>Scope of Services</span></p><div style='border:none;border-top:solid windowtext 1.0pt;padding:6.0pt 0cm 0cm 0cm;
+<br></span></p><p class='Newhdg' align=left style='text-align:left'><span lang=EN-AU>1. <span class=spacefix> </span>
+        </span><span lang=EN-AU>Scope of Services</span></p><div style='border:none;border-top:solid windowtext 1.0pt;padding:0.0pt 0cm 0cm 0cm;
 margin-left:1.0cm;
         margin-right:0cm'>
 
@@ -362,17 +385,10 @@ style='font-size:11.0pt;font-family:Symbol'><span style='font:7.0pt "Times New R
         &nbsp;
         &nbsp;
         &nbsp;
-        </span></span><span lang=EN-AU style='font-size:11.0pt'><?=nl2br($feeproposal->scopeofservice) ?>p</span></p><p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        </span></span><span lang=EN-AU>Documents provided by the Client for the Services</span></p><div style='border:none;border-top:solid windowtext 1.0pt;padding:6.0pt 0cm 0cm 0cm;
+        </span></span><span lang=EN-AU style='font-size:11.0pt'><?=nl2br($feeproposal->scopeofservice) ?><br>
+        
+        </span></p><p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>2. <span class='spacefix'> </span>
+        </span><span lang=EN-AU>Documents provided by the Client for the Services</span></p><div style='border:none;border-top:solid windowtext 1.0pt;padding:6.0pt 0cm 0cm 0cm;
 margin-left:1.0cm;
         margin-right:0cm'>
 
@@ -380,30 +396,16 @@ margin-left:1.0cm;
 margin-left:0cm;
         border:none;
         padding:0cm'><span lang=EN-AU style='font-size: 11.0pt;
-        color:blue'>&nbsp;</span></p>
+        '>The Consultant will render the Services by relying upon a briefing and all information concerning the Client's requirements in relation to the Project as follows-</span></p>
 
-        </div><p class=MsoNormal style='margin-left:1.0cm'><span lang=EN-AU style='font-size:
-11.0pt'>The Consultant</span><span style='font-size:11.0pt'> will render the Services by relying upon a briefing and all information concerning the Client's requirements in relation to the Project as follows-</span></p><p class=MsoNormal style='margin-left:1.0cm'><span lang=EN-AU style='font-size:
-11.0pt'>&nbsp;</span></p>
+        </div>
 
         <p class=MsoListParagraph style='margin-left:64.35pt;text-indent:-18.0pt'><span lang=EN-AU style='font-size:11.0pt;font-family:Symbol'><span style='font:7.0pt "Times New Roman"'>&nbsp;
         &nbsp;
         &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        </span></span><span lang=EN-AU style='font-size:11.0pt'><?=nl2br($feeproposal->documentsprovided) ?><br><br></span></p><p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        </span></span><span lang=EN-AU>Fees and Disbursements</span></p><div style='border:none;border-top:solid windowtext 1.0pt;padding:6.0pt 0cm 0cm 0cm;
+        </span></span><span lang=EN-AU style='font-size:11.0pt'><?=nl2br($feeproposal->documentsprovided) ?><br><br></span></p>
+        <p class='Newhdg' align=left style='text-align:left'><span lang=EN-AU>3. <span class=spacefix> </span>
+        </span><span lang=EN-AU>Fees and Disbursements</span></p><div style='border:none;border-top:solid windowtext 1.0pt;padding:6.0pt 0cm 0cm 0cm;
 margin-left:1.0cm;
         margin-right:0cm'>
 
@@ -413,7 +415,7 @@ margin-left:0cm;
         padding:0cm'><b><span lang=EN-AU style='font-size: 11.0pt'>Fees</span></b></p>
 
         </div><p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:1.0cm'><span lang=EN-AU style='font-size:11.0pt'>Agreed fixed fee of <?= $feeproposal->fixedfee ?> plus GST.</span></p>
+margin-left:1.0cm'><span lang=EN-AU style='font-size:11.0pt'>Agreed fixed fee of $<?= $feeproposal->fixedfee ?> plus GST.</span></p>
 
         <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:1.0cm'><span lang=EN-AU style='font-size:11.0pt'>&nbsp;</span></p>
@@ -433,13 +435,13 @@ margin-left:1.0cm;
         margin-left:1.0cm;
         text-align:left;
         line-height:normal'><span lang=EN-AU
-style='font-size:11.0pt'>On the Client's present instructions, the estimate total fees and disbursements will be in the order of <b> <?= $feeproposal->fixedfee ?> </b> plus GST. This is broken down to: </span></p>
+style='font-size:11.0pt'>On the Client's present instructions, the estimate total fees and disbursements will be in the order of <b> $<?= $feeproposal->fixedfee ?> </b> plus GST. This is broken down to: </span></p>
 
         <p class=J15 align=left style='margin-top:6.0pt;margin-right:0cm;margin-bottom:
 6.0pt;
         margin-left:72.0pt;
         text-align:left;
-        line-height:normal'><span lang=EN-AU  style='font-size:11.0pt'> <b> <?= $feeproposal->total ?> </b> for our fees relating to the principal building plus GST</span></p>
+        line-height:normal'><span lang=EN-AU  style='font-size:11.0pt'> <b> $<?= $feeproposal->total ?> </b> for our fees relating to the principal building plus GST</span></p>
 
 
     <!--<p class=J15 align=left style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:5.0cm;text-align:left;text-indent:-69.75pt;line-height:normal'><span-->
@@ -454,15 +456,15 @@ style='font-size:11.0pt'>On the Client's present instructions, the estimate tota
 
     <p class=J15 align=left style='margin-top:6.0pt;margin-right:0cm;margin-bottom:
 6.0pt;margin-left:72.0pt;text-align:left;line-height:normal'><span lang=EN-AU style='font-size:11.0pt'> <b>
-                <?= $feeproposal->totalgst ?> </b> for disbursements plus GST. </span></p>
+                $<?= $feeproposal->totalgst ?> </b> for disbursements plus GST. </span></p>
 
     <p class=J15 align=left style='margin-top:6.0pt;margin-right:0cm;margin-bottom:
 6.0pt;margin-left:72.0pt;text-align:left;line-height:normal'><span lang=EN-AU style='font-size:11.0pt'> <b>
-                <?= $feeproposal->grandtotal ?> </b> for total plus GST. </span></p>
+                $<?= $feeproposal->grandtotal ?> </b> for total plus GST. </span></p>
 
     <p class=MsoNormal style='margin-left:1.0cm;text-indent:-1.0cm;page-break-after:
-avoid'><b><span lang=EN-AU style='font-size:11.0pt'>4.<span
-                    style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+avoid'><b><span lang=EN-AU style='font-size:11.0pt'>4.&nbsp;<span
+                    class='spacefix' style='font:7.0pt "Times New Roman"'> </span>
                 </span></span></b><b><span lang=EN-AU style='font-size:11.0pt'>Billing and payment
                 arrangements</span></b></p>
 
@@ -472,21 +474,21 @@ margin-left:1.0cm;margin-right:0cm'>
         <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:1.0cm;text-indent:-1.0cm;border:none;padding:0cm'><a name="_Hlk517776747"></a><a
                 name="_Hlk517773099"></a><a name="_Hlk517772716"><span lang=EN-AU style='font-size:11.0pt'>(a)<span
-                        style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    </span></span><span lang=EN-AU style='font-size:11.0pt'>The Consultant will issue end of month invoices to the Client based on the Services that have been provided for the relevant month. Invoices may also be issued at key milestones, such as construction issues.</span></a></p>
+                        style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+                    </span></span><span class='spacefix' lang=EN-AU style='font-size:11.0pt'>The Consultant will issue end of month invoices to the Client based on the Services that have been provided for the relevant month. Invoices may also be issued at key milestones, such as construction issues.</span></a></p>
 
     </div>
 
     <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>(b)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span><span style='font-size:11.0pt'>Payment claims are made under the Building and Construction Industry Security of Payment Act 2002 (Act). All monies payable to the Consultant by the Client to be paid within 30 days of the date of invoice. </span></p>
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+            </span></span><span class='spacefix2'  style='font-size:11.0pt'>Payment claims are made under the <i> Building and Construction Industry Security of Payment Act 2002 </i> (<b>Act</b>). All monies payable to the Consultant by the Client to be paid within 30 days of the date of invoice. </span></p>
 
     <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm'><span lang=EN-AU style='font-size:11.0pt'>&nbsp;</span></p>
 
-    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>5.<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>5.&nbsp;<span class='spacefix2'
+                style='font:7.0pt "Times New Roman"'>
             </span></span><span lang=EN-AU>Interest charged</span></p>
 
     <div style='border:none;border-top:solid windowtext 1.0pt;padding:6.0pt 0cm 0cm 0cm;
@@ -504,21 +506,18 @@ margin-left:0cm;border:none;padding:0cm'><span lang=EN-AU style='font-size:
 
     </div>
 
-    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>6.<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>6.&nbsp;<span class='spacefix2'
+                style='font:7.0pt "Times New Roman"'>
             </span></span><span lang=EN-AU>Guarantor</span></p>
 
     <div style='border:none;border-top:solid windowtext 1.0pt;padding:1.0pt 0cm 0cm 0cm;
 margin-left:1.0cm;margin-right:0cm'>
 
-        <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm;border:none;padding:0cm'><span lang=EN-AU style='font-size:
-11.0pt'>&nbsp;</span></p>
-
     </div>
 
     <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:1.0cm'><span style='font-size:11.0pt'>The Guarantor and their
+margin-left:1.0cm'><span style='font-size:11.0pt'> <br>
+            The Guarantor and their
             respective executors and administrators jointly and severally covenant that if
             at any time the Client defaults from paying the bills, they will forthwith on demand
             indemnify the Consultant against any losses, costs, charges and expenses
@@ -528,8 +527,8 @@ margin-left:1.0cm'><span style='font-size:11.0pt'>The Guarantor and their
     <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm'><span lang=EN-AU style='font-size:11.0pt'>&nbsp;</span></p>
 
-    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>7.<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>7.&nbsp;<span class='spacefix2'
+                style='font:7.0pt "Times New Roman"'>
             </span></span><span lang=EN-AU>Briefing other experts</span></p>
 
     <div style='border:none;border-top:solid windowtext 1.0pt;padding:6.0pt 0cm 0cm 0cm;
@@ -551,8 +550,8 @@ margin-left:0cm;border:none;padding:0cm'><span lang=EN-AU style='font-size:
     <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm'><span lang=EN-AU style='font-size:11.0pt'>&nbsp;</span></p>
 
-    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>8.<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>8. &nbsp;<span class='spacefix' 
+                style='font:7.0pt "Times New Roman"'>
             </span></span><span lang=EN-AU>General Conditions</span></p>
 
     <div style='border:none;border-top:solid windowtext 1.0pt;padding:1.0pt 0cm 0cm 0cm;
@@ -566,7 +565,7 @@ margin-left:0cm;border:none;padding:0cm'><span lang=EN-AU style='font-size:
 
     <p class=MsoListParagraphCxSpFirst style='margin-top:6.0pt;margin-right:0cm;
 margin-bottom:6.0pt;margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>(a)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
             </span></span><span style='font-size:11.0pt'>The Consultant will exercise the
             degrees of skill, care and diligence normally exercised by professionals in
             similar circumstances in the provision of the Services.</span></p>
@@ -576,8 +575,8 @@ margin-bottom:6.0pt;margin-left:2.0cm'><span lang=EN-AU style='font-size:11.0pt'
 
     <p class=MsoListParagraphCxSpMiddle style='margin-top:6.0pt;margin-right:0cm;
 margin-bottom:6.0pt;margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>(b)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span><span style='font-size:11.0pt'>All drawings, reports,
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+            </span></span><span class='spacefixer' style='font-size:11.0pt'>All drawings, reports,
             specifications, calculations, models, software, source code, object code, bills
             of quantities, and other documents produced and provided by us in connection to
             the Project (<b>Design</b>) will remain the Consultant's property and
@@ -588,8 +587,8 @@ margin-bottom:6.0pt;margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style
 
     <p class=MsoListParagraphCxSpMiddle style='margin-top:6.0pt;margin-right:0cm;
 margin-bottom:6.0pt;margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>(c)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span><span style='font-size:11.0pt'>If the Consultant agrees to
+                style='font:7.0pt "Times New Roman"'>
+            </span></span><span class='spacefix202' style='font-size:11.0pt'>If the Consultant agrees to
             provide to the Client the Design, at a commercial cost, the Consultant does not
             have to provide to the Client any formulas and calculations relating to the
             Design.<br>
@@ -599,7 +598,7 @@ margin-bottom:6.0pt;margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style
 
     <p class=MsoListParagraphCxSpMiddle style='margin-top:6.0pt;margin-right:0cm;
 margin-bottom:6.0pt;margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU>(d)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
             </span></span><span style='font-size:11.0pt'>To the maximum extent permitted by
             law </span>the Consultant is discharged from all liability in respect of the
         Services provided, whether under contract, in tort (including negligence), in
@@ -611,7 +610,7 @@ margin-bottom:6.0pt;margin-left:2.0cm'><span lang=EN-AU style='font-size:11.0pt'
 
     <p class=MsoListParagraphCxSpMiddle style='margin-top:6.0pt;margin-right:0cm;
 margin-bottom:6.0pt;margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>(e)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
             </span></span><span lang=EN-AU style='font-size:11.0pt'>The Consultant will </span><span
             style='font-size:11.0pt'>hold a professional indemnity insurance in respect to
             the provision of the Services under this agreement.</span></p>
@@ -621,7 +620,7 @@ margin-bottom:6.0pt;margin-left:2.0cm'><span lang=EN-AU style='font-size:11.0pt'
 
     <p class=MsoListParagraphCxSpMiddle style='margin-top:6.0pt;margin-right:0cm;
 margin-bottom:6.0pt;margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>(f)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </span></span><span style='font-size:11.0pt'>The Consultant's liability to the
             Client for any loss or damage, including a claim for damages for a breach of
             this agreement by the Consultant will be reduced to the extent that an act or
@@ -633,7 +632,7 @@ margin-bottom:6.0pt;margin-left:2.0cm'><span lang=EN-AU style='font-size:11.0pt'
 
     <p class=MsoListParagraphCxSpMiddle style='margin-top:6.0pt;margin-right:0cm;
 margin-bottom:6.0pt;margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>(g)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
             </span></span><span style='font-size:11.0pt'>The Client will indemnify the
             Consultant against all claims, costs, suits and demands by third parties
             arising in respect of the Services.</span></p>
@@ -643,7 +642,7 @@ margin-bottom:6.0pt;margin-left:2.0cm'><span lang=EN-AU style='font-size:11.0pt'
 
     <p class=MsoListParagraphCxSpMiddle style='margin-top:6.0pt;margin-right:0cm;
 margin-bottom:6.0pt;margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>(h)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
             </span></span><span style='font-size:11.0pt'>To the extent that is reasonably
             possible, the Client will make sure that the Consultant's input into the
             Project is duly recognized in any publicity material generated by the Client in
@@ -654,7 +653,7 @@ margin-bottom:6.0pt;margin-left:2.0cm'><span lang=EN-AU style='font-size:11.0pt'
 
     <p class=MsoListParagraphCxSpMiddle style='margin-top:6.0pt;margin-right:0cm;
 margin-bottom:6.0pt;margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>(i)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </span></span><span style='font-size:11.0pt'>Any dispute between the parties
             will first be subject of mediation, provided this provision shall not prevent the
             Consultant from instituting legal action at the time to recover monies owing to
@@ -664,8 +663,8 @@ margin-bottom:6.0pt;margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style
 
     <p class=MsoListParagraphCxSpMiddle style='margin-top:6.0pt;margin-right:0cm;
 margin-bottom:6.0pt;margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>(j)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span><span style='font-size:11.0pt'>Subject to conditions of this
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+            </span></span><span class=spacefix2 style='font-size:11.0pt'>Subject to conditions of this
             agreement, and payment in full for the Services, the Consultant will grant the
             Client a royalty-free license and its successors in title to the site of the Project
             to use the drawings and documents prepared by the Consultant for the purpose of
@@ -678,8 +677,8 @@ margin-bottom:6.0pt;margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style
 
     <p class=MsoListParagraphCxSpMiddle style='margin-top:6.0pt;margin-right:0cm;
 margin-bottom:6.0pt;margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>(k)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span><span style='font-size:11.0pt'>Neither party may assign, transfer
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+            </span></span><span class=spacefix2 style='font-size:11.0pt'>Neither party may assign, transfer
             or sublet any obligation under this agreement without the written consent of
             the other. Unless stated in writing to the contrary, no assignment, transfer or
             subletting shall release the assignor from any obligation under this agreement.<br>
@@ -688,8 +687,8 @@ margin-bottom:6.0pt;margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style
 
     <p class=MsoListParagraphCxSpMiddle style='margin-top:6.0pt;margin-right:0cm;
 margin-bottom:6.0pt;margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>(l)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span><span style='font-size:11.0pt'>The Client acknowledges that,
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span><span class=spacefix3 style='font-size:11.0pt'>The Client acknowledges that,
             unless agreed otherwise, the provision of Services by the Consultants for the
             Project is not given on the exclusive basis.<br>
             <br>
@@ -697,7 +696,7 @@ margin-bottom:6.0pt;margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style
 
     <p class=MsoListParagraphCxSpMiddle style='margin-top:6.0pt;margin-right:0cm;
 margin-bottom:6.0pt;margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>(m)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
             </span></span><span style='font-size:11.0pt'>The Consultant will have no
             liability, howsoever caused, due to claims, loss or damages associated with
             asbestos, toxic mold or terrorism.<br>
@@ -706,14 +705,14 @@ margin-bottom:6.0pt;margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style
 
     <p class=MsoListParagraphCxSpMiddle style='margin-top:6.0pt;margin-right:0cm;
 margin-bottom:6.0pt;margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>(n)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
             </span></span><i><span style='font-size:11.0pt'>Personal property Securities
                 Act 2009 </span></i><span style='font-size:11.0pt'>(<b>PPSA</b>)</span></p>
 
     <p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
 margin-bottom:8.0pt;margin-left:72.0pt;text-indent:-18.0pt;line-height:107%'><span
             style='font-size:11.0pt;line-height:107%'>a.<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
             </span></span><span style='font-size:11.0pt;line-height:107%'>The Client
             acknowledges that these terms and conditions constitute a security interest for
             the purposes of section 20 of the PPSA and that a security interest exists in
@@ -726,7 +725,7 @@ margin-bottom:8.0pt;margin-left:72.0pt;text-indent:-18.0pt;line-height:107%'><sp
     <p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
 margin-bottom:8.0pt;margin-left:72.0pt;text-indent:-18.0pt;line-height:107%'><span
             style='font-size:11.0pt;line-height:107%'>b.<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
             </span></span><span style='font-size:11.0pt;line-height:107%'>The Client will
             execute documents and do such further acts as may be required by the Consultant
             to register the security interest granted to the Consultant under these terms
@@ -737,14 +736,14 @@ margin-bottom:8.0pt;margin-left:72.0pt;text-indent:-18.0pt;line-height:107%'><sp
     <p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
 margin-bottom:8.0pt;margin-left:72.0pt;text-indent:-18.0pt;line-height:107%'><span
             style='font-size:11.0pt;line-height:107%'>c.<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
             </span></span><span style='font-size:11.0pt;line-height:107%'>The Client;</span></p>
 
     <p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
 margin-bottom:8.0pt;margin-left:99.25pt;text-indent:-1.0cm;line-height:107%'><span
             style='font-size:11.0pt;line-height:107%'>(i)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span><span style='font-size:11.0pt;line-height:107%'>waives the right
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span><span class=spacefix style='font-size:11.0pt;line-height:107%'>waives the right
             under section 157 of the PPSA to receive a copy of the verification statement
             verifying the registration of a financial statement or a financial change
             statement relating to a security interest created under the contract; and <br>
@@ -754,8 +753,8 @@ margin-bottom:8.0pt;margin-left:99.25pt;text-indent:-1.0cm;line-height:107%'><sp
     <p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
 margin-bottom:8.0pt;margin-left:99.25pt;text-indent:-1.0cm;line-height:107%'><span
             style='font-size:11.0pt;line-height:107%'>(ii)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span><span style='font-size:11.0pt;line-height:107%'>contracts out its
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span><span class=spacefix3 style='font-size:11.0pt;line-height:107%'>contracts out its
             rights to receive any other notice or statement under any other provision of
             the PPSA (including for the avoidance of doubt, any of the provisions specified
             in paragraph (d)).<br>
@@ -764,9 +763,10 @@ margin-bottom:8.0pt;margin-left:99.25pt;text-indent:-1.0cm;line-height:107%'><sp
 
     <p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
 margin-bottom:8.0pt;margin-left:72.0pt;text-indent:-18.0pt;line-height:107%'><span
-            style='font-size:11.0pt;line-height:107%'>d.<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span><span style='font-size:11.0pt;line-height:107%'>Until ownership
+            style='font-size:11.0pt;line-height:107%'>d.&nbsp;<span
+                style='font:7.0pt "Times New Roman"'>
+            </span></span><span class=spacefix3
+             style='font-size:11.0pt;line-height:107%'>Until ownership
             of the goods passes, the Client waive their rights under the following
             provisions of the PPSA. Sections 95, 117, 118, 120, 121(4), 123, 125, the
             second sentence of section 126(2), sections 129(2), 129(3), 130, 132(3)(d),
@@ -777,8 +777,8 @@ margin-bottom:8.0pt;margin-left:72.0pt;text-indent:-18.0pt;line-height:107%'><sp
     <p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
 margin-bottom:8.0pt;margin-left:72.0pt;text-indent:-18.0pt;line-height:107%'><span
             style='font-size:11.0pt;line-height:107%'>e.<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span><span style='font-size:11.0pt;line-height:107%'>The Client agrees
+                style='font:7.0pt "Times New Roman"'>
+            </span></span><span class=spacefix style='font-size:11.0pt;line-height:107%'>The Client agrees
             that where the Consultant has rights in addition to those under the PPSA, those
             rights will continue to apply. <br>
             <br>
@@ -787,8 +787,8 @@ margin-bottom:8.0pt;margin-left:72.0pt;text-indent:-18.0pt;line-height:107%'><sp
     <p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
 margin-bottom:8.0pt;margin-left:72.0pt;text-indent:-18.0pt;line-height:107%'><span
             style='font-size:11.0pt;line-height:107%'>f.<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span><span style='font-size:11.0pt;line-height:107%'>Until ownership
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+            </span></span><span class=spacefix1px style='font-size:11.0pt;line-height:107%'>Until ownership
             of the goods, the Client must not give to the Consultant a written demand or
             allow any other person to give to the Consultant a written demand requiring Consultant
             to register a financial change statement under the PPSA or enter into or allow
@@ -800,45 +800,45 @@ margin-bottom:8.0pt;margin-left:72.0pt;text-indent:-18.0pt;line-height:107%'><sp
     <p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
 margin-bottom:8.0pt;margin-left:72.0pt;text-indent:-18.0pt;line-height:107%'><span
             style='font-size:11.0pt;line-height:107%'>g.<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
             </span></span><span style='font-size:11.0pt;line-height:107%'>Wherein a
             Schedule of Rates is the basis fee for Services;</span></p>
 
     <p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
 margin-bottom:8.0pt;margin-left:99.25pt;text-indent:-1.0cm;line-height:107%'><span
             style='font-size:11.0pt;line-height:107%'>(i)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span><span style='font-size:11.0pt;line-height:107%'>Services will be within
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+            </span></span><span class=spacefix2 style='font-size:11.0pt;line-height:107%'>Services will be within
             normal business hours between 7am to 5:30pm, Monday to Friday, will be
             undertaken and invoiced as listed in this Agreement.</span></p>
 
     <p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
 margin-bottom:8.0pt;margin-left:99.25pt;text-indent:-1.0cm;line-height:107%'><span
             style='font-size:11.0pt;line-height:107%'>(ii)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span><span style='font-size:11.0pt;line-height:107%'>Services provided
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+            </span></span><span class=spacefix style='font-size:11.0pt;line-height:107%'>Services provided
             in relation to VCAT or legal proceedings will be conducted at hourly rates.</span></p>
 
     <p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
 margin-bottom:8.0pt;margin-left:99.25pt;text-indent:-1.0cm;line-height:107%'><span
             style='font-size:11.0pt;line-height:107%'>(iii)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span><span style='font-size:11.0pt;line-height:107%'>Travel time
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+            </span></span><span class=spacefix3 style='font-size:11.0pt;line-height:107%'>Travel time
             required to provide the Service will be invoiced at normal hourly rates, unless
             undertaken outside normal business hours where it shall be invoiced.</span></p>
 
     <p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
 margin-bottom:8.0pt;margin-left:99.25pt;text-indent:-1.0cm;line-height:107%'><span
             style='font-size:11.0pt;line-height:107%'>(iv)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span><span style='font-size:11.0pt;line-height:107%'>Services provided
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+            </span></span><span class=spacefix style='font-size:11.0pt;line-height:107%'>Services provided
             shall be invoiced in fifteen (15) minute increments. </span></p>
 
     <p class=MsoListParagraphCxSpLast style='margin-top:0cm;margin-right:0cm;
 margin-bottom:8.0pt;margin-left:99.25pt;text-indent:-1.0cm;line-height:107%'><span
             style='font-size:11.0pt;line-height:107%'>(v)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span><span style='font-size:11.0pt;line-height:107%'>Hourly Rates are
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+            </span></span><span class=spacefix style='font-size:11.0pt;line-height:107%'>Hourly Rates are
             to be adjusted annually, with adjusted rates to be applicable as of the 1<sup>st</sup>
             of July. Services provided will be invoiced to the rates relevant at time of
             the Services being provided. </span></p>
@@ -846,8 +846,8 @@ margin-bottom:8.0pt;margin-left:99.25pt;text-indent:-1.0cm;line-height:107%'><sp
     <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:1.0cm'><span lang=EN-AU style='font-size:11.0pt'>&nbsp;</span></p>
 
-    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>9.<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>9. &nbsp;<span class='spacefix'
+                style='font:7.0pt "Times New Roman"'>
             </span></span><span lang=EN-AU>Termination of this agreement</span></p>
 
     <div style='border:none;border-top:solid windowtext 1.0pt;padding:6.0pt 0cm 0cm 0cm;
@@ -855,7 +855,7 @@ margin-left:1.0cm;margin-right:0cm'>
 
         <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:1.0cm;text-indent:-1.0cm;border:none;padding:0cm'><span lang=EN-AU style='font-size:11.0pt'>(a)<span
-                    style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
                 </span></span><span lang=EN-AU style='font-size:11.0pt'>The Consultant will not
                 continue to do provide the Services if the Client fails to pay the Consultant
                 bills, if the Client fails to provide the Consultant with adequate
@@ -865,7 +865,7 @@ margin-left:1.0cm;text-indent:-1.0cm;border:none;padding:0cm'><span lang=EN-AU s
 
     <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>(b)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
             </span></span><span lang=EN-AU style='font-size:11.0pt'>The Consultant will give
             the Client at least 14 days' notice of the Consultant's intention to terminate this
             agreement, and of the grounds on which the notice is based. The Client will be
@@ -876,15 +876,15 @@ margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>
 
     <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>(c)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span><span lang=EN-AU style='font-size:11.0pt'>If the Consultant has
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span><span class=spacefix4 lang=EN-AU style='font-size:11.0pt'>If the Consultant has
             to engage a collection agency or law firm to for unpaid bills, the Client will pay
             for the costs that the Consultant incurs in taking debt recovery action.<br>
             <br>
         </span></p>
 
-    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>10.<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <p class=Newhdg align=left style='text-align:left'><span lang=EN-AU>10.<span class='spacefix'
+                style='font:7.0pt "Times New Roman"'>
             </span></span><span lang=EN-AU>Electronic communication</span></p>
 
     <div style='border:none;border-top:solid windowtext 1.0pt;padding:6.0pt 0cm 0cm 0cm;
@@ -892,8 +892,8 @@ margin-left:1.0cm;margin-right:0cm'>
 
         <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:1.0cm;text-indent:-1.0cm;border:none;padding:0cm'><span lang=EN-AU style='font-size:11.0pt'>(a)<span
-                    style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </span></span><span lang=EN-AU style='font-size:11.0pt'>The parties may
+                    style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+                </span></span><span class=spacefix3 lang=EN-AU style='font-size:11.0pt'>The parties may
                 communicate electronically with the Client and other parties using electronic
                 mail, both direct and via the Internet, and using data storage devices. If the
                 parties communicate electronically, the parties acknowledge and agree as
@@ -903,16 +903,16 @@ margin-left:1.0cm;text-indent:-1.0cm;border:none;padding:0cm'><span lang=EN-AU s
 
     <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:3.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>(i)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span><span lang=EN-AU style='font-size:11.0pt'>There are some delivery
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+            </span></span><span class=spacefix2 lang=EN-AU style='font-size:11.0pt'>There are some delivery
             risks in using electronic mail and the parties accept the risk of interception
             of the email by third parties or of non-receipt or delayed receipt of the
             message; and</span></p>
 
     <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:3.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>(ii)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span><span lang=EN-AU style='font-size:11.0pt'>Computer viruses and
+                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span><span class=spacefix3 lang=EN-AU style='font-size:11.0pt'>Computer viruses and
             similar damaging items can be transmitted through emails and by introducing
             data storage devices into their system. The parties will use virus-scanning
             software to reduce these risks. However, it is not possible to completely
@@ -920,8 +920,8 @@ margin-left:3.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>
 
     <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:2.0cm;text-indent:-1.0cm'><span lang=EN-AU style='font-size:11.0pt'>(b)<span
-                style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span><span lang=EN-AU style='font-size:11.0pt'>If the parties
+                style='font:7.0pt "Times New Roman"'>&nbsp;
+            </span></span><span class=spacefix20 lang=EN-AU style='font-size:11.0pt'>If the parties
             communicate electronically, the parties release each other from all claims,
             losses, expenses and liabilities caused by any of the risks referred to above
             and arising directly or indirectly out of that communication.</span></p>
@@ -948,7 +948,7 @@ uppercase'>&nbsp;</span></b></a></p>
 
     <p class=MsoNormal style='margin-top:6.0pt;text-align:justify;text-indent:1.0cm;
 page-break-after:avoid'><b><span lang=EN-AU style='font-size:11.0pt;text-transform:
-uppercase'>Marshall Structures</span></b></p>
+uppercase'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Marshall Structures</span></b></p>
 
     <div style='border:solid windowtext 1.0pt;padding:12.0pt 8.0pt 12.0pt 12.0pt;
 margin-left:42.55pt;margin-right:0cm'>
@@ -993,7 +993,7 @@ avoid'><span lang=EN-AU style='font-size:11.0pt'><br>
 
     <p class=MsoNormal style='margin-top:6.0pt;text-align:justify;text-indent:1.0cm;
 page-break-after:avoid'><b><span lang=EN-AU style='font-size:11.0pt;text-transform:
-uppercase'>Client</span></b></p>
+uppercase'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Client</span></b></p>
 
     <div style='border:solid windowtext 1.0pt;padding:12.0pt 8.0pt 12.0pt 12.0pt;
 margin-left:42.55pt;margin-right:0cm'>
