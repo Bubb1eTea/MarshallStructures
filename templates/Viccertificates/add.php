@@ -115,7 +115,7 @@ debug($session->read('previous_url')); ?>
                     Use a ; to separate document number, date, type of document, pages and who it is prepared by, e.g. 1;10/05/2020;drawings;17;Ben']);
                     echo $this->Form->control('performancereq', ['label'=>'Relevant performance requirement']);
                     echo $this->Form->control('performancesolution',['label'=>'Details of performance solution required by regulation 124']);
-                    echo $this->Form->control('designstandards._ids', array('label' => "Design Basis (hold 'ctrl' when selecting more than one)", 'options' => $designstandards, 'multiple' => 'checkbox'));
+                    echo $this->Form->control('designstandards._ids', array('label' => "Design Basis (hold 'ctrl' when selecting more than one)", 'options' => $designstandards));
                 ?>
                 <div class="control_left">
                 <?php
