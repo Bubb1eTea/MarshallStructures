@@ -12,6 +12,8 @@ $session->write('previous_url', $session->read('url'));
 $session->write('url', 'projects.edit');
 $session->write('projects_id',$project->id);
 debug($session->read('previous_url'));?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
+
 <style>
     select[multiple="multiple"] { height:15rem;}
     .error-message {color:red;}
@@ -48,12 +50,49 @@ debug($session->read('previous_url'));?>
                     //echo $this->Html->link(__('Add New Client'), ['action' => '../clients/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('client_id', ['label'=>"Client", 'options' => $clients, 'empty' => true]);
                     //echo $this->Html->link(__('Add New Associate'), ['action' => '../associates/add'], ['class' => 'button float-right']);
-                    echo $this->Form->control('associates._ids', ['label'=>"Associate (hold 'ctrl' when selecting more than one)", 'options' => $associates]);
+                    echo $this->Form->control('associates._ids', ['label'=>"Associate (hold 'ctrl' when selecting more than one)", 'options' => $associates, 'id'=>'associate-id']);
                     echo $this->Form->control('invoiceaddressee_id', ['label'=>"Associate (addressee of invoice)",'options' => $associates, 'empty' => true]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
+
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    var select = document.getElementById('associate-id');
+                    document.getElementById('invoiceaddressee-id').innerHTML = "";
+                    var listItems = "";
+
+                    var selected = $('#associate-id').val();
+                    var selectedtext = $('#associate-id option:selected')
+                        .toArray().map(item => item.text);
+
+                    for(i=0;i<selected.length;i++){
+                        listItems += '<option value="' + selected[i] + '">' + selectedtext[i] + '</option>';
+                    }
+
+                    $('#invoiceaddressee-id').html(listItems);
+
+                    select.addEventListener('click', function(){
+                        document.getElementById('invoiceaddressee-id').innerHTML = "";
+
+                        var listItems = "";
+
+                        var selected = $('#associate-id').val();
+                        var selectedtext = $('#associate-id option:selected')
+                            .toArray().map(item => item.text);
+
+                        for(i=0;i<selected.length;i++){
+                            listItems += '<option value="' + selected[i] + '">' + selectedtext[i] + '</option>';
+                        }
+
+                        $('#invoiceaddressee-id').html(listItems);
+
+                    });
+
+                });
+            </script>
         </div>
     </div>
 </div>
