@@ -79,7 +79,7 @@ class InvoicesController extends AppController
     public function edit($id = null)
     {
         $invoice = $this->Invoices->get($id, [
-            'contain' => [],
+            'contain' => ['Projects'=>['Feeproposals']],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $invoice = $this->Invoices->patchEntity($invoice, $this->request->getData());
@@ -101,6 +101,7 @@ class InvoicesController extends AppController
 
         $this->set(compact('invoice', 'projects', 'feeproposals'));
         $this->set(compact('feeproposal'));
+
     }
 
     /**
@@ -132,6 +133,7 @@ class InvoicesController extends AppController
         $this->viewBuilder()->enableAutoLayout(false);
         $invoice = $this->Invoices->get($id, [
             'contain' => ['Projects' =>[
+                'Invoiceaddressees',
                 'Clients'=>['Companys']],
                 'Feeproposals'],
         ]);
@@ -157,9 +159,53 @@ class InvoicesController extends AppController
     {
         $invoice = $this->Invoices->get($id, [
             'contain' => ['Projects' =>[
+                'Invoiceaddressees'=>['Companys'],
                 'Clients'=>['Companys']],
                 'Feeproposals'],
         ]);
         $this->set(compact('invoice'));
+    }
+
+    public function test($id=null)
+    {
+        $this->loadModel('Projects');
+        $this->autoRender = false;
+        $this->layout = false;
+        $project = $this->Projects->get($id, [
+            'contain' => ['Clients', 'Associates', 'Feeproposals', 'Invoices', 'Ntcertificates', 'Viccertificates'],
+        ]);
+
+        $this->set(compact('project'));
+        echo json_encode( (count($project->invoices )));
+        exit;
+
+    }
+
+    public function feeproposalnum($id=null)
+    {
+        $this->loadModel('Projects');
+        $this->autoRender = false;
+        $this->layout = false;
+        $project = $this->Projects->get($id, [
+            'contain' => ['Clients', 'Associates', 'Feeproposals', 'Invoices', 'Ntcertificates', 'Viccertificates'],
+        ]);
+
+        $this->set(compact('project'));
+        echo json_encode($project->feeproposals);
+        exit;
+
+    }
+
+    public function feeproposaltotal($id=null)
+    {
+        $this->loadModel('Feeproposals');
+        $this->autoRender = false;
+        $this->layout = false;
+        $feeproposal = $this->Feeproposals->get($id);
+
+        $this->set(compact('feeproposal'));
+        echo json_encode($feeproposal->grandtotal);
+        exit;
+
     }
 }

@@ -27,6 +27,7 @@ label[for=<?php echo $labels[$i-1] ?>]{
 }
 <?php } ?>
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
 
 <?php session_start();
 $session = $this->request->getSession();
@@ -86,7 +87,7 @@ debug($session->read('previous_url')); ?>
                     echo $this->Form->control('client_id', ['options' => $clients, 'empty' => true]);
                     //echo $this->Html->link(__('Add New Associate'), ['action' => '../associates/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('associates._ids', ['label'=>"Associate (hold 'ctrl' when selecting more than one)", 'options' => $associates, 'empty' => true, 'multiple'=>'checkbox']);
-                    echo $this->Form->control('invoiceclientname', ['label'=>"Project Client Name: (For Invoicing Purpose)"]);
+                    echo $this->Form->control('invoiceaddressee_id', ['label'=>"Associate (addressee of invoice)",'options' => $associates, 'empty' => true]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

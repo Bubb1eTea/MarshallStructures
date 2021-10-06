@@ -19,7 +19,9 @@ use Cake\ORM\Entity;
  * @property string $total
  * @property string $totalgst
  * @property string $grandtotal
- * @property int $paywithinday
+ * @property int|null $paywithinday
+ * @property int $feeproposalnum
+
  *
  * @property \App\Model\Entity\Project $project
  * @property \App\Model\Entity\Invoice[] $invoices
@@ -50,5 +52,6 @@ class Feeproposal extends Entity
         'paywithinday' => true,
         'project' => true,
         'invoices' => true,
+        'feeproposalnum'=>true
     ];
 }

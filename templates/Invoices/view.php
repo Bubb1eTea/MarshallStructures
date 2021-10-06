@@ -15,32 +15,27 @@ debug($session->read('previous_url')); ?>
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
             <?= $this->Html->link(__('Edit Invoice'), ['action' => 'edit', $invoice->id], ['class' => 'side-nav-item']) ?>
-            <?= $this->Form->postLink(__('Delete Invoice'), ['action' => 'delete', $invoice->id], ['confirm' => __('Are you sure you want to delete invoice #{0}?', $invoice->id), 'class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('List Invoice'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Form->postLink(
+                __('Delete Invoice'),
+                ['action' => 'delete', $invoice->id],
+                ['confirm' => __('Are you sure you want to delete invoice #{0} for project '.$invoice->project->msnumber.'?', $invoice->invoicenum), 'class' => 'side-nav-item']
+            ) ?>            <?= $this->Html->link(__('List Invoice'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
             <?= $this->Html->link(__('New Invoice'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
         <div class="invoices view content">
-            <h3><?= 'Invoice #'.h($invoice->id) ?> <buttoner style='float: right;'> <?= $this->Html->link(__('Download to pdf'), ['action' => 'invoiceReport', $invoice->id ], ['class' => 'button float-right']); ?>
+            <h3><?= 'Invoice #'.($invoice->invoicenum).' for Project '.($invoice->project->msnumber) ?> <buttoner style='float: right;'> <?= $this->Html->link(__('Download to pdf'), ['action' => 'invoiceReport', $invoice->id ], ['class' => 'button float-right']); ?>
                 <buttoner style='float: right; padding-right:10px;'> <?= $this->Html->link(__('View Generated Template'), ['action' => 'invoiceReportPreview', $invoice->id], ['class' => 'button float-right']); ?></buttoner> </h3>
-                
+
             <table>
-                <tr>
-                    <th><?= __('Invoice ID') ?></th>
-                    <td><?= h($invoice->id) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('MS Code') ?></th>
-                    <td><?= $invoice->has('project') ? $this->Html->link($invoice->project->msnumber, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></td>
-                </tr>
                 <tr>
                     <th><?= __('Project Name') ?></th>
                     <td><?= $invoice->has('project') ? $this->Html->link($invoice->project->projectname, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Referenced Fee Proposal ID') ?></th>
-                    <td><?= $invoice->has('feeproposal') ? $this->Html->link($invoice->feeproposal->id, ['controller' => 'Feeproposals', 'action' => 'view', $invoice->feeproposal->id]) : '' ?></td>
+                    <th><?= __('Referenced Fee Proposal No.') ?></th>
+                    <td><?= $invoice->has('feeproposal') ? $this->Html->link($invoice->feeproposal->feeproposalnum, ['controller' => 'Feeproposals', 'action' => 'view', $invoice->feeproposal->id]) : '' ?></td>
                 </tr>
             </table>
                 <tr>

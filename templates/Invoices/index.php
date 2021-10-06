@@ -18,10 +18,10 @@ debug($session->read('previous_url')); ?>
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('datecreated',['label'=>'Date Created']) ?></th>
-                    <th><?= $this->Paginator->sort('id', ['label'=>'Invoice ID']) ?></th>
                     <th><?= $this->Paginator->sort('project_id',['label'=>'MS Code']) ?></th>
                     <th><?= $this->Paginator->sort('project_id',['label'=>'Project Name']) ?></th>
-                    <th><?= $this->Paginator->sort('feeproposal_id',['label'=>'Fee Proposal ID']) ?></th>
+                    <th><?= $this->Paginator->sort('invoicenum', ['label'=>'Invoice No.']) ?></th>
+                    <th><?= $this->Paginator->sort('feeproposal_id',['label'=>'Fee Proposal No.']) ?></th>
                     <th><?= $this->Paginator->sort('completedpercentage',['label'=>'Percentage']) ?></th>
                     <th><?= $this->Paginator->sort('grandtotal',['label'=>'Grand Total']) ?></th>
                     <th><?= $this->Paginator->sort('paywithinday',['label'=>'Date Due']) ?></th>
@@ -32,17 +32,21 @@ debug($session->read('previous_url')); ?>
                 <?php foreach ($invoices as $invoice): ?>
                 <tr>
                     <td><?= date('d/m/y',strtotime($invoice->datecreated)) ?></td>
-                    <td><?= $this->Number->format($invoice->id) ?></td>
                     <td><?= $invoice->has('project') ? $this->Html->link($invoice->project->msnumber, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></td>
                     <td><?= $invoice->has('project') ? $this->Html->link($invoice->project->projectname, ['controller' => 'Projects', 'action' => 'view', $invoice->project->id]) : '' ?></td>
-                    <td><?= $invoice->has('feeproposal') ? $this->Html->link($invoice->feeproposal->id, ['controller' => 'Feeproposals', 'action' => 'view', $invoice->feeproposal->id]) : '' ?></td>
+                    <td><?= $this->Number->format($invoice->invoicenum) ?></td>
+                    <td><?= $invoice->has('feeproposal') ? $this->Html->link($invoice->feeproposal->feeproposalnum, ['controller' => 'Feeproposals', 'action' => 'view', $invoice->feeproposal->id]) : '' ?></td>
                     <td><?= $this->Number->format($invoice->completedpercentage, ['after' => '%']) ?></td>
                     <td><?= $this->Number->format($invoice->grandtotal, ['places' => 2, 'before' => '$']) ?></td>
                     <td><?= date('d/m/y', strtotime($invoice->datecreated. ' + ' .$invoice->paywithinday.' days')) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $invoice->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $invoice->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $invoice->id], ['confirm' => __('Are you sure you want to delete invoice #{0}?', $invoice->id)]) ?>
+                        <?= $this->Form->postLink(
+                            __('Delete'),
+                            ['action' => 'delete', $invoice->id],
+                            ['confirm' => __('Are you sure you want to delete invoice #{0} for project '.$invoice->project->msnumber.'?', $invoice->invoicenum), 'class' => 'side-nav-item']
+                        ) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

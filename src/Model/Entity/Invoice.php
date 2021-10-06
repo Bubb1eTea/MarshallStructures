@@ -13,12 +13,14 @@ use Cake\ORM\Entity;
  * @property int $feeproposal_id
  * @property \Cake\I18n\FrozenTime $datecreated
  * @property string|null $invdesc
+* @property string $feeproposaltotal
  * @property string $completedpercentage
  * @property string $total
  * @property string $totalgst
  * @property string $grandtotal
  * @property int $paywithinday
- *
+ * @property int $invoicenum
+
  * @property \App\Model\Entity\Project $project
  * @property \App\Model\Entity\Feeproposal $feeproposal
  */
@@ -39,11 +41,13 @@ class Invoice extends Entity
         'datecreated' => true,
         'invdesc' => true,
         'completedpercentage' => true,
+        'feeproposaltotal' =>true,
         'total' => true,
         'totalgst' => true,
         'grandtotal' => true,
         'paywithinday' => true,
         'project' => true,
         'feeproposal' => true,
+        'invoicenum' => true,
     ];
 }

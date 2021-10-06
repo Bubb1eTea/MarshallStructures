@@ -15,26 +15,18 @@ debug($session->read('previous_url')); ?>
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
             <?= $this->Html->link(__('Edit Fee Proposal'), ['action' => 'edit', $feeproposal->id], ['class' => 'side-nav-item']) ?>
-            <?= $this->Form->postLink(__('Delete Fee Proposal'), ['action' => 'delete', $feeproposal->id], ['confirm' => __('Are you sure you want to delete fee proposal #{0}?', $feeproposal->id), 'class' => 'side-nav-item']) ?>
+            <?= $this->Form->postLink(__('Delete Fee Proposal'), ['action' => 'delete', $feeproposal->id], ['confirm' => __('Are you sure you want to delete fee proposal #{0} for project '.$feeproposal->project->msnumber.'?', $feeproposal->feeproposalnum)]) ?>
             <?= $this->Html->link(__('List Fee Proposal'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
             <?= $this->Html->link(__('New Fee Proposal'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
         <div class="feeproposals view content">
-            <h3><?= 'Fee Proposal #'.($feeproposal->id) ?></h3>
+            <h3><?= 'Fee Proposal #'.($feeproposal->feeproposalnum).' for Project '.($feeproposal->project->msnumber) ?></h3>
                 <buttoner style='float: right;'> <?= $this->Html->link(__('Download to PDf'), ['action' => 'feeproposalReport', $feeproposal->id ], ['class' => 'button float-right']); ?></buttoner>
                 <buttoner style='float: right; padding-right:10px;'> <?= $this->Html->link(__('View Generated Template'), ['action' => 'feeproposalReportPreview', $feeproposal->id ], ['class' => 'button float-right']); ?></buttoner>
             </h3>
             <table>
-                <tr>
-                    <th><?= __('Fee Proposal ID') ?></th>
-                    <td><?= h($feeproposal->id) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('MS Code') ?></th>
-                    <td><?=$feeproposal->has('project') ? $this->Html->link($feeproposal->project->msnumber, ['controller' => 'Projects', 'action' => 'view', $feeproposal->project->id]) : '' ?></td>
-                </tr>
                 <tr>
                     <th><?= __('Project Name') ?></th>
                     <td><?= $feeproposal->has('project') ? $this->Html->link($feeproposal->project->projectname, ['controller' => 'Projects', 'action' => 'view', $feeproposal->project->id]) : '' ?></td>
@@ -57,14 +49,6 @@ debug($session->read('previous_url')); ?>
                     <strong><?= __('Documents Provided') ?></strong>
                     <blockquote>
                         <?= $this->Text->autoParagraph(h($feeproposal->documentsprovided)); ?>
-                    </blockquote>
-                </div>
-            </tr>
-            <tr>
-                <div class="text">
-                    <strong><?= __('Fee Breakdown') ?></strong>
-                    <blockquote>
-                        <?= $this->Text->autoParagraph(h($feeproposal->feebreakdown)); ?>
                     </blockquote>
                 </div>
             </tr>
@@ -93,10 +77,6 @@ debug($session->read('previous_url')); ?>
                 <tr>
                     <th><?= __('Grand Total') ?></th>
                     <td><?= $this->Number->format($feeproposal->grandtotal, ['places' => 2, 'before' => '$']) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Pay within how many days?') ?></th>
-                    <td><?= $this->Number->format($feeproposal->paywithinday) ?> days</td>
                 </tr>
             </table>
             <div class="related">

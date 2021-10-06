@@ -19,10 +19,11 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenDate|null $duedate
  * @property string|null $projdesc
  * @property int|null $client_id
- * @property string|null invoiceclientname
+ * @property int|null $invoiceaddressee_id
 
  *
  * @property \App\Model\Entity\Client $client
+ * @property \App\Model\Entity\Associate $invoiceaddressee
  * @property \App\Model\Entity\Feeproposal[] $feeproposals
  * @property \App\Model\Entity\Invoice[] $invoices
  * @property \App\Model\Entity\Associate[] $associates
@@ -50,9 +51,14 @@ class Project extends Entity
         'projdesc' => true,
         'client_id' => true,
         'client' => true,
+        'invoiceaddressee_id' => true,
+        'associate' => true,
         'feeproposals' => true,
         'invoices' => true,
         'associates' => true,
-        'invoiceclientname'=>true,
     ];
+
+    protected function _getProjectDisplay() {
+        return $this->msnumber . ' - ' . $this->projectname;
+    }
 }

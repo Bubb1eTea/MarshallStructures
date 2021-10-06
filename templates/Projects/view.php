@@ -9,28 +9,21 @@ $session = $this->request->getSession();
 $session->write('previous_url', $session->read('url'));
 $session->write('url', 'projects.view');
 debug($session->read('previous_url')); ?>
+<?php debug($project)?>
 <div class="row">
     <aside class="column">
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
             <?= $this->Html->link(__('Edit Project'), ['action' => 'edit', $project->id], ['class' => 'side-nav-item']) ?>
-            <?= $this->Form->postLink(__('Delete Project'), ['action' => 'delete', $project->id], ['confirm' => __('Are you sure you want to delete project "{0}"?', $project->projectname), 'class' => 'side-nav-item']) ?>
+            <?= $this->Form->postLink(__('Delete Project'), ['action' => 'delete', $project->id], ['confirm' => __('Are you sure you want to delete project "{0}"?', $project->project_display), 'class' => 'side-nav-item']) ?>
             <?= $this->Html->link(__('List Project'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
             <?= $this->Html->link(__('New Project'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
         <div class="projects view content">
-            <h3><?= h($project->msnumber) ?>: <?= h($project->projectname) ?></h3>
+            <h3><?= h($project->project_display) ?></h3>
             <table>
-                <tr>
-                    <th><?= __('MS Code') ?></th>
-                    <td><?= h($project->msnumber) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Project Name') ?></th>
-                    <td><?= h($project->projectname) ?></td>
-                </tr>
                 <tr>
                     <th><?= __('Street Name') ?></th>
                     <td><?= h($project->streetname) ?></td>
@@ -54,6 +47,10 @@ debug($session->read('previous_url')); ?>
                 <tr>
                     <th><?= $this->Html->link('Client','/clients/index') ?></th>
                     <td><?= $project->has('client') ? $this->Html->link($project->client->full_name, ['controller' => 'clients', 'action' => 'view', $project->client->id]) : '' ?></td>
+                </tr>
+                <tr>
+                    <th><?= $this->Html->link('Associate (addressee of invoice)','/associates/index') ?></th>
+                    <td><?= $project->has('invoiceaddressee') ? $this->Html->link($project->invoiceaddressee->full_name, ['controller' => 'associates', 'action' => 'view', $project->invoiceaddressee->id]) : '' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Due Date') ?></th>

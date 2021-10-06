@@ -64,6 +64,16 @@ class FeeproposalsController extends AppController
         }
         $projects = $this->Feeproposals->Projects->find('list', ['limit' => 200]);
         $this->set(compact('feeproposal', 'projects'));
+
+        $id=$this->request->getData('id');
+        if($id!=null) {
+            $project = $this->Feeproposals->Projects->get($id, [
+                'contain' => ['Feeproposals']]);
+            $count=count($project['feeproposals']);
+
+            $this->set(compact('count'));
+        }
+        $this->set(compact('id'));
     }
 
     /**
@@ -76,7 +86,7 @@ class FeeproposalsController extends AppController
     public function edit($id = null)
     {
         $feeproposal = $this->Feeproposals->get($id, [
-            'contain' => [],
+            'contain' => ['Projects'],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $feeproposal = $this->Feeproposals->patchEntity($feeproposal, $this->request->getData());
@@ -120,6 +130,7 @@ class FeeproposalsController extends AppController
         $this->viewBuilder()->enableAutoLayout(false);
         $feeproposal = $this->Feeproposals->get($id, [
             'contain' => ['Projects'=>[
+                'Invoiceaddressees',
                 'Clients'=>[
                     'Companys']]]]);
 
@@ -146,8 +157,24 @@ class FeeproposalsController extends AppController
     {
         $feeproposal = $this->Feeproposals->get($id, [
             'contain' => ['Projects'=>[
+                'Invoiceaddressees',
                 'Clients'=>[
                 'Companys']]]]);
         $this->set(compact('feeproposal'));
+    }
+
+    public function test($id=null)
+    {
+        $this->loadModel('Projects');
+        $this->autoRender = false;
+        $this->layout = false;
+        $project = $this->Projects->get($id, [
+            'contain' => ['Clients', 'Associates', 'Feeproposals', 'Invoices', 'Ntcertificates', 'Viccertificates'],
+        ]);
+
+        $this->set(compact('project'));
+        echo json_encode( (count($project->feeproposals )));
+        exit;
+
     }
 }

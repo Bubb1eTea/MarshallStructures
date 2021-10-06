@@ -6,8 +6,8 @@
  */
 ?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
-
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>-->
 <?php session_start();
 $session = $this->request->getSession();
 $session->write('previous_url', $session->read('url'));
@@ -32,10 +32,11 @@ debug($session->read('previous_url')); ?>
             <?= $this->Form->create($feeproposal) ?>
             <fieldset>
                 <legend><?= __('Add Fee Proposal') ?></legend>
+                <!-- echo $this->Form->control('feeproposalnum', ['label'=>"Fee Proposal Number"]);                 -->
                 <div class="control_left">
                     <?php
                         //echo $this->Html->link(__('Add New Project'), ['action' => '../projects/add'], ['class' => 'button float-right']);
-                        echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true, 'style'=>'width:82%']);
+                        echo $this->Form->control('project_id', ['options' => $projects, 'empty' =>['*'=>'SELECT...'], 'style'=>'width:82%']);
                     ?>
                 </div>
                 <div class="control_right">
@@ -61,17 +62,12 @@ debug($session->read('previous_url')); ?>
                 <div class="control_right">
                     <?php    echo $this->Form->control('grandtotal', ['label' =>"Grand Total", array('readonly' => 'readonly')]);?>
                 </div>
-                <div class="control_left">
-                    <?php
-                        $days = ['7'=>'7','30'=>'30'];
-                        echo $this->Form->control('paywithinday', ['label' =>"Pay within how many days?",'options' => $days, 'empty' => false, 'style'=>'width:82%']);
-                    ?>
-                </div>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
 
-            <script>
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+            <script type="text/javascript">
                 $(document).ready(function() {
                     $('input').keyup(function(ev) {
                         var fixedfee = parseFloat($('#fixedfee').val()) || 0;
@@ -89,6 +85,49 @@ debug($session->read('previous_url')); ?>
                         var grandtotal = (parseFloat(total) + parseFloat(totalgst)).toFixed(2);
                         var divobj = document.getElementById('grandtotal');
                         divobj.value = grandtotal;
+                    });
+
+                    document.getElementById('project-id').addEventListener('change', function(){
+                        var projectid = $('#project-id').val();
+                        var urlnew = "<?= $this->Url->build(['controller' => 'Feeproposals', 'action' => 'test']) ?>"+'/'+projectid;
+                        var csrfToken = $('meta[name="csrfToken"]').attr('content');
+
+                        $.ajax({
+                            type: 'get',
+                            url: urlnew,
+                            datatype: 'json',
+                            headers: {  'X-CSRF-TOKEN': csrfToken   },
+                            success: function (result) {
+
+                                var feeProposalNum=parseInt(result)+1;
+                                console.log(feeProposalNum);
+                                if(result)
+                                {
+                                    document.getElementById('feeproposalnum').value=feeProposalNum ;
+                                }
+                                else
+                                {
+                                    document.getElementById('feeproposalnum').value=1 ;
+                                }
+
+                            },
+                            error: function (result) {
+                                //  console.log(result);
+                            }
+                        });
+                        /*
+                       $.ajax({
+                           type: 'get',
+                           url: urlnew,
+                           datatype: 'json',
+                           headers:{'X-CSRF-Token':<?= json_encode($this->request->getParam('_csrfToken')) ?>},
+                             success: function (result) {
+                              console.log(json.parse(result));
+                            }
+
+
+                        });
+                        */
                     });
                 });
             </script>

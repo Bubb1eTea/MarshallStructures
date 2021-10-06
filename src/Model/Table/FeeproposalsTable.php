@@ -41,7 +41,7 @@ class FeeproposalsTable extends Table
         parent::initialize($config);
 
         $this->setTable('feeproposals');
-        $this->setDisplayField('id');
+        $this->setDisplayField('feeproposalnum');
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Projects', [
@@ -128,8 +128,15 @@ class FeeproposalsTable extends Table
 
         $validator
             ->integer('paywithinday')
-            ->requirePresence('paywithinday', 'create')
-            ->notEmptyString('paywithinday', 'This field cannot be empty.');
+            ->allowEmptyString('paywithinday', 'This field cannot be empty.');
+
+
+        $validator
+            ->integer('feeproposalnum')
+            ->greaterThanOrEqual('feeproposalnum', 0,'This field must be positive.')
+            ->maxLength('feeproposalnum',12,'This field is too long.')
+            ->requirePresence('feeproposalnum', 'create')
+            ->notEmptyString('feeproposalnum', 'This field cannot be empty.');
 
         return $validator;
     }

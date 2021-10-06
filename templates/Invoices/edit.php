@@ -8,7 +8,6 @@
 ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
-
 <?php session_start();
 $session = $this->request->getSession();
 $session->write('previous_url', $session->read('url'));
@@ -27,9 +26,9 @@ debug($session->read('previous_url'));?>
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
             <?= $this->Form->postLink(
-                __('Delete'),
+                __('Delete Invoice'),
                 ['action' => 'delete', $invoice->id],
-                ['confirm' => __('Are you sure you want to delete invoice #{0}?', $invoice->id), 'class' => 'side-nav-item']
+                ['confirm' => __('Are you sure you want to delete invoice #{0} for project '.$invoice->project->msnumber.'?', $invoice->invoicenum), 'class' => 'side-nav-item']
             ) ?>
             <?= $this->Html->link(__('List Invoices'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
@@ -42,11 +41,12 @@ debug($session->read('previous_url'));?>
                 <div class="control_left">
                     <?php
                     //echo $this->Html->link(__('Add New Project'), ['action' => '../projects/add'], ['class' => 'button float-right']);
-                    echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true, 'style'=>'width:82%']);
+                    echo $this->Form->control('project_id', ['options' => $projects, 'empty' =>['*'=>'SELECT...'], 'style'=>'width:82%']);
+                    echo $this->Form->control('invoicenum', ['label'=>'Invoice Number']);
+                    echo $this->Html->link(__('Add a Fee Proposal'), ['action' => '../feeproposals/add'], ['class' => 'button float-right', 'target' => '_blank']);
                     ?>
                 </div>
                 <div class="control_right">
-                    <?php    echo $this->Html->link(__('View All Fee Proposals'), ['action' => '../feeproposals'], ['class' => 'button float-right', 'target' => '_blank']);?>
                     <?php    echo $this->Form->control('feeproposal_id', ['options' => $feeproposals, 'empty' => true, 'label'=>"Fee Proposal"]);?>
                 </div>
                 <?php
@@ -70,7 +70,7 @@ debug($session->read('previous_url'));?>
                 </div>
                 <div class="control_right">
                     <?php
-                    $days = ['7'=>'7','30'=>'30'];
+                    $days = ['7'=>'7 days','30'=>'30 days'];
                     echo $this->Form->control('paywithinday',['label' =>"Pay within how many days?",'options' => $days, 'empty' => false]);
                     ?>
                 </div>
@@ -80,6 +80,42 @@ debug($session->read('previous_url'));?>
 
             <script>
                 $(document).ready(function() {
+                    var projectid = $('#project-id').val();
+                    var urlnew = "<?= $this->Url->build(['controller' => 'Invoices', 'action' => 'test']) ?>"+'/'+projectid;
+                    var urlnew1 = "<?= $this->Url->build(['controller' => 'Invoices', 'action' => 'feeproposalnum']) ?>"+'/'+projectid;
+                    var csrfToken = $('meta[name="csrfToken"]').attr('content');
+                    var feeproposalid = $('#feeproposal-id').val();
+                    var feeproposalobj = document.getElementById("feeproposal-id");
+                    var feeproposalnum = feeproposalobj.options[feeproposalobj.selectedIndex].text;
+
+                    $.ajax({
+                        type: 'get',
+                        url: urlnew1,
+                        datatype: 'json',
+                        headers: {'X-CSRF-TOKEN': csrfToken},
+                        success: function (result) {
+
+                            if (result) {
+                                document.getElementById('feeproposal-id').innerHTML = "";
+                                $jsonresult = JSON.parse(result);
+                                var listItems = "";
+
+                                listItems += '<option value="' + feeproposalid + '">' + feeproposalnum + '</option>';
+
+                                    for (i = 0; i < $jsonresult.length; i++) {
+                                        if($jsonresult[i]['id']!=feeproposalid) {
+                                            listItems += '<option value="' + $jsonresult[i]['id'] + '">' + $jsonresult[i]['feeproposalnum'] + '</option>';
+                                        }
+                                    }
+                                $('#feeproposal-id').html(listItems);
+                            }
+
+                        },
+                        error: function (result) {
+                            //  console.log(result);
+                        }
+                    });
+
                     $('input').keyup(function(ev) {
                         var completedpercentage = (parseFloat($('#completedpercentage').val())* 0.1) || 0;
                         var feeproposaltotal = (parseFloat($('#feeproposaltotal').val())* 0.1) || 0;
@@ -96,6 +132,96 @@ debug($session->read('previous_url'));?>
                         var divobj = document.getElementById('grandtotal');
                         divobj.value = grandtotal;
                     });
+
+                    document.getElementById('project-id').addEventListener('change', function(){
+
+                        if(projectid==='*'){
+                            document.getElementById('invoicenum').value='' ;
+                            document.getElementById('feeproposal-id').innerHTML = "";
+
+                        }
+                        else {
+                            $.ajax({
+                                type: 'get',
+                                url: urlnew,
+                                datatype: 'json',
+                                headers: {'X-CSRF-TOKEN': csrfToken},
+                                success: function (result) {
+
+                                    var invoiceNum = parseInt(result) + 1;
+                                    console.log(invoiceNum);
+                                    if (result) {
+                                        document.getElementById('invoicenum').value = invoiceNum;
+                                    } else {
+                                        document.getElementById('invoicenum').value = 1;
+                                    }
+
+                                },
+                                error: function (result) {
+                                    //  console.log(result);
+                                }
+                            });
+
+                            $.ajax({
+                                type: 'get',
+                                url: urlnew1,
+                                datatype: 'json',
+                                headers: {'X-CSRF-TOKEN': csrfToken},
+                                success: function (result) {
+
+                                    if (result) {
+                                        document.getElementById('feeproposal-id').innerHTML = "";
+                                        $jsonresult = JSON.parse(result);
+                                        var listItems = "";
+                                        if ($jsonresult.length === 0) {
+                                            listItems += '<option disabled selected value>' + "NO FEE PROPOSALS FOR THIS PROJECT." + '</option>';
+                                        } else {
+                                            listItems += '<option value=empty>' + "SELECT..." + '</option>';
+
+                                            for (i = 0; i < $jsonresult.length; i++) {
+                                                listItems += '<option value="' + $jsonresult[i]['id'] + '">' + $jsonresult[i]['feeproposalnum'] + '</option>';
+                                            }
+                                        }
+                                        $('#feeproposal-id').html(listItems);
+                                    }
+
+                                },
+                                error: function (result) {
+                                    //  console.log(result);
+                                }
+                            });
+                        }
+                    });
+
+                    document.getElementById('feeproposal-id').addEventListener('change', function(){
+                        var feeproposalid = $('#feeproposal-id').val();
+                        var urlnew = "<?= $this->Url->build(['controller' => 'Invoices', 'action' => 'feeproposaltotal']) ?>"+'/'+feeproposalid;
+                        var csrfToken = $('meta[name="csrfToken"]').attr('content');
+
+                        document.getElementById('completedpercentage').value = '';
+                        document.getElementById('total').value = '';
+                        document.getElementById('totalgst').value = '';
+                        document.getElementById('grandtotal').value = '';
+
+                        $.ajax({
+                            type: 'get',
+                            url: urlnew,
+                            datatype: 'json',
+                            headers: {'X-CSRF-TOKEN': csrfToken},
+                            success: function (result) {
+                                $jsonresult=JSON.parse(result);
+
+                                if (result) {
+                                    document.getElementById('feeproposaltotal').value = $jsonresult;
+                                }
+
+                            },
+                            error: function (result) {
+                                //  console.log(result);
+                            }
+                        });
+                    });
+                    
                 });
             </script>
         </div>

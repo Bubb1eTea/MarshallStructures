@@ -51,7 +51,7 @@ debug($session->read('previous_url'));?>
             <?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $project->id],
-                ['confirm' => __('Are you sure you want to delete project "{0}"?', $project->projectname), 'class' => 'side-nav-item']
+                ['confirm' => __('Are you sure you want to delete project "{0}"?', $project->project_display), 'class' => 'side-nav-item']
             ) ?>
             <?= $this->Html->link(__('List Project'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
@@ -93,19 +93,9 @@ debug($session->read('previous_url'));?>
                     //echo $this->Html->link(__('Add New Client'), ['action' => '../clients/add'], ['class' => 'button float-right']);
                     echo $this->Form->control('client_id', ['label'=>"Client", 'options' => $clients, 'empty' => true]);
                     //echo $this->Html->link(__('Add New Associate'), ['action' => '../associates/add'], ['class' => 'button float-right']);
-                    echo $this->Form->control('associates._ids', ['label'=>"Associate (hold 'ctrl' when selecting more than one)", 'options' => $associates,'multiple'=>'checkbox']);
-
-                    $invoiceclientnameoptions=[];
-                      for($associate=0; $associate<count($project['associates']); $associate++) {
-                        $associatefullname=$project['associates'][$associate]['firstname'].' '.$project['associates'][$associate]['lastname'];
-                        $invoiceclientnameoptions+= array($associatefullname=>$associatefullname);
-                      }
-
-                      debug($invoiceclientnameoptions);
-                    echo $this->Form->control('invoiceclientname', ['label'=>"Project Client Name: (For Invoicing Purpose)", 'options' => $invoiceclientnameoptions, 'empty' => true]);
-                    ?>
-
-
+                    echo $this->Form->control('associates._ids', ['label'=>"Associate (hold 'ctrl' when selecting more than one)", 'options' => $associates, 'multiple'=>'checkbox']);
+                    echo $this->Form->control('invoiceaddressee_id', ['label'=>"Associate (addressee of invoice)",'options' => $associates, 'empty' => true]);
+                ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
