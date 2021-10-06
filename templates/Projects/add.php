@@ -104,6 +104,7 @@ debug($session->read('previous_url')); ?>
                         document.getElementById('invoiceaddressee-id').innerHTML = "";
 
                         var listItems = "";
+                        listItems += '<option value=empty>N/A</option>';
 
                         var selected = $('#associate-id').val();
                         var selectedtext = $('#associate-id option:selected')

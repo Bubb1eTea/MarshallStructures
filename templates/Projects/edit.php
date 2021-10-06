@@ -107,14 +107,23 @@ debug($session->read('previous_url'));?>
             <script type="text/javascript">
                 $(document).ready(function() {
                     var select = document.getElementById('associate-id');
+                    var associateobj = document.getElementById("invoiceaddressee-id");
+                    var associatetext = associateobj.options[associateobj.selectedIndex].text;
+                    var associateid = $('#invoiceaddressee-id').val();
+
+
                     document.getElementById('invoiceaddressee-id').innerHTML = "";
+
                     var listItems = "";
+                    listItems += '<option value="' + associateid + '">' + associatetext + '</option>';
+                    listItems += '<option value=empty>N/A</option>';
 
                     var selected = $('#associate-id').val();
                     var selectedtext = $('#associate-id option:selected')
                         .toArray().map(item => item.text);
 
                     for(i=0;i<selected.length;i++){
+                        if(selected[i]!=associateid)
                         listItems += '<option value="' + selected[i] + '">' + selectedtext[i] + '</option>';
                     }
 
@@ -124,6 +133,7 @@ debug($session->read('previous_url'));?>
                         document.getElementById('invoiceaddressee-id').innerHTML = "";
 
                         var listItems = "";
+                        listItems += '<option value=empty>N/A</option>';
 
                         var selected = $('#associate-id').val();
                         var selectedtext = $('#associate-id option:selected')
