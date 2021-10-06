@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Filesystem\Folder;
+
 /**
  * Projects Controller
  *
@@ -66,6 +68,17 @@ class ProjectsController extends AppController
         if ($this->request->is('post')) {
             $project = $this->Projects->patchEntity($project, $this->request->getData());
             if ($this->Projects->save($project)) {
+
+                //Folder creation
+                $foldername = "msdir/" . $project->msnumber. " - " .$project->projectname;
+                mkdir($foldername, 0777, TRUE);
+
+                mkdir($foldername . "/Administration", 0777, TRUE);
+                mkdir($foldername . "/Design", 0777, TRUE);
+                mkdir($foldername . "/Drafting", 0777, TRUE);
+                mkdir($foldername . "/Incoming", 0777, TRUE);
+                mkdir($foldername . "/Outgoing", 0777, TRUE);
+
                 $this->Flash->success(__('The project has been saved.'));
 
                 $session = $this->request->getSession();
@@ -127,32 +140,23 @@ class ProjectsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $project = $this->Projects->get($id);
         if ($this->Projects->delete($project)) {
+
+            $foldername = "msdir/" . $project->msnumber. " - " .$project->projectname;
+            
+            rmdir($foldername . "/Administration");
+            rmdir($foldername . "/Design");
+            rmdir($foldername . "/Drafting");
+            rmdir($foldername . "/Incoming");
+            rmdir($foldername . "/Outgoing");
+
+            rmdir($foldername);
+
             $this->Flash->success(__('The project has been deleted.'));
         } else {
             $this->Flash->error(__('The project could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);
-    }
-    public function first()
-    {
-        $this->paginate = [
-            'contain' => ['Clients'],
-        ];
-        $projects = $this->paginate($this->Projects);
-
-        $key = $this->request->getQuery('key');
-
-        if($key){
-            $query = $this->Projects->find("all")
-                ->where(['Or'=>['projectname like'=>'%'.$key.'%','streetname like'=>'%'.$key.'%','suburb like'=>'%'.$key.'%','postcode like'=>'%'.$key.'%','state like'=>'%'.$key.'%','msnumber'=>$key+0]]);
-        }else{
-            $query = $this->Projects;
-        }
-
-        $projects = $this->paginate($query);
-
-        $this->set(compact('projects'));
     }
 }
 
