@@ -61,6 +61,9 @@
             font-family: "Arial", sans-serif;
         }
 
+        
+
+
         h1 {
             mso-style-link: "Heading 1 Char";
             margin-top: 15.0pt;
@@ -817,17 +820,18 @@ border-top:none;
                 Information:</span></b>
     </p>
     <br>
+
     <p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-indent:
-            -18.0pt'><span lang=EN-AU>1)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-            </span></span><span lang=EN-AU>The above inspections are required to be carried
+            -18.0pt'><span lang=EN-AU>1)<span style='font:11.0pt "Times New Roman"'>&nbsp;&nbsp;
+            </span></span><span style="font-size: 11pt" lang=EN-AU>The above inspections are required to be carried
             out by either the certifying engineer or the building certifier who issued the
             Building Permit for the work. (If no inspections are indicated refer to the
             certifying engineer for advice).</span>
     </p>
     <p class=MsoNormal style='margin-left:36.0pt;text-align:justify'><span lang=EN-AU>&nbsp;</span></p>
     <p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-indent:
-            -18.0pt'><span lang=EN-AU>2)<span style='font:7.0pt "Times New Roman"'>&nbsp;
-            </span></span><span class=spacefix lang=EN-AU>&nbsp;Where works are prescribed building works under
+            -18.0pt'><span lang=EN-AU>2)<span style='font:11.0pt "Times New Roman"'>&nbsp;
+            </span></span><span style="font-size: 11pt" class=spacefix lang=EN-AU>&nbsp;Where works are prescribed building works under
             the <i>NT Building Act</i>, the building certifier must be provided with a copy
             of the inspection record and no further works must be carried out by the
             builder until the building certifier issues a release to proceed with further
@@ -835,15 +839,15 @@ border-top:none;
     </p>
     <p class=MsoListParagraph><span lang=EN-AU>&nbsp;</span></p>
     <p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-indent:
-            -18.0pt'><span lang=EN-AU>3)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-            </span></span><span lang=EN-AU>Additional non structural inspections may be
+            -18.0pt'><span lang=EN-AU>3)<span style='font:11.0pt "Times New Roman"'>&nbsp;&nbsp;
+            </span></span><span style="font-size: 11pt" lang=EN-AU>Additional non structural inspections may be
             required during the course of construction before the issue of an Occupancy
             Permit (refer to building certifier for requirements).</span>
     </p>
     <p class=MsoListParagraph><span lang=EN-AU>&nbsp;</span></p>
     <p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-indent:
-            -18.0pt'><span lang=EN-AU>4)<span style='font:7.0pt "Times New Roman"'>&nbsp;
-            </span></span><span lang=EN-AU>Failure to obtain inspections may prevent the
+            -18.0pt'><span lang=EN-AU>4)<span style='font:11.0pt "Times New Roman"'>&nbsp;
+            </span></span><span style="font-size: 11pt" lang=EN-AU>&nbsp;Failure to obtain inspections may prevent the
             issue of an Occupancy Permit upon completion of the building works. </span>
     </p>
     <p class=MsoNormal style='margin-left:18.7pt;text-align:justify;text-indent:
