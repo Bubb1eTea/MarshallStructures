@@ -57,8 +57,8 @@ debug($session->read('previous_url')); ?>
                 </tr>
             </table>
             <div class="related">
-                <h4><?= __('Related Associates') ?></h4>
                 <?php if (!empty($company->associates)) : ?>
+                <h4><?= __('Related Associates') ?></h4>
                 <div class="table-responsive">
                     <table>
                         <tr>
@@ -89,8 +89,8 @@ debug($session->read('previous_url')); ?>
                 <?php endif; ?>
             </div>
             <div class="related">
-                <h4><?= __('Related Clients') ?></h4>
                 <?php if (!empty($company->clients)) : ?>
+                <h4><?= __('Related Clients') ?></h4>
                 <div class="table-responsive">
                     <table>
                         <tr>

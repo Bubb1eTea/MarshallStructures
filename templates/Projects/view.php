@@ -64,8 +64,8 @@ debug($session->read('previous_url')); ?>
                 </blockquote>
             </div>
             <div class="related">
-                <h4><?= __('Related Associates') ?></h4>
                 <?php if (!empty($project->associates)) : ?>
+                <h4><?= __('Related Associates') ?></h4>
                 <div class="table-responsive">
                     <table>
                         <tr>
@@ -99,8 +99,8 @@ debug($session->read('previous_url')); ?>
                 <?php endif; ?>
             </div>
             <div class="related">
-                <h4><?= __('Related Fee Proposals') ?></h4>
                 <?php if (!empty($project->feeproposals)) : ?>
+                <h4><?= __('Related Fee Proposals') ?></h4>
                 <div class="table-responsive">
                     <table>
                         <tr>
@@ -127,9 +127,9 @@ debug($session->read('previous_url')); ?>
                 </div>
                 <?php endif; ?>
             </div>
-            <div class="related">
-                <h4><?= __('Related Invoices') ?></h4>
+            <div class="related">                
                 <?php if (!empty($project->invoices)) : ?>
+                <h4><?= __('Related Invoices') ?></h4>
                 <div class="table-responsive">
                     <table>
                         <tr>
@@ -159,8 +159,8 @@ debug($session->read('previous_url')); ?>
                 <?php endif; ?>
             </div>
             <div class="related">
-                <h4><?= __('Related Certificates') ?></h4>
                 <?php if (!empty($project->ntcertificates) or !empty($project->viccertificates)) : ?>
+                <h4><?= __('Related Certificates') ?></h4>
                 <div class="table-responsive">
                     <table>
                         <tr>

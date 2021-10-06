@@ -53,8 +53,8 @@ debug($session->read('previous_url')); ?>
                 </tr>
             </table>
             <div class="related">
-                <h4><?= __('Related Projects') ?></h4>
                 <?php if (!empty($associate->projects)) : ?>
+                <h4><?= __('Related Projects') ?></h4>
                 <div class="table-responsive">
                     <table>
                         <tr>
