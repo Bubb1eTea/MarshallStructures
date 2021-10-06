@@ -32,7 +32,6 @@ debug($session->read('previous_url')); ?>
             <?= $this->Form->create($feeproposal) ?>
             <fieldset>
                 <legend><?= __('Add Fee Proposal') ?></legend>
-                <!-- echo $this->Form->control('feeproposalnum', ['label'=>"Fee Proposal Number"]);                 -->
                 <div class="control_left">
                     <?php
                         //echo $this->Html->link(__('Add New Project'), ['action' => '../projects/add'], ['class' => 'button float-right']);
@@ -40,8 +39,9 @@ debug($session->read('previous_url')); ?>
                     ?>
                 </div>
                 <div class="control_right">
-                    <?php    echo $this->Form->control('guarantor',['label' =>"Guarantor (leave blank if none)"]);?>
+                    <?php echo $this->Form->control('feeproposalnum', ['label'=>"Fee Proposal Number"]);?>
                 </div>
+                <?php    echo $this->Form->control('guarantor',['label' =>"Guarantor (leave blank if none)", 'style'=>'width:45.1%']);?>
                 <?php    echo $this->Form->control('scopeofservice',['label' =>"Scope of Service (provide a list)"]);?>
                 <?php    echo $this->Form->control('documentsprovided',['label' =>"Documents Provided (provide a list)"]);?>
                 <div class="control_left">
