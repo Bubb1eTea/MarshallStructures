@@ -132,7 +132,11 @@ class FeeproposalsTable extends Table
             ->notEmptyString('paywithinday', 'This field cannot be empty.');
 
         $validator
-            ->integer('feeproposalnum');
+            ->integer('feeproposalnum')
+            ->greaterThanOrEqual('feeproposalnum', 0,'This field must be positive.')
+            ->maxLength('feeproposalnum',12,'This field is too long.')
+            ->requirePresence('feeproposalnum', 'create')
+            ->notEmptyString('feeproposalnum', 'This field cannot be empty.');
 
         return $validator;
     }

@@ -116,7 +116,11 @@ class InvoicesTable extends Table
             ->notEmptyString('paywithinday', 'This field cannot be empty.');
 
         $validator
-            ->integer('invoicenum');
+            ->integer('invoicenum')
+            ->greaterThanOrEqual('invoicenum', 0,'This field must be positive.')
+            ->maxLength('invoicenum',12,'This field is too long.')
+            ->requirePresence('invoicenum', 'create')
+            ->notEmptyString('invoicenum', 'This field cannot be empty.');
 
         return $validator;
     }
