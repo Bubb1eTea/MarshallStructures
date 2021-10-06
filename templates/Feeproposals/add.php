@@ -31,7 +31,7 @@ debug($session->read('previous_url')); ?>
                 <legend><?= __('Add Fee Proposal') ?></legend>
                 <?php
                     //echo $this->Html->link(__('Add New Project'), ['action' => '../projects/add'], ['class' => 'button float-right']);
-                    echo $this->Form->control('project_id', ['options' => $projects, 'empty' => true]);
+                    echo $this->Form->control('project_id', ['options' => $projects, 'empty' =>['*'=>'SELECT...']]);
                     echo $this->Form->control('feeproposalnum', ['label'=>"Fee Proposal Number"]);
                     echo $this->Form->control('guarantor',['label' =>"Guarantor (leave blank if none)"]);
                     echo $this->Form->control('scopeofservice',['label' =>"Scope of Service (provide a list)"]);
