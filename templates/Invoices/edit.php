@@ -37,7 +37,7 @@ debug($session->read('previous_url'));?>
         <div class="invoices form content">
             <?= $this->Form->create($invoice) ?>
             <fieldset>
-                <legend><?= __('Add Invoice') ?></legend>
+                <legend><?= __('Edit Fee Proposal #'.$invoice->feeproposalnum.' for project '.$invoice->project->msnumber) ?></legend>
                 <?php echo $this->Form->control('project_id', ['options' => $projects, 'empty' =>['*'=>'SELECT...']]);?>
                 <div class="control_left">
                     <?php
