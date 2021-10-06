@@ -17,7 +17,7 @@
     <h3><?= __('Projects') ?></h3>
 
     <!--     Search function-->
-    <table> 
+    <table>
         <th class="searchbar"><h4 class="searchtitle"><?= ('Search') ?></h4></th>
         <th><?= $this->Form->create(null,['type'=>'get']) ?><?= $this->Form->control('key',['label'=>'','value'=>$this->request->getQuery('key')]) ?></th>
         <th class="submitbox"><?= $this->Form->submit() ?></th>
@@ -55,7 +55,7 @@
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $project->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $project->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $project->id], ['confirm' => __('Are you sure you want to delete project "{0}"?', $project->projectname)]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $project->id], ['confirm' => __('Are you sure you want to delete project "{0}"?', $project->project_display)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>
