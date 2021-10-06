@@ -9,6 +9,7 @@ $session = $this->request->getSession();
 $session->write('previous_url', $session->read('url'));
 $session->write('url', 'projects.view');
 debug($session->read('previous_url')); ?>
+<?php debug($project)?>
 <div class="row">
     <aside class="column">
         <div class="side-nav">
@@ -21,16 +22,8 @@ debug($session->read('previous_url')); ?>
     </aside>
     <div class="column-responsive column-80">
         <div class="projects view content">
-            <h3><?= h($project->projectname) ?></h3>
+            <h3><?= h($project->project_display) ?></h3>
             <table>
-                <tr>
-                    <th><?= __('MS Code') ?></th>
-                    <td><?= h($project->msnumber) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Project Name') ?></th>
-                    <td><?= h($project->projectname) ?></td>
-                </tr>
                 <tr>
                     <th><?= __('Street Name') ?></th>
                     <td><?= h($project->streetname) ?></td>
@@ -54,6 +47,10 @@ debug($session->read('previous_url')); ?>
                 <tr>
                     <th><?= $this->Html->link('Client','/clients/index') ?></th>
                     <td><?= $project->has('client') ? $this->Html->link($project->client->full_name, ['controller' => 'clients', 'action' => 'view', $project->client->id]) : '' ?></td>
+                </tr>
+                <tr>
+                    <th><?= $this->Html->link('Associate (addressee of invoice)','/associates/index') ?></th>
+                    <td><?= $project->has('invoiceaddressee') ? $this->Html->link($project->invoiceaddressee->full_name, ['controller' => 'associates', 'action' => 'view', $project->invoiceaddressee->id]) : '' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Due Date') ?></th>
@@ -160,7 +157,7 @@ debug($session->read('previous_url')); ?>
                     </table>
                 </div>
                 <?php endif; ?>
-            </div>            
+            </div>
             <div class="related">
                 <h4><?= __('Related Certificates') ?></h4>
                 <?php if (!empty($project->ntcertificates) or !empty($project->viccertificates)) : ?>

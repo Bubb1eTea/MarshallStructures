@@ -41,7 +41,7 @@ class FeeproposalsTable extends Table
         parent::initialize($config);
 
         $this->setTable('feeproposals');
-        $this->setDisplayField('id');
+        $this->setDisplayField('feeproposalnum');
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Projects', [
@@ -130,6 +130,9 @@ class FeeproposalsTable extends Table
             ->integer('paywithinday')
             ->requirePresence('paywithinday', 'create')
             ->notEmptyString('paywithinday', 'This field cannot be empty.');
+
+        $validator
+            ->integer('feeproposalnum');
 
         return $validator;
     }

@@ -329,26 +329,26 @@ margin-bottom:6.0pt;
         margin-left:0cm;
         text-align:center'><b><span lang=EN-AU
 style='font-size:11.0pt'>&nbsp;
-         </span></b></p><p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+        </span></b></p><p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm;
-        text-align:justify'><b><span lang=EN-AU style='font-size:11.0pt'>BETWEEN<br><br></span></b></p>
+        text-align:justify'><b><span lang=EN-AU style='font-size:11.0pt'>BETWEEN<br>
+<br></span></b></p>
 
         <?php $clientCheck = $feeproposal->project->client;
-        $invoiceClientCheck=$feeproposal->project->invoiceclientname;
+        $invoiceAddresseeCheck=$feeproposal->project->invoiceaddressee;
         if(!empty($clientCheck)){?>
             <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm;
         text-align:justify'><b><span lang=EN-AU style='font-size:11.0pt'>CLIENT: <?=$feeproposal['project']['client']['firstname'].' '.$feeproposal['project']['client']['lastname']?></span></b></p>
-        <?php } elseif(!empty($invoiceClientCheck)) {?>
+        <?php } elseif(!empty($invoiceAddresseeCheck)) {?>
             <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm;
-        text-align:justify'><b><span lang=EN-AU style='font-size:11.0pt'>CLIENT: <?=$feeproposal['project']['invoiceclientname']?></span></b></p>
+        text-align:justify'><b><span lang=EN-AU style='font-size:11.0pt'>CLIENT: <?=$feeproposal['project']['invoiceaddressee']['firstname'].' '.$feeproposal['project']['invoiceaddressee']['lastname']?></span></b></p>
         <?php } else {?>
             <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm;
-        text-align:justify'><b><span lang=EN-AU style='font-size:11.0pt'>CLIENT: </span></b></p>
-        <?php }?>
-<?php $guarCheck = $feeproposal->guarantor;
+            margin-left:0cm;text-align:justify'><b><span lang=EN-AU style='font-size:11.0pt'>CLIENT: </span></b></p>
+        <?php }
+        $guarCheck = $feeproposal->guarantor;
     if(!empty($guarCheck)){ ?>
 
         <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;

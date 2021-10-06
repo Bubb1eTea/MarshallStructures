@@ -18,9 +18,9 @@ debug($session->read('previous_url')); ?>
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('datecreated',['label'=>'Date Created']) ?></th>
-                    <th><?= $this->Paginator->sort('id', ['label' =>"Fee Proposal ID"]) ?></th>
                     <th><?= $this->Paginator->sort('project_id', ['label' =>"MS Code"]) ?></th>
                     <th><?= $this->Paginator->sort('project_id', ['label' =>"Project Name"]) ?></th>
+                    <th><?= $this->Paginator->sort('feeproposalnum', ['label' =>"Fee Proposal No."]) ?></th>
                     <th><?= $this->Paginator->sort('guarantor', ['label' =>"Guarantor"]) ?></th>
                     <th><?= $this->Paginator->sort('grandtotal', ['label' =>"Grand Total"]) ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
@@ -30,15 +30,15 @@ debug($session->read('previous_url')); ?>
                 <?php foreach ($feeproposals as $feeproposal): ?>
                 <tr>
                     <td><?= date('d/m/y', strtotime($feeproposal->datecreated)) ?></td>
-                    <td><?= $this->Number->format($feeproposal->id) ?></td>
                     <td><?= $feeproposal->has('project') ? $this->Html->link($feeproposal->project->msnumber, ['controller' => 'Projects', 'action' => 'view', $feeproposal->project->id]) : '' ?></td>
                     <td><?= $feeproposal->has('project') ? $this->Html->link($feeproposal->project->projectname, ['controller' => 'Projects', 'action' => 'view', $feeproposal->project->id]) : '' ?></td>
+                    <td><?= $this->Number->format($feeproposal->feeproposalnum) ?></td>
                     <td><?= h($feeproposal->guarantor) ?></td>
                     <td><?= $this->Number->format($feeproposal->grandtotal, ['places' => 2, 'before' => '$']) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $feeproposal->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $feeproposal->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $feeproposal->id], ['confirm' => __('Are you sure you want to delete fee proposal #{0}?', $feeproposal->id)]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $feeproposal->id], ['confirm' => __('Are you sure you want to delete fee proposal #{0} for project '.$feeproposal->project->msnumber.'?', $feeproposal->feeproposalnum)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>
