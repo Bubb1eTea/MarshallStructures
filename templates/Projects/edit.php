@@ -23,7 +23,7 @@ debug($session->read('previous_url'));?>
             <?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $project->id],
-                ['confirm' => __('Are you sure you want to delete project "{0}"?', $project->projectname), 'class' => 'side-nav-item']
+                ['confirm' => __('Are you sure you want to delete project "{0}"?', $project->project_display), 'class' => 'side-nav-item']
             ) ?>
             <?= $this->Html->link(__('List Project'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
