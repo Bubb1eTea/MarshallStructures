@@ -52,14 +52,6 @@ debug($session->read('previous_url')); ?>
                     </blockquote>
                 </div>
             </tr>
-            <tr>
-                <div class="text">
-                    <strong><?= __('Fee Breakdown') ?></strong>
-                    <blockquote>
-                        <?= $this->Text->autoParagraph(h($feeproposal->feebreakdown)); ?>
-                    </blockquote>
-                </div>
-            </tr>
             <table>
                 </tr>
                 <tr>
