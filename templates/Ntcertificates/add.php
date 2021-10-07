@@ -222,10 +222,7 @@ debug($session->read('previous_url')); ?>
                 <?php
                     echo $this->Form->control('exclusion', ['label' => "The following items are excluded and shall be certified separately"]);
                     echo $this->Form->control('comment', ['label' => "Comments"]);
-                    echo $this->Form->control('compname', ['label' => "Company Name"]);
-                    echo $this->Form->control('compntregnum', ['label' => "Company NT Registration Number"]);
-                    echo $this->Form->control('date', ['label' => "Date of Issue", 'empty' => true]);
-                ?>
+                    ?>
                 <div class="control_left">
                 <?php    echo $this->Form->control('compname', ['label' => "Company Name", 'style'=>'width:82%']);?>
                 </div>
