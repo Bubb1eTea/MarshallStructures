@@ -76,16 +76,16 @@
 
     <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=668 style='width:500.8pt;border-collapse:collapse'>
         <tr>
-            <td width=481 valign=top style='width:360.4pt;padding:0cm 5.4pt 0cm 5.4pt'>
+            <td width=481 valign=top style='width:360.4pt;padding:0cm 5.4pt 0cm 5.4pt;'>
                 <p class=MsoNormal><span lang=EN-GB>Suite 263 Queen Street</span></p>
                 <p class=MsoNormal><span lang=EN-GB>Melbourne, Australia, 3000</span></p>
                 <p class=MsoNormal><span lang=EN-GB>P | 0424 488 649 &nbsp; E | BMarshall@MarshallStructures.com.au</span></p>
             </td>
-            <td width=187 valign=top style='width:140.4pt;padding:0cm 5.4pt 0cm 5.4pt'>
-                <p class=MsoNormal style='text-indent:.4pt'><b><span lang=EN-GB>MS CODE: <?= $invoice->project->id ?></span></b></p>
-                <p class=MsoNormal style='text-indent:.4pt'><b><span lang=EN-GB>INVOICE No: <?= $invoice->invoicenum ?></span></b></p>
-                <p class=MsoNormal style='text-indent:.4pt'><b><span lang=EN-GB>DATE: </span></b><b><span lang=EN-GB><?= date('d/m/y', strtotime($invoice->datecreated)) ?></span></b></p>
-                <p class=MsoNormal style='text-indent:.4pt'><span lang=EN-GB>&nbsp;</span></p>
+            <td width=187 valign=top style='width:140.4pt;padding:0cm 5.4pt 0cm 5.4pt;'>
+                <p class=MsoNormal style='text-indent:.4pt; text-align:right'><b><span lang=EN-GB>JOB NUMBER: <?= $invoice->project->msnumber ?></span></b></p>
+                <p class=MsoNormal style='text-indent:.4pt; text-align:right'><b><span lang=EN-GB>INVOICE No: <?= $invoice->invoicenum ?></span></b></p>
+                <p class=MsoNormal style='text-indent:.4pt; text-align:right'><b><span lang=EN-GB>DATE: </span></b><b><span lang=EN-GB><?= date('d F, Y', strtotime($invoice->datecreated)) ?></span></b></p>
+                <p class=MsoNormal style='text-indent:.4pt; text-align:right'><span lang=EN-GB>&nbsp;</span></p>
             </td>
         </tr>
     </table>
@@ -152,7 +152,7 @@
                 <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->completedpercentage ?>%</span></p>
             </td>
             <td width="14%" valign=top style='width:14.16%;border:none;border-right:solid windowtext 1.0pt;padding:0cm 10.8pt 0cm 10.8pt'>
-                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->total ?>$</span></p>
+                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->total ?></span></p>
             </td>
         </tr>
         <tr style='page-break-inside:avoid'>
@@ -185,7 +185,7 @@
                 <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB>SUBTOTAL</span></p>
             </td>
             <td width="14%" valign=top style='width:14.16%;border:none;border-right:solid windowtext 1.0pt;padding:0cm 10.8pt 0cm 10.8pt'>
-                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB> <?= $invoice->total ?>$ </span></p>
+                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB> <?= $invoice->total ?></span></p>
             </td>
         </tr>
         <tr style='page-break-inside:avoid'>
@@ -193,10 +193,10 @@
                 <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB>&nbsp;</span></p>
             </td>
             <td width="45%" colspan=2 valign=top style='width:45.02%;border:none;border-right:solid windowtext 1.0pt;padding:0cm 10.8pt 0cm 10.8pt'>
-                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB>GST</span></p>
+                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB>SALES TAX</span></p>
             </td>
             <td width="14%" valign=top style='width:14.16%;border:none;border-right:solid windowtext 1.0pt;padding:0cm 10.8pt 0cm 10.8pt'>
-                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->totalgst ?>$</span></p>
+                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->totalgst ?></span></p>
             </td>
         </tr>
         <tr style='page-break-inside:avoid'>
@@ -204,10 +204,10 @@
                 <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB>&nbsp;</span></p>
             </td>
             <td width="45%" colspan=2 valign=top style='width:45.02%;border:none;border-right:solid windowtext 1.0pt;padding:0cm 10.8pt 0cm 10.8pt'>
-                <p class=MsoNormal align=right style='text-align:right'><b><span lang=EN-GB>TOTALDUE</span></b></p>
+                <p class=MsoNormal align=right style='text-align:right'><b><span lang=EN-GB>TOTAL DUE</span></b></p>
             </td>
             <td width="14%" valign=top style='width:14.16%;border:solid windowtext 1.0pt;border-left:none;padding:0cm 10.8pt 0cm 10.8pt'>
-                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->grandtotal ?>$</span></p>
+                <p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB><?= $invoice->grandtotal ?></span></p>
             </td>
         </tr>
         <tr height=0>
@@ -244,12 +244,11 @@
 
     <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
 
-    <p class=MsoNormal><strong><u>Bank Information</u></strong></p>
-    <p class=MsoNormal>Bank West<br>
+    <p class=MsoNormal style="color:#8a8a8a"><strong><u>Bank Information</u></strong></p>
+    <p class=MsoNormal style="color:#8a8a8a">Bank West<br>
     Account Name: &nbsp; &nbsp; Marshall Structures
     <br>BSB Number: &nbsp; &nbsp; &nbsp; 302-162
     <br>Account Number: 16 52 478</p>
-
 </div>
 
 </body>

@@ -17,33 +17,52 @@
     <style>
         <!--
         /* Font Definitions */
-        @font-face
-        {font-family:"Cambria Math";
-            panose-1:2 4 5 3 5 4 6 3 2 4;}
-        @font-face
-        {font-family:Tahoma;
-            panose-1:2 11 6 4 3 5 4 4 2 4;}
-        @font-face
-        {font-family:"Arial Black";
-            panose-1:2 11 10 4 2 1 2 2 2 4;}
+        @font-face {
+            font-family: "Cambria Math";
+            panose-1: 2 4 5 3 5 4 6 3 2 4;
+        }
+
+        @font-face {
+            font-family: Tahoma;
+            panose-1: 2 11 6 4 3 5 4 4 2 4;
+        }
+
+        @font-face {
+            font-family: "Arial Black";
+            panose-1: 2 11 10 4 2 1 2 2 2 4;
+        }
+
         /* Style Definitions */
-        p.MsoNormal, li.MsoNormal, div.MsoNormal
-        {margin:0cm;
-            font-size:10.0pt;
-            font-family:"Arial",sans-serif;}
-        .MsoChpDefault
-        {font-size:10.0pt;}
+        p.MsoNormal,
+        li.MsoNormal,
+        div.MsoNormal {
+            margin: 0cm;
+            font-size: 10.0pt;
+            font-family: "Arial", sans-serif;
+        }
+
+        .MsoChpDefault {
+            font-size: 10.0pt;
+        }
+
         /* Page Definitions */
-        @page WordSection1
-        {size:595.3pt 841.9pt;
-            margin:36.0pt 53.85pt 13.05pt 53.85pt;}
-        div.WordSection1
-        {page:WordSection1;}
+        @page WordSection1 {
+            size: 595.3pt 841.9pt;
+            margin: 36.0pt 53.85pt 13.05pt 53.85pt;
+        }
+
+        div.WordSection1 {
+            page: WordSection1;
+        }
+
         /* List Definitions */
-        ol
-        {margin-bottom:0cm;}
-        ul
-        {margin-bottom:0cm;}
+        ol {
+            margin-bottom: 0cm;
+        }
+
+        ul {
+            margin-bottom: 0cm;
+        }
 
     </style>
 
@@ -54,7 +73,7 @@
 <div class="contenter">
 <div class=WordSection1>
 
-    <p class=MsoNormal><img width=338 height=77 id="Picture 1" src="http://localhost/team078-app_fit3048/webroot/img/Logo_2.png">
+    <p class=MsoNormal><img width=338 height=77 id="Picture 1" src="https://i.imgur.com/M5t7FpO.png">
 
         <b>
             <span lang=EN-GB style='font-size:18.0pt; margin-left: 20%;'> </span>
