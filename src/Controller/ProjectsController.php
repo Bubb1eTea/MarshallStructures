@@ -31,7 +31,7 @@ class ProjectsController extends AppController
 
         if($key){
             $query = $this->Projects->find("all")
-                ->where(['Or'=>['projectname like'=>'%'.$key.'%','streetname like'=>'%'.$key.'%','suburb like'=>'%'.$key.'%','state like'=>'%'.$key.'%','msnumber'=>$key+0]]);
+                ->where(['Or'=>['projectname like'=>'%'.$key.'%','streetname like'=>'%'.$key.'%','suburb like'=>'%'.$key.'%','state like'=>'%'.$key.'%','msnumber like'=>'%'.$key.'%']]);
         }else{
             $query = $this->Projects;
         }
@@ -142,7 +142,7 @@ class ProjectsController extends AppController
         if ($this->Projects->delete($project)) {
 
             $foldername = "msdir/" . $project->msnumber. " - " .$project->projectname;
-            
+
             rmdir($foldername . "/Administration");
             rmdir($foldername . "/Design");
             rmdir($foldername . "/Drafting");
