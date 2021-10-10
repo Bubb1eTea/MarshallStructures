@@ -28,6 +28,17 @@ class InvoicesController extends AppController
         ];
         $invoices = $this->paginate($this->Invoices);
 
+        $key = $this->request->getQuery('key');
+
+        if($key){
+            $query = $this->Invoices->find("all")
+                ->where(['Or'=>['projectname like'=>'%'.$key.'%', 'msnumber like'=>'%'.$key.'%']]);
+        }else{
+            $query = $this->Invoices;
+        }
+
+        $invoices = $this->paginate($query);
+
         $this->set(compact('invoices'));
     }
 
