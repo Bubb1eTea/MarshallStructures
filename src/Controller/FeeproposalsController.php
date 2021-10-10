@@ -26,6 +26,17 @@ class FeeproposalsController extends AppController
         ];
         $feeproposals = $this->paginate($this->Feeproposals);
 
+        $key = $this->request->getQuery('key');
+
+        if($key){
+            $query = $this->Feeproposals->find("all")
+                ->where(['Or'=>['projectname like'=>'%'.$key.'%','msnumber like'=>'%'.$key.'%']]);
+        }else{
+            $query = $this->Feeproposals;
+        }
+
+        $feeproposals = $this->paginate($query);
+
         $this->set(compact('feeproposals'));
     }
 
